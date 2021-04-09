@@ -45,12 +45,13 @@ A thread is defined by the following
 * **Id:** A global unique thread identifier, effectively the number of threads created in forum prior to this one. From this one can infer a chronological ordering of threads within the category. Importantly, because of the way information is organized in the blockchain state, the identifier for the category is also also required when identifying a thread.
 * **Title:** The human readable title.
 * **Author:** Member who created the thread.
-* **Posts:** The posts in this thread.
 * **Poll:** An optional poll for the thread, defined by the following
   * **Description:** A human readable description of what question is being polled.
   * **Deadline:** Some block before which is the only time anyone can participate in the poll.
   * **Alternatives:** A list of alternatives, each with its own explainer text, vote count and members who have voted in favor of it.
 * **Archival Status:** Whether thread is archived or not.
+* **Number of posts:** Number of posts in thread
+* **Cleanup Payoff:** Payoff for deleting thread from storage.
 
 ### Post
 
@@ -59,6 +60,15 @@ A post in a thread is defined by the following
 * **Id:** A global unique post identifier, effectively the number of posts created in the forum prior to this one. From this one can infer a chronological ordering of posts within the thread. Importantly, because of the way information is organized in the blockchain state, the identifiers for the category and thread are also also required when identifying a post.
 * **Text:** The post thread
 * **Author:** Member who created the pot.
+* **Last edited:** Last time the post was modified by the author
+* **Cleanup Payoff:** Payoff for deleting thread from storage.
+
+### Editable/Non-Editable
+
+A thread and a post can be either editable or not editable. A non-editable thread/post doesn't take any space in the runtime's storage. When a thread or post is being deleted it just indicates that you no longer want to edit it. To indicate that you want it to be hidden, similar to deletion in a classical forum, you need to set `hidden` to true. The first post in a thread is by default editable as well as any thread at creation.
+To create a thread or an editable post you require an initial deposit for the usage of storage space.
+Non-editable posts doesn't require an initial deposit.
+Furthermore, by deleting a thread/post you can reclaim the initial deposit.
 
 ### Reaction
 
@@ -272,7 +282,7 @@ The description of the category corresponding to `category_id` is set to `new_de
 * Signer uses role account of `actor`.
 * `category_id` corresponds to an existing category.
 * If signer is moderator, then this moderator must be assigned have control of the category.
-* All identifiers `threads`corresponding to existing threads.
+* All thread identifiers must have existed at some point in time.
 
 #### Effect
 
@@ -335,6 +345,7 @@ The category is dropped.
 #### Conditions
 
 * Signer uses role account of member corresponding to `member_id`.
+* Signer has enough balance to cover deposit for thread creation and post creation(`ThreadDeposit` + `PostDeposit`)
 * `category_id` corresponds to an existing category.
 * Limit `MAX_THREADS_IN_CATEGORY` is respected.
 * The category is not archived.
@@ -346,7 +357,8 @@ The category is dropped.
 #### Effect
 
 * A thread is created.
-* `THREAD_DEPOSIT + POST_DEPOSIT` is discounted from signer's account and added to thread account.
+* The first post is created.
+* Post + Thread deposit is substracted from signer account, `ThreadDeposit` is added to thread's `cleanup_payoff` and `PostDeposit` is added to post's `cleanup_payoff`.
 
 ### Update Thread Archival Status
 
@@ -388,6 +400,7 @@ Archival status of thread corresponding to `thread_id` is updated to `new_archiv
 * `category_id` corresponds to an existing category.
 * `thread_id` corresponds to an existing thread.
 * `member_id` corresponds to the author of the thread.
+* The thread is not deleted from storage.
 * The category is not archived. \[WIP\]
 * The thread is not archived. \[WIP\]
 
@@ -412,7 +425,7 @@ The title of the thread is set to `new_title`.
 * `category_id` corresponds to an existing category.
 * `new_category_id` corresponds to an existing category.
 * `category_id` and `new_category_id` are distinct.
-* `thread_id` corresponds to an existing thread.
+* `thread_id` corresponds to an existing thread that's not deleted from storage.
 * If signer is moderator, then this moderator must be assigned have control of the category corresponding to `category_id`.
 * If signer is moderator, then this moderator must be assigned have control of the category corresponding to `new_category_id`.
 * Limit `MAX_THREADS_IN_CATEGORY` is respected for category corresponding to `new_category_id`. \[WIP\]
@@ -427,6 +440,30 @@ The thread has relocated to category corresponding to `new_category_id`.
 
 | Name | Description |
 | :--- | :--- |
+| `forum_member_id` | Forum member identifier. |
+| `category_id` | Category identifier. |
+| `thread_id` | Thread identifier. |
+| `rationale` | Human-readable text. |
+| `hidden` | Indicates whether the thread should be hidden or just removed from storage. |
+
+#### Conditions
+
+* Signer corresponds to `forum_member_id`. 
+* `category_id` corresponds to an existing category.
+* `thread_id` corresponds to an existing thread that's not deleted from storage.
+* `forum_member_id` corresponds to thread creator.
+
+#### Effect
+
+* The thread is removed from storage.
+* `cleanup_payoff` is paid to the thread deleter account.
+
+### Moderate Thread
+
+**Parameters**
+
+| Name | Description |
+| :--- | :--- |
 | `actor` | Either member identifier, lead or working group identifier of moderator. |
 | `category_id` | Category identifier. |
 | `thread_id` | Thread identifier. |
@@ -434,20 +471,15 @@ The thread has relocated to category corresponding to `new_category_id`.
 
 #### Conditions
 
-* Signer uses role account of `actor`. 
+* Signer corresponds to `forum_member_id`. 
 * `category_id` corresponds to an existing category.
-* `thread_id` corresponds to an existing thread.
-* If signer is 
-  * moderator, then this moderator must be assigned have control of the category corresponding to `category_id`.
-  * member, then member is thread author and 
-    * thread can at most have the one post.
-    * category is not archived.
-    * thread is not archived.
+* `thread_id` corresponds to an existing thread that's not deleted from storage.
+* If signer is moderator then this moderator must be assigned have control of the category corresponding to `category_id`.
 
 #### Effect
 
-* The thread and all corresponding posts are removed.
-* All balance from thread account is transfered to signer's account.
+* The thread is removed from storage.
+* Thread's `cleanup_payoff` is slashed from thread account.
 
 ### Create Post
 
@@ -459,21 +491,21 @@ The thread has relocated to category corresponding to `new_category_id`.
 | `category_id` | Category identifier. |
 | `thread_id` | Thread identifier. |
 | `text` | Human-readable text. |
+| `editable` | Whether or not the post is editable. |
 
 #### Conditions
 
 * Signer uses role account of member corresponding to `member_id`.
 * `category_id` corresponds to an existing category.
-* `thread_id` corresponds to an existing thread.
+* `thread_id` corresponds to an existing thread that's not deleted from storage.
+* Signer has at least `PostDeposit` usable balance.
 * category is not archived.
 * thread is not archived.
-* Limit `MAX_POSTS_IN_THREAD` is respected.
-* Signer's account has at least `POST_DEPOSIT` free balance.
 
 #### Effect
 
-* A new post is created in thread with text `text`and author is `member_id`.
-* `POST_DEPOSIT` is discounted from signer's account.
+* A new post is created in thread with text `text`and author is `member_id` and `cleanup_payoff` is `PostDeposit`.
+* `PostDeposit` is transferred from signer's account to thread's account.
 
 ### Edit Post
 
@@ -491,8 +523,8 @@ The thread has relocated to category corresponding to `new_category_id`.
 
 * Signer uses role account of member corresponding to `member_id`.
 * `category_id` corresponds to an existing category.
-* `thread_id` corresponds to an existing thread.
-* `post_id` corresponds to an existing post.
+* `thread_id` corresponds to an existing thread that's not deleted.
+* `post_id` corresponds to an existing post that is in storage.
 * member is author of post.
 * category is not archived.
 * thread is not archived.
@@ -517,8 +549,7 @@ Post text is set to `new_text`.
 
 * Signer uses role account of member corresponding to `member_id`.
 * `category_id` corresponds to an existing category.
-* `thread_id` corresponds to an existing thread.
-* `post_id` corresponds to an existing post.
+* `thread_id` corresponds to an existing thread that is not deleted.
 * member is author of post.
 * category is not archived.
 * thread is not archived.
@@ -533,7 +564,36 @@ Reaction with value `reaction_value`is accepted.
 
 | Name | Description |
 | :--- | :--- |
-| `actor` | Either member identifier, lead or working group identifier of moderator. |
+| `forum_user_id` | Member identifier. |
+| `category_id` | Category identifier. |
+| `thread_id` | Thread identifier. |
+| `post_id` | Post identifier. |
+| `hidden` | Whether post should be also be hidden. |
+
+#### Conditions
+
+* Signer uses role account of `actor`. 
+* `category_id` corresponds to an existing category.
+* `thread_id` corresponds to an existing thread.
+* `post_id` corresponds to an existing post.
+* post is not first post in thread.
+* `forum_user_id` is member of forum and is either
+    * Post author
+    * Or Post's thread has been deleted and `PostLifeTime` has happened since post's `last_edited`
+* If `forum_user_id` is not author `hidden` must be false.
+
+#### Effect
+
+* Post is deleted from storage.
+* Post original deposit is transferred into the Signer's account.
+
+### Moderate Post
+
+**Parameters**
+
+| Name | Description |
+| :--- | :--- |
+| `actor` | lead or working group identifier of moderator. |
 | `category_id` | Category identifier. |
 | `thread_id` | Thread identifier. |
 | `post_id` | Post identifier. |
@@ -543,18 +603,14 @@ Reaction with value `reaction_value`is accepted.
 
 * Signer uses role account of `actor`. 
 * `category_id` corresponds to an existing category.
-* `thread_id` corresponds to an existing thread.
 * `post_id` corresponds to an existing post.
 * post is not first post in thread.
-* If signer is 
-  * moderator, then this moderator must be assigned have control of the category corresponding to `category_id`.
-  * member, then member is post author and
-    * category is not archived.
-    * thread is not archived.
+* If moderator, then this moderator must be assigned have control of the category corresponding to `category_id`.
 
 #### Effect
 
-Post is deleted.
+* Post is deleted from storage.
+* Post original deposit is slashed from thread account.
 
 ### Vote On Poll
 
