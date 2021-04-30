@@ -1,56 +1,92 @@
 # Encodings
 
+<!-- Member metadata -->
+
 ## Membership Metadata
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | name | string | optional | Member&#39;s real name |
-| avatar_uri | string | optional | Member&#39;s avatar image uri |
+| avatar | uint32 | optional | Member&#39;s avatar - index into external assets array |
 | about | string | optional | Member&#39;s md-formatted about text |
 
-## Working Group Status
+<!-- Working Group Action (set_status_text metadata) -->
+
+## Working Group Action
+
+**Only one of the fields should be set.**
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| description | string | optional | Full status description (md-formatted) |
-| about | string | optional | Status about text (md-formatted) |
-| status | string | optional | The status itself (expected to be 1-3 words) |
-| status_message | string | optional | Short status message |
+| set_group_metadata | [SetGroupMetadata](#setgroupmetadata) | optional |  |
+| add_upcoming_opening | [AddUpcomingOpening](#addupcomingopening) | optional |  |
+| remove_upcoming_opening | [RemoveUpcomingOpening](#removeupcomingopening) | optional |  |
 
-## Working Group Opening Description
-
+### SetGroupMetadata
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| short_description | string | required | Short description of the opening |
-| description | string | required | Full description of the opening |
-| hiring_limit | uint32 | required | Expected number of hired applicants |
-| expected_ending_timestamp | uint64 | required | Expected time when the opening will close (Unix timestamp) |
-| application_details | string | required | Md-formatted text explaining the application process |
+| new_metadata | [WorkingGroupMetadata](#workinggroupmetadata) | optional | New working group metadata to set (can be a partial update) |
+### AddUpcomingOpening
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| metadata | [UpcomingOpeningMetadata](#upcomingopeningmetadata) | optional | Upcoming opening metadata |
+
+### RemoveUpcomingOpening
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | string | optional | Upcoming opening query-node id |
+
+### UpcomingOpeningMetadata
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| expected_start | uint32 | optional | Expected opening start (timestamp) |
+| reward_per_block | uint64 | optional | Expected reward per block |
+| min_application_stake | uint64 | optional | Expected min. application stake |
+| metadata | [OpeningMetadata](#openingmetadata) | optional | Opening metadata |
+
+### WorkingGroupMetadata
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| description | string | optional | Group description text (md-formatted) |
+| about | string | optional | Group about text (md-formatted) |
+| status | string | optional | Current group status (expected to be 1-3 words) |
+| status_message | string | optional | Short status message associated with the status |
+
+<!-- Working Group Opening metadata -->
+
+## Working Group Opening Metadata
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| short_description | string) | optional | Short description of the opening |
+| description | string | optional | Full description of the opening |
+| hiring_limit | uint32 | optional | Expected number of hired applicants |
+| expected_ending_timestamp | uint32 | optional | Expected time when the opening will close (Unix timestamp) |
+| application_details | string | optional | Md-formatted text explaining the application process |
 | application_form_questions | [ApplicationFormQuestion](#applicationformquestion) | repeated | List of questions that should be answered during application |
-
-<a name=".ApplicationFormQuestion"></a>
 
 ### ApplicationFormQuestion
 
-
-
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| question | string | required | The question itself (ie. &#34;What is your name?&#34;&#34;) |
-| type | [InputType](#inputtype) | required | Suggested type of the UI answer input |
+| question | string | optional | The question itself (ie. &#34;What is your name?&#34;&#34;) |
+| type | [InputType](#inputtype) | optional | Suggested type of the UI answer input |
 
 ### InputType
 
-
 | Name | Number | Description |
 | ---- | ------ | ----------- |
+| TEXTAREA | 0 |  |
 | TEXT | 1 |  |
-| TEXTAREA | 2 |  |
 
+<!-- Working Group Application metadata -->
 
-
-## Working Group Application Description
+## Working Group Application Metadata
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
