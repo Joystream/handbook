@@ -38,13 +38,17 @@ Storage Providers Working Group Knowledge Base
 
 ## Score
 
-The HR working group score is computed as follows
+The score is computed as follows
 
-`[GENERAL_WG_SCORE + GREETING_SCORE + ONBOARDING_SCORE + CATALYZING_SCORE + BOUNTY_MANAGEMENT]/(5*2^{N})`
+`[GENERAL_WG_SCORE + UPLOAD_ROBUSTNESS + UPLOAD_CAPACITY + REPLICATION_LATENCY + DOS_ROBUSTNESS]/(5*2^{N})`
 
 where
 
 * `GENERAL_WG_SCORE` : is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`30%`**.
+* `UPLOAD_ROBUSTNESS`: is the share of uploads of data objects where the first picked liason for a storage bucket starts accepting the upload within **`300ms`**, as measured on the client side.
+* `UPLOAD_CAPACITY`: is computed
+* `REPLICATION_LATENCY`: is the share of uploads of data objects where the latency from upload completion to _all_ storage providers for corresponding first picked liason for a storage bucket starts accepting the upload within **`300ms`**, as measured on the client side.
+* `DOS_ROBUSTNESS`:
 *
 * `GREETING_SCORE`:  is a score computed by Jsgenesis staff for the quality and speed of the greeting activity, which will be in the range \[0, 1], and will emphasize
   * Latency: the time it takes from a new person joining until someone gets in touch. Between **`8am` ** to **`23pm`** (CET), greeting time must be less than **`2 minutes`**.
@@ -57,7 +61,6 @@ where
 * `CATALYZING_SCORE`: is `1/percentile(75%, [x_1, ..., x_l])` , which will be in the range \[0, 1], where&#x20;
   * `percentile(X,S)` returns the `X`th percentile in non-empty sequence of observations _S._&#x20;
   * `x_i` is the number of days since the last registered interaction in the CRM with the ith non-founding member in the CRM as of the end of the period.&#x20;
-* `BOUNTY_MANAGEMENT` : is a score computed by Jsgenesis staff for the quality of bounty management, which will be in the range \[0, 1].
 * `N` : The number of catastrophic error instances which occurred, as defined below.
 
 ### Catastrophic Errors&#x20;
