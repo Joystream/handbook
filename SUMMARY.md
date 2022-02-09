@@ -1,0 +1,61 @@
+# Table of contents
+
+* [🎯 Start Here](README.md)
+* [🚀 $JOY](usdjoy.md)
+* [🏤 Jsgenesis](jsgenesis.md)
+
+## Testnet
+
+* [🤑 Testnet Rewards](testnet/testnet-rewards.md)
+* [💵 $tJOY](testnet/usdtjoy.md)
+* [🧙 Founding Member Program](testnet/founding-member-program.md)
+* [📏 Council Period Scoring](testnet/council-period-scoring/README.md)
+  * [General Working Group Score](testnet/council-period-scoring/general-working-group-score.md)
+  * [Content Directory Score](testnet/council-period-scoring/content-directory-score.md)
+  * [Human Resources Score](testnet/council-period-scoring/human-resources-score.md)
+  * [Marketers Score](testnet/council-period-scoring/marketers-score.md)
+  * [Storage Providers Score](testnet/council-period-scoring/storage-providers-score.md)
+  * [Distributors Score](testnet/council-period-scoring/distributors-score.md)
+  * [Builders Score](testnet/council-period-scoring/builders-score.md)
+
+## system
+
+* [🔑 Memberships](system/memberships/README.md)
+  * [Tutorial: Become a Member](system/memberships/tutorial-become-a-member.md)
+  * [Tutorial: Invite A New Member](system/memberships/tutorial-invite-a-new-member.md)
+  * [Tutorial: Cashout $tJOY](system/memberships/tutorial-cashout-usdtjoy.md)
+* [🏛 Council](system/council/README.md)
+  * [Tutorial: Stand for Council](system/council/tutorial-stand-for-council.md)
+  * [Tutorial: Vote for Council Candidate](system/council/tutorial-vote-for-council-candidate.md)
+  * [A Case Study: Tomato](system/council/a-case-study-tomato.md)
+* [👷♀ Working Groups](system/working-groups/README.md)
+  * [Tutorial: Create Upcoming Opening](system/working-groups/tutorial-create-upcoming-opening.md)
+  * [Tutorial: Create Opening](system/working-groups/tutorial-create-opening.md)
+  * [Tutorial: Hire Worker](system/working-groups/tutorial-hire-worker.md)
+  * [Tutorial: Fire A Worker](system/working-groups/tutorial-fire-a-worker.md)
+  * [Tutorial: Slash A Worker](system/working-groups/tutorial-slash-a-worker.md)
+  * [Tutorial: Leave A Role](system/working-groups/tutorial-leave-a-role.md)
+  * [Tutorial: Apply For Role](system/working-groups/tutorial-apply-for-role.md)
+* [⚖ Proposal System](system/proposal-system/README.md)
+  * [Tutorial: Create A Proposal](system/proposal-system/tutorial-create-a-proposal.md)
+* [🎬 Content Directory](system/content-directory/README.md)
+  * [Tutorial: Issue Video NFT](system/content-directory/tutorial-issue-video-nft.md)
+  * [Tutorial: Claim Reward](system/content-directory/tutorial-claim-reward.md)
+  * [Tutorial: Issue Creator Token](system/content-directory/tutorial-issue-creator-token.md)
+  * [A Case Study: Laura](system/content-directory/a-case-study-laura.md)
+* [👫 Human Resources](system/human-resources.md)
+* [🛠 Builders](system/builders/README.md)
+  * [A Case Study: l1dev](system/builders/a-case-study-l1dev.md)
+  * [Tutorial: X](system/builders/tutorial-x.md)
+* [🚀 Marketers](system/marketers.md)
+* [🗞 Forum](system/forum.md)
+* [🌉 Gateways](system/gateways.md)
+* [💽 Storage](system/storage.md)
+* [📡 Content Delivery](system/content-delivery.md)
+* [🏹 Bounties](system/bounties.md)
+* [🏭 Validation](system/validation.md)
+
+***
+
+* [📔 Glossary](glossary.md)
+* [❓ FAQ](faq.md)
