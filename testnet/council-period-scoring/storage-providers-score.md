@@ -54,7 +54,7 @@ where
 * `UPLOAD_CAPACITY`: is computed
 * `REPLICATION_LATENCY`: is the share of uploads of data objects where the latency from upload completion to _all_ storage providers for corresponding first picked liason for a storage bucket starts accepting the upload within **`300ms`**, as measured on the client side.
 * `DOS_ROBUSTNESS`: is a score computed by Jsgenesis staff for the ability to withstand DoS and DDoS attacks, which will be in the range \[0, 1], and will emphasize handling of attacks of the following kinds
-  * ICMP FLooding/ Smurf Attack
+  * ICMP Flooding/ Smurf Attack
   * SYN Flooding
   * Ping of Death
   * HTTP (GET/POST) Flooding
@@ -64,6 +64,4 @@ where
 
 #### **Permanent Data Object Loss**
 
-xxxxxxxxxx
-
-xxx
+A confirmed data object can no longer be recovered from storage nodes, despite not being deleted on chain.
