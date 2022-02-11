@@ -19,17 +19,6 @@ The storage providers, coordinated by the lead, have to provide a storage system
 
 Jsgenesis staff will be conducting experiments to put load on the system, including denial of service attacks, spamming, and also posing as malicious workers.
 
-## Collaboration
-
-It is critical that the lead and workers collaborate to compile and share information with the council and Jsgenesis infrastructure maintainers about changes that are needed in terms of resources or tech.
-
-`wip`- add more here when builders WG has been fleshed out.
-
-\-jsgenesis
-
-* council&#x20;
-*
-
 ## Knowledge Base
 
 {% embed url="https://grizzled-corleggy-af8.notion.site/Storage-9dc5a16444934dc4bda08b596bc15375" %}
