@@ -51,7 +51,7 @@ where
 
 * `GENERAL_WG_SCORE` : is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`30%`**.
 * `UPLOAD_ROBUSTNESS`: is the share of uploads of data objects where the first picked liason for a storage bucket starts accepting the upload within **`300ms`**, as measured on the client side.
-* `UPLOAD_CAPACITY`: is computed
+* `UPLOAD_CAPACITY`: is 1, will be defined later.
 * `REPLICATION_LATENCY`: is the share of uploads of data objects where the latency from upload completion to _all_ storage providers for corresponding first picked liason for a storage bucket starts accepting the upload within **`300ms`**, as measured on the client side.
 * `DOS_ROBUSTNESS`: is a score computed by Jsgenesis staff for the ability to withstand DoS and DDoS attacks, which will be in the range \[0, 1], and will emphasize handling of attacks of the following kinds
   * ICMP Flooding/ Smurf Attack
