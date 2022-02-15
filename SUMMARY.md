@@ -20,6 +20,7 @@
 
 ## system
 
+* [🥩 Staking](system/staking.md)
 * [🔑 Memberships](system/memberships/README.md)
   * [Tutorial: Become a Member](system/memberships/tutorial-become-a-member.md)
   * [Tutorial: Invite A New Member](system/memberships/tutorial-invite-a-new-member.md)
@@ -53,6 +54,7 @@
 * [💽 Storage](system/storage.md)
 * [📡 Content Delivery](system/content-delivery.md)
 * [🏹 Bounties](system/bounties.md)
+* [💸 Fees](system/fees.md)
 * [🏭 Validation](system/validation.md)
 
 ***
