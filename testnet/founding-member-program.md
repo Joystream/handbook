@@ -61,9 +61,15 @@ To get verified make a thread in the `Verification` category of the forum, using
 
 ## Refer A Friend
 
-When creating a membership on-chain, they can select what other member has referred them. This new member, when getting verified, will result in $JOY being added to allocation of whomever invited them. This referral information has to be established immediately when first getting started creating a membership, otherwise it will not be counted. The amount of $JOY rewarded varies from council period to period, and there are only a limited number of referrals rewarded per period, on a first come, first served basis.\
+When a either makes their membership, or interacts with \
+For a given council period, the first `REFERRALS_LIMIT` number of members who get verified and who were invited, then result in `REFERRAL_JOY_AMOUNT`  amount of $JOY for the invitor. The reward occurs on a first-come-first-serve basis, so if the limit has already been reached in a given period, then opportunity to receive $JOY for this invitation is permanently lost. Read&#x20;
+
+
+
+When creating a membership on-chain, or when interacting with the onboarding process of the HR group ([#onboarding](council-period-scoring/human-resources-score.md#onboarding "mention")), they can select what other member has referred them. The new member, when getting verified, will result in $JOY being added to allocation of whomever invited them. The amount of $JOY&#x20;
+
 \
-**NOTE:** Before Olympia, the runtime has no explicit field for this for members, so just put it in the description field of the membership, and tell a representative of the [Broken link](broken-reference "mention") .
+&#x20;This referral information has to be established immediately when first getting started creating a membership, otherwise it will not be counted. The amount of $JOY rewarded varies from council period to period, and there are only a limited number of referrals rewarded per period, on a first come, first served basis.
 
 ## Dashboard
 

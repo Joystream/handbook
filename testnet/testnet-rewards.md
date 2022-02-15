@@ -30,10 +30,10 @@ Each council period a set of key parameters are updated, and these are critical 
 | Name                  | Description                                                                                        |
 | --------------------- | -------------------------------------------------------------------------------------------------- |
 | `JOY_BUDGET`          | Total $JOY available to be rewarded for all activities, except referring a friend.                 |
-| `REFERRAL_JOY_AMOUNT` | $JOY rewarded for referring a friend, per friend.                                                  |
+| `REFERRER_JOY`        | $JOY rewarded to someone who referred someone when that person was verified.                       |
+| `REFERREE_JOY`        | $JOY rewarded to someone who was referred when verified.                                           |
 | `tJOY_BUDGET`         | Total $tJOY which can be spent by DAO across all activities.                                       |
 | `USD_SUBSIDY`         | The USD value which is added to the backing value of $tJOY at the beginning of the council period. |
-| `REFERRALS_LIMIT`     | Max number of referrals that can be rewarded with $JOY during a council period.                    |
 | `CAP`                 | Limit for how much $JOY can be earned by unverified person.                                        |
 | `COUNCIL_tJOY_REWARD` | The council member reward in $tJOY how much each council member makes, as reward rate.             |
 
@@ -43,7 +43,7 @@ Here we cover how different kinds activities are rewarded
 
 ### Refer A Friend
 
-For a given council period, the first `REFERRALS_LIMIT` number of members who get verified and who were invited, then result in `REFERRAL_JOY_AMOUNT`  amount of $JOY for the invitor. The reward occurs on a first-come-first-serve basis, so if the limit has already been reached in a given period, then opportunity to receive $JOY for this invitation is permanently lost. Read more in section [#refer-a-friend](founding-member-program.md#refer-a-friend "mention").
+Read more in section [#refer-a-friend](founding-member-program.md#refer-a-friend "mention").
 
 ### Bounties
 
