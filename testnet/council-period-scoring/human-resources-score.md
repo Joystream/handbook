@@ -6,7 +6,7 @@ description: Metrics used to compute score for HR working group.
 
 ## Overview
 
-The HR working group activities relevant to scoring fall into the following three four categories
+The HR working group activities relevant to scoring fall into the following five categories
 
 * **Greeting:** Engage with every new person entering the official [Official Discord](https://discord.com/invite/DE9UN3YpRP).
 * **Onboarding:** Get new persons setup with a first membership and added to the [#crm](human-resources-score.md#crm "mention").
