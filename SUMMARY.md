@@ -40,6 +40,7 @@
 * [⚖ Proposal System](system/proposal-system/README.md)
   * [Tutorial: Create A Proposal](system/proposal-system/tutorial-create-a-proposal.md)
 * [🎬 Content Directory](system/content-directory/README.md)
+  * [NFT](system/content-directory/nft.md)
   * [Tutorial: Issue Video NFT](system/content-directory/tutorial-issue-video-nft.md)
   * [Tutorial: Claim Reward](system/content-directory/tutorial-claim-reward.md)
   * [Tutorial: Issue Creator Token](system/content-directory/tutorial-issue-creator-token.md)
