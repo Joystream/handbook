@@ -4,15 +4,21 @@ description: >-
   system is allocated across actors.
 ---
 
-# 🥩 Staking
-
-
+# 🥩 Accounts & Staking
 
 ## Introduction
 
 Staking, or bonding, is the act of locking up funds under some terms so that they are not transferable and otherwise not entirely usable as they otherwise would be. The terms, referred to as _unstaking terms_ describe the circumstances under which the funds may begin to cease being staked. This may involve who is able to initiate this, at what time and whether there is a possible delay from initiation to completion. This time lag is referred to as the _unstaking period._ Another critical term will also be whether and some part, possibly all of, the funds may be burned. This is referred to as _slashing._
 
-## **Purpose**
+## **Accounts**
+
+`wip`  **** &#x20;
+
+## Module Accounts
+
+`wip`  **** &#x20;
+
+## **Staking**
 
 Staking is used for two purposes to serve the system as a whole by providing more robust incentives for socially optimal conduct in some role that impacts the overall success of the system.
 

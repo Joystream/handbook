@@ -20,7 +20,7 @@
 
 ## system
 
-* [🥩 Staking](system/staking.md)
+* [🥩 Accounts & Staking](system/accounts-and-staking.md)
 * [🔑 Memberships](system/memberships/README.md)
   * [Tutorial: Become a Member](system/memberships/tutorial-become-a-member.md)
   * [Tutorial: Invite A New Member](system/memberships/tutorial-invite-a-new-member.md)
