@@ -53,11 +53,7 @@ Is not only strictly prohibited, but Jsgenesis will be conducting continuous bri
 
 ## Verification
 
-Verification is the process by which Jsgenesis approves you for further participation in the founding member program, so you can keep earning $JOY tokens and eventually reach founding member status. You have to have at least the following number of $JOY tokens allocated before you can get verified:
-
-**`<call data warehouse API>`**
-
-To get verified make a thread in the `Verification` category of the forum, using the membership you wish to get verified for, and add a short bullet-point list of things for which you have earned $JOY in past council periods. [Here](http://www.cnn.com) is an example of such a thread. Then finally write an email where you reference this thread, and send it to `verification@jsgenesis.com`.
+Verification is the process by which Jsgenesis approves you for further participation in the founding member program, so you can keep earning $JOY tokens and eventually reach founding member status. You have to have a minimum number of $JOY tokens before you can get verified: `<add link to dashboard which shares this value>`. To get verified make a thread in the `Verification` category of the forum, using the membership you wish to get verified for, and add a short bullet-point list of things for which you have earned $JOY in past council periods. [Here](http://www.cnn.com) is an example of such a thread. Then finally write an email where you reference this thread, and send it to `verification@jsgenesis.com`.
 
 ## Refer A Friend
 
