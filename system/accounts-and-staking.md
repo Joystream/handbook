@@ -54,24 +54,24 @@ The model for reuse of accounts is quite simple. There is a finite set of lock t
 
 | Lock                            | Binding |       ID      | Rivalrous |
 | ------------------------------- | :-----: | :-----------: | --------- |
-| Voting                          |    No   |       0       | No        |
+| Voting                          |    No   |  \*b"voting " | No        |
 | Vesting                         |  No\*\* | \*b"vesting " | No        |
-| Invitation                      |   No\*  |       10      | No        |
-| Bound Staking Account           |   Yes   |       11      | No        |
-| Council Candidate Staking       |   Yes   |       1       | Yes       |
-| Council Member Staking          |   Yes   |       2       | Yes       |
+| Invitation                      |   No\*  | \*b"invitemb" | No        |
+| Bound Staking Account           |   Yes   | \*b"stakcand" | No        |
+| Council Candidate Staking       |   Yes   | \*b"candidac" | Yes       |
+| Council Member Staking          |   Yes   | \*b"councilo" | Yes       |
 | Validation & Nomination Staking |    No   | \*b"staking " | Yes       |
-| Proposals Staking               |   Yes   |       5       | Yes       |
-| Storage WG Staking              |   Yes   |       6       | Yes       |
-| Content Directory WG Staking    |   Yes   |       7       | Yes       |
-| Forum WG Staking                |   Yes   |       8       | Yes       |
-| Membership WG Staking           |   Yes   |       9       | Yes       |
-| Distributor WG Staking          |   Yes   |       ?       | Yes       |
-| Builders WG Staking             |   Yes   |       13      | Yes       |
-| Gateway WG Staking              |   Yes   |       14      | Yes       |
-| HR WG Staking                   |   Yes   |       ?       | Yes       |
-| Marketing WG Staking            |   Yes   |       ?       | Yes       |
-| Bounty Entry Staking            |   Yes   |       12      | Yes       |
+| Proposals Staking               |   Yes   | \*b"proposal" | Yes       |
+| Storage WG Staking              |   Yes   | \*b"wg-storg" | Yes       |
+| Content Directory WG Staking    |   Yes   | \*b"wg-contt" | Yes       |
+| Forum WG Staking                |   Yes   | \*b"wg-forum" | Yes       |
+| Membership WG Staking           |   Yes   | \*b"wg-membr" | Yes       |
+| Distributor WG Staking          |   Yes   | \*b"wg-distr" | Yes       |
+| Builders WG Staking             |   Yes   | \*b"wg-opera" | Yes       |
+| Gateway WG Staking              |   Yes   | \*b"wg-gatew" | Yes       |
+| HR WG Staking                   |   Yes   | \*b"wg-operb" | Yes       |
+| Marketing WG Staking            |   Yes   | \*b"wg-operg" | Yes       |
+| Bounty Entry Staking            |   Yes   |  \*b"bounty " | Yes       |
 
 \* It is not possible to initiation the invitation lock, it is automatically applied when a new member is invited on, hence the question of whether binding is required for applying the lock does not even apply.\
 \*\* Vesting is only going to be setup for accounts originating from mainnet genesis block, and so by definition no binding would be needed for that.
