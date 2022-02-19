@@ -10,7 +10,7 @@ The HR working group activities relevant to scoring fall into the following five
 
 * **Greeting:** Engage with every new person entering the official [Official Discord](https://discord.com/invite/DE9UN3YpRP).
 * **Onboarding:** Get new persons setup with a first membership and added to the [#crm](human-resources-score.md#crm "mention").
-* **Catalyzing:** Get persons started with a concrete activity, such as standing for council, creating a bounty, working on an existing bounty or applying for a role.
+* **Catalyzing:** Get persons started with a concrete activity, such as creating a bounty, working on an existing bounty or applying for a role.
 * **Nurture:** To engage and re-engage existing persons in the CRM who are not yet founding members, to encourage them to continue, help them get answers to questions, and gather insights about their experience to support the overall success of the founding member program.
 * **Bounty management:** Get new, and existing, people to work on small one off tasks as a way to get into more permanent and long running roles in the system.
 
@@ -23,17 +23,19 @@ New people will continuously be arriving in the Discord, both directly, and thro
 All new persons should be&#x20;
 
 * greeted by a member in the HR working group in the `#welcome` or `#general` channels,&#x20;
-* offered initial $tJOY and help creating a membership, and
-* be added to the CRM using the appropriate form, capturing all the relevant information.
+* offered assistance in solving CAPTCHAs if needed,
 
 ## Onboarding
 
-As soon as possible after being greeted, the objective of the HR worker is to identify what specific opportunity the person has the interest and capacity to pursue on their road to becoming a founding member. This is first achieved by developing an understanding of the person in terms of skills and interests, and the filtering the set of near term opportunities through this profile. The major opportunities are
+As soon as possible after being greeted, the objective of the HR worker is to do the following in the given order
 
-1. Starting to work on an existing bounty.
-2. Getting a role in a working group where there is soon space for newcomers.
-3. Running as a candidate for the council.
-4. Creating a new bounty specifically based on this persons skills and interests.
+1. Capture the person in the CRM, so that they can be catalyzed later and the project captures relevant up to date information about who is arriving, and from where,
+2. Get the person to create a membership on-chain, with accurate referral information and metadata, and also some initial $tJOY to get started using the chain,
+3. Get the person into a specific activity, aligned with their skills and interests, and with the needs of the network, allowing them to earn $tJOY and $JOY. This is first achieved by developing an understanding of the person in terms of skills and interests, and the filtering the set of near term opportunities through this profile. The major opportunities are
+   1. Starting to work on an existing bounty.
+   2. Getting a role in a working group where there is soon space for newcomers.
+   3. Running as a candidate for the council.
+   4. Creating a new bounty specifically based on this persons skills and interests.
 
 This onboarding should always be initiated right after the initial greeting stage, however, it may also be attempted as part of a catalyzing effort for a dormant person who never graduated into a substantive activity. The outcome of an attempt should be recorded in the CRM.
 
