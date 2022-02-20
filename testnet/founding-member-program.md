@@ -72,7 +72,7 @@ There is a dynamic dashboard which holds up to date information on the state of 
   * All incentives were directly paid in USD (XMR) for work performed on the network. This meant that none of the balances on the testnet were of much consequence.
 * **`20/05/2020`**
   * `Constantinople` testnet was launched ([Blog post](https://blog.joystream.org/constantinople-released/)). This for the first time created the concept of `tJOY` and a `fiat pool` allowing for testnet participants to be directly incentivized by tokens on the testnet and have their incentives be impacted by the DAO and community's decisions. The network was initially backed by a pool of `$2500 USD` that was managed by Jsgenesis ([Blog Post](https://blog.joystream.org/constantinople-incentives/)).
-    * As of early 2022, the `fiat pool` had increased from the intial `$2500 USD` to over `$65,000 USD`.
+    * As of early 2022, the `fiat pool` had increased from the intial `$2500 USD` to over `$65,000 USD`, paying out more than `$93,000 USD` in incentives to users.
   * The `tJOY` balances were exchangeable into `USD` by exchanging them for `Monero` and eventually `Bitcoin Cash`.
   * This release also introduced `KPIs` which were a set of goals for each council to work toward to gain more incentives ([First KPI blog post](https://blog.joystream.org/constantinople-kpis/)).
     * As of early 2022, the potential weekly `KPI` rewards had increased from `$200 USD` to as much as `$4800 USD`.
