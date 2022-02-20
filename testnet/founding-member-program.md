@@ -65,7 +65,11 @@ There is a dynamic dashboard which holds up to date information on the state of 
 
 ## History
 
-`<Tomato has mentioned the need to explain the history of the program, prior rules, causes for change, as such transparency and public information is key to legitimacy in the future>`
+* `11/12/2018` - The Joystream project was launched by Jsgenesis ([Blog post](https://blog.joystream.org/jsgenesis/)).
+* `21/12/2018-19/05/2020` - Various testnets were launched over this time period (`Mesopotamia`, `Sparta`, `Athens`, `Acropolis`, `Rome`). All incentives were directly paid in USD (XMR) for work performed on the network. This meant that none of the balances on the testnet were of much consequence.
+* `20/05/2020` - The `Constantinople` testnet was launched ([Blog post](https://blog.joystream.org/constantinople-released/)) which for the first time created the concept of `tJOY` allowing for testnet participants to be directly incentivized by the DAO's decisions. The network was initially backed by a pool of `$2500 USD` that was managed by Jsgenesis ([Blog Post](https://blog.joystream.org/constantinople-incentives/)). The `tJOY` balances were exchangeable into `USD` by exchanging them for XMR and eventually `Bitcoin Cash`
+
+There were also users that participated more heavily than others and weren't directly rewarded via incentives.
 
 ## FAQ
 
