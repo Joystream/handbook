@@ -1,4 +1,11 @@
-# Page 1
+---
+description: >-
+  An on-chain index of all data stored and distributed in the system, with
+  associated information about ownership and what providers are tasked with
+  storing and providing bandwidth.
+---
+
+# Data Directory
 
 ## Introduction
 
@@ -28,7 +35,7 @@ A _data object_ represents a single static data asset, like an image or video me
 
 ### Bag Id
 
-A _Bag Id_ is a value which can identify a specific bag, see section on [#bag](page-1.md#bag "mention") for further elaboration, and it takes one of the following varieties
+A _Bag Id_ is a value which can identify a specific bag, see section on [#bag](data-directory.md#bag "mention") for further elaboration, and it takes one of the following varieties
 
 * `static`: a _static bag id_ identifies one of the built in bags in the system, and it comes in one of the following subvarieties
   * `council`: identifies the bag reserved for the council to manage through its proposal system.
@@ -48,10 +55,10 @@ A _data object bag_, or _bag_ for short, is a dynamic collection of data objects
 
 A bag is defined by the following information
 
-* `id` : an id of type [#bag-id](page-1.md#bag-id "mention") for this bag.
-* `stored_by`: set of ids for [#storage-bucket](page-1.md#storage-bucket "mention") tasked with storing the objects in the bag.
-* `distributed_by`: set of ids for [#distributor-bucket](page-1.md#distributor-bucket "mention") tasked with distributing the objects in the bag.
-* `deletion_prize`: amount of money placed in [#undefined](page-1.md#undefined "mention") as staking bond for cleaning up unused bag.
+* `id` : an id of type [#bag-id](data-directory.md#bag-id "mention") for this bag.
+* `stored_by`: set of ids for [#storage-bucket](data-directory.md#storage-bucket "mention") tasked with storing the objects in the bag.
+* `distributed_by`: set of ids for [#distributor-bucket](data-directory.md#distributor-bucket "mention") tasked with distributing the objects in the bag.
+* `deletion_prize`: amount of money placed in [#undefined](data-directory.md#undefined "mention") as staking bond for cleaning up unused bag.
 * `object_size`: cumulative size of all data objects in the bag.
 * `object_count`: cumulative number of objects in the bag.
 
@@ -85,14 +92,14 @@ A _distribution bucket_ represents a commitment to distribute a set of bags to e
 Buckets are partitioned into so called _distribution bucket families_. These families group buckets with interchangeable semantics from distributional point of view, and the purpose of the grouping is to allow sharding over the bag space for a given service level when creating new bags. Here is an example that can make this more clear. A subset of families could for example represent each country in East Asia, where each family corresponds to a specific country. The buckets in a family, say the family for Mongolia, will be operated by infrastructure which can provide sufficiently low latency guarantees w.r.t. the corresponding country. The bag for a channel known to be particularly popular in this area could be setup so as to use these buckets disproportionately.
 
 * `id`: a unique immutable non-negative integer identifying an individual distribution bucket family, is automatically assigned by the blockchain upon creation.
-* `distribution_buckets`: a map which sends [#distribution-bucket](page-1.md#distribution-bucket "mention") `id` to the corresponding bucket, and holds all buckets that are part of this family.
+* `distribution_buckets`: a map which sends [#distribution-bucket](data-directory.md#distribution-bucket "mention") `id` to the corresponding bucket, and holds all buckets that are part of this family.
 
 ### Dynamic Bag Creation Policy
 
 A _dynamic bag creation policy_ holds parameter values impacting how exactly the creation of a new dynamic bag occurs, and there is one such policy for each type of dynamic bag, so two, one for `member` and one for `channel`. It describes how many storage buckets should store the bag, and from what subset of distribution bucket families (described below) to select a given number of distribution buckets, specifically
 
 * `number_of_storage_buckets`: number of storage buckets which should replicate the new bag.
-* `families`: map of [#distribution-bucket-family](page-1.md#distribution-bucket-family "mention") id to the number of distribution buckets in the given family one must assign to a new bag for distribution when subject to this policy.
+* `families`: map of [#distribution-bucket-family](data-directory.md#distribution-bucket-family "mention") id to the number of distribution buckets in the given family one must assign to a new bag for distribution when subject to this policy.
 
 ### Blacklist
 
