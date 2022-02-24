@@ -12,8 +12,8 @@ A working group is an organizational body, subject to the oversight of the counc
 
 ## Groups
 
-{% content-ref url="../human-resources/" %}
-[human-resources](../human-resources/)
+{% content-ref url="../human-resources.md" %}
+[human-resources.md](../human-resources.md)
 {% endcontent-ref %}
 
 {% content-ref url="../builders/" %}
@@ -32,8 +32,8 @@ A working group is an organizational body, subject to the oversight of the counc
 [storage](../storage/)
 {% endcontent-ref %}
 
-{% content-ref url="../content-delivery.md" %}
-[content-delivery.md](../content-delivery.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ## Operations Working Groups
