@@ -28,8 +28,8 @@ A working group is an organizational body, subject to the oversight of the counc
 [marketers.md](../marketers.md)
 {% endcontent-ref %}
 
-{% content-ref url="../storage.md" %}
-[storage.md](../storage.md)
+{% content-ref url="../storage/" %}
+[storage](../storage/)
 {% endcontent-ref %}
 
 {% content-ref url="../content-delivery.md" %}
