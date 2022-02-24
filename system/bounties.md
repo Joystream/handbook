@@ -88,7 +88,7 @@ Below is a list of the stages a bounty can be in, and what each of them mean:
 
 The stages and transitions are summarized in the image below.
 
-![Bounty life-cycle stages.](broken-reference)
+![Bounty life-cycle stages.](../.gitbook/assets/bounties\_statechart.png)
 
 ## Constants
 
