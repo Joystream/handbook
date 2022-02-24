@@ -4,7 +4,7 @@ description: >-
   around making a subsystem of the platform to work.
 ---
 
-# 👷♀ Working Groups
+# 👷♀ 👷♀ Working Groups
 
 ## Introduction
 
@@ -12,8 +12,8 @@ A working group is an organizational body, subject to the oversight of the counc
 
 ## Groups
 
-{% content-ref url="../human-resources.md" %}
-[human-resources.md](../human-resources.md)
+{% content-ref url="../human-resources/" %}
+[human-resources](../human-resources/)
 {% endcontent-ref %}
 
 {% content-ref url="../builders/" %}

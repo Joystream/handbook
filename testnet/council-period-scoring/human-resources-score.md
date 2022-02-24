@@ -49,7 +49,7 @@ _**Note: This management requires the presence of the bounty system on-chain, pr
 
 ### Creation
 
-As mentioned prior, [bounties.md](../../system/bounties.md "mention") are an excellent low barrier to entry means of allowing total newcomers to participate, start earning $tJOY and $JOY, and learning the system and community. Bounties are created on-chain using either
+As mentioned prior, [bounties.md](../../system/human-resources/bounties.md "mention") are an excellent low barrier to entry means of allowing total newcomers to participate, start earning $tJOY and $JOY, and learning the system and community. Bounties are created on-chain using either
 
 * Pre-prepared bounties living in the `BountyTemplate` table of the CRM. Bounties are added here by
   * the HR lead
