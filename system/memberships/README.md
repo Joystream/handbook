@@ -66,6 +66,16 @@ The following constants are hard coded into the system, they can only be updated
 | `INVITE_LOCK_ID`        | The identifier value for the lock applied to root account of a new member | `fill-in` |
 | `MAX_NUMBER_OF_WORKERS` |                                                                           | `fill-in` |
 
+## Metadata
+
+### Membership
+
+| Field  | Type   | Label    | Description                                        |
+| ------ | ------ | -------- | -------------------------------------------------- |
+| name   | string | optional | Member's real name                                 |
+| avatar | uint32 | optional | Member's avatar - index into external assets array |
+| about  | string | optional | Member's md-formatted about text                   |
+
 ## Extrinsics
 
 ### Buy a Membership

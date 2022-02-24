@@ -145,6 +145,93 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 | `MIN_UNSTAKING_PERIOD_LIMIT` | Minimum unstaking period in this working group.                                            |
 | `MINIMUM_STAKE_FOR_OPENING`  | Minimum stake required for any opening.                                                    |
 
+## Metadata
+
+### Working Group Action <a href="#working-group-action" id="working-group-action"></a>
+
+**Only one of the fields should be set.**​
+
+
+
+| Field                     | Type                                              | Label    | Description |
+| ------------------------- | ------------------------------------------------- | -------- | ----------- |
+| set\_group\_metadata      | [SetGroupMetadata](./#setgroupmetadata)           | optional |             |
+| add\_upcoming\_opening    | [AddUpcomingOpening](./#addupcomingopening)       | optional |             |
+| remove\_upcoming\_opening | [RemoveUpcomingOpening](./#removeupcomingopening) | optional |             |
+
+### SetGroupMetadata
+
+| Field                  | Type                                            | Label    | Description                                                 |
+| ---------------------- | ----------------------------------------------- | -------- | ----------------------------------------------------------- |
+| new\_metadata          | [WorkingGroupMetadata](./#workinggroupmetadata) | optional | New working group metadata to set (can be a partial update) |
+| ### AddUpcomingOpening |                                                 |          |                                                             |
+
+### RemoveUpcomingOpening
+
+| Field | Type   | Label    | Description                    |
+| ----- | ------ | -------- | ------------------------------ |
+| id    | string | optional | Upcoming opening query-node id |
+
+### UpcomingOpeningMetadata
+
+| Field                   | Type                                  | Label    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------------- | ------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| expected\_start         | uint32                                | optional | Expected opening start (timestamp)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| reward\_per\_block      | uint64                                | optional | Expected reward per block                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| min\_application\_stake | uint64                                | optional | Expected min. application stake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| metadata                | [OpeningMetadata](./#openingmetadata) | optional | <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody><tr><td>expected_start</td><td>uint32</td><td>optional</td><td>Expected opening start (timestamp)</td></tr><tr><td>reward_per_block</td><td>uint64</td><td>optional</td><td>Expected reward per block</td></tr><tr><td>min_application_stake</td><td>uint64</td><td>optional</td><td>Expected min. application stake</td></tr><tr><td>metadata</td><td><a href="./#openingmetadata">OpeningMetadata</a></td><td>optional</td><td>Opening metadata</td></tr></tbody></table><p>Opening metadata</p> |
+
+### Working Group Status
+
+| Field           | Type   | Label    | Description                                     |
+| --------------- | ------ | -------- | ----------------------------------------------- |
+| description     | string | optional | Group description text (md-formatted)           |
+| about           | string | optional | Group about text (md-formatted)                 |
+| status          | string | optional | Current group status (expected to be 1-3 words) |
+| status\_message | string | optional | Short status message associated with the status |
+
+### Working Group Opening Metadata
+
+| Field                        | Type                                                  | Label    | Description                                                  |
+| ---------------------------- | ----------------------------------------------------- | -------- | ------------------------------------------------------------ |
+| short\_description           | string)                                               | optional | Short description of the opening                             |
+| description                  | string                                                | optional | Full description of the opening                              |
+| hiring\_limit                | uint32                                                | optional | Expected number of hired applicants                          |
+| expected\_ending\_timestamp  | uint32                                                | optional | Expected time when the opening will close (Unix timestamp)   |
+| application\_details         | string                                                | optional | Md-formatted text explaining the application process         |
+| application\_form\_questions | [ApplicationFormQuestion](./#applicationformquestion) | repeated | List of questions that should be answered during application |
+
+### ApplicationFormQuestion
+
+| Field    | Type                      | Label    | Description                                     |
+| -------- | ------------------------- | -------- | ----------------------------------------------- |
+| question | string                    | optional | The question itself (ie. "What is your name?"") |
+| type     | [InputType](./#inputtype) | optional | Suggested type of the UI answer input           |
+
+### InputType
+
+| Name     | Number | Description |
+| -------- | ------ | ----------- |
+| TEXTAREA | 0      |             |
+| TEXT     | 1      |             |
+
+### Working Group Application Metadata <a href="#working-group-application-metadata" id="working-group-application-metadata"></a>
+
+
+
+| Field   | Type   | Label    | Description                                           |
+| ------- | ------ | -------- | ----------------------------------------------------- |
+| answers | string | repeated | List of answers to opening application form questions |
+
+### Council Candidacy Note
+
+| Field              | Type   | Label    | Description                                |
+| ------------------ | ------ | -------- | ------------------------------------------ |
+| header             | string | optional | Candidacy header text                      |
+| bullet\_points     | string | repeated | Candidate program in form of bullet points |
+| banner\_image\_uri | string | optional | Image uri of candidate's banner            |
+| description        | string | optional | Candidacy description (md-formatted)       |
+
 ## Extrinsics
 
 ### Creating an Opening for Workers
