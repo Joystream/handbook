@@ -176,7 +176,7 @@ The key architectural properties of the system is as follows
 
 This can all be succinctly summarize in the following figure.
 
-![Network Architecture](broken-reference)
+![System Architecture](../../.gitbook/assets/storage\_v2.png)
 
 ## Scenarios
 
