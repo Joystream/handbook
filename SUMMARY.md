@@ -11,10 +11,10 @@
 * [🧙 Founding Member Program](testnet/founding-member-program.md)
 * [📏 Council Period Scoring](testnet/council-period-scoring/README.md)
   * [General Working Group Score](testnet/council-period-scoring/general-working-group-score.md)
-  * [Content Directory Score](testnet/council-period-scoring/content-directory-score.md)
-  * [Human Resources Score](testnet/council-period-scoring/human-resources-score.md)
-  * [Marketers Score](testnet/council-period-scoring/marketers-score.md)
   * [Storage Providers Score](testnet/council-period-scoring/storage-providers-score.md)
+  * [Human Resources Score](testnet/council-period-scoring/human-resources-score.md)
+  * [Content Directory Score](testnet/council-period-scoring/content-directory-score.md)
+  * [Marketers Score](testnet/council-period-scoring/marketers-score.md)
   * [Distributors Score](testnet/council-period-scoring/distributors-score.md)
   * [Builders Score](testnet/council-period-scoring/builders-score.md)
 
