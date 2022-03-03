@@ -6,14 +6,6 @@ description: >-
 
 # 🎯 Start Here
 
-## **Get Started**
-
-`<Add link to onboarding funnel>`
-
-## System Overview <a href="#system-overview" id="system-overview"></a>
-
-`<add network overview & describe all roles in one coherent view>`
-
 ## Opportunities
 
 There are a variety of ways to earn $JOY and $tJOY, summarized in the table below, and there are up to date values for what each activity pays in [this dashboard](http://joystream.org/dashboard).
