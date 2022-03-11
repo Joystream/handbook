@@ -33,4 +33,4 @@ There are different rules which determine how each kind of testnet activity is r
 
 ## Feeling Lost?
 
-Are you still totally lost, not sure where to go or whom to speak to about getting started? Go speak to our integrators, described here , these are the friendliest folks you can imagine, standing by 24/7 - rewarded by the DAO, to help you find your place and become valuable and effective contributor to the system.
+Are you still totally lost, not sure where to go or whom to speak to about getting started? Go speak to our integrators, these are the friendliest folks you can imagine, standing by 24/7 - rewarded by the DAO, to help you find your place and become valuable and effective contributor to the system.
