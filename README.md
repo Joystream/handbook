@@ -10,10 +10,27 @@ description: >-
 
 There are a variety of ways to earn $JOY and $tJOY, summarized in the table below, and there are up to date values for what each activity pays in [this dashboard](http://joystream.org/dashboard).
 
-<table><thead><tr><th>Activity</th><th>Reference</th><th data-type="checkbox" data-hidden>Active</th><th data-type="number" data-hidden>Recipients</th></tr></thead><tbody><tr><td>Refer A Friend</td><td><a data-mention href="testnet/founding-member-program.md#refer-a-friend">#refer-a-friend</a></td><td>false</td><td>null</td></tr><tr><td>Bounty</td><td><a data-mention href="system/bounties.md">bounties.md</a></td><td>true</td><td>null</td></tr><tr><td>Council Member</td><td><a data-mention href="system/council/#council-member">#council-member</a></td><td>true</td><td>null</td></tr><tr><td>Content Curator</td><td><a data-mention href="system/content-directory/#content-curator">#content-curator</a></td><td>true</td><td>null</td></tr><tr><td>Content Curator Lead</td><td><a data-mention href="system/content-directory/#content-curator-lead">#content-curator-lead</a></td><td>false</td><td>null</td></tr><tr><td>Builder</td><td><a data-mention href="system/builders/#builder">#builder</a></td><td>true</td><td>null</td></tr><tr><td>Builders Lead</td><td><a data-mention href="system/builders/#builder-lead">#builder-lead</a></td><td>false</td><td>null</td></tr><tr><td>Human Resources</td><td><a data-mention href="system/human-resources.md#hr-representative">#hr-representative</a></td><td>false</td><td>null</td></tr><tr><td>Human Resources Lead</td><td><a data-mention href="system/human-resources.md#hr-lead">#hr-lead</a></td><td>false</td><td>null</td></tr><tr><td>Marketer</td><td><a data-mention href="system/marketers.md#marketer">#marketer</a></td><td>false</td><td>null</td></tr><tr><td>Marketer Lead</td><td><a data-mention href="system/marketers.md#marketer-lead">#marketer-lead</a></td><td>false</td><td>null</td></tr><tr><td>Storage Provider</td><td><a data-mention href="system/storage/#storage-provider">#storage-provider</a></td><td>false</td><td>null</td></tr><tr><td>Storage Provider Lead</td><td><a data-mention href="system/storage/#storage-provider-leader">#storage-provider-leader</a></td><td>false</td><td>null</td></tr><tr><td>Distributor</td><td><a data-mention href="broken-reference">Broken link</a></td><td>false</td><td>null</td></tr><tr><td>Distributor Lead</td><td><a data-mention href="broken-reference">Broken link</a></td><td>false</td><td>null</td></tr><tr><td>Validator</td><td><a data-mention href="system/validation.md#validator">#validator</a></td><td>true</td><td>null</td></tr></tbody></table>
+| Activity              | Reference                                                                         |
+| --------------------- | --------------------------------------------------------------------------------- |
+| Refer A Friend        | [#refer-a-friend](testnet/founding-member-program.md#refer-a-friend "mention")    |
+| Bounty                | [bounties.md](system/bounties.md "mention")                                       |
+| Council Member        | [#council-member](system/council/#council-member "mention")                       |
+| Content Curator       | [#content-curator](system/content-directory/#content-curator "mention")           |
+| Content Curator Lead  | [#content-curator-lead](system/content-directory/#content-curator-lead "mention") |
+| Builder               | [#builder](system/builders/#builder "mention")                                    |
+| Builders Lead         | [#builder-lead](system/builders/#builder-lead "mention")                          |
+| Human Resources       | [#hr-representative](system/human-resources.md#hr-representative "mention")       |
+| Human Resources Lead  | [#hr-lead](system/human-resources.md#hr-lead "mention")                           |
+| Marketer              | [#marketer](system/marketers.md#marketer "mention")                               |
+| Marketer Lead         | [#marketer-lead](system/marketers.md#marketer-lead "mention")                     |
+| Storage Provider      | [#storage-provider](system/storage/#storage-provider "mention")                   |
+| Storage Provider Lead | [#storage-provider-leader](system/storage/#storage-provider-leader "mention")     |
+| Distributor           | [#distributor](system/storage/#distributor "mention")                             |
+| Distributor Lead      | [#distributor-lead](system/storage/#distributor-lead "mention")                   |
+| Validator             | [#validator](system/validation.md#validator "mention")                            |
 
-There are different rules which determine how each kind of testnet activity is rewarded, and these rules are continuously updated by [#jsgenesis](glossary.md#jsgenesis "mention") staff to ensure that the testnet activity in line with the stated goals.&#x20;
+There are different rules which determine how each kind of testnet activity is rewarded, and these rules are continuously updated by [#jsgenesis](glossary.md#jsgenesis "mention") staff to ensure that the testnet activity in line with the stated goals.
 
 ## Feeling Lost?
 
-Are you still totally lost, not sure where to go or whom to speak to about getting started? Go speak to our integrators, described here [Broken link](broken-reference "mention"), these are the friendliest folks you can imagine, standing by 24/7 - rewarded by the DAO, to help you find your place and become valuable and effective contributor to the system.
+Are you still totally lost, not sure where to go or whom to speak to about getting started? Go speak to our integrators, described here , these are the friendliest folks you can imagine, standing by 24/7 - rewarded by the DAO, to help you find your place and become valuable and effective contributor to the system.
