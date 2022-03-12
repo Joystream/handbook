@@ -4,11 +4,11 @@ description: >-
   around making a subsystem of the platform to work.
 ---
 
-# 👷♀ 👷♀ Working Groups
+# 👷♀ Working Groups
 
 ## Introduction
 
-A working group is an organizational body, subject to the oversight of the council, which is responsible for the day to day functioning of some subsystem of the platform. There is exactly one working group per subsystem. The rationale for having a working group for this purpose, rather than having the council directly involved, has three parts. First, since all council members are supposed to be fully informed on all matters the cumulative workload of overseeing all subsystems would not be feasible for a single council. Second, even if it was feasible, voting is not a sound means of making such decisions, because there is a lack of guaranteed coherence in the decisions over time. Third, each subsystem will over time likely require a differentiated skill set, knowledge base and social capital. The appropriate analogy for understanding the role of the working groups in the overall operation of the system would be a commission or agency body in a political institution.
+A working group is an organizational body, subject to the oversight of the council, which is responsible for the day to day functioning of some subsystem of the platform. There is exactly one working group per subsystem. The rationale for having a working group for this purpose, rather than having the council directly involved, has three parts. First, since all council members are supposed to be fully informed on all matters the cumulative workload of overseeing all subsystems would not be feasible for a single council. Second, even if it was feasible, voting is not a sound means of making such decisions, because there is a lack of guaranteed coherence in the decisions over time. Third, each subsystem will over time likely require a differentiated skill set, knowledge base and social capital. The appropriate analogy for understanding the role of the working groups in the overall operation of the system would be a commission or agency body in a political institution.&#x20;
 
 ## Groups
 
@@ -32,8 +32,8 @@ A working group is an organizational body, subject to the oversight of the counc
 [storage](../storage/)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="broken-reference/" %}
+[broken-reference](broken-reference/)
 {% endcontent-ref %}
 
 ## Operations Working Groups
@@ -50,7 +50,7 @@ The relevant roles in a working group are
 
 * **Applicant:** A member who has submitted an application to join an opening for a worker role in the working group. A given member may apply more than once to a given opening, and also if they already occupy the role as worker the same group. Openings are created by the lead (see below), or by the council when wanting to fill the lead role.
 * **Worker:** A member who has, through an application, entered the working group.The worker may or may not be staked, and is receiving payouts to a designated account at regular intervals. The worker role gives some ability to act in a domain specific way within the given subsystem. So for example in the context of the forum, a worker in the forum working group can be assigned to be a moderator in certain forum categories, and have associated moderation privileges. Lastly, a member may act as multiple works simultaneously, or over time, in the same working group.
-* **Lead:** A designated worker who is responsible for hiring and managing the other workers, as well as allocating funds from a budget towards purposes that support the success of the subsystem. Also the leader could set the general working group status, like:&#x20;
+* **Lead:** A designated worker who is responsible for hiring and managing the other workers, as well as allocating funds from a budget towards purposes that support the success of the subsystem. Also the leader could set the general working group status, like:
   * a one line status message on the subsystem,
   * new upcoming expected positions,
   * a link to a subsection of the forum devoted to the subsystem,
@@ -93,7 +93,7 @@ In addition to rewards, the lead can spend from this budget for arbitrary purpos
 
 ### Staking
 
-Worker roles require staking in order to apply and remain in the role. Staking for worker roles is done using a designated working group lock on a single account per worker role. The amount required is set by the discretion of the lead. The staking requirement could be decreased by the lead (or by the council for leaders). The worker is able to increase their own stake, for example, in response for leader demand. Consult the [Staking](broken-reference) article to see a list of other staking purposes, and corresponding locks, which can be combined with staking for a given working group.
+Worker roles require staking in order to apply and remain in the role. Staking for worker roles is done using a designated working group lock on a single account per worker role. The amount required is set by the discretion of the lead. The staking requirement could be decreased by the lead (or by the council for leaders). The worker is able to increase their own stake, for example, in response for leader demand. Consult the [Staking](broken-reference/) article to see a list of other staking purposes, and corresponding locks, which can be combined with staking for a given working group.
 
 #### Staking Policy
 
@@ -115,7 +115,7 @@ An application has the following information
 * **Role account:** A required account that is used to authenticate as the worker if selected, in other parts of the platform. Need not be unique across workers, but in practice probably will be.
 * **Staking account:** The account holding the stake of the application.
 * **Member:** Identifier of member from which application originates.
-* **Description:** [Application description metadata](broken-reference).
+* **Description:** [Application description metadata](broken-reference/).
 
 #### Opening
 
@@ -123,7 +123,7 @@ An opening has the following information associated
 
 * **Id:** A unique immutable non-negative integer identifying an individual opening, is automatically assigned when an opening is created.
 * **Type:** Whether the opening is for the lead or for a non-lead worker.
-* **Description:** [Opening description metadata](broken-reference).
+* **Description:** [Opening description metadata](broken-reference/).
 * **Staking policy:**
   * **Balance:** The required non-zero balance required.
   * **Leaving unstaking period:** The number of blocks required from a worker initiating leaving the group until their staked funds are unlocked.
@@ -149,9 +149,7 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 
 ### Working Group Action <a href="#working-group-action" id="working-group-action"></a>
 
-**Only one of the fields should be set.**​
-
-
+\*\*Only one of the fields should be set.\*\*​
 
 | Field                     | Type                                              | Label    | Description |
 | ------------------------- | ------------------------------------------------- | -------- | ----------- |
@@ -180,6 +178,11 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 | reward\_per\_block      | uint64                                | optional | Expected reward per block                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | min\_application\_stake | uint64                                | optional | Expected min. application stake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | metadata                | [OpeningMetadata](./#openingmetadata) | optional | <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody><tr><td>expected_start</td><td>uint32</td><td>optional</td><td>Expected opening start (timestamp)</td></tr><tr><td>reward_per_block</td><td>uint64</td><td>optional</td><td>Expected reward per block</td></tr><tr><td>min_application_stake</td><td>uint64</td><td>optional</td><td>Expected min. application stake</td></tr><tr><td>metadata</td><td><a href="./#openingmetadata">OpeningMetadata</a></td><td>optional</td><td>Opening metadata</td></tr></tbody></table><p>Opening metadata</p> |
+| Field                   | Type                                  | Label    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| expected\_start         | uint32                                | optional | Expected opening start (timestamp)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| reward\_per\_block      | uint64                                | optional | Expected reward per block                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| min\_application\_stake | uint64                                | optional | Expected min. application stake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| metadata                | [OpeningMetadata](./#openingmetadata) | optional | Opening metadata                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ### Working Group Status
 
@@ -217,8 +220,6 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 
 ### Working Group Application Metadata <a href="#working-group-application-metadata" id="working-group-application-metadata"></a>
 
-
-
 | Field   | Type   | Label    | Description                                           |
 | ------- | ------ | -------- | ----------------------------------------------------- |
 | answers | string | repeated | List of answers to opening application form questions |
@@ -238,11 +239,11 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 
 **Parameters**
 
-| Name               | Description                                               |
-| ------------------ | --------------------------------------------------------- |
-| `description`      | Endoded [opening description](broken-reference) metadata. |
-| `staking_policy`   | Staking policy of new opening.                            |
-| `reward_per_block` | Initial per reward block.                                 |
+| Name               | Description                                                |
+| ------------------ | ---------------------------------------------------------- |
+| `description`      | Endoded [opening description](broken-reference/) metadata. |
+| `staking_policy`   | Staking policy of new opening.                             |
+| `reward_per_block` | Initial per reward block.                                  |
 
 #### Conditions
 
@@ -259,14 +260,14 @@ A new opening is added with the given information and for hiring a worker, not l
 
 **Parameters**
 
-| Name              | Description                                                   |
-| ----------------- | ------------------------------------------------------------- |
-| `member_id`       | Member identifier.                                            |
-| `opening_id`      | Identifier of opening being applied to.                       |
-| `role_account`    | Role account of future worker.                                |
-| `staking_account` | Account holding stake.                                        |
-| `staking_balance` | Balance to stake.                                             |
-| `description`     | Encoded [application description](broken-reference) metadata. |
+| Name              | Description                                                    |
+| ----------------- | -------------------------------------------------------------- |
+| `member_id`       | Member identifier.                                             |
+| `opening_id`      | Identifier of opening being applied to.                        |
+| `role_account`    | Role account of future worker.                                 |
+| `staking_account` | Account holding stake.                                         |
+| `staking_balance` | Balance to stake.                                              |
+| `description`     | Encoded [application description](broken-reference/) metadata. |
 
 #### Conditions
 
@@ -315,7 +316,7 @@ The staking is removed by removing the lock on the staking account. The applicat
 * `opening_id` corresponds to existing opening.
 * opening is for hiring a worker, not lead.
 * all identifiers in `winners` correspond to existing applications.
-* Opening type is for worker, and the number of workers in the opening plus the number of  `winners` does not exceed `MAX_NUMBER_OF_WORKERS`.
+* Opening type is for worker, and the number of workers in the opening plus the number of `winners` does not exceed `MAX_NUMBER_OF_WORKERS`.
 
 #### Effect
 
@@ -532,9 +533,9 @@ Account balance is increased by `amount`, and `budget` is reduced correspondingl
 
 **Parameters**
 
-| Name         | Description                                                           |
-| ------------ | --------------------------------------------------------------------- |
-| `new_status` | Encoded [working group status](broken-reference) new status metadata. |
+| Name         | Description                                                            |
+| ------------ | ---------------------------------------------------------------------- |
+| `new_status` | Encoded [working group status](broken-reference/) new status metadata. |
 
 #### Conditions
 
