@@ -4,7 +4,7 @@ description: How you become a owner and operator of the Joystream network.
 
 # 🧙 Founding Member Program
 
-## &#x20;:flag\_us: US persons are not eligible for $JOY :flag\_us:
+## :flag\_us: US persons are not eligible for $JOY :flag\_us:
 
 ## Introduction
 
@@ -13,6 +13,10 @@ While Jsgenesis is the team currently building the technology behind the Joystre
 The Founding Member Program (FMP) formally allocates JOY tokens among some of our highest quality community members in recognition of their contributions to the project and ensures that a sufficiently large, effective and motivated community of users is ready to occupy all the different roles required to run, evolve and grow the platform on mainnet.
 
 The program is intended to run _**atleast**_ until the platform is ready to go live on mainnet, possibly even after. However, some changes in structure along the way must be expected.
+
+## Current Founding Members
+
+[https://github.com/Joystream/founding-members/blob/main/inducted/README.md](https://github.com/Joystream/founding-members/blob/main/inducted/README.md)
 
 ## Why Become A Founding Member?
 
@@ -66,7 +70,7 @@ There is a dynamic dashboard which holds up to date information on the state of 
 ## History
 
 * **`11/12/2018`**
-  * The Joystream project was launched by Jsgenesis ([Blog post](https://blog.joystream.org/jsgenesis/)), JSG was created from inception to focus on the coding and system elements of the platform, while the running of the platform was entrusted to users under the motto [*"We are building Joystream to set it free"*](https://www.jsgenesis.com/)
+  * The Joystream project was launched by Jsgenesis ([Blog post](https://blog.joystream.org/jsgenesis/)), JSG was created from inception to focus on the coding and system elements of the platform, while the running of the platform was entrusted to users under the motto [_"We are building Joystream to set it free"_](https://www.jsgenesis.com)
 * **`21/12/2018-19/05/2020`**
   * Various testnets were launched over this time period (`Mesopotamia`, `Sparta`, `Athens`, `Acropolis`, `Rome`).
   * All incentives were directly paid in USD (XMR) for work performed on the network. This meant that none of the balances on the testnet were of much consequence.
@@ -90,8 +94,6 @@ There is a dynamic dashboard which holds up to date information on the state of 
   * The old `Founding Member` program officially came to an end.
   * With `Olympia` (the largest testnet release to date) and a new `Founding Member` program launching, it would also involve wiping some amount of content from the testnet.
     * Prior to this upgrade, the testnet, incentives, `FM` program, `KPI` system had come together around a nascent, dedicated community and managed to produce a truly staggering amount of activity--including more than 1,400+ on-chain proposals, 3,400+ on-chain memberships, 11,000+ on-chain forum posts, 90+ on-chain forum threads, on-chain elections involving more than `$16,000 USD` worth of stake, more than 85 workers concurrently working on-chain and being paid automatically by a DAO maintained by more than 50 validators. While also sustaining a storage and distribution network sering more than 5,500 video uploads managed by the DAO.
-
-
 
 ## FAQ
 
