@@ -57,6 +57,10 @@ This works by giving each person an _invite quota_, that is a certain number of 
 
 When a member is invited, they are also credited some initial balance to their controller account so that they can engage in some initial set of activities. These funds are however only spendable on transaction fees, nothing else, such as transferring to another member. The amount credited is held in a mutable parameter denoted as `invited_initial_balance`.
 
+#### What can you do?
+
+`<WIP: add detailed breakdown of what invited funds allow you to do, as its a nuanced topic>`
+
 ## Constants
 
 The following constants are hard coded into the system, they can only be updated with a runtime upgrade.
@@ -82,13 +86,13 @@ The following constants are hard coded into the system, they can only be updated
 
 **Parameters**
 
-| Name                 | Description                                     |
-| -------------------- | ----------------------------------------------- |
-| `root_account`       | To be root account of membership.               |
-| `controller_account` | To be controller account of membership.         |
-| `handle`             | To be handle of membership.                     |
-| `metadata`           | Encoded [membership metadata](broken-reference) |
-| `referer_id`         | Optional identifier of some existing member.    |
+| Name                 | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `root_account`       | To be root account of membership.                |
+| `controller_account` | To be controller account of membership.          |
+| `handle`             | To be handle of membership.                      |
+| `metadata`           | Encoded [membership metadata](broken-reference/) |
+| `referer_id`         | Optional identifier of some existing member.     |
 
 #### Conditions
 
@@ -105,13 +109,13 @@ The following constants are hard coded into the system, they can only be updated
 
 **Parameters**
 
-| Name                 | Description                                     |
-| -------------------- | ----------------------------------------------- |
-| `member_id`          | Identifier of inviting member.                  |
-| `root_account`       | To be root account of membership.               |
-| `controller_account` | To be controller account of membership.         |
-| `handle`             | To be handle of membership.                     |
-| `metadata`           | Encoded [membership metadata](broken-reference) |
+| Name                 | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `member_id`          | Identifier of inviting member.                   |
+| `root_account`       | To be root account of membership.                |
+| `controller_account` | To be controller account of membership.          |
+| `handle`             | To be handle of membership.                      |
+| `metadata`           | Encoded [membership metadata](broken-reference/) |
 
 #### Conditions
 
@@ -131,11 +135,11 @@ The following constants are hard coded into the system, they can only be updated
 
 **Parameters**
 
-| Name           | Description                                                                                             |
-| -------------- | ------------------------------------------------------------------------------------------------------- |
-| `member_id`    | Identifier of member wishing to update profile.                                                         |
-| `handle`       | Optional new handle for membership.                                                                     |
-| `new_metadata` | Optional new encoded [membership metadata](broken-reference) (only the provided fields will be updated) |
+| Name           | Description                                                                                              |
+| -------------- | -------------------------------------------------------------------------------------------------------- |
+| `member_id`    | Identifier of member wishing to update profile.                                                          |
+| `handle`       | Optional new handle for membership.                                                                      |
+| `new_metadata` | Optional new encoded [membership metadata](broken-reference/) (only the provided fields will be updated) |
 
 #### Conditions
 
