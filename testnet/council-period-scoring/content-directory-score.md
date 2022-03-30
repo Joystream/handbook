@@ -40,7 +40,7 @@ Curators, who should be very familiar with content licensing and attribution rul
 
 ## Knowledge Base
 
-{% embed url="https://grizzled-corleggy-af8.notion.site/Content-Directory-35573c46f5b54d899fa2069621a6f1e4" %}
+{% embed url="https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab" %}
 Content Directory Working Group Knowledge Base
 {% endembed %}
 

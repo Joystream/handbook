@@ -21,7 +21,7 @@ Jsgenesis staff will be conducting experiments to put load on the system, includ
 
 ## Knowledge Base
 
-{% embed url="https://grizzled-corleggy-af8.notion.site/Storage-9dc5a16444934dc4bda08b596bc15375" %}
+{% embed url="https://joystream.notion.site/Storage-9dc5a16444934dc4bda08b596bc15375" %}
 Storage Providers Working Group Knowledge Base
 {% endembed %}
 

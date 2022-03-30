@@ -10,12 +10,24 @@ The _general working group score_ is a type of score, computed in the same way, 
 
 To find the final scores for each group, consult the corresponding sub-article:
 
+{% content-ref url="builders-score.md" %}
+[builders-score.md](builders-score.md)
+{% endcontent-ref %}
+
 {% content-ref url="content-directory-score.md" %}
 [content-directory-score.md](content-directory-score.md)
 {% endcontent-ref %}
 
+{% content-ref url="distributors-score.md" %}
+[distributors-score.md](distributors-score.md)
+{% endcontent-ref %}
+
 {% content-ref url="human-resources-score.md" %}
 [human-resources-score.md](human-resources-score.md)
+{% endcontent-ref %}
+
+{% content-ref url="forum-score.md" %}
+[forum-score.md](forum-score.md)
 {% endcontent-ref %}
 
 {% content-ref url="marketers-score.md" %}
@@ -26,13 +38,6 @@ To find the final scores for each group, consult the corresponding sub-article:
 [storage-providers-score.md](storage-providers-score.md)
 {% endcontent-ref %}
 
-{% content-ref url="distributors-score.md" %}
-[distributors-score.md](distributors-score.md)
-{% endcontent-ref %}
-
-{% content-ref url="builders-score.md" %}
-[builders-score.md](builders-score.md)
-{% endcontent-ref %}
 
 ## Working Group Summary
 

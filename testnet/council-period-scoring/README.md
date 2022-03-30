@@ -48,7 +48,7 @@ The council and each working group must maintain its own Notion board where a bo
 
 ## Council Knowledge Base
 
-{% embed url="https://grizzled-corleggy-af8.notion.site/Council-fc32f813e9914dd38290dd5908bf40a8" %}
+{% embed url="https://joystream.notion.site/Council-809dd7bcf6744844ba0dcccf98670dcc" %}
 Council Knowledge Base
 {% endembed %}
 
@@ -174,4 +174,3 @@ The average time between blocks was greater than `10s` for more than a 2 hour in
 ### How do I get on the council?
 
 You have to win a seat as part of the [#elections](./#elections "mention"), and this requires persuading people to vote for you, in you yourself do not have sufficient $tJOY to back your own candidacy. However, Jsgenesis will be looking to help a few promising newcomers each council, as described in [#jsgenesis-endorsement](./#jsgenesis-endorsement "mention").
-

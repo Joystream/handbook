@@ -97,7 +97,7 @@ and much more. The HR working group has some limited ability to manage the infor
 
 ## Knowledge Base
 
-{% embed url="https://grizzled-corleggy-af8.notion.site/Human-Resources-6e11b458208646d6a81cbf40c2ad3f2f" %}
+{% embed url="https://joystream.notion.site/Human-Resources-ab782adffbdd4be497654f9e48309e2a" %}
 Human Resources Working Group Knowledge Base
 {% endembed %}
 
