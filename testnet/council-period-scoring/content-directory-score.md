@@ -48,24 +48,65 @@ Content Directory Working Group Knowledge Base
 
 The Content Directory working group score is computed as follows
 
-`[GENERAL_WG_SCORE + MODERATION_SCORE + FEATURING_SCORE + METADATA_SCORE]/(4*2^{N})`
+```
+CONTENT_SCORE = 0.1*GENERAL_WG_SCORE +0.25*POLICY_SCORE + 0.35*WORKFLOW_SCORE + 0.3*GUIDE_SCORE
+```
 
 where
 
-* `GENERAL_WG_SCORE` : is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`30%`**.
-* `MODERATION_SCORE`:  is a score computed by Jsgenesis staff for the quality and speed of the moderation activity, which will be in the range \[0, 1], and will emphasize
-  * Speed of response to any content which violates our guidelines
-  * Appropriate level of sanction applied for infractions
-* `FEATURING_SCORE`: is a score computed by Jsgenesis staff for the quality of featuring activity, which will be in the range \[0, 1], and will emphasize&#x20;
-  * Frequency of updating featured content
-  * Quality of content featured given the content available and quality of text, thumbnails etc. and other assets used in promoting content
-* `METADATA_SCORE`: is a score computed by Jsgenesis staff for the quality of metadata monitoring activity, which will be in the range \[0, 1], and will emphasize&#x20;
-  * The proportion of Jsgenesis test videos uploaded correctly screened
-  * Instances where other video metadata errors have been ignored (apart from Jsgenesis spotchecks)
-* `N` : The number of catastrophic error instances which occurred, as defined below.
+### `GENERAL_WG_SCORE`
+Is computed with metricS defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`0%`**.
 
-### Catastrophic Errors&#x20;
 
-#### Failure to apply moderation rules
+### `POLICY_SCORE`
+*Objective:* `Create a curation policy`
 
-Any item which violates the content guidelines is unmoderated more than 24 hours after being uploaded
+#### Instructions
+Jsgenesis has published a new (limited) [curation policy](/system/content-directory/content-policy.md) to use as the base, but that only covers the bare minimum.
+The Council and/or Content group should create two documents:
+1. one that targets users, so that a channel owner can know what to expect, how to rectify the situation, etc.
+2. one that targets curators, so that they know what to do in case `x` happens
+- create a flow chart diagram that displays the above visually
+Propose a moderation policy, if approved by the Council, add a (sticky) Forum thread about it, and add it to the [notion space](https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab).
+
+#### Scoring Calculations
+The `POLICY_SCORE` is graded subjectively.
+
+
+### `WORKFLOW_SCORE`
+*Objective:* `Create a Content Curation workflow`
+
+#### Instructions
+Closely related to the above, but not exactly the same. Curators can't just randomly look at videos popping up on the [player](play.joystream.org), and watch/review them independently of each other. Propose a workflow, if approved by the Council, add it to the [notion space](https://www.notion.so/joystream/Content-Directory-6e4b6d211b174526889464d263475cab).
+A good workflow could be built around a spreadsheet, or db, that keeps track of all channels, videos and dataObjects in the directory, and:
+- when they were last updated
+- who reviewed "it", and when (in case of new updates)
+- any remarks
+- any actions made
+- etc.
+Part of this should address who reviews what and how?
+
+#### Scoring Calculations
+The `WORKFLOW_SCORE` is graded subjectively.
+
+### `GUIDE_SCORE`
+*Objective:* `Create a howto guide for Content Workers`
+
+#### Instructions
+Until now, the Joystream "howto" guides in general, and Curators are no exception, has been available in the helpdesk. We are moving away from this, and want them to hosted in the groups [notion space](https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab).
+
+In order to test how curation works, use staging network, with:
+- [pioneer](https://pioneer-2.vercel.app/#/settings?network-config=https://18.207.235.254.nip.io/network/config.json)
+- [atlas](https://atlas-olympia-staging.vercel.app/)
+DM Martin on discord for the Lead key, as testing of access is likely needed.
+
+Create new guides for doing all the actions required by the Curators (and the Lead). This includes (at least):
+- How to use the [query-node playground](query.joystream.org)
+  - To find new or updated channels/videos
+- How to use the cli
+  - What you can do (as a `Curator`) in the cli
+  - What are groups, and how do they work
+- How to delete assets, if the owner refuses (this requires checking other modules!)
+
+#### Scoring Calculations
+The `GUIDE_SCORE` is graded subjectively.

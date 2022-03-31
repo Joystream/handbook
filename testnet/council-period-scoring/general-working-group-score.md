@@ -96,7 +96,7 @@ The general working groups core for a given group is computed as follows:
 * If the period plan not is submitted, as described above, by 48 hours after the last election of a council period, then the score is 0.
 * otherwise it is
 
-`[SUMMARY_SCORE + PLAN_SCORE + WORKER_OPPORTUNITIES_SCORE]/(3*2^{N+M})`&#x20;
+`[1*SUMMARY_SCORE + 0*PLAN_SCORE + 0*WORKER_OPPORTUNITIES_SCORE]/(3*2^{N+M})`&#x20;
 
 where
 

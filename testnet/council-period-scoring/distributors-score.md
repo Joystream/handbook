@@ -41,24 +41,106 @@ The working group report should include a special section with information about
 ## Score
 
 The score is computed as follows
+```
+DISTRIBUTOR_SCORE = 0.2*GENERAL_WG_SCORE 0.35*THUMBNAIL_SCORE + 0.1*PLAYABLITIY_SCORE + 0.3*SERVICE_SCORE + 0.15*GUIDE_SCORE
+```
 
-`[GENERAL_WG_SCORE + UPLOAD_ROBUSTNESS + UPLOAD_CAPACITY + REPLICATION_LATENCY + DOS_ROBUSTNESS]/(5*2^{N})`
+### `GENERAL_WG_SCORE`
+Is computed with the metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`0%`**.
 
-where
+### `THUMBNAIL_SCORE`
+*Objective:* `Get a "clean" landing page on play.joystream.org`
 
-* `GENERAL_WG_SCORE` : is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`30%`**.
-* `DOWNLOAD_ROBUSTNESS`: is the share of uploads of data objects where the first picked liason for a storage bucket starts accepting the upload within **`300ms`**, as measured on the client side.
-* `DOWNLOAD_CAPACITY`: is 1, will be defined later.
-* `REPLICATION_LATENCY`: is the share of uploads of data objects where the latency from upload completion to _all_ storage providers for corresponding first picked liason for a storage bucket starts accepting the upload within **`300ms`**, as measured on the client side.
-* `DOS_ROBUSTNESS`: is a score computed by Jsgenesis staff for the ability to withstand DoS and DDoS attacks, which will be in the range \[0, 1], and will emphasize handling of attacks of the following kinds
-  * ICMP Flooding/ Smurf Attack
-  * SYN Flooding
-  * Ping of Death
-  * HTTP (GET/POST) Flooding
-* `N` : The number of catastrophic error instances which occurred, as defined below.
+#### Notes
+- Unless all thumbnails are cached on the server side, a new user scrolling through the player will have a bad experiences.
+- It's not clear to us how to best achieve this. It will likely playing around with both node and system configs
 
-### Catastrophic Errors
+#### Scoring Calculations
+Let:
+- `blockheight_start` be block #100400 (12h after officially publishing the incentives)
+- `blockheight_end` be block #151200 (12h after the end of the Term, so the new Council has time to react)
+- `avg_rendering_time_i` be the average time [ms] it takes to GET all thumbnails (on screen) when opening [the player](play.joystream.org) (and optionally scrolling), for a test run `i`
+- `max_rendering_time_i` be the longest time [ms] it takes to render a thumbnail when opening [the player](play.joystream.org), (and optionally scrolling), for a test run `i`
+- `THUMBNAIL_SCORE` be the final score [0,1]
 
-#### **Permanent Data Object Loss**
+Then:
+```
+  avg_rendering = Zigma[max((1500-avg_rendering_time_i)/1000,1)]/i
+  max_rendering_score = max((2500-avg_rendering_time_i/1000),1)
 
-A confirmed data object can no longer be recovered from storage nodes, despite not being deleted on chain.
+  # finally
+  THUMBNAIL_SCORE = 0.6*avg_rendering + 0.4*max_rendering_score
+```
+
+### `PLAYABLITIY_SCORE`
+*Objective:* `All content should be playable from at least 3 sources`
+
+#### Notes
+- At any point in time, at least 3 operated buckers should have each bag
+- Note that having configured that to be the case is only some fraction of the job. Unless the content can be fetched from that/those sources, it doesn't do much good!
+
+#### Scoring Calculations
+Let:
+- `avg_configured_sources_i` be the average number of buckets (where `distributing=true`), that holds each bag, for a spot check `i`
+- `min_configured_sources_i` be the lowest number of buckets (where `distributing=true`), that holds a bag, for a spot check `i`
+- `unavailable_distributors_i` be the amount of operated buckets (where `distributing=true`), that should have a dataObject that, for whatever reason, can't be fetched
+- `PLAYABLITIY_SCORE` be the final score [0,1]
+
+Then:
+```
+  avg_configured_sources_score = Zigma[max(avg_configured_sources_i-2.5,1)]/i
+  min_configured_sources_score = Zigma[max(min_configured_sources-2,1)]/i
+  unavailable_distributors_score = Zigma[max(1-unavailable_distributors_i,1)]/i
+
+  # finally
+  PLAYABLITIY_SCORE = 0.3*(avg_configured_sources_score + min_configured_sources_score) + 0.4*unavailable_distributors_score
+```
+
+
+### `SERVICE_SCORE`
+*Objective:* `Download and playback quality`
+
+#### Notes
+- Measurements will be done by spotchecks from Europe.
+- Latency caused ping will be removed from the equation (we'll ping the server and deduct)
+
+#### Scoring Calculations
+Let:
+- `blockheight_start` be block #100400 (12h after officially publishing the incentives)
+- `blockheight_end` be block #151200 (12h after the end of the Term, so the new Council has time to react)
+- `avg_download_ratio_i` be the average playtime [s] divided by download time [s] (for a sample of videos), assuming some random checks (indexed `i`) are done between `blockheight_start` and the `blockheight_end`
+- `min_download_ratio_i` be the lowest playtime [s] divided by download time [s] (for a sample of videos), assuming some random checks (indexed `i`) are done between `blockheight_start` and the `blockheight_end`
+- `avg_buffering_i` be the average time [s] of buffering, when playing a video and skipping ahead, assuming some random checks (indexed `i`) are done between `blockheight_start` and the `blockheight_end`
+- `max_buffering_i` be the highest time [s] of buffering, when playing a video and skipping ahead, assuming some random checks (indexed `i`) are done between `blockheight_start` and the `blockheight_end`
+- `SERVICE_SCORE` be the final score [0,1]
+
+Then:
+```
+  avg_download_ratio_score = Zigma[max(avg_download_ratio_i-1,1)]/i
+  min_download_ratio_score = Zigma[max(min_download_ratio_i-0.5,1)]/i
+  avg_buffering_score = Zigma[max((5-avg_buffering_i)/3,1)]/i
+  max_buffering_score = Zigma[max((10-max_buffering_i)/6,1)]/i
+
+  # finally
+  service_score = 0.25*(avg_download_ratio_score + min_download_ratio_i + avg_buffering_i + max_buffering_i)
+```
+
+
+### `GUIDE_SCORE`
+*Objective:* `Update, improve and migrate the howto guide to match Olympia`
+
+#### Notes
+Until now, the Joystream "howto" guides in general, aDistributors are no exception, has been available in the helpdesk. We are moving away from this, and want them to hosted in the groups [notion space](https://joystream.notion.site/Distribution-1f4cfbbb2e934c79bf20b8db7f019d32).
+The existing ones will also need some updates, to stay current. Unlike the other SoW, this will be graded subjectively.
+
+#### Instructions
+- Create a user friendly "landing page", that explains:
+  - the purpose of the role
+  - the tools required
+  - how to apply for the role
+  - other relevant information and links
+- Add the technical instructions required for starting out as a distributors
+  - we have imported the current and outdated [helpdesk README.md](https://github.com/Joystream/helpdesk/tree/master/roles/distributors#readme), but that will of course have a lot of broken links and incorrect information
+
+#### Scoring Calculations
+The `GUIDE_SCORE` is graded subjectively.

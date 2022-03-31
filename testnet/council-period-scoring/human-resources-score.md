@@ -6,7 +6,7 @@ description: Metrics used to compute score for HR working group.
 
 ## Overview
 
-The HR working group activities relevant to scoring fall into the following five categories
+The HR working group activities relevant to scoring will generally fall into one of the following categories:
 
 * **Greeting:** Engage with every new person entering the official [Official Discord](https://discord.com/invite/DE9UN3YpRP).
 * **Onboarding:** Get new persons setup with a first membership and added to the [#crm](human-resources-score.md#crm "mention").
@@ -45,8 +45,6 @@ Invariably, people will drop off at various level of progression before becoming
 
 ## Bounty Management
 
-_**Note: This management requires the presence of the bounty system on-chain, presumably launched with Olympia.**_
-
 ### Creation
 
 As mentioned prior, [bounties.md](../../system/bounties.md "mention") are an excellent low barrier to entry means of allowing total newcomers to participate, start earning $tJOY and $JOY, and learning the system and community. Bounties are created on-chain using either
@@ -62,7 +60,7 @@ The funding from the bounties always come from the HR working group workers, who
 
 ### **Management**
 
-It is the responsibility of each worker acting as the oracle for a bounty to check up on progress and log this using the on-chain discussion system. If the contributor is getting stuck or delayed, this must be logged publicly, and the oracle should help to push the contributor forward, but also establish clear forward looking expectations about the possibility that the bounty will be cancelled without the contributor getting anything, if sufficient progress is not made.&#x20;
+It is the responsibility of each worker acting as the oracle for a bounty to check up on progress and log this using the on-chain discussion system. If the contributor is getting stuck or delayed, this must be logged publicly, and the oracle should help to push the contributor forward, but also establish clear forward looking expectations about the possibility that the bounty will be cancelled without the contributor getting anything, if sufficient progress is not made.
 
 ### Resolution
 
@@ -105,39 +103,55 @@ Human Resources Working Group Knowledge Base
 
 The HR working group score is computed as follows
 
-`[GENERAL_WG_SCORE + GREETING_SCORE + ONBOARDING_SCORE + CATALYZING_SCORE + BOUNTY_MANAGEMENT]/(5*2^{N})`
+```
+HR_SCORE = 0.1*GENERAL_WG_SCORE + 0.2*PROTOCOL_SCORE + 0.25*CRM_SCORE + 0.2*TIMELINESS_SCORE + 0.25*WELCOMING_SCORE
+```
 
-where
-
-* `GENERAL_WG_SCORE` : is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`30%`**.
-* `GREETING_SCORE`:  is a score computed by Jsgenesis staff for the quality and speed of the greeting activity, which will be in the range \[0, 1], and will emphasize
-  * Latency: the time it takes from a new person joining until someone gets in touch. Between **`8am` ** to **`23pm`** (CET), greeting time must be less than **`2 minutes`**.
-  * Capture: The% of interactions that lead to a membership getting created and data entered into CRM, and the quality of this data.
-* `ONBOARDING_SCORE`: is a score computed by Jsgenesis staff for the quality of onboarding activity, which will be in the range \[0, 1], and will emphasize the % of captured persons who are&#x20;
-  * assigned a bounty
-  * apply for a working group role with a credible application
-  * stand for the council with a credible candidacy
-  * have a bounty created for them
-* `CATALYZING_SCORE`: is `1/percentile(75%, [x_1, ..., x_l])` , which will be in the range \[0, 1], where&#x20;
-  * `percentile(X,S)` returns the `X`th percentile in non-empty sequence of observations _S._&#x20;
-  * `x_i` is the number of days since the last registered interaction in the CRM with the ith non-founding member in the CRM as of the end of the period.&#x20;
-* `BOUNTY_MANAGEMENT` : is a score computed by Jsgenesis staff for the quality of bounty management, which will be in the range \[0, 1].
-* `N` : The number of catastrophic error instances which occurred, as defined below.
-
-### Catastrophic Errors&#x20;
-
-#### **Inadequate Report**
-
-An inadequate report addendum about the bounties was provided, for example by missing or incorrect information.
-
-**Budget Template Violation**
-
-A bounty was created with an amount of $tJOY exceeding the current template budget.
-
-**Missing Judgement**
-
-A bounty did not receive oracle judgement.
+### `GENERAL_WG_SCORE`
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`0%`**.
 
 
+### `PROTOCOL_SCORE`
+*Objective:* `Working out the protocols`
 
-****
+#### Instructions
+Working group (emphasis on lead) coordinates with Robert and Ben to establish the protocols for communicating with new joiners. This can be an informal process on Discord which then results in some basic principles for communicating with new participants being shared in the community notion. It can also involve the working group members suggesting changes to the Discord/Chatbot/Onboarding design to optimize any aspect of their work.
+
+#### Scoring Calculations
+The `PROTOCOL_SCORE` is graded subjectively.
+
+### `CRM_SCORE`
+*Objective:* `Familiarity with tools (principally CRM)`
+
+#### Instructions
+- All HR WG participants are added to the community notion, timesheet spreadsheet/table and retool CRM tool.
+- All HR WG participants participate in a brief training session with Ben to get them familar (and added to) with CRM, or alternatively watch brief video series created by him, then are briefly tested and scored by him on their understanding (this will be a very simple test just to show they understand how to use the CRM forms).
+  - The HR Group is responsible for organizing this
+
+#### Scoring Calculations
+The `CRM_SCORE` is graded subjectively.
+
+### `TIMELINESS_SCORE`
+*Objective:* `Ensuring WG is responsive in Discord in timely fashion`
+
+#### Instructions
+- Availability to respond to newly arriving participants is an essential element of participation within the HR Working Group.
+- Therefore, even in this first week, there will be an emphasis on responding to new people and JSG dummy accounts within the #start-here channel.
+  - Working group lead directs the creation of a table within Notion or an alternative platform to show the availability of the WG participants
+  - Checks of CRM form for reporting availability reflect accurately the same information.
+  - Pings in #start-here channel get a response from one of the available integrators.
+
+#### Scoring Calculations
+The `TIMELINESS_SCORE` is graded subjectively.
+
+
+### `WELCOMING_SCORE`
+*Objective:* `Ensuring WG is responsive in Discord in timely fashion`
+
+#### Instructions
+- New members are directed to create new memberships as a first step in the onboarding, and to allow them to be tracked in the CRM (before that, store the data somewhere else)
+  - Conduct a quick round of questions, in order to get a flavor for what they would like to do on/for the platform
+  - They are further told to check in next week, and that a Bounty will be created for them then
+
+#### Scoring Calculations
+The `WELCOMING_SCORE` is graded subjectively.
