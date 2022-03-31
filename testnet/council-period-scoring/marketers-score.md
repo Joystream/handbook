@@ -6,7 +6,7 @@ description: Metrics used to compute score for marketers working group.
 
 ## Overview
 
-The marketing working group activities relevant to scoring, will generally fall into on of the following categories:
+The marketing working group activities relevant to scoring, will generally fall into one of the following categories:
 
 * **Content Creation:** Creating blog posts, videos, graphics and other content to promote the project, and remixing content which may already exist (e.g. community calls) to be used in marketing campaigns.
 * **Research:** Collecting information on the current state of the project and its base of participants, as well as researching other projects in the space as directed by Jsgenesis, the Council, or to facilitate current or future marketing campaigns.

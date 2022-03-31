@@ -11,7 +11,7 @@ The forum working group activities relevant to scoring will, generally, fall int
 * Maintain a reasonable set of categories, allowing users to easily navigate the forum
 * Moderate the forum
   * ideally, this means moving threads that were placed inappropriately, but also
-  * includes censoring anything that violates the [ToS](todo)
+  * includes censoring anything that violates the [content policy](/system/content-directory/content-policy.md)
 * Forum (tech) support,
   * Including maintaining guides for how the forum works from a user point of view
 
