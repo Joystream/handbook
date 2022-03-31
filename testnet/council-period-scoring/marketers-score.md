@@ -6,11 +6,10 @@ description: Metrics used to compute score for marketers working group.
 
 ## Overview
 
-The marketing working group activities relevant to scoring fall into the following three categories:
+The marketing working group activities relevant to scoring, will generally fall into one of the following categories:
 
 * **Content Creation:** Creating blog posts, videos, graphics and other content to promote the project, and remixing content which may already exist (e.g. community calls) to be used in marketing campaigns.
 * **Research:** Collecting information on the current state of the project and its base of participants, as well as researching other projects in the space as directed by Jsgenesis, the Council, or to facilitate current or future marketing campaigns.
-* **Campaign Management:** Running paid and non-paid campaigns to promote the project, informed by the research conducted by the working group
 
 ## Content Creation
 
@@ -26,13 +25,9 @@ For this reason, the marketing WG score will place some emphasis on the effectiv
 
 Research might explore similar projects in the space and compare them to Joystream, or might involve creating surveys to understand our current base of participants. This research may be partially directed by Jsgenesis, but will also rely on the working group defining some of its own questions which research might help to answer.
 
-## Campaign Management
-
-Running marketing campaigns to increase participation in the project is the fundamental goal of establishing the marketing working group. These can take a variety of formats, but all will be scored based on a combination of factors, including the quality of planning, clarity and specificity of campaign objectives and the quality and presentation of data collected about ongoing campaigns.
-
 ## Knowledge Base
 
-{% embed url="https://grizzled-corleggy-af8.notion.site/Marketers-e9c39c5089694ddd9a64087c831216f3" %}
+{% embed url="https://joystream.notion.site/Marketers-e9c39c5089694ddd9a64087c831216f3" %}
 Marketers Working Group Knowledge Base
 {% endembed %}
 
@@ -40,31 +35,100 @@ Marketers Working Group Knowledge Base
 
 The marketing working group score is computed as follows
 
-`[GENERAL_WG_SCORE + CONTENT_SCORE + RESEARCH_SCORE + CAMPAIGN_SCORE]/(4*2^{N})`
+```
+MARKETING_SCORE = 0.1*GENERAL_WG_SCORE + 0.40*ISSUES_SCORE + 0.35*GITBOOK_SCORE + 0.15*GLOSSARY_SCORE
+```
 
 where
 
-* `GENERAL_WG_SCORE` : is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`30%`**.
-* `CONTENT_SCORE`:  is a score computed by Jsgenesis staff for the quality and volume of content produced, which will be in the range \[0, 1], and will emphasize
-  * Quality of content produced and alignment with our branding guidelines
-  * Quantity of content produced relative to the source material available
-* `RESEARCH_SCORE`: is a score computed by Jsgenesis staff for the quality of research activity, which will be in the range \[0, 1], and will emphasize&#x20;
-  * Robustness of data collection methods
-  * Usefulness of data being collected
-  * Amount of research being conducted given resources available
-  * Clarity of conclusions reached based on campaign data
-* `CAMPAIGN_SCORE`: is a score computed by Jsgenesis staff for the quality of campaign management activity, which will be in the range \[0, 1], and will emphasize
-  * General quality of planning
-  * Clarity and specificity of campaign objectives
-  * Quality and presentation of data collected about ongoing campaigns
-* `N` : The number of catastrophic error instances which occurred, as defined below.
+### `GENERAL_WG_SCORE`
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`0%`**.
 
-### Catastrophic Errors&#x20;
+### `ISSUES_SCORE`
+*Objective:* `Review Marketing issues`
 
-#### **Misinformation**
+#### Instructions
+The marketing github repo has a lot of open [issues](https://github.com/Joystream/marketing/issues). Many of these are far outside the scope we want the WG to address, but some of them are not. Especially those that requires up front research of publicly available data.
+Go through as many issues as possible, and produce a spreadsheet/table in the [notion space](https://joystream.notion.site/Marketers-e9c39c5089694ddd9a64087c831216f3) containing all (open issues) and comment:
+- A one-liner on what the issue is about
+- Assign it one of three categories:
+  - `out-of-scope`
+  - `maybe-in-scope`
+  - `in-scope`
+- If `in-scope` comment in the issue::
+  - why you think this is something the group can do
+  - what resources you'd need (if any)
+  - what you imagine the deliverable is
+  - link to the comment in the spreadsheet
+- For all `maybe-in-scope` issues, create a _single new_ issue in said repo, and
+  - list them all
+  - add a quick comment on why you think it might be something the group can address
+  -  what stops you from marking it `in-scope`
+  - what you'd "need" to put it there
+#### Scoring Calculations
+Let:
+- `issues_addressed` be the amount of issues added to the notion space, with comment
+- `grading` be the subjective grading JSG assigns [0,1]
+Then:
+```
+  ISSUES_SCORE = grading * (issues_addressed--40)/60
+```
 
-Any material published by the marketing working group contains gross inaccuracies or exaggerations.
+### `GITBOOK_SCORE`
+*Objective:* `Propose Gitbook improvements`
 
-#### Branding Failure
+#### Instructions
+Our [gitbook](https://joystream.gitbook.io/testnet-workspace/) contains a lot of holes, broken links and hard to parse language. Although some parts of it will naturally have to be "difficult" to understand for non-technical users, the basic concepts should not be. Let's focus on what is there for now, as a lot of holes will be "filled" during the week.
 
-Any material published by the marketing working group which represents a significant departure from brand guidelines.
+Oftentimes, confusion will stem from either language barriers, or a concept being explained "too" succinctly with technical terms. Many of these can be overcome by adding a visual representation. In other cases, a complex concept requires examples, analogies, or just a longer/better explanation.
+Produce a spreadsheet/table in the [notion space](https://joystream.notion.site/Marketers-e9c39c5089694ddd9a64087c831216f3), go through the gitbook as it stands and each time you struggle to understand something, or suspect lots of users will:
+- Link to the section
+- Add a short note what makes it difficult
+- Suggest a (conceptional) solution, eg:
+  1. "Add a [chart|graph|image] (visual) representation"
+  2. "Use [an|this] analogy here"
+  3. "Elaborate more on this"
+  4. "Rewrite entirely"
+  5. etc
+- Feel free to make a complete suggestion as well. If it's really good, that will be add to your score, but if it's just a little better, no credit is given. The exception is 1. where a wireframe/MS paint rough sketch/draft is likely better than trying to make it perfect.
+
+#### Scoring Calculations
+Let:
+- `identified_i` be a "problematic" part identified and added to the notion space, with comments
+  - `identified_grading_i` be a binary [yes|no] whether the input was valuable
+  - `suggestion_i` be a (potential) solution to a "problematic" part
+  - `suggestion_grading_i` be the subjective grading JSG assigns [0,1] to a (potential) solution
+Then:
+```
+  GITBOOK_SCORE = max[Zigma(identified_grading_i * identified_i)*0.8 * (i-10/30) + Zigma(suggestion_grading_i * suggestion_i) , 1]
+```
+
+#### Scoring Calculations
+Let:
+- `issues_addressed` be the amount of issues added to the notion space, with comment
+- `grading` be the subjective grading JSG assigns [0,1]
+
+Then:
+```
+  ISSUES_SCORE = grading * (issues_addressed-50)/100
+```
+
+### `GLOSSARY_SCORE`
+*Objective:* `Propose a Gitbook glossary`
+
+#### Instructions
+Our [gitbook](https://joystream.gitbook.io/testnet-workspace/) also contains a far amount of technical terms.
+While doing the above, create a list of terms that should go in the glossary, and add them to the [notion space](https://www.notion.so/joystream/Marketers-e9c39c5089694ddd9a64087c831216f3), along with:
+- (a) link(s) to where the term is used
+- why it needs to be there
+- an attempt at the definition (if you understand it!)
+  - IF a term only applies to a specific section - a category
+
+#### Scoring Calculations
+Let:
+- `identified_i` be a difficult term identified and added to the notion space, with comments
+  - `identified_grading_i` be a binary [yes|no] whether the input was valuable
+Then:
+```
+  GLOSSARY_SCORE = Zigma(identified_grading_i * identified_i) * (i-10/10)
+```
