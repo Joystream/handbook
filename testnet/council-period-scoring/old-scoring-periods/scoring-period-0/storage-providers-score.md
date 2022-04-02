@@ -46,7 +46,7 @@ The working group report should include a special section with information about
 The score is computed as follows
 
 ```
-STORAGE_SCORE = [0.1*GENERAL_WG_SCORE + 0.60*MAINTENANCE_SCORE + 0.30*UPLOAD_SCORE]/(5*2^{N})`
+STORAGE_SCORE = 0.1*GENERAL_WG_SCORE + 0.25*REPLICATION_SCORE + 0.3*MAINTENANCE_SCORE + 0.20*UPLOAD_SCORE + 0.15*GUIDE_SCORE
 ```
 
 where
@@ -54,6 +54,32 @@ where
 ### `GENERAL_WG_SCORE`
 Is computed with the metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`0%`**.
 
+
+### `REPLICATION_SCORE`
+*Objective:* `Ensure content directory integrity through redundancy`
+
+#### Notes
+If all `bags` are stored by a single node only (or in one data center/VPS provider only) the system may crash entirely.
+
+"Operating/operated" means that a bucket is assigned to a Worker, the worker is running a node that can be uploaded to (by a channel owner) and downloaded from (by a distributor)
+
+#### Scoring Calculations
+Let:
+- `replication_rate` be the number of operated buckets currently holding a bag
+  - `min_replication_rate` be be the lowest `replication_rate` of any (accepted) object at that moment
+  - `avg_replication_rate` be be the average `replication_rate` of any (accepted) object at that moment
+- `blockheight` be a target blockheight
+- `*_@#<blockheight>`
+- `REPLICATION_SCORE` be the final score [0,1]
+
+Then:
+```
+  replication_score_@#100400 = 0.5*[max(min_replication_rate-2,1)+max(avg_replication_rate-2.5,1)]
+  replication_score_@#151200 = max(min_replication_rate-3,1)
+
+  # finally
+  REPLICATION_SCORE = 0.5*(replication_score_@#100400 + replication_score_@#151200)
+```
 
 ### `MAINTENANCE_SCORE`
 *Objective:* `Maintain excess capacity, with a replication_rate of at least 4`
@@ -67,9 +93,11 @@ Is computed with the metrics defined in [general-working-group-score.md](general
 
 #### Scoring Calculations
 Let:
-- `dynamic_configuration_i` be the maximum amount of operated storage buckets, that with the current configuration, in a worst case scenario, can accept and store new bags, assuming some random checks (indexed `i`) are made
-- `existing_bag_configuration_i` be the maximum amount of operated storage buckets, that with the current configuration, in a "worst case scenario" will accept new dataObjects to an existing bag, aassuming some random checks (indexed `i`) are made
-- `excess_capacity_objects_true/false_i` and `excess_capacity_size_true/false_i` be the extra capacity for objects and size [GB] the system has, to accept new dataObjects, whether the bucket accepts new bags or only additions to existing bags, assuming some random checks (indexed `i`) are made
+- `blockheight_start` be block #100400 (12h after officially publishing the incentives)
+- `blockheight_end` be block #151200 (12h after the end of the Term, so the new Council has time to react)
+- `dynamic_configuration_i` be the maximum amount of operated storage buckets, that with the current configuration, in a worst case scenario, can accept and store new bags, assuming some random checks (indexed `i`) are done between `blockheight_start` and the `blockheight_end`
+- `existing_bag_configuration_i` be the maximum amount of operated storage buckets, that with the current configuration, in a "worst case scenario" will accept new dataObjects to an existing bag, assuming some random checks (indexed `i`) are done between `blockheight_start` and the `blockheight_end`
+- `excess_capacity_objects_true/false_i` and `excess_capacity_size_true/false_i` be the extra capacity for objects and size [GB] the system has, to accept new dataObjects, whether the bucket accepts new bags or only additions to existing bags, assuming some random checks (indexed `i`) are done between `blockheight_start` and the `blockheight_end`
 - `MAINTENANCE_SCORE` be the final score [0,1]
 
 Then:
@@ -106,8 +134,21 @@ Then:
 ```
 
 
-### Catastrophic Errors
+### `GUIDE_SCORE`
+*Objective:* `Update, improve and migrate the howto guide to match Olympia`
 
-#### Permanent Data Object Loss
+#### Notes
+Until now, the Joystream "howto" guides in general, and Storage Providers are no exception, has been available in the helpdesk. We are moving away from this, and want them to hosted in the groups [notion space](https://joystream.notion.site/Storage-9dc5a16444934dc4bda08b596bc15375).
+The existing ones will also need some updates, to stay current. Unlike the other SoW, this will be graded subjectively.
 
-A confirmed data object can no longer be recovered from storage nodes, despite not being deleted on chain.
+#### Instructions
+- Create a user friendly "landing page", that explains:
+  - the purpose of the role
+  - the tools required
+  - how to apply for the role
+  - other relevant information and links
+- Add the technical instructions required for starting out as a storage provides
+  - we have imported the current and outdated [helpdesk README.md](https://github.com/Joystream/helpdesk/blob/master/roles/storage-providers/README.md), but that will of course have a lot of broken links and incorrect information
+
+#### Scoring Calculations
+The `GUIDE_SCORE` is graded subjectively.

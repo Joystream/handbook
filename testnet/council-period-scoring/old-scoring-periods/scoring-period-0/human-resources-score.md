@@ -104,80 +104,54 @@ Human Resources Working Group Knowledge Base
 The HR working group score is computed as follows
 
 ```
-HR_SCORE = [0.1*GENERAL_WG_SCORE + 0.6*GREETING_SCORE + 0.3*BOUNTY_GENERATION_SCORE]/(2^{N})
+HR_SCORE = 0.1*GENERAL_WG_SCORE + 0.2*PROTOCOL_SCORE + 0.25*CRM_SCORE + 0.2*TIMELINESS_SCORE + 0.25*WELCOMING_SCORE
 ```
 
 ### `GENERAL_WG_SCORE`
-Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`10%`**.
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`0%`**.
 
-### `GREETING_SCORE`
-*Objective:* `Ensuring WG is responsive and helpful on Discord in timely fashion`
+
+### `PROTOCOL_SCORE`
+*Objective:* `Working out the protocols`
+
+#### Instructions
+Working group (emphasis on lead) coordinates with Robert and Ben to establish the protocols for communicating with new joiners. This can be an informal process on Discord which then results in some basic principles for communicating with new participants being shared in the community notion. It can also involve the working group members suggesting changes to the Discord/Chatbot/Onboarding design to optimize any aspect of their work.
+
+#### Scoring Calculations
+The `PROTOCOL_SCORE` is graded subjectively.
+
+### `CRM_SCORE`
+*Objective:* `Familiarity with tools (principally CRM)`
+
+#### Instructions
+- All HR WG participants are added to the community notion, timesheet spreadsheet/table and retool CRM tool.
+- All HR WG participants participate in a brief training session with Ben to get them familar (and added to) with CRM, or alternatively watch brief video series created by him, then are briefly tested and scored by him on their understanding (this will be a very simple test just to show they understand how to use the CRM forms).
+  - The HR Group is responsible for organizing this
+
+#### Scoring Calculations
+The `CRM_SCORE` is graded subjectively.
+
+### `TIMELINESS_SCORE`
+*Objective:* `Ensuring WG is responsive in Discord in timely fashion`
 
 #### Instructions
 - Availability to respond to newly arriving participants is an essential element of participation within the HR Working Group.
-  - Working group lead directs the creation of a table within Notion or an alternative platform to show the availability of the WG participants for the week
+- Therefore, even in this first week, there will be an emphasis on responding to new people and JSG dummy accounts within the #start-here channel.
+  - Working group lead directs the creation of a table within Notion or an alternative platform to show the availability of the WG participants
   - Checks of CRM form for reporting availability reflect accurately the same information.
-  - Pings in #start-here channel get a response from one of the available integrators in a timely fashion.
-  - New members are directed to create new memberships as a first step in the onboarding, and to allow them to be tracked in the CRM (before that, store the data somewhere else)
-  - Conduct a quick round of questions, in order to get a flavor for what they would like to do on/for the platform
-  - Assign them a bounty from the Board, or if nothing suits them:
-    - Ask them to create a draft themselves
-    - Provide a round of feedback, and help them create it on Pioneer
-    - Once completed, notify `@blrhc#0162` and `@bwhm#6514` for funding and approval
+  - Pings in #start-here channel get a response from one of the available integrators.
 
 #### Scoring Calculations
-Let:
-  - `delta_t_a` be the average difference in timestamp [min] from a user posts in the #start-here channel, until a greeter responds
-    - if the user posts between midnight and noon (CET), it counts as being posted at noon
-  - `ONBOARDING_SCORE` be the fraction of users posting in #start-here that gets an entry in the CRM
-  - `BOUNTY_ASSIGNMENT_SCORE` be the fraction of new users in the CRM that gets a Bounty funded
+The `TIMELINESS_SCORE` is graded subjectively.
 
-Then:
-```
-TIMELINESS_SCORE = max(delta_t_a/10,1)
 
-GREETING_SCORE = (TIMELINESS_SCORE + ONBOARDING_SCORE + BOUNTY_ASSIGNMENT_SCORE)/3
-```
-
-### `BOUNTY_GENERATION_SCORE`
+### `WELCOMING_SCORE`
+*Objective:* `Ensuring WG is responsive in Discord in timely fashion`
 
 #### Instructions
-In order to offer new users a Bounty to get started, we need to be able to offer
-- a variety of different categories of Bounties, to fit the wide range of skills a newcomer may have
-- a variety of difficulty levels
-- plenty of them
-
-The purpose of these are to get new users on the "fast track" for roles, meaning they should ideally be a related to one of the WGs, so that they can use the result as part of their application.
-
-Create a list of Bounty ideas on the notion board, with:
-- a TL;DR of the scope
-- a category
-- expected workload (in hours)
-- for the ones you perceive as the best ideas, write up a draft of the full bounty text
-
-Note: The community has previously been tasked with a similar task. No shame in using it for inspiration, or even a blatant copypasta!
+- New members are directed to create new memberships as a first step in the onboarding, and to allow them to be tracked in the CRM (before that, store the data somewhere else)
+  - Conduct a quick round of questions, in order to get a flavor for what they would like to do on/for the platform
+  - They are further told to check in next week, and that a Bounty will be created for them then
 
 #### Scoring Calculations
-Let:
-  - `IDEAS_APPROVED` be the amount of ideas not specified in detail, that Jsgenesis approves to be made into Bounties, regardless of whether it ever becomes one
-  - `DRAFTS_APPROVED` be the amount of complete drafts, that Jsgenesis approves to be made into Bounties, regardless of whether it gets rewritten or not
-    - As ideas and drafts must be reviewed manually, only what is available in Notion when it's less than #7200 blocks remaining is guaranteed to be included
-Then:
-```
-BOUNTY_GENERATION_SCORE = 0.4*max(IDEAS_APPROVED-10/10,1) + 0.6*max(DRAFTS_APPROVED-4/6,1)
-```
-
-
-### Catastrophic Errors&#x20;
-
-#### **Inadequate Report**
-
-An inadequate report addendum about the bounties was provided, for example by missing or incorrect information.
-
-**Budget Template Violation**
-
-A bounty was created with an amount of $tJOY exceeding the current template budget.
-
-**Missing Judgement**
-
-A bounty did not receive oracle judgement.
+The `WELCOMING_SCORE` is graded subjectively.

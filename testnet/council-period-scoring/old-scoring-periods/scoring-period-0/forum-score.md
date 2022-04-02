@@ -36,13 +36,13 @@ The working group report should include a special section with information about
 The score is computed as follows
 
 ```
-FORUM_SCORE = [0.1*GENERAL_WG_SCORE + 0.7*MODERATION_SCORE + 0.2*NOTIFICATION_SCORE]/(2^{N})
+FORUM_SCORE = 0.1*GENERAL_WG_SCORE + 0.35*CATEGORY_SCORE + 0.3*PARAMETER_SCORE + 0.05*MODERATION_SCORE + 0.2*GUIDE_SCORE
 ```
 
 where
 
 ### `GENERAL_WG_SCORE`
-Is computed with metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"), where the opportunity target is **`0%`**.
+Is computed with metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"), where the opportunity target is **`20%`**.
 
 ### `MODERATION_SCORE`
 
@@ -54,21 +54,27 @@ Apply the moderation policy, and for each occurrence, make an entry of it in a s
 #### Scoring Calculations
 The `MODERATION_SCORE` is set subjectively.
 
-### `NOTIFICATION_SCORE`
+### `GUIDE_SCORE`
+*Objective:* `Create a howto guide for Forum Workers`
 
 #### Notes
-A user that posts on the forum may have a question either towards a the council, a lead, a Worker, Jsgenesis or just a member of the platform. However, that person may not see it.
-
-When a question is raised, that is either directly or indirectly best handled by someone else, help the user by tagging the appropriate person on Discord.
+Until now, the Joystream "howto" guides in general has been available in the helpdesk. The Forum WG is brand new, so not really applicable, but we are moving away from this, and want guides hosted in the groups [notion space](https://joystream.notion.site/Forum-9d4eae77ce7544e0a860fbce4386805d).
+- Create a user friendly "landing page", that explains:
+  - the purpose of the role
+  - the tools required
+  - how to apply for the role
+  - other relevant information and links
+  - a visual of the current category structure, and the philosophy behind it
+  - a visual of the (imagined future) category structure, and the philosophy behind it
+- Add the technical instructions required for working as a Forum Lead/Worker, basically explain/example for all cli commands
+  - how to create/delete/update categories
+  - how to "sticky" threads
+  - how to moderate
 
 #### Scoring Calculations
-The `NOTIFICATION_SCORE` is set subjectively.
+The `GUIDE_SCORE` is set subjectively.
 
 * `N` : The number of catastrophic error instances which occurred, as defined below.
 
 ### Catastrophic Errors
-
-
-#### **Violation of Content Policy**
-
-Although not strictly the same, the concepts in the [content policy](/system/content-directory/content-policy.md) applies to the forum as well. Any post or thread fitting the above, left unmoderated for 12h.
+NA

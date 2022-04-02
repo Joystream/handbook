@@ -42,7 +42,7 @@ The working group report should include a special section with information about
 
 The score is computed as follows
 ```
-DISTRIBUTOR_SCORE = [0.2*GENERAL_WG_SCORE 0.35*THUMBNAIL_SCORE + 0.1*PLAYABLITIY_SCORE + 0.3*SERVICE_SCORE]/(2^{N})
+DISTRIBUTOR_SCORE = 0.2*GENERAL_WG_SCORE 0.35*THUMBNAIL_SCORE + 0.1*PLAYABLITIY_SCORE + 0.3*SERVICE_SCORE + 0.15*GUIDE_SCORE
 ```
 
 ### `GENERAL_WG_SCORE`
@@ -126,8 +126,21 @@ Then:
 ```
 
 
-### Catastrophic Errors
+### `GUIDE_SCORE`
+*Objective:* `Update, improve and migrate the howto guide to match Olympia`
 
-#### **No available sources to fetch a data object from**
+#### Notes
+Until now, the Joystream "howto" guides in general, aDistributors are no exception, has been available in the helpdesk. We are moving away from this, and want them to hosted in the groups [notion space](https://joystream.notion.site/Distribution-1f4cfbbb2e934c79bf20b8db7f019d32).
+The existing ones will also need some updates, to stay current. Unlike the other SoW, this will be graded subjectively.
 
-A data object is not available from any distributor, despite being held be an available storage node
+#### Instructions
+- Create a user friendly "landing page", that explains:
+  - the purpose of the role
+  - the tools required
+  - how to apply for the role
+  - other relevant information and links
+- Add the technical instructions required for starting out as a distributors
+  - we have imported the current and outdated [helpdesk README.md](https://github.com/Joystream/helpdesk/tree/master/roles/distributors#readme), but that will of course have a lot of broken links and incorrect information
+
+#### Scoring Calculations
+The `GUIDE_SCORE` is graded subjectively.

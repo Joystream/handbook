@@ -1,8 +1,8 @@
 ---
-description: Reward what you want to see in the world.
+Scoring Period 0 Summary
 ---
 
-# 📏 Council Period Scoring
+# 📏 Council Period 0 Scoring
 
 ## Introduction
 
@@ -41,21 +41,13 @@ There needs to be a way to measure how well the system is operating overall, as 
 ## Previous Scoring Rounds
 All metrics and results for previous scoring rounds can be found [here](/testnet/council-period-scoring/old-scoring-periods/scoring-period-0).
 
-## Council Period Parameters
-| Name                  | Value           |
-| --------------------- | --------------- |
-| `JOY_BUDGET`          | 1000000 (0.1%)  |
-| `REFERRER_JOY`        | TBD             |
-| `REFERREE_JOY`        | TBD             |
-| `tJOY_BUDGET`         | 80,000,000      |
-| `USD_SUBSIDY`         | USD 2000        |
-| `CAP`                 | TBD             |
-| `COUNCIL_tJOY_REWARD` | TBD             |
-
-
 ## Dashboard
 
 Here is a live [dashboard](http://joystream.org) which holds key information from the current council period.
+
+For the first Council:
+- `tJOY_BUDGET`: 48,000,000
+-  `JOY_BUDGET`: 0.06%
 
 (Both numbers revised upwards, with the addition of a `MARTETING_SCORE` & `GENERAL_WG_SCORE` )
 
@@ -237,8 +229,5 @@ Total spending, as defined in [#total-usdtjoy-spending](./#total-usdtjoy-spendin
 
 The average time between blocks was greater than `10s` for more than a 2 hour interval.
 
-## FAQ
 
-### How do I get on the council?
-
-You have to win a seat as part of the [#elections](./#elections "mention"), and this requires persuading people to vote for you, in you yourself do not have sufficient $tJOY to back your own candidacy. However, Jsgenesis will be looking to help a few promising newcomers each council, as described in [#jsgenesis-endorsement](./#jsgenesis-endorsement "mention").
+## Results
