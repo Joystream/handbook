@@ -176,15 +176,8 @@ where
 
 The current weights are:
 
-<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>3</td></tr><tr><td><code>M_W</code></td><td>1</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>HR_W</code></td><td>3</td></tr><tr><td><code>S_W</code></td><td>5</td></tr><tr><td><code>D_W</code></td><td>6</td></tr><tr><td><code>SU_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>0</td></tr><tr><td><code>LO_W</code></td><td>0</td></tr></tbody></table>
+<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>5</td></tr><tr><td><code>M_W</code></td><td>1</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>HR_W</code></td><td>3</td></tr><tr><td><code>S_W</code></td><td>5</td></tr><tr><td><code>D_W</code></td><td>6</td></tr><tr><td><code>SU_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>0</td></tr></tbody></table>
 
-### Deployment Score
-For this first council term, the rewards from the initial set of [incentives](https://gist.github.com/bwhm/0df4242854c41a77a397b0e52e2f8a3b), focused on deploying the network, must also be included:
-
- * `STORAGE_DEPLOYMENT_SCORE` (`S_D_W`): 9
- * `CONTENT_DEPLOYMENT_SCORE` (`C_D_W`): 3
- * `DISTRIBUTOR_DEPLOYMENT_SCORE` (`D_D_W`): 3
- * `FORUM_DEPLOYMENT_SCORE` (`F_D_W`): 2
 
 Which Means:
 ```
