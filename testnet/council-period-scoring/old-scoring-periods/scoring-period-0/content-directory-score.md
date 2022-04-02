@@ -49,7 +49,7 @@ Content Directory Working Group Knowledge Base
 The Content Directory working group score is computed as follows
 
 ```
-CONTENT_SCORE = [0.1*GENERAL_WG_SCORE + 0.4*FEATURING_SCORE + 0.25*POLICY_SCORE + 0.25*WORKFLOW_SCORE]/(5*2^{N})
+CONTENT_SCORE = 0.1*GENERAL_WG_SCORE +0.25*POLICY_SCORE + 0.35*WORKFLOW_SCORE + 0.3*GUIDE_SCORE
 ```
 
 where
@@ -57,58 +57,6 @@ where
 ### `GENERAL_WG_SCORE`
 Is computed with metricS defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`0%`**.
 
-
-### `FEATURING_SCORE`
-*Objective:* `The "Featured Content" must be changed frequently to keep fresh`
-
-### Notes
-`FEATURING_SCORE` is a score computed by Jsgenesis staff for the quality of featuring activity, which will be in the range [0, 1], and will emphasize;
-* Frequency of updating featured content
-* Quality of content featured given the content available and quality of text, thumbnails etc. and other assets used in promoting content
-
-#### Instructions
-There are three different "types" of featured content:
-1. [Featured Categories](https://play.joystream.org/discover)
-2. [Hero](https://play.joystream.org/)
-  - More information about 1. and 2. can be found [here](https://github.com/Joystream/atlas/blob/master/docs/community/featured-content.md).
-  - The access keys, or help, needed to make the changes will be granted to the Lead upon mentioning `@klaudiusz.eth#6880` and `@bwhm#6514` on discord.
-
-#### Scoring Calculations
-Let:
-- `CATEGORIES_SCORE` be the score for updating the main featured categories on the platform, as a function of:
-  - `HERO_CATEGORIES_CHANGE` be the score for how frequently the categories at the top row are changed, counted on a 24h basis
-  - `VIDEO_CATEGORIES_CHANGE` be the score for how frequently the top video(s) in each categories are changed, counted on a 24h basis
-  - `CATEGORIES_CHANGE_QUALITY` be the subjective score of how well this is done, based on how frequently the same videos are rotated back to the top, whether the "teaser" and metadata is correct, and whether the video is appropriate to feature (eg. actually representative of the category, good/bad video, not NSFW, etc.)
-- `HERO_SCORE` be the score for updating the main featured video on the platform, as a function of:
-  - `HERO_CHANGE_FREQUENCY` be the frequency of which the hero video is changed, where only changes once per day counts (as close as possible to a set time, eg. ~noon GMT)
-  - `HERO_CHANGE_QUALITY` be the subjective score of how well this is done, based on how frequently the same video is rotated back to the top, whether the "teaser" and metadata is correct, and whether the video is appropriate to feature (eg. good/bad video, not NSFW, etc.)
-    - Note that Jsgenesis reserves the right to veto videos suggested for this position, as it's the first thing a new user sees, and should thus be of really high quality
-- `LOGGING_SCORE` be the quality of the change logs in the notion board, so that grading can be done without having to check manually every day. This means creating a spreadsheet/table/db/json that every time a change is made, shows:
-  - `HERO`:
-    - `entryId` the index of change (eg 0,1,2,...,n)
-    - `blockheight+timestamp` denoting when changed
-    - `videoId` of new video,
-    - `metadata` used
-    - (perma)`link` to teaser
-    - `Delta_blockheight` showing how many blocks/days since the last time that vide was used as hero
-    - `lastEntryIds` an array of `entryIds` with all the previous times the video was used
-  - `CATEGORY`:
-    - `entryId` the index of change (eg 0,1,2,...,n)
-    - `blockheight+timestamp` denoting when changed
-    - `changelog` showing the exact changes made, eg.
-      - Top row: `Comedy/9,Gaming/7,Sports/5 -> Gaming/7,Film&Animation/1,Education/13`
-      - Autoplay: `Pets&Animals/4: 22770->22769`
-      - Top 6: ...
-```
-  CATEGORIES_SCORE = (0.5*HERO_CATEGORIES_CHANGE + 0.5*VIDEO_CATEGORIES_CHANGE) * CATEGORIES_CHANGE_QUALITY =
-  0.5*[max(HERO_CHANGES_MADE/3,1) + max(VIDEO_CHANGES_MADE/3,1)] * CATEGORIES_CHANGE_QUALITY
-
-  HERO_SCORE = HERO_CHANGE_FREQUENCY*HERO_CHANGE_QUALITY =
-  max(CHANGES_MADE/3,1) * HERO_CHANGE_QUALITY
-
-  # finally
-  FEATURING_SCORE = (CATEGORIES_SCORE + HERO_SCORE + LOGGING_SCORE)/3
-```
 
 ### `POLICY_SCORE`
 *Objective:* `Create a curation policy`
@@ -118,8 +66,7 @@ Jsgenesis has published a new (limited) [curation policy](/system/content-direct
 The Council and/or Content group should create two documents:
 1. one that targets users, so that a channel owner can know what to expect, how to rectify the situation, etc.
 2. one that targets curators, so that they know what to do in case `x` happens
-  - create a flow chart diagram that displays the above visually
-
+- create a flow chart diagram that displays the above visually
 Propose a moderation policy, if approved by the Council, add a (sticky) Forum thread about it, and add it to the [notion space](https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab).
 
 #### Scoring Calculations
@@ -142,14 +89,24 @@ Part of this should address who reviews what and how?
 #### Scoring Calculations
 The `WORKFLOW_SCORE` is graded subjectively.
 
+### `GUIDE_SCORE`
+*Objective:* `Create a howto guide for Content Workers`
 
-### Catastrophic Errors;
+#### Instructions
+Until now, the Joystream "howto" guides in general, and Curators are no exception, has been available in the helpdesk. We are moving away from this, and want them to hosted in the groups [notion space](https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab).
 
-#### Failure to apply moderation rules
+In order to test how curation works, use staging network, with:
+- [pioneer](https://pioneer-2.vercel.app/#/settings?network-config=https://18.207.235.254.nip.io/network/config.json)
+- [atlas](https://atlas-olympia-staging.vercel.app/)
+DM Martin on discord for the Lead key, as testing of access is likely needed.
 
-Any item which violates the content guidelines is unmoderated more than 24 hours after being uploaded
+Create new guides for doing all the actions required by the Curators (and the Lead). This includes (at least):
+- How to use the [query-node playground](query.joystream.org)
+  - To find new or updated channels/videos
+- How to use the cli
+  - What you can do (as a `Curator`) in the cli
+  - What are groups, and how do they work
+- How to delete assets, if the owner refuses (this requires checking other modules!)
 
-
-#### Featured Content Unplayable
-
-If the hero video, or the hero of any category, is not playable and is not dealt within within 1 hour after the change
+#### Scoring Calculations
+The `GUIDE_SCORE` is graded subjectively.
