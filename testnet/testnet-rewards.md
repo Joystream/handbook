@@ -4,11 +4,11 @@ description: Who is given what, for what reason at what time?
 
 # 🤑 Testnet Rewards
 
-## &#x20;:flag\_us: US persons are not eligible for $JOY :flag\_us:
+## :flag\_us: US persons are not eligible for $JOY :flag\_us:
 
 ## Introduction
 
-There are two kinds of rewards associated with testnet participation.&#x20;
+There are two kinds of rewards associated with testnet participation.
 
 1. The first is $tJOY, described here [usdtjoy.md](usdtjoy.md "mention") , which is the native token of our testnets, and which can be used to redeem for $USD at any time.
 2. The second is $JOY, described here [usdjoy.md](../usdjoy.md "mention"), which is the native token of our coming mainnet. This tokens are distributed as part of our Founding Member Program (FMP), described here [founding-member-program.md](founding-member-program.md "mention"), which is our program to reward high value community member with our mainnet token.
@@ -67,15 +67,16 @@ Validators earn $JOY allocations in the same way as for bounty contributions: a 
 
 ### Council Member
 
-All council members earn the same quantity of $tJOY per period, let `TOTAL_COUNCIL_tJOY_REWARD` denote the total $tJOY payout earned by the entire council.  This value is controlled by Jsgenesis, and can change over time.&#x20;
+All council members earn the same quantity of $tJOY per period, let `TOTAL_COUNCIL_tJOY_REWARD` denote the total $tJOY payout earned by the entire council. This value is controlled by Jsgenesis, and can change over time.
 
-Council Members earn $JOY a bit differently, specifically, the total $JOY amount shared equally among all members is given by\
+Council Members earn $JOY a bit differently, specifically, the total $JOY amount shared equally among all members depends what is called the _network peformance score,_ given by\
 \
 `(TOTAL_COUNCIL_tJOY_REWARD/tJOY_BUDGET)*(NETWORK_PERFORMANCE_SCORE)^2`\
 \
-where `NETWORK_PERFORMANCE_SCORE` is called the _network performance score_, and is in the interval \[0, 1]. This score, computed by Jsgenesis using public evaluation metrics, attempts to capture how well the network performed. The evaluation metrics will change from one council period to the next.
+where `NETWORK_PERFORMANCE_SCORE`, and is in the interval \[0, 1]. This score, computed by Jsgenesis using public evaluation metrics, attempts to capture how well the network performed. The evaluation metrics will change from one council period to the next.
+
+Council members earn $JOY allocations: a share of the `JOY_BUDGET` equal to what share the earned $tJOY makes up of the `tJOY_BUDGET`.
 
 ### Content Creator
 
 `<Coming>`
-
