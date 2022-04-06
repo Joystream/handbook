@@ -17,6 +17,7 @@
   * [Marketers Score](testnet/council-period-scoring/marketers-score.md)
   * [Distributors Score](testnet/council-period-scoring/distributors-score.md)
   * [Builders Score](testnet/council-period-scoring/builders-score.md)
+* [✋ Content Policy](testnet/content-policy.md)
 
 ## system
 
@@ -40,7 +41,6 @@
 * [⚖ Proposal System](system/proposal-system/README.md)
   * [Tutorial: Create A Proposal](system/proposal-system/tutorial-create-a-proposal.md)
 * [🎬 Content Directory](system/content-directory/README.md)
-  * [Content Policy](system/content-directory/content-policy.md)
   * [NFT](system/content-directory/nft.md)
   * [Tutorial: Issue Video NFT](system/content-directory/tutorial-issue-video-nft.md)
   * [Tutorial: Claim Reward](system/content-directory/tutorial-claim-reward.md)

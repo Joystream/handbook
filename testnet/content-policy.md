@@ -4,7 +4,7 @@ description: >-
   testnets.
 ---
 
-# Content Policy
+# ✋ Content Policy
 
 ## JSG Content Policy
 
