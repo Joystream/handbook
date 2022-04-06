@@ -20,9 +20,9 @@ New people will continuously be arriving in the Discord, both directly, and thro
 
 `<add picture of Widgetbot on site>`
 
-All new persons should be&#x20;
+All new persons should be
 
-* greeted by a member in the HR working group in the `#welcome` or `#general` channels,&#x20;
+* greeted by a member in the HR working group in the `#welcome` or `#general` channels,
 * offered assistance in solving CAPTCHAs if needed,
 
 ## Onboarding
@@ -47,7 +47,7 @@ Invariably, people will drop off at various level of progression before becoming
 
 ### Creation
 
-As mentioned prior, [bounties.md](../../system/bounties.md "mention") are an excellent low barrier to entry means of allowing total newcomers to participate, start earning $tJOY and $JOY, and learning the system and community. Bounties are created on-chain using either
+As mentioned prior, [bounties](../../system/bounties/ "mention") are an excellent low barrier to entry means of allowing total newcomers to participate, start earning $tJOY and $JOY, and learning the system and community. Bounties are created on-chain using either
 
 * Pre-prepared bounties living in the `BountyTemplate` table of the CRM. Bounties are added here by
   * the HR lead
@@ -79,7 +79,7 @@ The [#working-group-summary](general-working-group-score.md#working-group-summar
 
 ## CRM
 
-The Jsgenesis Customer Relationship Management (CRM) system is a datawarehouse operated by Jsgenesis as a central source of truth for the state and histroy of the Joystream testnets, it will go away on mainnet. It holds information about&#x20;
+The Jsgenesis Customer Relationship Management (CRM) system is a datawarehouse operated by Jsgenesis as a central source of truth for the state and histroy of the Joystream testnets, it will go away on mainnet. It holds information about
 
 * council periods
 * founding members
@@ -108,31 +108,37 @@ HR_SCORE = [0.1*GENERAL_WG_SCORE + 0.6*GREETING_SCORE + 0.3*BOUNTY_GENERATION_SC
 ```
 
 ### `GENERAL_WG_SCORE`
+
 Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`10%`**.
 
 ### `GREETING_SCORE`
-*Objective:* `Ensuring WG is responsive and helpful on Discord in timely fashion`
+
+_Objective:_ `Ensuring WG is responsive and helpful on Discord in timely fashion`
 
 #### Instructions
-- Availability to respond to newly arriving participants is an essential element of participation within the HR Working Group.
-  - Working group lead directs the creation of a table within Notion or an alternative platform to show the availability of the WG participants for the week
-  - Checks of CRM form for reporting availability reflect accurately the same information.
-  - Pings in #start-here channel get a response from one of the available integrators in a timely fashion.
-  - New members are directed to create new memberships as a first step in the onboarding, and to allow them to be tracked in the CRM (before that, store the data somewhere else)
-  - Conduct a quick round of questions, in order to get a flavor for what they would like to do on/for the platform
-  - Assign them a bounty from the Board, or if nothing suits them:
-    - Ask them to create a draft themselves
-    - Provide a round of feedback, and help them create it on Pioneer
-    - Once completed, notify `@blrhc#0162` and `@bwhm#6514` for funding and approval
+
+* Availability to respond to newly arriving participants is an essential element of participation within the HR Working Group.
+  * Working group lead directs the creation of a table within Notion or an alternative platform to show the availability of the WG participants for the week
+  * Checks of CRM form for reporting availability reflect accurately the same information.
+  * Pings in #start-here channel get a response from one of the available integrators in a timely fashion.
+  * New members are directed to create new memberships as a first step in the onboarding, and to allow them to be tracked in the CRM (before that, store the data somewhere else)
+  * Conduct a quick round of questions, in order to get a flavor for what they would like to do on/for the platform
+  * Assign them a bounty from the Board, or if nothing suits them:
+    * Ask them to create a draft themselves
+    * Provide a round of feedback, and help them create it on Pioneer
+    * Once completed, notify `@blrhc#0162` and `@bwhm#6514` for funding and approval
 
 #### Scoring Calculations
+
 Let:
-  - `delta_t_a` be the average difference in timestamp [min] from a user posts in the #start-here channel, until a greeter responds
-    - if the user posts between midnight and noon (CET), it counts as being posted at noon
-  - `ONBOARDING_SCORE` be the fraction of users posting in #start-here that gets an entry in the CRM
-  - `BOUNTY_ASSIGNMENT_SCORE` be the fraction of new users in the CRM that gets a Bounty funded
+
+* `delta_t_a` be the average difference in timestamp \[min] from a user posts in the #start-here channel, until a greeter responds
+  * if the user posts between midnight and noon (CET), it counts as being posted at noon
+* `ONBOARDING_SCORE` be the fraction of users posting in #start-here that gets an entry in the CRM
+* `BOUNTY_ASSIGNMENT_SCORE` be the fraction of new users in the CRM that gets a Bounty funded
 
 Then:
+
 ```
 TIMELINESS_SCORE = max(delta_t_a/10,1)
 
@@ -142,33 +148,37 @@ GREETING_SCORE = (TIMELINESS_SCORE + ONBOARDING_SCORE + BOUNTY_ASSIGNMENT_SCORE)
 ### `BOUNTY_GENERATION_SCORE`
 
 #### Instructions
+
 In order to offer new users a Bounty to get started, we need to be able to offer
-- a variety of different categories of Bounties, to fit the wide range of skills a newcomer may have
-- a variety of difficulty levels
-- plenty of them
+
+* a variety of different categories of Bounties, to fit the wide range of skills a newcomer may have
+* a variety of difficulty levels
+* plenty of them
 
 The purpose of these are to get new users on the "fast track" for roles, meaning they should ideally be a related to one of the WGs, so that they can use the result as part of their application.
 
 Create a list of Bounty ideas on the notion board, with:
-- a TL;DR of the scope
-- a category
-- expected workload (in hours)
-- for the ones you perceive as the best ideas, write up a draft of the full bounty text
+
+* a TL;DR of the scope
+* a category
+* expected workload (in hours)
+* for the ones you perceive as the best ideas, write up a draft of the full bounty text
 
 Note: The community has previously been tasked with a similar task. No shame in using it for inspiration, or even a blatant copypasta!
 
 #### Scoring Calculations
+
 Let:
-  - `IDEAS_APPROVED` be the amount of ideas not specified in detail, that Jsgenesis approves to be made into Bounties, regardless of whether it ever becomes one
-  - `DRAFTS_APPROVED` be the amount of complete drafts, that Jsgenesis approves to be made into Bounties, regardless of whether it gets rewritten or not
-    - As ideas and drafts must be reviewed manually, only what is available in Notion when it's less than #7200 blocks remaining is guaranteed to be included
-Then:
+
+* `IDEAS_APPROVED` be the amount of ideas not specified in detail, that Jsgenesis approves to be made into Bounties, regardless of whether it ever becomes one
+* `DRAFTS_APPROVED` be the amount of complete drafts, that Jsgenesis approves to be made into Bounties, regardless of whether it gets rewritten or not
+  * As ideas and drafts must be reviewed manually, only what is available in Notion when it's less than #7200 blocks remaining is guaranteed to be included Then:
+
 ```
 BOUNTY_GENERATION_SCORE = 0.4*max(IDEAS_APPROVED-10/10,1) + 0.6*max(DRAFTS_APPROVED-4/6,1)
 ```
 
-
-### Catastrophic Errors&#x20;
+### Catastrophic Errors
 
 #### **Inadequate Report**
 
