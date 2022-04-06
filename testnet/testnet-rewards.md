@@ -189,4 +189,5 @@ COUNCIL_JOY_REWARD = USD 120000 * (10/80) * 1^2 = USD 15000
 ```
 
 We see the `NETWORK_PERFORMANCE_SCORE` is of major importance to the Council, but not for Workers or Leads \*.
+
 \* Which should make the Council pay close attention to the performance of the groups!
