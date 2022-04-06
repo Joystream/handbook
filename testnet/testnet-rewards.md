@@ -92,7 +92,7 @@ Note that the inputs are somewhat random, so don't set your expectations based o
 | `JOY_BUDGET`          | 2,000,000/0.2%/USD120,000 |
 | `USD_SUBSIDY`         | 2,000                     |
 | `tJOY_BUDGET`         | 80,000,000                |
-| `COUNCIL_tJOY_REWARD` | 10,000,00                 |
+| `COUNCIL_tJOY_REWARD` | 10,000,000                 |
 
 | Group                 | Weight                    |
 | --------------------- |:-------------------------:|
@@ -108,9 +108,9 @@ Note that the inputs are somewhat random, so don't set your expectations based o
 | `SUM`                 | **27**                    |
 
 ### Budget Allocation
+Of the tJOY 80M in the budget, we assume tJOY 78.5M was spent, as shown below:
 
-Of the tJOY 80M in the budget, we assume tJOY 78M was spent, as shown below:
-| Purpose         | Spending [tJOY] | Workers (ex Lead) | Lead [tJOY] | Workers [tJOY] |
+| Purpose         | Spending [MtJOY]| Workers (ex Lead) | Lead [MtJOY]| Workers [MtJOY]|
 |-----------------|:---------------:|:-----------------:|:-----------:|:--------------:|
 | Builders        | 15              | 5                 | 3           | 2.4            |
 | Content         | 10.5            | 6                 | 1.8         | 1.45           |
@@ -118,13 +118,20 @@ Of the tJOY 80M in the budget, we assume tJOY 78M was spent, as shown below:
 | Forum           | 3               | 2                 | 1.5         | 0.75           |
 | Human Resources | 16              | 20                | 2           | 0.7            |
 | Marketing       | 7               | 3                 | 1           | 2              |
-| Council         | 6               | 5                 | NA          | 1.2            |
-| `SUM`           | **74.5**        | **49**            | **12.3**    | **62.2**       |
+| Council         | 10              | 5                 | NA          | 1.2            |
+| `SUM`           | **78.5**        | **49**            | **12.3**    | **62.2**       |
+
+**Note**
+The tables show:
+- total spending (in tJOY rewards) for the group
+- amount of Workers in each group
+- The Lead rewards
+- The (average) Worker rewards
 
 ### WG Rewards
-As the WG rewards are not (directly\*) impacted by their performance, we get the following rewards for the Workers and Leads:
+As the WG rewards are not (directly) impacted by their performance, we get the following rewards for the Workers and Leads.
 
-| Purpose         | Spending [MtJOY] | Workers (ex Lead) | Workers [MtJOY] | Workers [JOY] | Workers [USD]   | Lead [MtJOY] | Lead [JOY] | Lead [USD]      |
+| Purpose         | Spending [MtJOY] | Workers (ex Lead) | Workers [MtJOY] | Workers [JOY] | Workers [USD]\* |Lead [MtJOY]\*| Lead [JOY] | Lead [USD]      |
 |-----------------|:----------------:|:-----------------:|:---------------:|:-------------:|:---------------:|:------------:|:----------:|:---------------:|
 | Builders        | 15               | 5                 | 2.4             | 60000         | 60 - 3600       | 3            | 75000      | 75 - 4500       |
 | Content         | 10.5             | 6                 | 1.45            | 36250         | 36.25 - 2175    | 1.8          | 45000      | 45 - 2700       |
@@ -134,6 +141,7 @@ As the WG rewards are not (directly\*) impacted by their performance, we get the
 | Marketing       | 7                | 3                 | 1.5             | 50000         | 37.5 - 2250     | 2.5          | 62500      | 62.5 - 3750     |
 | **SUM**         | **68.5**         | **44**            | **54.7**        | **1367500**   |**1368 - 82050** | **13.8**     | **345000** |**345 - 20700**  |  
 
+\* denotes the USD value of their tJOY and JOY rewards respectively
 
 ### CM Rewards
 For the CMs, the tJOY reward is independent of the `NETWORK_PERFORMANCE_SCORE`, whereas the JOY reward is not.
