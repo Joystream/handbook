@@ -39,7 +39,7 @@ There needs to be a way to measure how well the system is operating overall, as 
 {% endcontent-ref %}
 
 ## Previous Scoring Rounds
-All metrics and results for previous scoring rounds can be found [here](/testnet/council-period-scoring/old-scoring-periods/scoring-period-0).
+All metrics and results for previous scoring rounds can be found [here](/testnet/council-period-scoring/old-scoring-periods/README.md).
 
 ## Council Period Parameters
 | Name                  | Value           |
