@@ -1,13 +1,25 @@
 ---
-description: Deeper dive on to the councils own metrics
+description: Deeper dive on to the councils own metrics and rewards structure.
 ---
 
 # Overview
-The Councilors themselves are the only participants whose rewards are _directly_ impacted by the metrics we are, and will measure. Looking closely at the two most natural comparisons to what the Council means to Joystream, namely - what the executive branch of a government means to a state and what the board of directors means to a company, we see:
+The Councilors themselves are the only participants whose rewards are _directly_ impacted by the metrics we are, and will measure.
+
+XXX
+Looking closely at the two most natural comparisons to what the Council means to Joystream, namely - what the executive branch of a government means to a state and what the board of directors means to a company, we see:
 
 ## Governments
 Broken down to the core, the executive branch of a government;
+- Uses polls do get an understanding what the people want
+- Campaigns based on said input
+- XXX
 
+The Councils activities relevant to scoring will, generally, fall into one of the following categories:
+
+* Use the current scoring metrics to delegate tasks and allocate resources to the Leads
+  * This could be conveyed sufficiently in a good [Council Period Plan](#plan_score), but some extra communication is likely needed.
+* Follow up the working groups (leads), to ensure they are indeed pulling the same way
+* Vote on proposals, and generally be responsive
 
 ## `PLAN_SCORE`
 The Council Plan is the Councils formal way of instructing their Leads, and informing stakeholders what their focus will be for their Term.
@@ -36,6 +48,10 @@ The weights assigned to a WG in a particular term MAY be a good indication on ho
 ### Grading of the Plan Score
 Although the plan will get a grading, it won't be weighted very heavily, for the simple reason that it will carry enough "weight" on its own. If the Council ignores this, it's likely that the `<WG>_SCORE` will suffer as a result, and their rewards will follow.
 
+### Tips
+The below list should not be seen as requirements. It's simply suggestions based on theory or empirical observations made by Jsgenesis:
+- Consider assigning the "main" responsibility for different Working Groups etc to individual Council Members.
+
 
 ## `SUMMARY_SCORE`
 The summary serves multiple purposes:
@@ -48,25 +64,13 @@ The summary serves multiple purposes:
 No organization can thrive (or even survive) unless there's a "peaceful transition of power". A Councilor that ragequits if not re-elected can't expect another chance from Jsgenesis, and shouldn't from the community either. Ideally, the handover should be a conversation, but the very least one should require is to:
 - leave without "broken" budgets
 - lessons learned
--
 
 ### Basis of Grading
-Jsgenesis will not require, or grade, the individual working groups
-- a summary of all personnel changes
+Jsgenesis will not require, or grade, the individual working groups reports. The Council however, will need a variety of data for their reports.
 
-###
+It will also serve as the basis for grading some of metrics.
 
+### Feedback
+For new metrics especially, but also due to some specific events, Jsgenesis may have set the expectations to high, or chosen a bad way to measure something. In that case, the Council may do themselves (assuming some of them are elected again), the project or at the very least, future councilors a service by raising it.
 
-
-### Expected Data
-
-#### Working Groups
-For each group:
-- all hirings and firings, with references
-- spending data
-  - all budget events (proposals)
-  - all spending (including )
-  -
-- total spending
-- a recap of what happened
--
+It's also a great way to raise that documentation is poor (and where), that some parameters or constants in the chain is bad, etc.

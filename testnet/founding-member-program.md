@@ -65,7 +65,7 @@ When creating a membership on-chain, or when interacting with the onboarding pro
 
 ## Dashboard
 
-There is a dynamic dashboard which holds up to date information on the state of the program and each participant, found [here](http://dashboard.org).
+There is a dynamic dashboard which holds up to date information on the state of the program and each participant, found [here](https://joystream.retool.com/embedded/public/9478bcc0-f6d6-4f74-bd0a-0637535e75b1).
 
 ## History
 
