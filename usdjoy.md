@@ -4,11 +4,15 @@ description: Our mainnet asset.
 
 # 🚀 $JOY
 
-## &#x20;:flag\_us: US persons are not eligible for $JOY :flag\_us:
+## :flag\_us: US persons are not eligible for $JOY :flag\_us:
 
 ## Introduction
 
 This is the native asset of the Joystream mainnet blockchain when it is launched Q2 2022, the only way to obtain this token at this time is to participate in our [founding-member-program.md](testnet/founding-member-program.md "mention") (FMP).
+
+## $tJOY is not $JOY!
+
+Importantly $tJOY balances have no relationship to mainnet $JOY balances, there will be no conversion of any kind. It is only _earning $tJOY_ that an translate to $JOY, hene, there is no purpose in holding or otherwise purchasing/obtaining $JOY. If it's not earned in one of the described roles and ways in [testnet-rewards.md](testnet/testnet-rewards.md "mention"), then it has no relevance to mainnet.
 
 ## Valuation
 
