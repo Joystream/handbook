@@ -10,7 +10,7 @@ This is the native asset of the testnet, it is minted by the testnet blockchain 
 
 ## Value
 
-Jsgenesis had linked the total supply of tJOYs to a corresponding pool of fiat currency (USD) held by the company. All testnet participants can redeem their tJOY for USD at any time. Every council period, some amount of $USD is added to the pool in order to roughly maintain the exchange rate of $tJOY, despite continuous issuance (i.e. dilution) used to fund on-chain expenses, such as validation, rewards, etc. This [dashboard](http://www.joystrem) has up to date information on $tJOY stats.
+Jsgenesis had linked the total supply of tJOYs to a corresponding pool of fiat currency (USD) held by the company. All testnet participants can redeem their tJOY for USD at any time. Every council period, some amount of $USD is added to the pool in order to roughly maintain the exchange rate of $tJOY, despite continuous issuance (i.e. dilution) used to fund on-chain expenses, such as validation, rewards, etc. A dashboard showing up to date information on $tJOY stats, will be published soon(tm).
 
 ## Live Dashboard
 
@@ -26,10 +26,10 @@ The easiest way to get your first $tJOY is to either
 
 ## $tJOY is not $JOY!
 
-Importantly $tJOY balances have no relationship to mainnet $JOY balances, there will be no conversion of any kind. It is only _earning $tJOY_ that an translate to $JOY, hene, there is no purpose in holding or otherwise purchasing/obtaining $JOY. If it's not earned in one of the described roles and ways in [testnet-rewards.md](testnet-rewards.md "mention"), then it has no relevance to mainnet.
+Importantly $tJOY balances have no relationship to mainnet $JOY balances, there will be no conversion of any kind.
 
 ## Cashout $tJOY to $USD
 
-The $tJOY earned on testnet can be converted into USD, paid out in the crypto currency BCH, with Jsgenesis at an exchange rate which does change, but Jsgenesis attempts to keep quite stable. Learn more about this here. The reason we allow cashing out $tJOY is to allow people to cover some costs of participating in the tesnets, something which does require some time and occasionally some resources.
-
-Checkout this tutorial [broken-reference](broken-reference/ "mention") for how to do it.
+The $tJOY earned on testnet can be converted into USD, paid out in the crypto currency BCH, with Jsgenesis at an exchange rate which does change, but Jsgenesis attempts to keep quite stable. Learn more about this here. The reason we allow cashing out $tJOY is to allow people to cover some costs of participating in the tesnets, something which does require some time and occasionally some resources. \
+\
+This can be done [here](https://www.joystream.org/cashout).

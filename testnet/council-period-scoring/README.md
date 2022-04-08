@@ -39,26 +39,49 @@ There needs to be a way to measure how well the system is operating overall, as 
 {% endcontent-ref %}
 
 ## Previous Scoring Rounds
-All metrics and results for previous scoring rounds can be found [here](/testnet/council-period-scoring/old-scoring-periods/README.md).
+
+Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee-7d4d-4437-b5f6-f59c8cb17ff6) where you can look up the results for individuals per scoring period, and overall status.
 
 ## Council Period Parameters
-| Name                  | Value           |
-| --------------------- | --------------- |
-| `JOY_BUDGET`          | 1000000 (0.1%)  |
-| `REFERRER_JOY`        | TBD             |
-| `REFERREE_JOY`        | TBD             |
-| `tJOY_BUDGET`         | 80,000,000      |
-| `USD_SUBSIDY`         | USD 2000        |
-| `CAP`                 | TBD             |
-| `COUNCIL_tJOY_REWARD` | TBD             |
 
+| Name                  | Value          |
+| --------------------- | -------------- |
+| `JOY_BUDGET`          | 1000000 (0.1%) |
+| `REFERRER_JOY`        | TBD            |
+| `REFERREE_JOY`        | TBD            |
+| `tJOY_BUDGET`         | 80,000,000     |
+| `USD_SUBSIDY`         | USD 2000       |
+| `CAP`                 | TBD            |
+| `COUNCIL_tJOY_REWARD` | TBD            |
+
+## Summary Report and Plan Deadlines
+
+
+
+For the system to work well, there is a need for a feedback-loop, between
+
+* the councils [#council-period-summary](./#council-period-summary "mention") and the working groups [#working-group-summary](general-working-group-score.md#working-group-summary "mention") are important for Jsgenesis to;
+* publish [#council-period-parameters](./#council-period-parameters "mention") (for the next term/scoring period), which are needed for;
+* the new councils [#council-period-plan](./#council-period-plan "mention") and working groups [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"). ****&#x20;
+
+For this to be the case, strict deadlines are required. See [#council-period-cadence](../testnet-rewards.md#council-period-cadence "mention") for definitions.
+
+1. No later than 12 hours after the start of the _first_ Revealing stage following the election that set the current council:
+   * the council delivers a **temporary** council period summary report
+   * all working groups delivers a **temporary** working group summary report
+     * based on information and data valid as of the start of the _first_ Revealing stage following the election that set the current council.
+2. No later than 12 hours after the a new council is set:
+   * the previous council delivers the **final** council period summary report
+   * all working groups delivers a **final** working group summary report
+     * based on information and data valid as of the block that set a new council
+3. No later than 6 hours after a new council is elected, Jsgenesis announces the Council Period Parameters, and notifies this in the `#council` channel on [Discord](https://discord.gg/DE9UN3YpRP).
+4. No later than 24 hours after a new council is set:
+   * the council delivers the council period plan
+   * all working groups delivers working group period plan
 
 ## Dashboard
 
-Here is a live [dashboard](http://joystream.org) which holds key information from the current council period.
-
-(Both numbers revised upwards, with the addition of a `MARTETING_SCORE` & `GENERAL_WG_SCORE` )
-
+TODO
 
 ## Knowledge Bases <a href="#group-knowledge-base" id="group-knowledge-base"></a>
 
@@ -70,19 +93,18 @@ The council and each working group must maintain its own Notion board where a bo
 Council Knowledge Base
 {% endembed %}
 
-## Total $tJOY Spending
+## Total tJOY Spending
 
-The total $tJOY spending over a given council period is something Jsgenesis attempts to directly constrain through its policy parameter `tJOY_BUDGET` , and it the sum of the following non-overlapping categories of flows during the blocks of a council period
+The total tJOY spending over a given council period is something Jsgenesis attempts to directly constrain through its policy parameter `tJOY_BUDGET` , and it the sum of the following non-overlapping categories of flows during the blocks of a council period
 
-* Any increase in $tJOY that any validator can cashout, but currently has not.
-* Any $tJOY that has actually been cashed out by validators.
-* Any $tJOY actually cashed out by any council member, lead or worker, so not counting missed payments.
-* Any $tJOY for spending proposals, except spending to finance on-demand bounties approval by [#human-resources](../../system/working-groups/#human-resources "mention") .
-* Any $tJOY approved for bounty work.
+* Any increase in tJOY that any validator can cashout, but currently has not.
+* Any tJOY that has actually been cashed out by validators.
+* Any tJOY actually awarded to any council member, lead or worker.
+* Any tJOY "owed" to a council member, lead or worker, IF said tJOY is in fact paid out in the NEXT reward period (for the group).
+* Any tJOY for spending proposals, except spending to finance on-demand bounties approval by [#human-resources](../../system/working-groups/#human-resources "mention") .
+* Any tJOY approved for bounty work.
 
-**Note:** The last two will be updated once the bounty module is included in Pioneer.
-
-**Question:** how easy is it for the council to actually (a) constrain and (b) monitor these flows for a given council period? At least before Pioneer 2 financial section.
+**Note** that it's not trivial for the Council to keep track of these payments flows themselves. We advise them to pay close attention to the status of missed payments at the start of each term, in addition to "general" budget overview.
 
 ## Council Period Summary
 
@@ -94,16 +116,19 @@ The total $tJOY spending over a given council period is something Jsgenesis atte
 ### Scope
 
 * Accounting of how much was spent on what.
-* Actual hirings done.
+* Actual hires made.
 * Actual firings done.
 * Spending proposals passed.
-* Changes made to the corresponding [Broken link](broken-reference "mention") .
+* Changes made to the notion board.
 * A summary on how well the network as a whole performed, and what problems occurred.
 * Recommendations for what should be focused on in next council period in order to make the network more effective.
+* Feedback on the Council Period Parameters during their term.
 
 ### Submission
 
 The report itself must be written as a markdown document in English, in the forum category `Testnet>Council>Summaries` , as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the report on the forum.
+
+If there is a need to link to extra information, statistics, etc. these should be in the notion board.
 
 ## Council Period Plan
 
@@ -120,6 +145,8 @@ Give Jsgenesis visibility into the priorities of the council, and also serve as 
 
 The plan itself must be written as a markdown document in English, in the forum category `Testnet>Council>Plans` , as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the plan on the forum.
 
+If there is a need to link to extra information, statistics, etc. these should be in the notion board.
+
 ## Lead Opportunities
 
 There must be made space for people to try to participate as leads for working group, even to the extent that other more experienced - but proficient leads, have to pause their participation. It is up to the council to determine the cheapest way to accommodate newcomers without undermining the operations of the working group. Not only must the space be allocated and reserved for newcomers, but there must be effective collaboration with the [human-resources.md](../../system/human-resources.md "mention") working group to actually identify potential applicants and encourage them to apply to these opportunities.
@@ -127,11 +154,8 @@ There must be made space for people to try to participate as leads for working g
 ## Score
 
 ### Overview
-**Note:**
-See [Deployment Score](#deployment-score) for how the deployment incentives plays in this first term.
 
-
-At the beginning of each council  [#jsgenesis](../../glossary.md#jsgenesis "mention") staff will state a set of explicit metrics that will apply to the upcoming council period. At the end of each council period,  [#jsgenesis](../../glossary.md#jsgenesis "mention") staff will determine a final _network performance score_ for the council which will be in the range \[0,1]. This score is used to determine the [usdtjoy.md](../usdtjoy.md "mention") reward and [#founding-member-points](../founding-member-program.md#founding-member-points "mention") for the council members, as described above.
+At the beginning of each council [#jsgenesis](../../glossary.md#jsgenesis "mention") staff will state a set of explicit metrics that will apply to the upcoming council period. At the end of each council period, [#jsgenesis](../../glossary.md#jsgenesis "mention") staff will determine a final _network performance score_ for the council which will be in the range \[0,1]. This score is used to determine the [usdtjoy.md](../usdtjoy.md "mention") reward and [#founding-member-points](../founding-member-program.md#founding-member-points "mention") for the council members, as described above.
 
 Specifically, the score is a weighted linear combination of scores _working group scores_, which themselves are in the range \[0,1], which is normalized by the weights, and lastly discounted by exponentially by the number of _catastrophic errors_ detected, that is
 
@@ -147,7 +171,7 @@ SUMMARY_SCORE*SU_W +
 PLAN_SCORE*P_W +
 LO_W*LEAD_OPPORTUNITIES_SCORE
 ]/((B_W + M_W + C_W + HR_W + S_W + D_W + SU_W + P_W + LO_W)*2^N)
-````
+```
 
 where
 
@@ -155,9 +179,9 @@ where
 * `MARKETER_SCORE` (`M_W`): computed with metric defined in [marketers-score.md](marketers-score.md "mention").
 * `CONTENT_SCORE`(`C_W`): computed with metric defined in [content-directory-score.md](content-directory-score.md "mention").
 * `HR_SCORE` (`HR_W`): computed with metric defined in [human-resources-score.md](human-resources-score.md "mention").
-* `STORAGE_SCORE` (`S_W`): computed with metric defined in [storage-providers-score.md](storage-providers-score.md "mention").&#x20;
-* `DISTRIBUTOR_SCORE` (`D_W`): computed with metric defined in [distributors-score.md](distributors-score.md "mention").&#x20;
-* `SUMMARY_SCORE` (`SU_W`):  is a score computed for the quality of the council summary, which will be in the range \[0, 1], and will emphasize things like
+* `STORAGE_SCORE` (`S_W`): computed with metric defined in [storage-providers-score.md](storage-providers-score.md "mention").
+* `DISTRIBUTOR_SCORE` (`D_W`): computed with metric defined in [distributors-score.md](distributors-score.md "mention").
+* `SUMMARY_SCORE` (`SU_W`): is a score computed for the quality of the council summary, which will be in the range \[0, 1], and will emphasize things like
   * Clarity of communication and organization.
   * Appropriate scope.
   * Accuracy of facts and information.
@@ -166,11 +190,9 @@ where
   * Clarity of communication and organization.
   * Appropriate scope.
   * Accuracy of facts and information.
-* `LEAD_OPPORTUNITIES_SCORE` (`LO_W`) is `1/min(x_1,..., x_k)` , which will be in the range \[0, 1], where `x_i` is the total number of council period in which the `i`th lead has worked in this group.&#x20;
+* `LEAD_OPPORTUNITIES_SCORE` (`LO_W`) is `1/min(x_1,..., x_k)` , which will be in the range \[0, 1], where `x_i` is the total number of council period in which the `i`th lead has worked in this group.
 * `B_W,M_W,C_W,HR_W,SP_W,D_W,SU_W,P_W,LO_W` : are the weights from the table below.
 * `N` : The number of catastrophic error instances which occurred, as defined below.
-
-
 
 ### Weights
 
@@ -178,8 +200,8 @@ The current weights are:
 
 <table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>5</td></tr><tr><td><code>M_W</code></td><td>1</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>HR_W</code></td><td>3</td></tr><tr><td><code>S_W</code></td><td>5</td></tr><tr><td><code>D_W</code></td><td>6</td></tr><tr><td><code>SU_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>0</td></tr></tbody></table>
 
-
 Which Means:
+
 ```
 NETWORK_PERFORMANCE_SCORE = [
 BUILDER_SCORE*B_W +
@@ -196,17 +218,14 @@ CONTENT_DEPLOYMENT_SCORE*C_D_W +
 DISTRIBUTOR_DEPLOYMENT_SCORE*D_D_W +
 FORUM_DEPLOYMENT_SCORE*F_D_W +
 ]/((B_W + M_W + C_W + HR_W + S_W + D_W + SU_W + P_W + LO_W + S_D_W + C_D_W + D_D_W + F_D_W)*2^N)
-```
-Which means:
-```
-TOTAL_COUNCIL_tJOY_REWARD = 0.4 * (tJOY_BUDGET + UNSPENT_tJOY_BUDGET) * NETWORK_PERFORMANCE_SCORE^2
+
 ```
 
-### Catastrophic Errors&#x20;
+### Catastrophic Errors
 
 #### **No valid plan**
 
-A valid council period plan was not submitted by 24 hours after the last election was completed, as specified above.&#x20;
+A valid council period plan was not submitted by 24 hours after the last election was completed, as specified above.
 
 **NA** for the initial term
 
@@ -224,11 +243,19 @@ A runtime upgrade, not proposed by [#official-jsgenesis-membership](../../jsgene
 
 #### **Total $tJOY exceeds tJOY\_BUDGET**
 
-Total spending, as defined in [#total-usdtjoy-spending](./#total-usdtjoy-spending "mention"), exceeded `tJOY_BUDGET`&#x20;
+Total spending, as defined in [#total-usdtjoy-spending](./#total-usdtjoy-spending "mention"), exceeded `tJOY_BUDGET`
 
 #### **Block time too low**
 
 The average time between blocks was greater than `10s` for more than a 2 hour interval.
+
+#### **Member faucet empty**
+
+The membership faucet requires both that the Membership working group budget has sufficient tJOY to pay the `membershipPrice` and that the Lead has sufficient invitations. If at any point during the council term, the faucet capacity is less than 5 new members, that counts as effectively empty.
+
+#### On chain Budget and Opening proposals without JOY equivalent
+
+Any approved proposals that deals with a working group budget (denominated in `tJOY`), or the opening for a Lead role (reward denominated in `tJOY`), must also contain a reference to the `JOY` value. This is a key factor in increasing awareness of the value of incentives, and must be respected as such.
 
 ## FAQ
 
