@@ -14,19 +14,19 @@ Jsgenesis had linked the total supply of tJOYs to a corresponding pool of fiat c
 
 ## Live Dashboard
 
-[https://www.joystream.org/token/](https://www.joystream.org/token/)
+\<Ben add dashboard>
 
 ## Acquiring $tJOY
 
 The easiest way to get your first $tJOY is to either
 
-1. Get in touch with the [broken-reference](broken-reference/ "mention") on Discord, they are present 24/7: [#feeling-lost](../#feeling-lost "mention")
-2. Try to create a membership in [broken-reference](broken-reference/ "mention"), where the faucet will give you some free initial $tJOY. (Only after `Olympia`)
-3. Try to create a channel in [broken-reference](broken-reference/ "mention"), where the faucet will give you some free initial $tJOY.
+1. Get in touch with the Integrators on Discord, they are present 24/7: [#feeling-lost](../#feeling-lost "mention")
+2. Try to create a membership in [Pioneer](http://dao.joystream.org), where the faucet will give you some free initial $tJOY.
+3. Try to create a channel in [Atlas](http://play.joystream.org), where the faucet will give you some free initial $tJOY.
 
 ## $tJOY is not $JOY!
 
-Importantly $tJOY balances have no relationship to mainnet $JOY balances, there will be no conversion of any kind.
+Importantly $tJOY balances have no relationship to mainnet $JOY balances, there will be no conversion of any kind. It is only _earning $tJOY_ that an translate to $JOY, hene, there is no purpose in holding or otherwise purchasing/obtaining $JOY. If it's not earned in one of the described roles and ways in [testnet-rewards.md](testnet-rewards.md "mention"), then it has no relevance to mainnet.
 
 ## Cashout $tJOY to $USD
 
