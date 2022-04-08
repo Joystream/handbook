@@ -44,15 +44,15 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-| Name                  | Value          |
-| --------------------- | -------------- |
-| `JOY_BUDGET`          | 1000000 (0.1%) |
-| `REFERRER_JOY`        | TBD            |
-| `REFERREE_JOY`        | TBD            |
-| `tJOY_BUDGET`         | 80,000,000     |
-| `USD_SUBSIDY`         | USD 2000       |
-| `CAP`                 | TBD            |
-| `COUNCIL_tJOY_REWARD` | TBD            |
+| Name                  | Value                         |
+| --------------------- | ----------------------------- |
+| `JOY_BUDGET`          | 1,000,000 (0.1% \~USD 60,000) |
+| `REFERRER_JOY`        | TBD                           |
+| `REFERREE_JOY`        | TBD                           |
+| `tJOY_BUDGET`         | 80,000,000                    |
+| `USD_SUBSIDY`         | USD 2000                      |
+| `CAP`                 | JOY 15,000 (\~USD 9,000)      |
+| `COUNCIL_tJOY_REWARD` | 10,000,000                    |
 
 ## Summary Report and Plan Deadlines
 
