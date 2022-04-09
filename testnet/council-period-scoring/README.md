@@ -44,15 +44,15 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-| Name                  | Value                         |
-| --------------------- | ----------------------------- |
-| `JOY_BUDGET`          | 1,000,000 (0.1% \~USD 60,000) |
-| `REFERRER_JOY`        | TBD                           |
-| `REFERREE_JOY`        | TBD                           |
-| `tJOY_BUDGET`         | 80,000,000                    |
-| `USD_SUBSIDY`         | USD 2000                      |
-| `CAP`                 | JOY 15,000 (\~USD 9,000)      |
-| `COUNCIL_tJOY_REWARD` | 10,000,000                    |
+| Name                  | Value                          |
+| --------------------- | ------------------------------ |
+| `JOY_BUDGET`          | 1,500,000 (0.15% \~USD 90,000) |
+| `REFERRER_JOY`        | 1000 (\~USD 60)                |
+| `REFERREE_JOY`        | 1000 (\~USD 60)                |
+| `tJOY_BUDGET`         | 90,000,000                     |
+| `USD_SUBSIDY`         | USD 2000                       |
+| `CAP`                 | JOY 15,000 (\~USD 9,000)       |
+| `COUNCIL_tJOY_REWARD` | 10,080,000                     |
 
 ## Summary Report and Plan Deadlines
 
@@ -162,25 +162,27 @@ Specifically, the score is a weighted linear combination of scores _working grou
 ```
 NETWORK_PERFORMANCE_SCORE = [
 BUILDER_SCORE*B_W +
-MARKETER_SCORE*M_W +
 CONTENT_SCORE*C_W +
-HR_SCORE*HR_W +
-STORAGE_SCORE*S_W +
 DISTRIBUTOR_SCORE*D_W +
+FORUM_SCORE*F_W +
+HR_SCORE*HR_W +
+MARKETER_SCORE*M_W +
+STORAGE_SCORE*S_W +
 SUMMARY_SCORE*SU_W +
 PLAN_SCORE*P_W +
 LO_W*LEAD_OPPORTUNITIES_SCORE
-]/((B_W + M_W + C_W + HR_W + S_W + D_W + SU_W + P_W + LO_W)*2^N)
+]/((B_W + C_W + D_W + F_W + HR_W + S_W + M_W + SU_W + P_W + LO_W)*2^N)
 ```
 
 where
 
-* `BUILDER_SCORE` (`B_W`): computed with metric defined in [builders-score.md](builders-score.md "mention").
-* `MARKETER_SCORE` (`M_W`): computed with metric defined in [marketers-score.md](marketers-score.md "mention").
-* `CONTENT_SCORE`(`C_W`): computed with metric defined in [content-directory-score.md](content-directory-score.md "mention").
-* `HR_SCORE` (`HR_W`): computed with metric defined in [human-resources-score.md](human-resources-score.md "mention").
-* `STORAGE_SCORE` (`S_W`): computed with metric defined in [storage-providers-score.md](storage-providers-score.md "mention").
-* `DISTRIBUTOR_SCORE` (`D_W`): computed with metric defined in [distributors-score.md](distributors-score.md "mention").
+* `BUILDER_SCORE` (`B_W`): computed with metrics defined in [builders-score.md](builders-score.md "mention").
+* `CONTENT_SCORE`(`C_W`): computed with metrics defined in [content-directory-score.md](content-directory-score.md "mention").
+* `DISTRIBUTOR_SCORE` (`D_W`): computed with metrics defined in [forum-score.md](forum-score.md "mention") .
+* `FORUM_SCORE` (`F_W`): computed with metrics defined in [distributors-score.md](distributors-score.md "mention").
+* `HR_SCORE` (`HR_W`): computed with metrics defined in [human-resources-score.md](human-resources-score.md "mention").
+* `MARKETER_SCORE` (`M_W`): computed with metrics defined in [marketers-score.md](marketers-score.md "mention").
+* `STORAGE_SCORE` (`S_W`): computed with metrics defined in [storage-providers-score.md](storage-providers-score.md "mention").
 * `SUMMARY_SCORE` (`SU_W`): is a score computed for the quality of the council summary, which will be in the range \[0, 1], and will emphasize things like
   * Clarity of communication and organization.
   * Appropriate scope.
@@ -191,14 +193,16 @@ where
   * Appropriate scope.
   * Accuracy of facts and information.
 * `LEAD_OPPORTUNITIES_SCORE` (`LO_W`) is `1/min(x_1,..., x_k)` , which will be in the range \[0, 1], where `x_i` is the total number of council period in which the `i`th lead has worked in this group.
-* `B_W,M_W,C_W,HR_W,SP_W,D_W,SU_W,P_W,LO_W` : are the weights from the table below.
+* `*_W` : are the weights from the table below.
 * `N` : The number of catastrophic error instances which occurred, as defined below.
 
 ### Weights
 
 The current weights are:
 
-<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>5</td></tr><tr><td><code>M_W</code></td><td>1</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>HR_W</code></td><td>3</td></tr><tr><td><code>S_W</code></td><td>5</td></tr><tr><td><code>D_W</code></td><td>6</td></tr><tr><td><code>SU_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>0</td></tr></tbody></table>
+<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>4</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>D_W</code></td><td>5</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>4</td></tr><tr><td><code>M_W</code></td><td>null</td></tr><tr><td><code>S_W</code></td><td>5</td></tr><tr><td><code>SUM_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>1</td></tr></tbody></table>
+
+Jsgenesis reserves the right to add 1 point to the `M_W` assuming a scope is agreed.
 
 Which Means:
 
@@ -212,12 +216,8 @@ STORAGE_SCORE*S_W +
 DISTRIBUTOR_SCORE*D_W +
 SUMMARY_SCORE*S2_W +
 PLAN_SCORE*P_W +
-LO_W*LEAD_OPPORTUNITIES_SCORE
-STORAGE_DEPLOYMENT_SCORE*S_D_W +
-CONTENT_DEPLOYMENT_SCORE*C_D_W +
-DISTRIBUTOR_DEPLOYMENT_SCORE*D_D_W +
-FORUM_DEPLOYMENT_SCORE*F_D_W +
-]/((B_W + M_W + C_W + HR_W + S_W + D_W + SU_W + P_W + LO_W + S_D_W + C_D_W + D_D_W + F_D_W)*2^N)
+LEAD_OPPORTUNITIES_SCORE*LO_W
+]/((B_W + M_W + C_W + HR_W + S_W + D_W + SUM_W + P_W + LO_W)*2^N)
 
 ```
 
@@ -226,8 +226,6 @@ FORUM_DEPLOYMENT_SCORE*F_D_W +
 #### **No valid plan**
 
 A valid council period plan was not submitted by 24 hours after the last election was completed, as specified above.
-
-**NA** for the initial term
 
 #### **No valid summary**
 

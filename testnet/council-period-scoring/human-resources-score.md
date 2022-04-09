@@ -109,7 +109,7 @@ HR_SCORE = [0.1*GENERAL_WG_SCORE + 0.6*GREETING_SCORE + 0.3*BOUNTY_GENERATION_SC
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`10%`**.
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
 
 ### `GREETING_SCORE`
 

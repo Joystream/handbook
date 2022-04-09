@@ -8,7 +8,7 @@ description: Metrics used to compute score for builders working group.
 
 The operations working group is unlike other working groups, in that they are only really being measured based on the quality of their output, as judged by Jsgenesis.
 
-The working group will generally focus on developing tools and enhancing existing applications (Pioneer, Atlas, CLI etc.) and the runtime which come together to make the Joystream platform as a whole.  Once the network has stabilized, a specific label will be assigned to issues in the various repos under the Joystream organization, each of which will include points to serve as a way to assign weight to each issue. These points will then be used in terms of calculating the groups score.
+The working group will generally focus on developing tools and enhancing existing applications (Pioneer, Atlas, CLI etc.) and the runtime which come together to make the Joystream platform as a whole. Once the network has stabilized, a specific label will be assigned to issues in the various repos under the Joystream organization, each of which will include points to serve as a way to assign weight to each issue. These points will then be used in terms of calculating the groups score.
 
 Their contributions to these tools and the creation of new ones are represented as a development score, which attempts to measure the volume and quality of development based on the resources available to the working group.
 
@@ -21,89 +21,95 @@ Builders Notion knowledge base
 {% endembed %}
 
 ## Score
+
 The builders working group score is computed as follows
 
 ```
-BUILDER_SCORE = 0.1*GENERAL_WG_SCORE + 0.15*WG_WORKFLOW_SCORE + 0.4*TESTING_SCORE + 0.35*ISSUES_SCORE
+BUILDER_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + TESTING_SCORE + DEVELOPMENT_SCORE]/4
 ```
 
 where
 
 ### `GENERAL_WG_SCORE`
+
 Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`20%`**.
 
+### `REPORT_SCORE`
 
-### `WG_WORKFLOW_SCORE`
-*Objective:* `Test pioneer bugfixes`
+In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must include a section covering
 
-#### Instructions
-A github [project](https://github.com/orgs/Joystream/projects/55) has been created for the Builder group. At the time of writing, the workflow it's not fully finalized, it only contains issues from the [pioneer](https://github.com/Joystream/pioneer/), and it only contains testing issues. By Tuesday, some development issues will be added as well.
+#### Dev builder issues
 
-A critical part of the Builders WG is to maintain a good workflow. We will hold the Builders to a different (and higher) standard than we would for "other" community members or just your random contributor. This is both because we are preparing the community for the future, but also because we want you to be an asset for us. If Jsgenesis continuously needs to spend more time reviewing/triaging/assisting the Builders than we would just fixing the issue, that wouldn't be true.
+* How many dev issues, when and which (link) for each, in each project board was
+  * Assigned to a worker (which)
+  * Started by a worker
+  * Sent for internal review (to whom)
+  * Internal review approved
+  * Sent to Jsgenesis review
+    * what is the status/result of said review
+  * What was the approximate hours spend per issue (work, review, addressing review feedback)
+* What is the current status on all issues started, but not completed
 
-#### Scoring Calculations
-Unlike other Builder scores, the metrics below are graded subjectively.
-Let:
-`ACCESS_RIGHTS`:
-- The Lead will research what (organizational) permissions are needed to:
-  - assign, and be assigned, issues
-  - move issues around in the project kanban boards
-- The Lead decides on a subset of Workers that will be given these privileges, based on:
-  - trust and experience
-  - organizational skills (rather than dev/testing skills)
-  - github familiarity
-- The Lead pings Jsgenesis every time a change in the permissions are required, including the Lead themselves.
-`WORKFLOW_FEEDBACK`
-- Review the workflow in the Project, and provide feedback to JSG regarding:
-  - clarity
-  - viability
-  - reasonability
-`ENVIRONMENT_SCORE`
-- Devs need a good environment to test in, whether it's their own work or not. We have a staging network deployed for which the Builders can be given access. Ask Jsgenesis for access, and review further needs.
-- Create a guide for in the groups notion board, for how to set up their own testing environment, whether it be:
-  - Pioneer only, where they connect to a specific chain and query-node, whether it's the staging network, "Olympia" proper, or a dev-chain
-  - A complete dev-chain, with local instances of the joystream-node query-node, Pioneer, atlas, orion, argus and colossus.
+#### Testing builder issues
 
-Then:
-```
-WG_WORKFLOW_SCORE = (ACCESS_RIGHTS + WORKFLOW_FEEDBACK + ENVIRONMENT_SCORE)/3
-```
+* How many testing issues, when and which (link) for each, in each project board was
+  * Tested and approved
+  * Tested, but issues were found
+
+#### Bounty issues
+
+* How many bounty issues, when and which (link) for each, in each project board was
+  * A builder was assigned as oracle (which)
+  * What is the current status of the bounty
+
+#### Other
+
+* How well is the Joystream stack covered by the current group
+* How well are the current dev issues suitable to the current group, meaning
+  * Are there any "kinds" of issues the group wants more of, relative to the their stack
+  * Are there any "kinds" of issues the group wants fewer of, relative to the their stack
+* What part of the workflow is unclear, or could be improved (how, why)
+
+Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
 
 ### `TESTING_SCORE`
-*Objective:* `Test pioneer bugfixes`
+
+_Objective:_ `Test pioneer bugfixes`
 
 #### Instructions
+
 A github [project](https://github.com/orgs/Joystream/projects/55) has been created for the Builder group.
 
-There are two "todo" columns in the project. One of them is "To Test on Staging", that contains issues that should have been fixed by the corresponding PR linked to in the issue itself. The workflow is defined at the top of the column.
-
-See [`WG_WORKFLOW_SCORE`](#wg_workflow_score) for more information.
-
 #### Scoring Calculations
+
 Let:
-  - `ISSUES_TESTED_SCORE_i` be an issue that was tested, moved to one of the two "done" in the github project, and commented on in line with the workflow.
-  - `GRADING_i` be the grading of each of the issues, based on whether the information provided was sufficient or not (binary)
-  - `WORKFLOW_SCORE` be the overall grading of the workflow, representing whether or not it was followed
+
+* `ISSUES_TESTED_SCORE_i` be an issue that was tested, moved to one of the two "done" in the github project, and commented on in line with the workflow.
+* `GRADING_i` be the grading of each of the issues, based on whether the information provided was sufficient or not (binary)
+* `WORKFLOW_SCORE` be the overall grading of the workflow, representing whether or not it was followed
+
 ```
-  TESTING_SCORE = PIONEER_TEST_SCORE*WORKFLOW_SCORE = [(13 - ISSUES_TESTED_SCORE_i*GRADING_i)/13]*WORKFLOW_SCORE
+  TESTING_SCORE = PIONEER_TEST_SCORE*WORKFLOW_SCORE = [(15 - ISSUES_TESTED_SCORE_i*GRADING_i)/15]*WORKFLOW_SCORE
 ```
 
 ### `DEVELOPMENT_SCORE`
-*Objective:* `Help building the platform`
+
+_Objective:_ `Help building the platform`
 
 #### Instructions
-A github [project](https://github.com/orgs/Joystream/projects/55) has been created for the Builder group.
 
-There are two "todo" columns in the project. One of them is "Community Backlog", and will be populated with issues by Tuesday. The workflow (will be updated) is defined at the top of the column.
+Two github projects has been created for the Builder group:
 
-See [`WG_WORKFLOW_SCORE`](#wg_workflow_score) for more information.
+1. [https://github.com/orgs/Joystream/projects/55](https://github.com/orgs/Joystream/projects/55)
+2. [https://github.com/orgs/Joystream/projects/56](https://github.com/orgs/Joystream/projects/56)
 
-These will be assigned an `ISSUE_VALUE`, represented by a number, meant to roughly equate to 1h of work for (and by) an experienced developer. Whenever a PR, made by someone in the Builders WG, is merged, points are earned for that scoring period.
+Whereas the first one is well populated, and with a fully fleshed out workflow, the latter is not.
 
-The relationship between the `ISSUE_VALUE` and `ISSUE_POINTS` will be added.
+How well the story points translates into score is not fully calibrated, and may be revised after the period is over. If so, it will only be upward. Not that only when a PR is _approved_ by Jsgenesis, will story points translate into points.
 
 #### Scoring Calculations
+
 ```
-  ISSUE_POINTS = Sigma(ISSUE_POINTS_i)
-  DEVELOPMENT_SCORE = (X-ISSUE_POINTS)/Y
+  ISSUE_POINTS = Sigma(STORY_POINTS_i)
+  DEVELOPMENT_SCORE = (10-ISSUE_POINTS)/5
 ```

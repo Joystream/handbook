@@ -4,7 +4,7 @@ description: Metrics used to compute score for content directory working group.
 
 # Content Directory Score
 
-## Overview
+Overview
 
 The Content Directory working group activities relevant to scoring can be understood exclusively in terms of the following three categories:
 
@@ -49,14 +49,34 @@ Content Directory Working Group Knowledge Base
 The Content Directory working group score is computed as follows
 
 ```
-CONTENT_SCORE = [0.1*GENERAL_WG_SCORE + 0.4*FEATURING_SCORE + 0.25*POLICY_SCORE + 0.25*WORKFLOW_SCORE]/(5*2^{N})
+CONTENT_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + FEATURING_SCORE + MODERATION_SCORE]/(4*2^{N})
 ```
 
 where
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with metricS defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`0%`**.
+Is computed with metrics defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
+
+### `REPORT_SCORE`
+
+In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the storage working group report must include a section with statistics covering
+
+* All channels and videos created.
+* All channels and videos deleted.
+* Amount of duplicate assets on chain, and what type they are (eg. video, channel cover, etc.)
+* All moderation actions taken by the group, for which channels/video and why.
+* All requests made to storage working group lead, related to moderation.
+* Any changes made to the moderation policy, and why.
+* Amount of videos hidden and censored.
+* All changes made to the featured content.
+* Categories created.
+* A chart (with raw data available for future use) that plots the changes in the values below over the council period, through snapshots at every 600 block:
+  * total playtime of videos available
+  * total videos and channels
+  * amount of members that own a channel
+
+Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
 
 ### `FEATURING_SCORE`
 
@@ -119,42 +139,26 @@ Let:
   FEATURING_SCORE = (CATEGORIES_SCORE + HERO_SCORE + LOGGING_SCORE)/3
 ```
 
-### `POLICY_SCORE`
+### `MODERATION_SCORE`
 
-_Objective:_ `Create a curation policy`
-
-#### Instructions
-
-Jsgenesis has published a new (limited) [curation policy](../content-policy.md) to use as the base, but that only covers the bare minimum. The Council and/or Content group should create two documents:
-
-1. one that targets users, so that a channel owner can know what to expect, how to rectify the situation, etc.
-2. one that targets curators, so that they know what to do in case `x` happens
-
-* create a flow chart diagram that displays the above visually
-
-Propose a moderation policy, if approved by the Council, add a (sticky) Forum thread about it, and add it to the [notion space](https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab).
+Content moderation is applied swiftly and appropriately.
 
 #### Scoring Calculations
 
-The `POLICY_SCORE` is graded subjectively.
+Let:
 
-### `WORKFLOW_SCORE`
+* `BLOCK_upload_i` be the blockheight of which a channel or video _i_, which should be moderated, is created.
+* `BLOCK_moderated_i` be the blockheight of which a channel or video _i_, is moderated.
+* `RULING_score_i` be the subjective score, set by Jsgenesis, whether the ruling _i_ made by the group was appropriate or not.
 
-_Objective:_ `Create a Content Curation workflow`
+Then:
 
-#### Instructions
+```
+MODERATION_SCORE = 
+Sum[RULING_score_i + (14400 -(BLOCK_moderated_i - BLOCK_upload_i)/14400)]/i
+```
 
-Closely related to the above, but not exactly the same. Curators can't just randomly look at videos popping up on the [player](play.joystream.org), and watch/review them independently of each other. Propose a workflow, if approved by the Council, add it to the [notion space](https://www.notion.so/joystream/Content-Directory-6e4b6d211b174526889464d263475cab). A good workflow could be built around a spreadsheet, or db, that keeps track of all channels, videos and dataObjects in the directory, and:
 
-* when they were last updated
-* who reviewed "it", and when (in case of new updates)
-* any remarks
-* any actions made
-* etc. Part of this should address who reviews what and how?
-
-#### Scoring Calculations
-
-The `WORKFLOW_SCORE` is graded subjectively.
 
 ### Catastrophic Errors;
 
