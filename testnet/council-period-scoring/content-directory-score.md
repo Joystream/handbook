@@ -60,7 +60,7 @@ Is computed with metrics defined in [general-working-group-score.md](general-wor
 
 ### `REPORT_SCORE`
 
-In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the storage working group report must include a section with statistics covering
+In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must include a section covering
 
 * All channels and videos created.
 * All channels and videos deleted.

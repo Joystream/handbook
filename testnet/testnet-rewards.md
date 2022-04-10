@@ -49,7 +49,9 @@ Read more in section [#refer-a-friend](founding-member-program.md#refer-a-friend
 
 ### Bounties
 
-Each bounty has an associated $tJOY budget, which is the maximum amount one may earn by completing is successfully. One may also end up earning less if the delivery is deemed partially complete in terms of scope or quality. There is also a $JOY reward associated with completing bounties, specifically, it is a share of the `JOY_BUDGET` for the council period in which work on the bounty sd (not the period where delivery was made!) which is equal to the share the $tJOY amount awarded makes up of the `tJOY_BUDGET` for the period the bounty started.
+Each bounty has an associated $tJOY budget, which is the maximum amount one may earn by completing is successfully. One may also end up earning less if the delivery is deemed partially complete in terms of scope or quality. There is also a $JOY reward associated with completing bounties, specifically, it is a share of the `JOY_BUDGET` for the council period in which the bounty was funded (not the period where delivery was made!) which is equal to the share the $tJOY amount awarded makes up of the `tJOY_BUDGET` for the period the bounty started.
+
+Only bounties created by the Human Resources working group will count towards the `JOY_BUDGET`. More information on this process can be found in the [#bounty-management](council-period-scoring/human-resources-score.md#bounty-management "mention") section of the [human-resources-score.md](council-period-scoring/human-resources-score.md "mention").
 
 ### Leads
 
