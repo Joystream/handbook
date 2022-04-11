@@ -14,7 +14,7 @@ You have to win a seat as part of the [#elections](testnet-faq.md#elections "men
 
 ### Does $tJOY Convert to $JOY?
 
-
+No, absolutely not, it never will.
 
 ### Should I hold $tJOY or cashout?
 
@@ -27,10 +27,6 @@ This testnet asset is convertible by cashing out to $USD with Jsgenesis, and the
 ### What is the value of one $tJOY in $JOY
 
 < answer this>
-
-### Does $tJOY Convert to $JOY?
-
-No, absolutely not, it never will.
 
 ## Founding Members
 
