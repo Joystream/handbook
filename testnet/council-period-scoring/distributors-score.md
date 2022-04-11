@@ -153,3 +153,11 @@ Then:
 #### **No available sources to fetch a data object from**
 
 A data object is not available from any distributor, despite being held be an available storage node
+
+
+
+### Need help understanding something?
+
+We know there are still lots of things that is unclear, and we want to address this. Async discord chats are not always the best way to communicate, so once a week, the lead of a group can reach out to `@blrhc#0162` and `@bwhm#6514` for a zoom call. Prepare a clear agenda, and propose a couple timeslots, as we won't always be available.
+
+Only workers in the group is invited, so we can keep focus on the problems, and keep a lower barrier for asking!

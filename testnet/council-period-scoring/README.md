@@ -44,15 +44,17 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-| Name                  | Value                          |
-| --------------------- | ------------------------------ |
-| `JOY_BUDGET`          | 1,500,000 (0.15% \~USD 90,000) |
-| `REFERRER_JOY`        | 1000 (\~USD 60)                |
-| `REFERREE_JOY`        | 1000 (\~USD 60)                |
-| `tJOY_BUDGET`         | 90,000,000                     |
-| `USD_SUBSIDY`         | USD 2000                       |
-| `CAP`                 | JOY 15,000 (\~USD 9,000)       |
-| `COUNCIL_tJOY_REWARD` | 10,080,000                     |
+_Valid through the current council scoring period, for the council elected at block `#244,800.`_
+
+| Name                  | Value                           |
+| --------------------- | ------------------------------- |
+| `JOY_BUDGET`          | 1,500,000 (0.15% \~USD 90,000)  |
+| `REFERRER_JOY`        | 1000 (\~USD 60)                 |
+| `REFERREE_JOY`        | 1000 (\~USD 60)                 |
+| `tJOY_BUDGET`         | 90,000,000                      |
+| `USD_SUBSIDY`         | USD 2000                        |
+| `CAP`                 | JOY 15,000 (\~USD 9,000)        |
+| `COUNCIL_tJOY_REWARD` | 2,016,000 (10,080,000 in total) |
 
 ## Summary Report and Plan Deadlines
 
@@ -147,6 +149,27 @@ The plan itself must be written as a markdown document in English, in the forum 
 
 If there is a need to link to extra information, statistics, etc. these should be in the notion board.
 
+## Council Handover Meeting
+
+Around the time a council election is over, a meeting between the council members that just finished their term, the newly elected council and Jsgenesis. Until further notice, the meeting will be closed off to only these participants, and mandatory in the sense that turnout impacts the score.
+
+### Motivation
+
+A handover meeting allows the new council to prepare for their [#council-period-plan](./#council-period-plan "mention") with assistance from both the previous council and Jsgenesis. The previous council will get immidiate feedback on their [#council-period-summary](./#council-period-summary "mention") and Jsgenesis will learn what the current pressure points are.
+
+### Agenda
+
+* Review the temporary summary, presented by the previous council, for the benefit of all parties, with an emphasis on lessons learned.
+* A look at the next [#council-period-parameters](./#council-period-parameters "mention"), and the impacts that may have.
+* A Q\&A session.
+* A quick run through of how the scoring works.
+
+A member of the new council takes notes, and quickly prepares a brief minutes of meeting to post on the forum or discord for feedback by the others. To avoid conflict and reduce the barrier to speak, the minutes must obey the "[Chatham House Rules](https://en.wikipedia.org/wiki/Chatham\_House\_Rule)".
+
+### Submission
+
+Once approved (informally, eg. no comments in discord unaddressed), the minutes are submitted in the forum category `Testnet>Council>Minutes`, as a thread which has the title which includes the two council period IDs.
+
 ## Lead Opportunities
 
 There must be made space for people to try to participate as leads for working group, even to the extent that other more experienced - but proficient leads, have to pause their participation. It is up to the council to determine the cheapest way to accommodate newcomers without undermining the operations of the working group. Not only must the space be allocated and reserved for newcomers, but there must be effective collaboration with the [human-resources.md](../../system/human-resources.md "mention") working group to actually identify potential applicants and encourage them to apply to these opportunities.
@@ -192,7 +215,11 @@ where
   * Clarity of communication and organization.
   * Appropriate scope.
   * Accuracy of facts and information.
-* `LEAD_OPPORTUNITIES_SCORE` (`LO_W`) is `1/min(x_1,..., x_k)` , which will be in the range \[0, 1], where `x_i` is the total number of council period in which the `i`th lead has worked in this group.
+* `HANDOVER_SCORE` (`P_W`): is a score in the range \[0, 1], computed based on three factors:
+  * Turnout of council members (n/m), for both meetings a single council should participate on
+  * The minutes of meeting, to be published for discussion within 30min of each call, and formalized within 2 days.
+* `LEAD_OPPORTUNITIES_SCORE` (`LO_W`) is `1`
+* `/min(x_1,..., x_k)` , which will be in the range \[0, 1], where `x_i` is the total number of council period in which the `i`th lead has worked in this group.
 * `*_W` : are the weights from the table below.
 * `N` : The number of catastrophic error instances which occurred, as defined below.
 
@@ -200,7 +227,7 @@ where
 
 The current weights are:
 
-<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>4</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>D_W</code></td><td>5</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>4</td></tr><tr><td><code>M_W</code></td><td>null</td></tr><tr><td><code>S_W</code></td><td>5</td></tr><tr><td><code>SUM_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>1</td></tr></tbody></table>
+<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>4</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>D_W</code></td><td>5</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>4</td></tr><tr><td><code>M_W</code></td><td>null</td></tr><tr><td><code>S_W</code></td><td>5</td></tr><tr><td><code>SUM_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>H_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>1</td></tr></tbody></table>
 
 Jsgenesis reserves the right to add 1 point to the `M_W` assuming a scope is agreed.
 
@@ -216,6 +243,7 @@ STORAGE_SCORE*S_W +
 DISTRIBUTOR_SCORE*D_W +
 SUMMARY_SCORE*S2_W +
 PLAN_SCORE*P_W +
+HANDOVER_SCORE*H_W +
 LEAD_OPPORTUNITIES_SCORE*LO_W
 ]/((B_W + M_W + C_W + HR_W + S_W + D_W + SUM_W + P_W + LO_W)*2^N)
 

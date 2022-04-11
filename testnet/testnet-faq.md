@@ -26,7 +26,16 @@ This testnet asset is convertible by cashing out to $USD with Jsgenesis, and the
 
 ### What is the value of one $tJOY in $JOY
 
-< answer this>
+This will fluctuate somewhat between each [council-period-scoring](council-period-scoring/ "mention") round.&#x20;
+
+If you are earning $tJOY for being part of a working group, or through bounties created by the [HR](council-period-scoring/human-resources-score.md) group, in _this_ scoring period, you can calculate the amount of $JOY you are earning from the formulae below, where:
+
+* &#x20;the current`tJOY_BUDGET` and `JOY_BUDGET` can be found in [#council-period-parameters](council-period-scoring/#council-period-parameters "mention")
+* `tJOY_EARNINGS` are the amount of `tJOY` you earned, or expect to earn during the period
+
+```
+JOY_EARNINGS = JOY_BUDGET * tJOY_EARNINGS / tJOY_BUDGET
+```
 
 ## Founding Members
 
@@ -66,5 +75,11 @@ Very much so, yes, please read the full ruleset below. Jsgenesis reserved the ri
 
 Our current best estimate is Q2 2022.
 
-##
+## Still need help?
+
+* If you are already in a working group, try asking the Lead first!
+* If you're new and want to get started, get in touch with the HR group on our [discord](https://discord.gg/vzr74ja6) by asking in the #start-here channel
+* If not, we _try_ to be available on [discord](https://discord.gg/vzr74ja6), try pinging `@blrhc#0162` and/or `@bwhm#6514`. On most weekdays, we strive for one of us to reply within an hour \*. On weekends, we check in at least twice a day.
+
+&#x20;\* inside reasonable hours (CET)
 

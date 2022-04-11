@@ -82,3 +82,11 @@ The `NOTIFICATION_SCORE` is set subjectively.
 #### **Violation of Content Policy**
 
 Although not strictly the same, the concepts in the content policy applies to the forum as well. Any post or thread fitting the above, left unmoderated for 12h.
+
+
+
+### Need help understanding something?
+
+We know there are still lots of things that is unclear, and we want to address this. Async discord chats are not always the best way to communicate, so once a week, the lead of a group can reach out to `@blrhc#0162` and `@bwhm#6514` for a zoom call. Prepare a clear agenda, and propose a couple timeslots, as we won't always be available.
+
+Only workers in the group is invited, so we can keep focus on the problems, and keep a lower barrier for asking!

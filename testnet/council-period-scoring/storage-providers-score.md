@@ -136,3 +136,13 @@ A confirmed data object can no longer be recovered from storage nodes, despite n
 #### Incorrect Reporting
 
 Whereas a failure to provide the storage specific report, or omission of certain values will simply cause a bad score, incorrect data will, if discovered, count as a catastrophic error.
+
+
+
+### Need help understanding something?
+
+### Need help understanding something?
+
+We know there are still lots of things that is unclear, and we want to address this. Async discord chats are not always the best way to communicate, so once a week, the lead of a group can reach out to `@blrhc#0162` and `@bwhm#6514` for a zoom call. Prepare a clear agenda, and propose a couple timeslots, as we won't always be available.
+
+Only workers in the group is invited, so we can keep focus on the problems, and keep a lower barrier for asking!

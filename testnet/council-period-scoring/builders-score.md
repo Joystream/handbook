@@ -113,3 +113,11 @@ How well the story points translates into score is not fully calibrated, and may
   ISSUE_POINTS = Sigma(STORY_POINTS_i)
   DEVELOPMENT_SCORE = (10-ISSUE_POINTS)/5
 ```
+
+
+
+### Need help understanding something?
+
+We know there are still lots of things that is unclear, and we want to address this. Async discord chats are not always the best way to communicate, so once a week, the lead of a group can reach out to `@blrhc#0162` and `@bwhm#6514` for a zoom call. Prepare a clear agenda, and propose a couple timeslots, as we won't always be available.
+
+Only workers in the group is invited, so we can keep focus on the problems, and keep a lower barrier for asking!
