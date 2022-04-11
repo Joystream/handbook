@@ -254,9 +254,3 @@ The membership faucet requires both that the Membership working group budget has
 #### On chain Budget and Opening proposals without JOY equivalent
 
 Any approved proposals that deals with a working group budget (denominated in `tJOY`), or the opening for a Lead role (reward denominated in `tJOY`), must also contain a reference to the `JOY` value. This is a key factor in increasing awareness of the value of incentives, and must be respected as such.
-
-## FAQ
-
-### How do I get on the council?
-
-You have to win a seat as part of the [#elections](./#elections "mention"), and this requires persuading people to vote for you, in you yourself do not have sufficient $tJOY to back your own candidacy. However, Jsgenesis will be looking to help a few promising newcomers each council, as described in [#jsgenesis-endorsement](./#jsgenesis-endorsement "mention").

@@ -20,6 +20,7 @@
   * [Marketers Score](testnet/council-period-scoring/marketers-score.md)
   * [Resources](testnet/council-period-scoring/resources.md)
 * [✋ Content Policy](testnet/content-policy.md)
+* [❓ Testnet FAQ](testnet/testnet-faq.md)
 
 ## system
 
@@ -67,4 +68,3 @@
 ***
 
 * [📔 Glossary](glossary.md)
-* [❓ FAQ](faq.md)

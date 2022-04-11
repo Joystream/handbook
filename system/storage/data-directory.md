@@ -69,7 +69,7 @@ A _storage bucket_ represents a commitment to hold some set of bags for long ter
 * `id` **:** a unique immutable non-negative integer identifying an individual storage bucket, is automatically assigned by the blockchain upon creation.
 * `operator_status`**:** status of bucket operator, is one of the following varieties
   * `missing`: when there is no operator.
-  * `invited`: with associated [Broken link](broken-reference "mention") id in storage working group, when the lead has invited the given worker to operate the bucket.
+  * `invited`: with associated [broken-reference](broken-reference/ "mention") id in storage working group, when the lead has invited the given worker to operate the bucket.
 * `accepting_new_bags`: whether this this bucket is an acceptable destination for additional bags.
 * `total_size_limit`: upper bound on cumulative size of all data objects in bucket.
 * `object_count_limit`: upper bound on cumulative number of all data objects in bucket.
@@ -83,8 +83,8 @@ A _distribution bucket_ represents a commitment to distribute a set of bags to e
 * `id` : a unique immutable non-negative integer identifying an individual distributor bucket, is automatically assigned by the blockchain upon creation.
 * `accepting_new_bags` : whether this bucket is an acceptable destination for additional bags.
 * `distributing`: whether assigned operators are servicing this bucket at the moment.
-* `pending_invitations`: set [Broken link](broken-reference "mention") ids from bandwidth working group for workers who have been invited and can join as operators.
-* `operators`: set [Broken link](broken-reference "mention") ids from bandwidth working group for workers currently acting as operators.
+* `pending_invitations`: set [broken-reference](broken-reference/ "mention") ids from bandwidth working group for workers who have been invited and can join as operators.
+* `operators`: set [broken-reference](broken-reference/ "mention") ids from bandwidth working group for workers currently acting as operators.
 * `assigned_bags`: the number of bags currently assigned to this bucket.
 
 ### Distribution Bucket Family
@@ -111,7 +111,7 @@ The _blacklist_ is a collection hashes, managed by the lead, which are not allow
 
 The following overview summarizes the main relationships between the primary concepts.
 
-![Entity Diagram](../../.gitbook/assets/storage\_and\_distribution.png)
+![Entity Diagram](<../../.gitbook/assets/storage\_and\_distribution (1).png>)
 
 ## Parameters
 
