@@ -69,6 +69,10 @@ Very much so, yes, please read the full ruleset below. Jsgenesis reserved the ri
 \
 **We will be conducting blind tests to ensure that there is no abuse.**
 
+### Can I get credit for work performed between Incentives 2.0 and Incentives 3.0?
+
+No, we do not have the resources to go back and evaluate testnet activities which took place during this period. We communicated clearly at the time that during this period no rewards would be in place for participants during those few months, and we will now be focusing exclusively on Incentives 3.0.
+
 ## **Mainnet**
 
 ### **Wen?**
