@@ -59,6 +59,7 @@
 * [🛠 Builders](system/builders/README.md)
   * [A Case Study: l1dev](system/builders/a-case-study-l1dev.md)
   * [Tutorial: X](system/builders/tutorial-x.md)
+* [🪐 Metaprotocols](system/metaprotocols.md)
 * [🚀 Marketers](system/marketers.md)
 * [🌉 Gateways](system/gateways.md)
 * [💸 Fees](system/fees.md)
