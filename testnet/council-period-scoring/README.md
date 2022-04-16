@@ -44,11 +44,11 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through the current council scoring period, for the council elected at block `#244,800.`_
+_Valid through the current council scoring period, for the council elected at block `#345,600.`_
 
 | Name                  | Value                           |
 | --------------------- | ------------------------------- |
-| `JOY_BUDGET`          | 1,500,000 (0.15% \~USD 90,000)  |
+| `JOY_BUDGET`          | 2,000,000 (0.2% \~USD 120,000)  |
 | `REFERRER_JOY`        | 1000 (\~USD 60)                 |
 | `REFERREE_JOY`        | 1000 (\~USD 60)                 |
 | `tJOY_BUDGET`         | 90,000,000                      |
