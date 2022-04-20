@@ -19,6 +19,7 @@
   * [Storage Providers Score](testnet/council-period-scoring/storage-providers-score.md)
   * [Marketers Score](testnet/council-period-scoring/marketers-score.md)
 * [✋ Content Policy](testnet/content-policy.md)
+* [📈 Dashboards](testnet/dashboards.md)
 * [❓ Testnet FAQ](testnet/testnet-faq.md)
 
 ## system
