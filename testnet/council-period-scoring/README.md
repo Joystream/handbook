@@ -44,7 +44,7 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through the current council scoring period, for the council elected at block `#345,600.`_
+_Valid through council scoring period number 4, for the council elected at block `#345,600.`_
 
 | Name                  | Value                           |
 | --------------------- | ------------------------------- |
@@ -56,9 +56,13 @@ _Valid through the current council scoring period, for the council elected at bl
 | `CAP`                 | JOY 15,000 (\~USD 9,000)        |
 | `COUNCIL_tJOY_REWARD` | 2,016,000 (10,080,000 in total) |
 
+_The Parameters for scoring period 5 will be made available on Monday 1800 CET, along with the updated metrics._&#x20;
+
+Although changes must be expected, the council should assume they will stay the same until the update is made.
+
+One change that can be accounted for already, is the fact that the Storage Providers and Distributors will receive an extra $tJOY subsidy, that will NOT count towards their $JOY earnings. This is done to account for the fact that workers (not Leads) in these roles have real operational costs, but their role doesn't require much time. The subsidy will be distributed at the time of grading, and will be shared equally across each worker in each group, adjusted by the number of blocks they were part of the group.
+
 ## Summary Report and Plan Deadlines
-
-
 
 For the system to work well, there is a need for a feedback-loop, between
 
@@ -77,9 +81,28 @@ For this to be the case, strict deadlines are required. See [#council-period-cad
    * all working groups delivers a **final** working group summary report
      * based on information and data valid as of the block that set a new council
 3. No later than 6 hours after a new council is elected, Jsgenesis announces the Council Period Parameters, and notifies this in the `#council` channel on [Discord](https://discord.gg/DE9UN3YpRP).
-4. No later than 24 hours after a new council is set:
-   * the council delivers the council period plan
-   * all working groups delivers working group period plan
+4.  No later than 24 hours after a new council is set:
+
+    * the council delivers the council period plan
+    * all working groups delivers working group period plan
+
+
+
+For council period **Council Scoring Round 5 (#**446,400-#547,200) the following deadlines will apply
+
+| Deliverable                                                                               | Responsible          | Deadline                             | Notes                            |
+| ----------------------------------------------------------------------------------------- | -------------------- | ------------------------------------ | -------------------------------- |
+| [#working-group-summary](general-working-group-score.md#working-group-summary "mention")  | Working Group Leads  | <p>#453,600<br>(24.04 ~1130 CET)</p> | Following the "old" ruleset      |
+| [#council-period-summary](./#council-period-summary "mention")                            | Council #4           | <p>#453,600<br>(24.04 ~1130 CET)</p> | Following the "old" ruleset      |
+| [#council-period-parameters](./#council-period-parameters "mention")                      | Jsgenesis            | <p>#471,600<br>(25.04 ~1800 CET)</p> | For Scoring Period #5            |
+| Council Period Scoring Results                                                            | Jsgenesis            | <p>#472,800<br>(25.04 ~2000 CET)</p> | For Scoring Period #4            |
+| [#council-period-plan](./#council-period-plan "mention")                                  | Council #5           | <p>#480,000<br>(26.04 ~0800 CET)</p> | Needs the two deliverables above |
+| [#working-group-summary](general-working-group-score.md#working-group-summary "mention")  | Working Group Leads  | <p>#554,400<br>(01.05 ~0900 CET)</p> |                                  |
+| [#council-period-summary](./#council-period-summary "mention")                            | Council #5           | <p>#558,000<br>(01.05 ~1200 CET)</p> |                                  |
+| Council Period Scoring Results                                                            | Jsgenesis            | <p>#572,400<br>(02.05 ~1700 CET)</p> | For Scoring Period #5            |
+| [#council-period-parameters](./#council-period-parameters "mention")                      | Jsgenesis            | <p>#572,400<br>(02.05 ~1700 CET)</p> | For Scoring Period #6            |
+
+
 
 ## Dashboard
 
@@ -169,6 +192,12 @@ A member of the new council takes notes, and quickly prepares a brief minutes of
 ### Submission
 
 Once approved (informally, eg. no comments in discord unaddressed), the minutes are submitted in the forum category `Testnet>Council>Minutes`, as a thread which has the title which includes the two council period IDs.
+
+## Council Daily Sync
+
+As for any organization, internal communication is key for performance. Every day between the handovers, the Council shall have a daily sync call, held in public on Discord. They are free to coordinate internally when these are held, with the exception of the first one that must be held after Jsgenesis publishes the new [#council-period-parameters](./#council-period-parameters "mention") and the scoring metrics for the period, and well before the deadline to release the [#council-period-plan](./#council-period-plan "mention"). See [#summary-report-and-plan-deadlines](./#summary-report-and-plan-deadlines "mention") for more information.
+
+During the [#council-handover-meeting](./#council-handover-meeting "mention") the Council shall agree on a specific times for these meetings. The minutes are submitted in the forum category `Testnet>Council>Minutes`, in a thread titled Council period ID.
 
 ## Lead Opportunities
 
