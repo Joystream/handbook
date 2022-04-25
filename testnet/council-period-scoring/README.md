@@ -44,7 +44,7 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 4, for the council elected at block `#345,600.`_
+_Valid through council scoring period number 5, for the council elected at block `#446,400.`_
 
 | Name                  | Value                            |
 | --------------------- | -------------------------------- |
