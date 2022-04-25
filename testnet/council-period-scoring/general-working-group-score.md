@@ -98,7 +98,7 @@ There must be made space for newcomers to try to participate in the working grou
 
 The general working groups score for a given group is computed as follows:
 
-`GENERAL_SCORE = [SUMMARY_SCORE + 0*PLAN_SCORE + 0*WORKER_OPPORTUNITIES_SCORE]/(3*2^{N+M})`
+`GENERAL_SCORE = [SUMMARY_SCORE + PLAN_SCORE + WORKER_OPPORTUNITIES_SCORE]/(3*2^{N+M})`
 
 where
 
