@@ -46,15 +46,17 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 _Valid through council scoring period number 4, for the council elected at block `#345,600.`_
 
-| Name                  | Value                           |
-| --------------------- | ------------------------------- |
-| `JOY_BUDGET`          | 2,000,000 (0.2% \~USD 120,000)  |
-| `REFERRER_JOY`        | 1000 (\~USD 60)                 |
-| `REFERREE_JOY`        | 1000 (\~USD 60)                 |
-| `tJOY_BUDGET`         | 90,000,000                      |
-| `USD_SUBSIDY`         | USD 2000                        |
-| `CAP`                 | JOY 15,000 (\~USD 9,000)        |
-| `COUNCIL_tJOY_REWARD` | 2,016,000 (10,080,000 in total) |
+| Name                  | Value                            |
+| --------------------- | -------------------------------- |
+| `JOY_BUDGET`          | 2,250,000 (0.225% \~USD 135,000) |
+| `REFERRER_JOY`        | 1000 (\~USD 60)                  |
+| `REFERREE_JOY`        | 1000 (\~USD 60)                  |
+| `tJOY_BUDGET`         | 80,000,000                       |
+| `USD_SUBSIDY`         | USD 2200 `*`                     |
+| `CAP`                 | JOY 15,000 (\~USD 9,000)         |
+| `COUNCIL_tJOY_REWARD` | 3,024,000 (15,120,000 in total)  |
+
+\`\*\` includes $100 subsidy for SPs, and $150 subsidy for distributors This means that JSG will mint $250 worth of tJOY and distribute across the workers, but these tJOY will not earn the recipients JOY.
 
 _The Parameters for scoring period 5 will be made available on Monday 1800 CET, along with the updated metrics._&#x20;
 
@@ -71,22 +73,6 @@ For the system to work well, there is a need for a feedback-loop, between
 * the new councils [#council-period-plan](./#council-period-plan "mention") and working groups [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"). ****&#x20;
 
 For this to be the case, strict deadlines are required. See [#council-period-cadence](../testnet-rewards.md#council-period-cadence "mention") for definitions.
-
-1. No later than 12 hours after the start of the _first_ Revealing stage following the election that set the current council:
-   * the council delivers a **temporary** council period summary report
-   * all working groups delivers a **temporary** working group summary report
-     * based on information and data valid as of the start of the _first_ Revealing stage following the election that set the current council.
-2. No later than 12 hours after the a new council is set:
-   * the previous council delivers the **final** council period summary report
-   * all working groups delivers a **final** working group summary report
-     * based on information and data valid as of the block that set a new council
-3. No later than 6 hours after a new council is elected, Jsgenesis announces the Council Period Parameters, and notifies this in the `#council` channel on [Discord](https://discord.gg/DE9UN3YpRP).
-4.  No later than 24 hours after a new council is set:
-
-    * the council delivers the council period plan
-    * all working groups delivers working group period plan
-
-
 
 For council period **Council Scoring Round 5 (#**446,400-#547,200) the following deadlines will apply
 
@@ -256,7 +242,7 @@ where
 
 The current weights are:
 
-<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>4</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>D_W</code></td><td>5</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>4</td></tr><tr><td><code>M_W</code></td><td>null</td></tr><tr><td><code>S_W</code></td><td>5</td></tr><tr><td><code>SUM_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>H_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>1</td></tr></tbody></table>
+<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>4</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>D_W</code></td><td>3</td></tr><tr><td><code>F_W</code></td><td>0</td></tr><tr><td><code>HR_W</code></td><td>4</td></tr><tr><td><code>M_W</code></td><td>null</td></tr><tr><td><code>S_W</code></td><td>3</td></tr><tr><td><code>SUM_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>H_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>1</td></tr></tbody></table>
 
 Jsgenesis reserves the right to add 1 point to the `M_W` assuming a scope is agreed.
 
@@ -265,17 +251,16 @@ Which Means:
 ```
 NETWORK_PERFORMANCE_SCORE = [
 BUILDER_SCORE*B_W +
-MARKETER_SCORE*M_W +
+DISTRIBUTOR_SCORE*D_W +
 CONTENT_SCORE*C_W +
 HR_SCORE*HR_W +
+MARKETER_SCORE*M_W +
 STORAGE_SCORE*S_W +
-DISTRIBUTOR_SCORE*D_W +
-SUMMARY_SCORE*S2_W +
+SUMMARY_SCORE*SUM_W +
 PLAN_SCORE*P_W +
-HANDOVER_SCORE*H_W +
+COUNCIL_MEETING_SCORE*CM_W +
 LEAD_OPPORTUNITIES_SCORE*LO_W
-]/((B_W + M_W + C_W + HR_W + S_W + D_W + SUM_W + P_W + LO_W)*2^N)
-
+]/((B_W + C_W + D_W + HR_W + M_W + S_W + SUM_W + P_W + CM_W + LO_W)*2^N)
 ```
 
 ### Catastrophic Errors

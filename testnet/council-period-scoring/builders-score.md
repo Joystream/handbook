@@ -84,37 +84,34 @@ A github [project](https://github.com/orgs/Joystream/projects/55) has been creat
 
 Let:
 
-* `ISSUES_TESTED_SCORE_i` be an issue that was tested, moved to one of the two "done" in the github project, and commented on in line with the workflow.
-* `GRADING_i` be the grading of each of the issues, based on whether the information provided was sufficient or not (binary)
-* `WORKFLOW_SCORE` be the overall grading of the workflow, representing whether or not it was followed
+* `ISSUES_TESTED` be the number of issues tested, regardless of the outcome of the test
+* If the feedback provided is lacking, or the workflow is not adhered to, the issue will not count.
 
 ```
-  TESTING_SCORE = PIONEER_TEST_SCORE*WORKFLOW_SCORE = [(15 - ISSUES_TESTED_SCORE_i*GRADING_i)/15]*WORKFLOW_SCORE
+TESTING_SCORE:
+  If ISSUES_TESTED >= 20:     1
+  If 5 < ISSUES_TESTED < 20:  1-((20-ISSUES_TESTED)/15)
+  If ISSUES_TESTED =< 5:      0
 ```
 
 ### `DEVELOPMENT_SCORE`
 
-_Objective:_ `Help building the platform`
-
 #### Instructions
 
-Two github projects has been created for the Builder group:
-
-1. [https://github.com/orgs/Joystream/projects/55](https://github.com/orgs/Joystream/projects/55)
-2. [https://github.com/orgs/Joystream/projects/56](https://github.com/orgs/Joystream/projects/56)
-
-Whereas the first one is well populated, and with a fully fleshed out workflow, the latter is not.
+Two github projects has been created for the Builder group, this metric applies to the pioneer project found [here](https://github.com/orgs/Joystream/projects/55).
 
 How well the story points translates into score is not fully calibrated, and may be revised after the period is over. If so, it will only be upward. Not that only when a PR is _approved_ by Jsgenesis, will story points translate into points.
 
 #### Scoring Calculations
 
-```
-  ISSUE_POINTS = Sigma(STORY_POINTS_i)
-  DEVELOPMENT_SCORE = (10-ISSUE_POINTS)/5
-```
+For each issue that gets merged during a scoring period, the amount of story points are summed up, and added below.
 
-
+```
+DEVELOPMENT_SCORE:
+  If STORY_POINTS >= 15:      1
+  If 5 < STORY_POINTS < 15:  1-((15-STORY_POINTS)/10)
+  If STORY_POINTS =< 5:      0
+```
 
 ### Need help understanding something?
 
