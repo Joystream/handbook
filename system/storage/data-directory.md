@@ -111,7 +111,7 @@ The _blacklist_ is a collection hashes, managed by the lead, which are not allow
 
 The following overview summarizes the main relationships between the primary concepts.
 
-![Entity Diagram](<../../.gitbook/assets/storage\_and\_distribution (1).png>)
+![Entity Diagram](../../.gitbook/assets/storage\_and\_distribution.png)
 
 ## Parameters
 

@@ -18,7 +18,7 @@ The HR working group activities relevant to scoring will generally fall into one
 
 New people will continuously be arriving in the Discord, both directly, and through a website chat widget installed on the Joystream website.
 
-`<add picture of Widgetbot on site>`
+![](<../../.gitbook/assets/Screenshot 2022-04-29 at 14.50.27.png>)
 
 All new persons should be
 
@@ -30,19 +30,17 @@ All new persons should be
 As soon as possible after being greeted, the objective of the HR worker is to do the following in the given order
 
 1. Capture the person in the CRM, so that they can be catalyzed later and the project captures relevant up to date information about who is arriving, and from where,
-2. Get the person to create a membership on-chain, with accurate referral information and metadata, and also some initial $tJOY to get started using the chain,
-   * This data must also be ado the person in the CRM
+2. Get the person to create a membership on-chain, with accurate referral information and metadata, and also some initial $tJOY to get started using the chain.
 3. Get the person into a specific activity, aligned with their skills and interests, and with the needs of the network, allowing them to earn $tJOY and $JOY. This is first achieved by developing an understanding of the person in terms of skills and interests, and the filtering the set of near term opportunities through this profile. The major opportunities are
-   1. Starting to work on an existing bounty, from the bounty template in the CRM, or assist them in creating a custom bounty.
+   1. Starting to work on an existing bounty, from the bounty template in the CRM, or assist them in creating a custom bounty (a new bounty specifically based on this persons skills and interests).
    2. Getting a role in a working group where there is soon space for newcomers.
    3. Running as a candidate for the council.
-   4. Creating a new bounty specifically based on this persons skills and interests.
 
 This onboarding should always be initiated right after the initial greeting stage, however, it may also be attempted as part of a catalyzing effort for a dormant person who never graduated into a substantive activity. The outcome of an attempt should be recorded in the CRM.
 
 ## Catalyzing
 
-Invariably, people will drop off at various level of progression before becoming founding members. Some may never even get started beyond setting up a membership. This could be for a variety of reasons. Since we are recording all interactions in th CRM, we have visibility into the history of correspondences between the HR group and a given person, and we can see the history of activities they have been involved in. This allows the HR group to check in with people as they stall and _catalyze_ them to continue their journey, as well as capture valuable information about why they stalled.
+Invariably, people will drop off at various level of progression before becoming founding members. Some may never even get started beyond setting up a membership. This could be for a variety of reasons. Since we are recording all interactions in the CRM, we have visibility into the history of correspondences between the HR group and a given person, and we can see the history of activities they have been involved in. This allows the HR group to check in with people as they stall and _catalyze_ them to continue their journey, as well as capture valuable information about why they stalled.
 
 ## Bounty Management
 
@@ -71,25 +69,22 @@ It is the responsibility of each worker acting as the oracle for a bounty to che
 
 At some point, the oracle must decide the outcome of the bounty during the judgment period. This really boils down to determining how much, if any, part of the initial $tJOY bounty budget the contributor should earn, which also implies how much $JOY they will earn.
 
-### Reporting
-
-The [#working-group-summary](general-working-group-score.md#working-group-summary "mention") for the HR working group must include information about the f
-
 ## CRM
 
-The Jsgenesis Customer Relationship Management (CRM) system is a datawarehouse operated by Jsgenesis as a central source of truth for the state and histroy of the Joystream testnets, it will go away on mainnet. It holds information about
+The Jsgenesis Customer Relationship Management (CRM) system is a data warehouse operated by Jsgenesis as a central source of truth for the state and histroy of the Joystream testnets, it will go away on mainnet. It holds information about
 
 * council periods
 * founding members
 * community members
 * $JOY allocations
-* bounties
+* bounty templates
 
 and much more. The HR working group has some limited ability to manage the information here, as needed or their role. Here are the official forms for data entry and updating in the CRM relevant to the activities of this group:
 
-* **Adding**/**Updating a person to the CRM:** `add link`
-* **Registering an interaction:** `add link`
-* **Add/Update bounty template:** `add link`
+* [Adding a person to the CRM](https://joystream.retool.com/embedded/public/5270b412-c53f-4620-886e-71c55a111905)
+* [Updating a person in the CRM](https://joystream.retool.com/embedded/public/1fe5d08c-69ea-4c9c-844c-4a4212a7aa29)
+* [Registering an interaction](https://joystream.retool.com/embedded/public/90e0966d-e253-451b-b1b7-0c27e51ebfff)
+* [Update bounty template status](https://joystream.retool.com/embedded/public/24a94b16-27d6-4efb-89ce-ac9fa58d06bd)
 
 ## Knowledge Base
 
@@ -102,7 +97,7 @@ Human Resources Working Group Knowledge Base
 The HR working group score is computed as follows
 
 ```
-HR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + GREETING_SCORE + BOUNTY_GENERATION_SCORE]/(4^{N})
+HR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + 2(RESPONSE_TIME_SCORE) + PERSON_LOGGING_SCORE + INTERACTION_LOGGING_SCORE + BOUNTY_SCORE]/(7^{N})
 ```
 
 ### `GENERAL_WG_SCORE`
@@ -113,7 +108,7 @@ Is computed with metric defined in [general-working-group-score.md](general-work
 
 In addition to what is outlined in the [#working-group-summary](general-working-group-score.md#working-group-summary "mention"), the working group report must include a section covering
 
-* How many new people reached out to the group in discor, and how many of them were captured in the CRM.
+* How many new people reached out to the group in discord, and how many of them were captured in the CRM.
 * What, and how many, bounties were funded by the group during the council period, and for each bounty
   * Which bounty template id was used for which bounty on-chain id&#x20;
   * Which HR worker created, assigned and funded it
@@ -124,72 +119,50 @@ In addition to what is outlined in the [#working-group-summary](general-working-
   * What was the result, meaning how much was paid (if any), to whom and why
   * How much was given to the oracle for providing the judgement
   * A timeline of all steps
-* What bounties failed during the judgement period because the oracle did not submit a valid judgement.
+* Which bounties failed during the judgement period because the oracle did not submit a valid judgement.
 * An overview of which bounty templates, and in general types of bounties, are the most and least sought after, and what types of bounty templates more options are needed.
 * Recommendations for "graduates" that should be considered for a role and a specific working group, or handed a spot the council.
 * What template bounties should have their budgets adjusted, and why.
 
 Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
 
-### `GREETING_SCORE`
+### `RESPONSE_TIME_SCORE`
 
-_Objective:_ `Ensuring WG is responsive and helpful on Discord, and are capturing interactions in the CRM.`
+_Objective:_ `Ensuring WG is responsive on Discord in a timely manner.`
 
-#### Instructions
+Between 6am and 11pm CET
 
-* Availability to respond to newly arriving participants is an essential element of participation within the HR Working Group.
-  * Working group lead directs the creation of a table within Notion or an alternative platform to show the availability of the WG participants for the week
-  * Checks of CRM form for reporting availability reflect accurately the same information.
-  * Pings in #start-here channel get a response from one of the available integrators in a timely fashion.
-  * New members are directed to create new memberships as a first step in the onboarding, and to allow them to be tracked in the CRM (before that, store the data somewhere else)
-  * Conduct a quick round of questions, in order to get a flavor for what they would like to do on/for the platform
+Each instance of a new person joining the Discord and sending a message in the #start-here channel will be given points as follows:
 
-#### Scoring Calculations
+* An initial response in under two minutes yields 1 point
+* An initial response between two minutes and five minutes yields 0.8 point
+* An initial response between five minutes and ten minutes yields 0.5 points
+* An initial response after ten minutes has passed yields zero points
+* An initial response or no response after more than 60 minutes yields -1 point.
 
-Let:
+`RESPONSE_TIME_SCORE* =` \
+`SUM(RESPONSE TIME POINTS)/TOTAL NEW JOINERS` \
+`*MUST BE GREATER THAN OR EQUAL TO 0`
 
-* `delta_t_a` be the average difference in timestamp \[min] from a user posts in the #start-here channel, until a greeter responds
-  * if the user posts between midnight and noon (CET), it counts as being posted at noon
-* `ONBOARDING_SCORE` be the fraction of users posting in #start-here that gets an entry in the CRM
+### `PERSON_LOGGING_SCORE`
 
-Then:
+&#x20;Is the fraction of users posting in #start-here that gets an entry in the CRM in the Persons table
 
-```
-TIMELINESS_SCORE = max(delta_t_a/10,1)
+### `INTERACTION_LOGGING_SCORE`
 
-GREETING_SCORE = (TIMELINESS_SCORE + ONBOARDING_SCORE)/2
-```
+Is the fraction of users posting in #start-here that gets an entry in the CRM in the IntegratorInteraction table.
 
-### `BOUNTY_SCORE`
+### `BOUNTY_SCORE`&#x20;
 
-#### Instructions
+Is the number of bounties assigned to new users joining the #start-here channel divided by the assignment target for the round. For round 5 onwards, the bounty target is `3`.
 
-The first step after capturing a new person in the CRM should be to help them getting a bounty to work on.
-
-Note that in the calculations below, only bounties that are created by the HR group for onboarding purposes counts.
-
-#### Scoring Calculations
-
-Let:
-
-* `BOUNTIES_STARTED` be the amount of bounties created on chain and funded by the group, for a person that has gone through the groups greeting and onboarding process.
-* `BOUNTIES_COMPLETED` be the amount of bounties completed, and with a full or partial payment. Note that bounties created in previous council periods counts.
-
-Then:
-
-```
-BOUNTY_SCORE = max(BOUNTIES_STARTED/10,1) + (BOUNTIES_COMPLETED/5,1)
-```
+The score cannot exceed 1, so, for example, if 4 bounties are assigned and created in Pioneer for new participants and the assignment target is 3, the score would be `1.000`. If the number of bounties assigned is 2, the score would be `0.667`.
 
 ### Catastrophic Errors
 
 #### **Inadequate Report**
 
 An inadequate report addendum about the bounties was provided, for example by missing or incorrect information.
-
-**Budget Template Violation**
-
-A bounty was created with an amount of $tJOY exceeding the current template budget.
 
 **Missing Judgement**
 

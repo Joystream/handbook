@@ -33,7 +33,7 @@
   * [Tutorial: Stand for Council](system/council/tutorial-stand-for-council.md)
   * [Tutorial: Vote for Council Candidate](system/council/tutorial-vote-for-council-candidate.md)
   * [A Case Study: Tomato](system/council/a-case-study-tomato.md)
-* [👷♀ Working Groups](system/working-groups/README.md)
+* [👷♀ 👷♀ Working Groups](system/working-groups/README.md)
   * [Tutorial: Create Upcoming Opening](system/working-groups/tutorial-create-upcoming-opening.md)
   * [Tutorial: Create Opening](system/working-groups/tutorial-create-opening.md)
   * [Tutorial: Hire Worker](system/working-groups/tutorial-hire-worker.md)
