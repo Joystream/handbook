@@ -145,7 +145,7 @@ Let:
   \- `1` when a sanction is applied within 24 hours of a policy breaching item\* being uploaded\
   \- `0` when no action is taken within 24 hours of a policy breaching item\* being uploaded\
   \*identified by Jsgenesis during the period
-* `TOTAL_BREACHES_OF_POLICY` be the total number of instances of policy breaching items being uploaded by Jsgenesis.
+* `TOTAL_BREACHES_OF_POLICY` be the total number of instances of policy breaching items seen uploaded by Jsgenesis.
 
 Then:
 
