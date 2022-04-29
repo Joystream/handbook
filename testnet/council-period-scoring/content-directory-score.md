@@ -141,15 +141,16 @@ Content moderation is applied swiftly and appropriately in accordance with the [
 
 Let:
 
-* `BLOCK_upload_i` be the blockheight of which a channel or video _i_, which should be moderated, is created.
-* `BLOCK_moderated_i` be the blockheight of which a channel or video _i_, is moderated.
-* `RULING_score_i` be the subjective score, set by Jsgenesis, whether the ruling _i_ made by the group was appropriate or not.
+* `RESPONSE SCORE` be equal to:\
+  \- `1` when a sanction is applied within 24 hours of a policy breaching item\* being uploaded\
+  \- `0` when no action is taken within 24 hours of a policy breaching item\* being uploaded\
+  \*identified by Jsgenesis during the period
+* `TOTAL_BREACHES_OF_POLICY` be the total number of instances of policy breaching items being uploaded by Jsgenesis.
 
 Then:
 
 ```
-MODERATION_SCORE = 
-Sum[RULING_score_i + (14400 -(BLOCK_moderated_i - BLOCK_upload_i)/14400)]/i
+MODERATION_SCORE = (SUM(RESPONSE_SCORES)/TOTAL_BREACHES_OF_POLICY)
 ```
 
 
