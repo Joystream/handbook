@@ -4,7 +4,7 @@ description: Metrics used to compute score for content directory working group.
 
 # Content Directory Score
 
-Overview
+## Overview
 
 The Content Directory working group activities relevant to scoring can be understood exclusively in terms of the following three categories:
 
@@ -64,17 +64,11 @@ In addition to what is outlined in the [#working-group-period-plan](general-work
 
 * All channels and videos created.
 * All channels and videos deleted.
-* Amount of duplicate assets on chain, and what type they are (eg. video, channel cover, etc.)
 * All moderation actions taken by the group, for which channels/video and why.
 * All requests made to storage working group lead, related to moderation.
-* Any changes made to the moderation policy, and why.
 * Amount of videos hidden and censored.
 * All changes made to the featured content.
 * Categories created.
-* A chart (with raw data available for future use) that plots the changes in the values below over the council period, through snapshots at every 600 block:
-  * total playtime of videos available
-  * total videos and channels
-  * amount of members that own a channel
 
 Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
 
@@ -141,7 +135,7 @@ Let:
 
 ### `MODERATION_SCORE`
 
-Content moderation is applied swiftly and appropriately.
+Content moderation is applied swiftly and appropriately in accordance with the [Content Policy](../content-policy.md).
 
 #### Scoring Calculations
 
@@ -160,11 +154,15 @@ Sum[RULING_score_i + (14400 -(BLOCK_moderated_i - BLOCK_upload_i)/14400)]/i
 
 
 
-### Catastrophic Errors;
+### Catastrophic Errors
 
 #### Failure to apply moderation rules
 
-Any item which violates the content guidelines is unmoderated more than 24 hours after being uploaded
+Any item which violates the content guidelines is unmoderated more than 24 hours after being uploaded\
+\
+**Logging does not occur**
+
+The logging mandated under the `FEATURING_SCORE` does not occur.
 
 #### Featured Content Unplayable
 
