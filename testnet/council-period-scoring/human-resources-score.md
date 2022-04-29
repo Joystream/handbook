@@ -51,9 +51,13 @@ As mentioned prior, [bounties](../../system/bounties/ "mention") are an excellen
 * Pre-prepared bounties living in the `BountyTemplate` table of the CRM. Bounties may only be added here by
   * the HR lead
   * Jsgenesis staff
+    * Note that the technical bounties found in the Bounties Backlog [here](https://github.com/orgs/Joystream/projects/55) can be considered added by the Jsgenesis staff.
 * Input from a user about doing a project which does not exist may be added upon request by the HR lead or Jsgenesis based on the scope and associated reward of the bounty
 
-The funding from the bounties always come from the HR working group workers, who should be provided small $tJOY cash funds from the lead, allowing them to create new bounties on an ongoing basis for new people showing up continuously in the community.&#x20;
+The funding from the bounties always come from the HR working group workers, who should be provided small $tJOY cash funds from the lead, allowing them to create new bounties on an ongoing basis for new people showing up continuously in the community. The same applies if outside resources are needed to act as oracles. There are surely many ways this funding can be handled, but we need to make sure that any costs are covered in a way that ensures the $tJOY are eligible for $JOY for the recipient when applicable. That means:
+
+* If a worker and/or lead creates and funds the bounty, the lead should consider that reimbursing through the HR budget (ie. through increased rewards) would mean they earn JOY rewards for these amounts. Instead, create funding request, and state it is not $JOY eligeble.
+* If there is a need for an outside oracle (eg. technical bounties), they can be paid by being temporarily hired as a worker in the HR group, through a funding request (that the HR lead creates and states IS eligeble for $JOY), or through the bounty itself.
 
 It is the responsibility of the lead to responsibly manage how much each worker is entrusted with over any given period of time. A bounty created on-chain _must_ reference the relevant `BountyTemplate` instance in the CRM, by ID, which is why those instances can never be deleted, and they _must_ respect the $tJOY budget limit specified in the template. If this limit is found to be too low, only the lead or Jsgenesis can update the budget. The worker creating the on-chain bounty must make sure to select the appropriate oracle, which is most likely the HR worker with most experience in the relevant area of the platform. If the bounty requires specific knowledge not currently available in the HR group, the HR group is responsible for recruiting in the system to perform this role, and agreeing on any payment for said service. Just as for the funding of a bounty, said reward must be set aside in the budget, and held in escrow in some reasonable way agreed by to by all parties.
 
@@ -86,6 +90,10 @@ and much more. The HR working group has some limited ability to manage the infor
 * [Registering an interaction](https://joystream.retool.com/embedded/public/90e0966d-e253-451b-b1b7-0c27e51ebfff)
 * [Update bounty template status](https://joystream.retool.com/embedded/public/24a94b16-27d6-4efb-89ce-ac9fa58d06bd)
 
+## Reporting
+
+The reporting for the HR working group should be split in two parts. One part addressing what is outlined in the[#working-group-summary](general-working-group-score.md#working-group-summary "mention"), the other under `REPORT_SCORE` below.
+
 ## Knowledge Base
 
 {% embed url="https://joystream.notion.site/Human-Resources-ab782adffbdd4be497654f9e48309e2a" %}
@@ -97,7 +105,7 @@ Human Resources Working Group Knowledge Base
 The HR working group score is computed as follows
 
 ```
-HR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + 2(RESPONSE_TIME_SCORE) + PERSON_LOGGING_SCORE + INTERACTION_LOGGING_SCORE + BOUNTY_SCORE]/(7^{N})
+HR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + 2(RESPONSE_TIME_SCORE) + PERSON_LOGGING_SCORE + INTERACTION_LOGGING_SCORE + BOUNTY_SCORE]/(7*2^{N})
 ```
 
 ### `GENERAL_WG_SCORE`

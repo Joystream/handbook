@@ -69,6 +69,14 @@ Leads earn $JOY allocations in the same way as for bounty contributions: a share
 
 Validators earn $JOY allocations in the same way as for bounty contributions: a share of the `JOY_BUDGET` equal to what share the earned $tJOY makes up of the `tJOY_BUDGET`.
 
+Note that unless you use either your membership root or controller key as your validator stash or controller key, we will not be able to link the two, and your earnings here will not be registered!
+
+### Funding Requests
+
+By default, the recipient of funding request will earn $JOY allocations in the same way as for bounty contributions: a share of the `JOY_BUDGET` equal to what share the earned $tJOY makes up of the `tJOY_BUDGET`.&#x20;
+
+However, in same cases there may be a reason for the $tJOY not to eligeble, for example if the recipient is reimbursed for some reason or other. If so, this should be clearly stated in the description.
+
 ### Council Member
 
 All council members earn the same quantity of $tJOY per period, let `TOTAL_COUNCIL_tJOY_REWARD` denote the total $tJOY payout earned by the entire council. This value is controlled by Jsgenesis, and can change over time.
@@ -80,6 +88,8 @@ TOTAL_COUNCIL_JOY_REWARD = JOY_BUDGET * (TOTAL_COUNCIL_tJOY_REWARD/tJOY_BUDGET) 
 ```
 
 where `NETWORK_PERFORMANCE_SCORE`, and is in the interval \[0, 1]. This score, computed by Jsgenesis using public evaluation metrics, attempts to capture how well the network performed. The evaluation metrics will change from one council period to the next.
+
+
 
 ### Content Creator
 

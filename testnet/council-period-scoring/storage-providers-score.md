@@ -32,7 +32,7 @@ Storage Providers Working Group Knowledge Base
 The score is computed as follows
 
 ```
-STORAGE_SCORE = [GENERAL_WG_SCORE + MAINTENANCE_SCORE + UPLOAD_SCORE]/(3^{N})
+STORAGE_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + MAINTENANCE_SCORE + UPLOAD_SCORE]/(4*2^{N})
 ```
 
 where
