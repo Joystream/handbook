@@ -4,6 +4,11 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+02.05.22
+
+* Updated Council Period Parameters for Round 6
+* Removed old deadlines
+
 29.04.22
 
 * Added this page!

@@ -44,21 +44,21 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 5, for the council elected at block `#446,400.`_
+_Valid through council scoring period number 6, for the council elected at block `#547,200.`_
 
-| Name                  | Value                            |
-| --------------------- | -------------------------------- |
-| `JOY_BUDGET`          | 2,250,000 (0.225% \~USD 135,000) |
-| `REFERRER_JOY`        | 1000 (\~USD 60)                  |
-| `REFERREE_JOY`        | 1000 (\~USD 60)                  |
-| `tJOY_BUDGET`         | 80,000,000                       |
-| `USD_SUBSIDY`         | USD 2200 `*`                     |
-| `CAP`                 | JOY 15,000 (\~USD 9,000)         |
-| `COUNCIL_tJOY_REWARD` | 3,024,000 (15,120,000 in total)  |
+| Name                  | Value                           |
+| --------------------- | ------------------------------- |
+| `JOY_BUDGET`          | 2,500,000 (0.25% \~USD 150,000) |
+| `REFERRER_JOY`        | 1000 (\~USD 60)                 |
+| `REFERREE_JOY`        | 1000 (\~USD 60)                 |
+| `tJOY_BUDGET`         | 100,000,000                     |
+| `USD_SUBSIDY`         | USD 2250 `*`                    |
+| `CAP`                 | JOY 15,000 (\~USD 9,000)        |
+| `COUNCIL_tJOY_REWARD` | 3,024,000 (15,120,000 in total) |
 
 \`\*\` includes $100 subsidy for SPs, and $150 subsidy for distributors This means that JSG will mint $250 worth of tJOY and distribute across the workers, but these tJOY will not earn the recipients JOY.
 
-_The Parameters for scoring period 5 will be made available on Monday 1800 CET, along with the updated metrics._&#x20;
+_The Parameters for scoring period 6 will be made available on Monday 1800 CET, along with the updated metrics._&#x20;
 
 Although changes must be expected, the council should assume they will stay the same until the update is made.
 
@@ -74,19 +74,7 @@ For the system to work well, there is a need for a feedback-loop, between
 
 For this to be the case, strict deadlines are required. See [#council-period-cadence](../testnet-rewards.md#council-period-cadence "mention") for definitions.
 
-For council period **Council Scoring Round 5 (#**446,400-#547,200) the following deadlines will apply
-
-| Deliverable                                                                               | Responsible          | Deadline                             | Notes                            |
-| ----------------------------------------------------------------------------------------- | -------------------- | ------------------------------------ | -------------------------------- |
-| [#working-group-summary](general-working-group-score.md#working-group-summary "mention")  | Working Group Leads  | <p>#453,600<br>(24.04 ~1130 CET)</p> | Following the "old" ruleset      |
-| [#council-period-summary](./#council-period-summary "mention")                            | Council #4           | <p>#453,600<br>(24.04 ~1130 CET)</p> | Following the "old" ruleset      |
-| [#council-period-parameters](./#council-period-parameters "mention")                      | Jsgenesis            | <p>#471,600<br>(25.04 ~1800 CET)</p> | For Scoring Period #5            |
-| Council Period Scoring Results                                                            | Jsgenesis            | <p>#472,800<br>(25.04 ~2000 CET)</p> | For Scoring Period #4            |
-| [#council-period-plan](./#council-period-plan "mention")                                  | Council #5           | <p>#480,000<br>(26.04 ~0800 CET)</p> | Needs the two deliverables above |
-| [#working-group-summary](general-working-group-score.md#working-group-summary "mention")  | Working Group Leads  | <p>#554,400<br>(01.05 ~0900 CET)</p> |                                  |
-| [#council-period-summary](./#council-period-summary "mention")                            | Council #5           | <p>#558,000<br>(01.05 ~1200 CET)</p> |                                  |
-| Council Period Scoring Results                                                            | Jsgenesis            | <p>#572,400<br>(02.05 ~1700 CET)</p> | For Scoring Period #5            |
-| [#council-period-parameters](./#council-period-parameters "mention")                      | Jsgenesis            | <p>#572,400<br>(02.05 ~1700 CET)</p> | For Scoring Period #6            |
+For council period **Council Scoring Round 6 (#**547,200-#648,000) the following deadlines will apply
 
 
 
