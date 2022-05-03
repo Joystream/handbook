@@ -72,11 +72,22 @@ For the system to work well, there is a need for a feedback-loop, between
 * publish [#council-period-parameters](./#council-period-parameters "mention") (for the next term/scoring period), which are needed for;
 * the new councils [#council-period-plan](./#council-period-plan "mention") and working groups [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"). ****&#x20;
 
-For this to be the case, strict deadlines are required. See [#council-period-cadence](../testnet-rewards.md#council-period-cadence "mention") for definitions.
+For this to be the case, strict deadlines are required. The following deadlines will apply for **Council Scoring Round 6**, with definitions below.
 
-For council period **Council Scoring Round 6 (#**547,200-#648,000) the following deadlines will apply
+| Deliverable                                                                                      | Responsible | Deadline                                                 |
+| ------------------------------------------------------------------------------------------------ | ----------- | -------------------------------------------------------- |
+| [#working-group-summary](general-working-group-score.md#working-group-summary "mention")         | WG Leads    | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
+| [#council-period-summary](./#council-period-summary "mention")                                   | Council     | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
+| Period Scoring Results                                                                           | Jsgenesis   | <p>Min[<code>B_ce+21600</code>,</p><p>09.05-1400CET]</p> |
+| [#council-period-parameters](./#council-period-parameters "mention") and Metrics                 | Jsgenesis   | <p>Min[<code>B_ce+24000</code>,</p><p>09.05-1800CET]</p> |
+| [#council-period-plan](./#council-period-plan "mention")                                         | Council     | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
+| [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention") | WG Leads    | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
 
-
+* `B_cs` means the block height the council term started (`B_cs+600`thus means 600 blocks later)
+* `N_cs` means the first time the clock strikes noon CET after the council term started
+* `B_ce` means the block height the council term ended
+* `N_ce` means the first time the clock strikes noon CET after the council term ended
+* `PPM` means when the new council period parameters and metrics are posted.
 
 ## Dashboard
 
@@ -125,7 +136,7 @@ The total tJOY spending over a given council period is something Jsgenesis attem
 
 ### Submission
 
-The report itself must be written as a markdown document in English, in the forum category `Testnet>Council>Summaries` , as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the report on the forum.
+The report itself must be written as a markdown document in English, in the forum category `Governance>Council Reports`, as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the report on the forum.
 
 If there is a need to link to extra information, statistics, etc. these should be in the notion board.
 
@@ -142,7 +153,7 @@ Give Jsgenesis visibility into the priorities of the council, and also serve as 
 
 ### Submission
 
-The plan itself must be written as a markdown document in English, in the forum category `Testnet>Council>Plans` , as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the plan on the forum.
+The plan itself must be written as a markdown document in English, in the forum category `Governance>Council Reports`, as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the plan on the forum.
 
 If there is a need to link to extra information, statistics, etc. these should be in the notion board.
 
@@ -165,7 +176,7 @@ A member of the new council takes notes, and quickly prepares a brief minutes of
 
 ### Submission
 
-Once approved (informally, eg. no comments in discord unaddressed), the minutes are submitted in the forum category `Testnet>Council>Minutes`, as a thread which has the title which includes the two council period IDs.
+Once approved (informally, eg. no comments in discord unaddressed), the minutes are submitted in the forum category `Governance>Council Reports` as a thread which has the title which includes the two council period IDs.
 
 ## Council Daily Sync
 
@@ -251,15 +262,17 @@ LEAD_OPPORTUNITIES_SCORE*LO_W
 ]/((B_W + C_W + D_W + HR_W + M_W + S_W + SUM_W + P_W + CM_W + LO_W)*2^N)
 ```
 
+### General Working Group Grading Notes
+
+For Jsgenesis to be able to complete the grading in "due time", all plans summaries needs to be
+
+* easy to find (eg. in the applicable forum category)
+* punctual
+* formatted the same, easily digestable, way
+
+To address this problem, the council will be tasked to create a template for the general working group summary and plan. Any report that is not made from this template, and posted on the forum in time, will score 0.
+
 ### Catastrophic Errors
-
-#### **No valid plan**
-
-A valid council period plan was not submitted by 24 hours after the last election was completed, as specified above.
-
-#### **No valid summary**
-
-A valid council period summary was not submitted by 12 hours after the next election was completed, as specified above.
 
 #### **Missed runtime upgrade**
 

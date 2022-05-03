@@ -6,8 +6,10 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 03.05.22
 
+* New requirements for Working Group plans and summaries
 * Updated builder metrics
 * Updated distributors metrics
+* Set new deadlines
 
 02.05.22
 

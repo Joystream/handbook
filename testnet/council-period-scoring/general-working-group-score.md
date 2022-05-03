@@ -62,9 +62,13 @@ All working group summaries have the same "core" scope
 
 ### Submission
 
-The lead for each for a working group must submit the report, written as a markdown document in English, in the forum category `Testnet>[Working Group Name]>Summaries` where `[Working Group Name]` is the name of the working group, as a thread which has the title which includes the council period ID.
+The lead for each for a working group must submit the report, with the following specifics:
 
-If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board.
+* written as a markdown document in English
+* in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the title which includes the council period ID.
+* must use the template created by the council for the term, which should be posted on their notion boards
+
+If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board, but the general report itself **must** be posted on the forum.
 
 ## Working Group Period Plan
 
@@ -86,9 +90,13 @@ All working group period plans have the same scope:
 
 ### Submission
 
-The lead for each for a working group must submit the plan, written as a markdown document in English, in the forum category `Testnet>[Working Group Name]>Plans` where `[Working Group Name]` is the name of the working group, as a thread which has the title which includes the council period ID.
+The lead for each for a working group must submit the report, with the following specifics:
 
-If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board.
+* written as a markdown document in English
+* in the forum category `Working Groups >[Working Group Name]>Plans` where `[Working Group Name]` is the name of the working group, as a thread which has the title which includes the council period ID
+* must use the template created by the council for the term, which should be posted on their notion boards
+
+If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board, but the general report itself **must** be posted on the forum.
 
 ## Worker Opportunities
 
