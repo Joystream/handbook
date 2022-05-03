@@ -4,6 +4,11 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+03.05.22
+
+* Updated builder metrics
+* Updated distributors metrics
+
 02.05.22
 
 * Updated Council Period Parameters for Round 6

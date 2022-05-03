@@ -25,7 +25,7 @@ Builders Notion knowledge base
 The builders working group score is computed as follows
 
 ```
-BUILDER_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + TESTING_SCORE + DEVELOPMENT_SCORE]/4
+BUILDER_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + TESTING_SCORE + PIONEER_DEVELOPMENT_SCORE + GENERAL_DEVELOPMENT_SCORE]/5
 ```
 
 where
@@ -94,13 +94,46 @@ TESTING_SCORE:
   If ISSUES_TESTED =< 5:      0
 ```
 
-### `DEVELOPMENT_SCORE`
+### `PIONEER_DEVELOPMENT_SCORE`
 
 #### Instructions
 
 Two github projects has been created for the Builder group, this metric applies to the pioneer project found [here](https://github.com/orgs/Joystream/projects/55).
 
 How well the story points translates into score is not fully calibrated, and may be revised after the period is over. If so, it will only be upward. Not that only when a PR is _approved_ by Jsgenesis, will story points translate into points.
+
+#### Rules
+
+The workflow cards that was added by jsgenesis must be added back to the board.
+
+#### Scoring Calculations
+
+For each issue that gets merged during a scoring period, the amount of story points are summed up, and added below.
+
+```
+DEVELOPMENT_SCORE:
+  If STORY_POINTS >= 12:      1
+  If STORY_POINTS < 12:  1-((10-STORY_POINTS)/12)
+```
+
+
+
+### `GENERAL_DEVELOPMENT_SCORE`
+
+#### Instructions
+
+Two github projects has been created for the Builder group, this metric applies to the general builders project found [here](https://github.com/orgs/Joystream/projects/56).
+
+How well the story points translates into score is not fully calibrated, and may be revised after the period is over. If so, it will only be upward. Not that only when a PR is _approved_ by Jsgenesis, will story points translate into points.
+
+#### Rules
+
+Unlike the Pioneer board, the builders may suggest tasks be added to this board. The process will be formalized further in the project, but until then the following workflow applies
+
+* The builder group, or jsgenesis adds an issue, and the lead assigns story points.
+* The lead requests approval for the issue/story points to jsg, either in a call or in the #builder channel on discord.
+  * The avoid this competing too much with the pioneer development score, only two issues can on this board can be worked on at the same time, and there should never be more than 10 unassigned issues at the same.
+* Jsgenesis can reject proposed issues based on their importance and/or the amount of story points assigned. Only approved issues will count for this score (eg. isses where jgenesis has explicitly given the go ahead in the issue).
 
 #### Scoring Calculations
 
@@ -109,8 +142,7 @@ For each issue that gets merged during a scoring period, the amount of story poi
 ```
 DEVELOPMENT_SCORE:
   If STORY_POINTS >= 15:      1
-  If 5 < STORY_POINTS < 15:  1-((15-STORY_POINTS)/10)
-  If STORY_POINTS =< 5:      0
+  If STORY_POINTS < 15:  1-((15-STORY_POINTS)/15)
 ```
 
 ### Need help understanding something?

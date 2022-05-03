@@ -32,7 +32,8 @@ Storage Providers Working Group Knowledge Base
 The score is computed as follows
 
 ```
-STORAGE_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + MAINTENANCE_SCORE + UPLOAD_SCORE]/(4*2^{N})
+STORAGE_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + MAINTENANCE_SCORE + UPLOAD_SCORE + RESEARCH_SCORE]/(5*2^{N})
+
 ```
 
 where
@@ -104,7 +105,7 @@ Then:
 
 ### `UPLOAD_SCORE`
 
-_Objective:_ `Keep failed uploads under 2%`
+_Objective:_ `Keep failed uploads under 5%`
 
 #### Notes
 
@@ -124,7 +125,47 @@ Let:
 Then:
 
 ```
-  UPLOAD_SCORE = (successful_uploads/total_uploads - 0.96)/0.04
+  UPLOAD_SCORE = (successful_uploads/total_uploads - 0.80)/0.20
+```
+
+###
+
+#### `RESEARCH_SCORE`
+
+**Notes**
+
+In order to drive improvements, we need the group to also consider how we can improve the functionality of their core focus. This particular score will introduce a new topic or two for each scoring round, while also incorporating potential feedback from the the grading of previous results.
+
+**Research Logging**
+
+To evaluate a system like this, we need to make sure the individual node logs are available, and useful. Actions:
+
+**`DEFAULT_LOGGING`** Review what is currently being logged by a storage node, and outline briefly what each "type" of logging means.
+
+**`ELASTIC_LOGGING`** There is an option for the storage node to run with `-e URL`, meaning logs, with configurable verbosity can be uploaded to an endpoint.
+
+* deploy a server to act as the endpoint
+* have a storage node or two report to it, and compare the resource consumption before/after (a couple of times)
+* make it public, so it can be used to debug and collect data
+* create a guide that explains how to set it up, and use it to look at the logs
+* use the most verbose log level, and IF that `LOG_LEVEL` differs from what was found in `DEFAULT_LOGGING`, outline what is added
+
+Note that the distributors will have a similar task - consider collaborating.
+
+**`PERFORMANCE_LOGGING`** It would be very useful to know how much resources a storage node is consuming in general with the current setup. Deploy two nodes on the same data center, with the exact same bucket configurations, but different specs, and log every hour so:
+
+* how much memory (virtual separately) is consumed, both in total and by the distributor node
+* how much cpu is consumed, both in total and by the distributor node
+* make some performance spotchecks for comparison, by uploading files to it
+
+All results must be added to the notion board, organized in a reasonable way.
+
+**Scoring Calculations**
+
+Grading is subjective:
+
+```
+RESEARCH_SCORE = [DEFAULT_LOGGING + 3*ELASTIC_LOGGING + 2*PERFORMANCE_LOGGING]/6
 ```
 
 ### Catastrophic Errors

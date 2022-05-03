@@ -30,7 +30,7 @@ Distributor Working Group Knowledge Base
 The score is computed as follows
 
 ```
-DISTRIBUTOR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + THUMBNAIL_SCORE + PLAYABLITIY_SCORE + SERVICE_SCORE]/(5*2^{N})
+DISTRIBUTOR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + THUMBNAIL_SCORE + RESEARCH_SCORE + SERVICE_SCORE]/(5*2^{N})
 ```
 
 ### `GENERAL_WG_SCORE`
@@ -88,33 +88,43 @@ Then:
   THUMBNAIL_SCORE = 0.6*avg_rendering + 0.4*max_rendering_score
 ```
 
-### `PLAYABLITIY_SCORE`
 
-_Objective:_ `All content should be playable from at least 3 sources`
 
-#### Notes
+### `RESEARCH_SCORE`
 
-* At any point in time, at least 3 operated buckers should have each bag
-* Note that having configured that to be the case is only some fraction of the job. Unless the content can be fetched from that/those sources, it doesn't do much good!
+**Notes**
 
-#### Scoring Calculations
+In order to drive improvements, we need the group to also consider how we can improve the functionality of their core focus. This particular score will introduce a new topic or two for each scoring round, while also incorporating potential feedback from the the grading of previous results.
 
-Let:
+**Research Logging**
 
-* `avg_configured_sources_i` be the average number of buckets (where `distributing=true`), that holds each bag, for a spot check `i`
-* `min_configured_sources_i` be the lowest number of buckets (where `distributing=true`), that holds a bag, for a spot check `i`
-* `unavailable_distributors_i` be the amount of operated buckets (where `distributing=true`), that should have a dataObject that, for whatever reason, can't be fetched
-* `PLAYABLITIY_SCORE` be the final score \[0,1]
+To evaluate a system like this, we need to make sure the individual node logs are available, and useful. Actions:
 
-Then:
+**`DEFAULT_LOGGING`** Review what is currently being logged by a distributor node, for each configurable `log-level`, and outline briefly what it provides.
+
+**`ELASTIC_LOGGING`** In the `config.yml` file `elastic` is commented out. Look into the codebase/documentation, and:
+
+* deploy a server to act as the endpoint
+* have a distributor node or two report to it, and compare the resource consumption before/after (a couple of times)
+* make it public, so it can be used to debug and collect data
+* create a guide that explains how to set it up, and use it to look at the logs
+
+Note that the storage providers will have a similar task - consider collaborating.
+
+**`PERFORMANCE_LOGGING`** It would be very useful to know how much resources a distributor node is consuming in general with the current setup. Deploy two nodes on the same data center, with the exact same bucket configurations, but different specs, and log every hour so:
+
+* how much memory (virtual separately) is consumed, both in total and by the distributor node
+* how much cpu is consumed, both in total and by the distributor node
+* make some performance spotchecks for comparison (make sure both nodes either have, or don't have, the files already downloaded locally and whether they are cached or not)
+
+All results must be added to the notion board, organized in a reasonable way.
+
+**Scoring Calculations**
+
+Grading is subjective:
 
 ```
-  avg_configured_sources_score = Zigma[max(avg_configured_sources_i-2.5,1)]/i
-  min_configured_sources_score = Zigma[max(min_configured_sources-2,1)]/i
-  unavailable_distributors_score = Zigma[max(1-unavailable_distributors_i,1)]/i
-
-  # finally
-  PLAYABLITIY_SCORE = 0.3*(avg_configured_sources_score + min_configured_sources_score) + 0.4*unavailable_distributors_score
+RESEARCH_SCORE = [DEFAULT_LOGGING + 3*ELASTIC_LOGGING + 2*PERFORMANCE_LOGGING]/6
 ```
 
 ### `SERVICE_SCORE`
