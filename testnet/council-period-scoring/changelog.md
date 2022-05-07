@@ -7,6 +7,7 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 07.05.22
 
 * Added another [requirement](../testnet-rewards.md#validators) for validators to earn $JOY
+* Updated Storage Providers and Distributors metrics (for the runtime upgrade)
 
 03.05.22
 

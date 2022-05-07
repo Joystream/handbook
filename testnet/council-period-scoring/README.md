@@ -44,7 +44,7 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 6, for the council elected at block `#547,200.`_
+_Valid through council scoring period number 7, for the council elected at block `#648,000.`_
 
 | Name                  | Value                           |
 | --------------------- | ------------------------------- |
@@ -72,7 +72,11 @@ For the system to work well, there is a need for a feedback-loop, between
 * publish [#council-period-parameters](./#council-period-parameters "mention") (for the next term/scoring period), which are needed for;
 * the new councils [#council-period-plan](./#council-period-plan "mention") and working groups [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"). ****&#x20;
 
-For this to be the case, strict deadlines are required. The following deadlines will apply for **Council Scoring Round 6**, with definitions below.
+For this to be the case, strict deadlines are required.&#x20;
+
+**NOTE: For Council Period 7, grading will be delayed until the 12th!**
+
+The following deadlines will apply for **Council Scoring Round 6**, with definitions below.
 
 | Deliverable                                                                                      | Responsible | Deadline                                                 |
 | ------------------------------------------------------------------------------------------------ | ----------- | -------------------------------------------------------- |

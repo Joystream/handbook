@@ -30,7 +30,8 @@ Distributor Working Group Knowledge Base
 The score is computed as follows
 
 ```
-DISTRIBUTOR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + THUMBNAIL_SCORE + RESEARCH_SCORE + SERVICE_SCORE]/(5*2^{N})
+DISTRIBUTOR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + THUMBNAIL_SCORE + UPGRADE_SCORE]/(4*2^{N})
+
 ```
 
 ### `GENERAL_WG_SCORE`
@@ -88,75 +89,34 @@ Then:
   THUMBNAIL_SCORE = 0.6*avg_rendering + 0.4*max_rendering_score
 ```
 
+### `UPGRADE_SCORE`
 
-
-### `RESEARCH_SCORE`
+Assuming it gets approved, the runtime will get upgraded to `rhodes` at block `#697,400`. This introduces a few changes in the types, which will impact the query-node (`hydra`), the distributor-node (`argus)` and the storage-node (`colossus`). Therefore upgrading the infrastructure is needed.
 
 **Notes**
 
-In order to drive improvements, we need the group to also consider how we can improve the functionality of their core focus. This particular score will introduce a new topic or two for each scoring round, while also incorporating potential feedback from the the grading of previous results.
+For the upgrade to take place seamlessly, all operators must switch over to a `rhodes` compatible version of both `hydra` and `argus` before any extrinsics/events exposing the new types occur. As that could happen right away, the group needs to act fast.
 
-**Research Logging**
+From testing, it appears that running both the `rhodes` version of the both the query node and distributor node before the upgrade will work. There is however a chance that some more changes are made to the `rhodes` branch before it gets merged to `master`. [https://query.joystream.org/graphql](https://query.joystream.org/graphql) may host the `rhodes` version even before the upgrade, which may cause some issues.
 
-To evaluate a system like this, we need to make sure the individual node logs are available, and useful. Actions:
+The distributors needs to plan this, and specifically address:
 
-**`DEFAULT_LOGGING`** Review what is currently being logged by a distributor node, for each configurable `log-level`, and outline briefly what it provides.
+* Which operators will upgrade `argus` before the release?&#x20;
+  * When will they upgrade their local query-node?
+  * Which endpoint will they point to while syncing their local query-node?
+* Which operators are available to upgrade to `argus` exactly at the time of the upgrade?
+  * When will they upgrade their local query-node?
+  * Which endpoint will they point to while syncing their local query-node?
 
-**`ELASTIC_LOGGING`** In the `config.yml` file `elastic` is commented out. Look into the codebase/documentation, and:
-
-* deploy a server to act as the endpoint
-* have a distributor node or two report to it, and compare the resource consumption before/after (a couple of times)
-* make it public, so it can be used to debug and collect data
-* create a guide that explains how to set it up, and use it to look at the logs
-
-Note that the storage providers will have a similar task - consider collaborating.
-
-**`PERFORMANCE_LOGGING`** It would be very useful to know how much resources a distributor node is consuming in general with the current setup. Deploy two nodes on the same data center, with the exact same bucket configurations, but different specs, and log every hour so:
-
-* how much memory (virtual separately) is consumed, both in total and by the distributor node
-* how much cpu is consumed, both in total and by the distributor node
-* make some performance spotchecks for comparison (make sure both nodes either have, or don't have, the files already downloaded locally and whether they are cached or not)
-
-All results must be added to the notion board, organized in a reasonable way.
+Although it's good to have as a backup, relying on the Jsgenesis query-node is not a good plan, and the distributors should maintain their own query nodes.
 
 **Scoring Calculations**
 
-Grading is subjective:
+The score will be set subjectively, based on:
 
-```
-RESEARCH_SCORE = [DEFAULT_LOGGING + 3*ELASTIC_LOGGING + 2*PERFORMANCE_LOGGING]/6
-```
-
-### `SERVICE_SCORE`
-
-_Objective:_ `Download and playback quality`
-
-#### Notes
-
-* Measurements will be done by spotchecks from Europe.
-* Latency caused ping will be removed from the equation (we'll ping the server and deduct)
-
-#### Scoring Calculations
-
-Let:
-
-* `avg_download_ratio_i` be the average playtime \[s] divided by download time \[s] (for a sample of videos), assuming some random checks (indexed `i`) are performed during the period
-* `min_download_ratio_i` be the lowest playtime \[s] divided by download time \[s] (for a sample of videos), assuming some random checks (indexed `i`) are performed during the period
-* `avg_buffering_i` be the average time \[s] of buffering, when playing a video and skipping ahead, assuming some random checks (indexed `i`) are performed during the period
-* `max_buffering_i` be the highest time \[s] of buffering, when playing a video and skipping ahead, assuming some random checks (indexed `i`) are performed during the period
-* `SERVICE_SCORE` be the final score \[0,1]
-
-Then:
-
-```
-  avg_download_ratio_score = Zigma[max(avg_download_ratio_i-1,1)]/i
-  min_download_ratio_score = Zigma[max(min_download_ratio_i-0.5,1)]/i
-  avg_buffering_score = Zigma[max((5-avg_buffering_i)/3,1)]/i
-  max_buffering_score = Zigma[max((10-max_buffering_i)/6,1)]/i
-
-  # finally
-  service_score = 0.25*(avg_download_ratio_score + min_download_ratio_i + avg_buffering_i + max_buffering_i)
-```
+1. Whether the plan is good (and on time).
+2. Whether the plan is followed.
+3. How many nodes are down at the same time, and whether they are set to "not" distributing while they are offline. At no point can more than two nodes be offline (restarting excluded).
 
 ### Catastrophic Errors
 
