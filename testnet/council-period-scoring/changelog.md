@@ -4,6 +4,10 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+07.05.22
+
+* Added another [requirement](../testnet-rewards.md#validators) for validators to earn $JOY
+
 03.05.22
 
 * New requirements for Working Group plans and summaries

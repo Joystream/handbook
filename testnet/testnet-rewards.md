@@ -69,7 +69,7 @@ Leads earn $JOY allocations in the same way as for bounty contributions: a share
 
 Validators earn $JOY allocations in the same way as for bounty contributions: a share of the `JOY_BUDGET` equal to what share the earned $tJOY makes up of the `tJOY_BUDGET`.
 
-Note that unless you use either your membership root or controller key as your validator stash or controller key, we will not be able to link the two, and your earnings here will not be registered!
+Note that unless you use either your membership root or controller key as your validator stash or controller key, we will not be able to link the two, and your earnings here will not be registered! If your keys are linked to two different memberships, **neither** will be eligible for $JOY rewards.
 
 ### Funding Requests
 
