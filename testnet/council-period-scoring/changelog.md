@@ -4,6 +4,11 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+09.05.22
+
+* Updated Council Parameters and the weight of the forum group
+* Changed the Metrics for the Forum group, with a metric for the category changes after the runtime upgrade.
+
 07.05.22
 
 * Added another [requirement](../testnet-rewards.md#validators) for validators to earn $JOY

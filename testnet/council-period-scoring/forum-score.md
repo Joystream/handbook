@@ -65,23 +65,47 @@ Apply the moderation policy, and for each occurrence, make an entry of it in a s
 
 The `MODERATION_SCORE` is set subjectively.
 
-### `NOTIFICATION_SCORE`
+### `CATEGORY_SCORE`
 
 #### Notes
 
-A user that posts on the forum may have a question either towards a the council, a lead, a Worker, Jsgenesis or just a member of the platform. However, that person may not see it.
+With the runtime upgrade scheduled for block `#697,500`, we are going from 20 to 40 max categories. This means we can implement the previously designed system, or a new better one.
 
-When a question is raised, that is either directly or indirectly best handled by someone else, help the user by tagging the appropriate person on Discord.
+There are multiple tasks associated with this metric:
+
+1. OPTIONAL: If the old, previously approved, system is found lacking, design a new system of categories and sub-categories.
+2. Get an proposal for a/the new category system approved by the Council. If a "brand" new system is designed, the proposal must include a design brief to explain the reasoning behind it. Regardless, it must include a an overview of:
+   * Which, if any, categories or subcategories should be deleted or moved
+   * Which, if any, threads should be moved
+3. Implement the new category system, without deleting any threads or posts.
 
 #### Scoring Calculations
 
-The `NOTIFICATION_SCORE` is set subjectively.
+If the changes made
+
+* are not approved by the council
+* are not implemented exactly as approved (without technical reasons) before the end of the term
+* ends up permanently deleting any post or thread
+
+the score is automatically zero.
+
+To get a full score, the changes must be completed before:
+
+```
+max[council_approval_block+14400 , runtime_upgrade_block + 28800]
+```
+
+If completed after the block above, but before the council terms ends, the score will be linear from 1 to 0 (assuming no other violations).
 
 ### Catastrophic Errors
 
 #### **Violation of Content Policy**
 
 Although not strictly the same, the concepts in the content policy applies to the forum as well. Any post or thread fitting the above, left unmoderated for 12h.
+
+#### **Unwarrented deletion of a post or thread**
+
+Any thread or post that gets deleted, for any reason, must be justified in the report. If the grounds are found unwarranted (ie. not in line with any policy), or simply not mentioned in any report, it counts as a catastrophic error.
 
 
 
