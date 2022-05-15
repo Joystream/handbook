@@ -42,6 +42,8 @@ There needs to be a way to measure how well the system is operating overall, as 
 
 Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee-7d4d-4437-b5f6-f59c8cb17ff6) where you can look up the results for individuals per scoring period, and overall status.
 
+
+
 ## Council Period Parameters
 
 _Valid through council scoring period number 7, for the council elected at block `#648,000.`_
@@ -76,18 +78,17 @@ For the system to work well, there is a need for a feedback-loop, between
 
 For this to be the case, strict deadlines are required.&#x20;
 
-**NOTE: For Council Period 7, grading will be delayed until the 12th!**
+The following deadlines will apply for a **Council Scoring Round**`n` with definitions below.
 
-The following deadlines will apply for **Council Scoring Round 6**, with definitions below.
-
-| Deliverable                                                                                      | Responsible | Deadline                                                 |
-| ------------------------------------------------------------------------------------------------ | ----------- | -------------------------------------------------------- |
-| [#working-group-summary](general-working-group-score.md#working-group-summary "mention")         | WG Leads    | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
-| [#council-period-summary](./#council-period-summary "mention")                                   | Council     | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
-| Period Scoring Results                                                                           | Jsgenesis   | <p>Min[<code>B_ce+21600</code>,</p><p>09.05-1400CET]</p> |
-| [#council-period-parameters](./#council-period-parameters "mention") and Metrics                 | Jsgenesis   | <p>Min[<code>B_ce+24000</code>,</p><p>09.05-1800CET]</p> |
-| [#council-period-plan](./#council-period-plan "mention")                                         | Council     | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
-| [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention") | WG Leads    | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
+| Deliverable                                                                                                | Responsible | Deadline                                                 |
+| ---------------------------------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------- |
+| Note: Council `n` elected                                                                                  | NA          | NA (`B_ce)`                                              |
+| [#working-group-summary](general-working-group-score.md#working-group-summary "mention") (for `n-1`)       | WG Leads    | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
+| [#council-period-summary](./#council-period-summary "mention") (for `n-1`)                                 | Council     | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
+| Period Scoring Results (for `n-1`)                                                                         | Jsgenesis   | <p>Min[<code>B_ce+21600</code>,</p><p>09.05-1400CET]</p> |
+| [#council-period-parameters](./#council-period-parameters "mention") and Metrics  (for `n`)                | Jsgenesis   | <p>Min[<code>B_ce+24000</code>,</p><p>09.05-1800CET]</p> |
+| [#council-period-plan](./#council-period-plan "mention") (for `n`)                                         | Council     | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
+| [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention") (for `n`) | WG Leads    | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
 
 * `B_cs` means the block height the council term started (`B_cs+600`thus means 600 blocks later)
 * `N_cs` means the first time the clock strikes noon CET after the council term started
@@ -116,11 +117,8 @@ The total tJOY spending over a given council period is something Jsgenesis attem
 * Any increase in tJOY that any validator can cashout, but currently has not.
 * Any tJOY that has actually been cashed out by validators.
 * Any tJOY actually awarded to any council member, lead or worker.
-* Any tJOY "owed" to a council member, lead or worker, IF said tJOY is in fact paid out in the NEXT reward period (for the group).
-* Any tJOY for spending proposals, except spending to finance on-demand bounties approval by [#human-resources](../../system/working-groups/#human-resources "mention") .
-* Any tJOY approved for bounty work.
-
-**Note** that it's not trivial for the Council to keep track of these payments flows themselves. We advise them to pay close attention to the status of missed payments at the start of each term, in addition to "general" budget overview.
+* Any tJOY paid through a Funding Request.
+* Any $tJOY approved for bounty work.
 
 ## Council Period Summary
 
@@ -156,6 +154,13 @@ Give Jsgenesis visibility into the priorities of the council, and also serve as 
 
 * Prioritization to each working group about what they should focus on solving.
 * How total $tJOY budget will be allocated across groups and council.
+* Set the schedule for all the [#council-meetings](./#council-meetings "mention") until the council period is over.
+* List all known tasks to be assigned to individual council members, and add them to the council period task tracker on the Notion board.
+* The council are further _encouraged_ to include specific workflows for items such as:
+  * How to follow up each working group, and by whom
+  * How budgets are managed, and by whom
+  * Who is responsible for taking and publishing minutes
+  * etc.
 
 ### Submission
 
@@ -163,32 +168,54 @@ The plan itself must be written as a markdown document in English, in the forum 
 
 If there is a need to link to extra information, statistics, etc. these should be in the notion board.
 
-## Council Handover Meeting
+## Council Meetings
 
-Around the time a council election is over, a meeting between the council members that just finished their term, the newly elected council and Jsgenesis. Until further notice, the meeting will be closed off to only these participants, and mandatory in the sense that turnout impacts the score.
+As a minimum, all council members are expected to be available for
+
+* two handover calls, after getting elected and after their term has ended
+  * organized and always attended by Jsgenesis
+* daily standups for coordinating between them
+  * organized by the council themselves
 
 ### Motivation
 
+#### Handover
+
 A handover meeting allows the new council to prepare for their [#council-period-plan](./#council-period-plan "mention") with assistance from both the previous council and Jsgenesis. The previous council will get immidiate feedback on their [#council-period-summary](./#council-period-summary "mention") and Jsgenesis will learn what the current pressure points are.
 
-### Agenda
+#### **Daily Standup**
 
-* Review the temporary summary, presented by the previous council, for the benefit of all parties, with an emphasis on lessons learned.
-* A look at the next [#council-period-parameters](./#council-period-parameters "mention"), and the impacts that may have.
-* A Q\&A session.
-* A quick run through of how the scoring works.
+As for any organization, internal communication is key for performance. Every day between the handovers, the Council shall have a daily sync call, held in public on Discord. The scheduling will be set in the [#council-period-plan](./#council-period-plan "mention"), where the inaugural shall be **after** Jsgenesis publishes the new [#council-period-parameters](./#council-period-parameters "mention") and the scoring metrics for the period, but **before** the deadline to release the [#council-period-plan](./#council-period-plan "mention").&#x20;
+
+See [#summary-report-and-plan-deadlines](./#summary-report-and-plan-deadlines "mention") for more information.
+
+### Scope
+
+#### Handover
+
+* Discuss the performance of the previous council
+* Review the temporary summary, presented by the previous council, for the benefit of all parties, with an emphasis on lessons learned
+* Questions and comments
 
 A member of the new council takes notes, and quickly prepares a brief minutes of meeting to post on the forum or discord for feedback by the others. To avoid conflict and reduce the barrier to speak, the minutes must obey the "[Chatham House Rules](https://en.wikipedia.org/wiki/Chatham\_House\_Rule)".
 
+#### **Daily Standup**
+
+* Follow up the tasks in the councils own task tracker
+
 ### Submission
+
+#### Handover
 
 Once approved (informally, eg. no comments in discord unaddressed), the minutes are submitted in the forum category `Governance>Council Reports` as a thread which has the title which includes the two council period IDs.
 
+#### **Daily Standup**
+
+Minutes are added to the `Governance>Council Reports` in a thread that contains all standups for the week.
+
 ## Council Daily Sync
 
-As for any organization, internal communication is key for performance. Every day between the handovers, the Council shall have a daily sync call, held in public on Discord. They are free to coordinate internally when these are held, with the exception of the first one that must be held after Jsgenesis publishes the new [#council-period-parameters](./#council-period-parameters "mention") and the scoring metrics for the period, and well before the deadline to release the [#council-period-plan](./#council-period-plan "mention"). See [#summary-report-and-plan-deadlines](./#summary-report-and-plan-deadlines "mention") for more information.
 
-During the [#council-handover-meeting](./#council-handover-meeting "mention") the Council shall agree on a specific times for these meetings. The minutes are submitted in the forum category `Testnet>Council>Minutes`, in a thread titled Council period ID.
 
 ## Lead Opportunities
 
@@ -213,8 +240,9 @@ MARKETER_SCORE*M_W +
 STORAGE_SCORE*S_W +
 SUMMARY_SCORE*SU_W +
 PLAN_SCORE*P_W +
-LO_W*LEAD_OPPORTUNITIES_SCORE
-]/((B_W + C_W + D_W + F_W + HR_W + S_W + M_W + SU_W + P_W + LO_W)*2^N)
+MEETING_SCORE*ME_W +
+LEAD_OPPORTUNITIES_SCORE + LO_W
+]/((B_W + C_W + D_W + F_W + HR_W + S_W + M_W + SU_W + ME_W + P_W + LO_W)*2^N)
 ```
 
 where
@@ -235,11 +263,10 @@ where
   * Clarity of communication and organization.
   * Appropriate scope.
   * Accuracy of facts and information.
-* `HANDOVER_SCORE` (`P_W`): is a score in the range \[0, 1], computed based on three factors:
-  * Turnout of council members (n/m), for both meetings a single council should participate on
-  * The minutes of meeting, to be published for discussion within 30min of each call, and formalized within 2 days.
-* `LEAD_OPPORTUNITIES_SCORE` (`LO_W`) is `1`
-* `/min(x_1,..., x_k)` , which will be in the range \[0, 1], where `x_i` is the total number of council period in which the `i`th lead has worked in this group.
+* `MEETING_SCORE` (`ME_W`): is a score in the range \[0, 1], computed based on two factors:
+  * Turnout of council members (n/m), for all handover and standups, where 80% is required to achieve a full score
+  * The quality and promptness of publishing the minutes of meeting, where the score falls linearly from 1 to 0 if minutes are published between 2 hour and 8 hours after the meeting started
+* `LEAD_OPPORTUNITIES_SCORE` is `1/min(x_1,..., x_k)` , which will be in the range \[0, 1], where `x_i` is the total number of council period in which the `i`th lead has worked in this group.
 * `*_W` : are the weights from the table below.
 * `N` : The number of catastrophic error instances which occurred, as defined below.
 
@@ -274,9 +301,23 @@ For Jsgenesis to be able to complete the grading in "due time", all plans summar
 
 * easy to find (eg. in the applicable forum category)
 * punctual
-* formatted the same, easily digestable, way
+* formatted the same, easy to digest, way
 
 To address this problem, the council will be tasked to create a template for the general working group summary and plan. Any report that is not made from this template, and posted on the forum in time, will score 0.
+
+
+
+### Resources
+
+It has become clear that some extra resources are needed for all parties to:
+
+* See grading in flight
+* Learn how Jsgenesis is grading each metric
+* Further tips and ideas, not formally part of the overall scoring
+
+{% embed url="https://joystream.notion.site/Incentives-v3-Draft-Scoring-ecc8f827943744a285f8621446ad43e3" %}
+Grading Notes
+{% endembed %}
 
 ### Catastrophic Errors
 

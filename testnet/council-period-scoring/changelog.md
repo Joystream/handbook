@@ -4,6 +4,12 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+16.05.22
+
+* Added extra scope to the Council Period Plan
+* Added/updated a new metric for the Council - a `MEETING_SCORE`
+* Added link to the notion, which contains some grading tools
+
 09.05.22
 
 * Updated Council Parameters and the weight of the forum group
