@@ -4,6 +4,10 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+18.05.22
+
+* Updated Council Parameters and weights
+
 16.05.22
 
 * Added extra scope to the Council Period Plan

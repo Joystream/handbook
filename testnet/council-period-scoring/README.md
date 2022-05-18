@@ -46,25 +46,25 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 7, for the council elected at block `#648,000.`_
+_Valid through council scoring period number 8, for the council elected at block `#748,800.`_
 
 Note: Increased by 5% to account for Forum weighting and score.
 
-| Name                  | Value                             |
-| --------------------- | --------------------------------- |
-| `JOY_BUDGET`          | 2,625,000 (0.2625% \~USD 157,500) |
-| `REFERRER_JOY`        | 1000 (\~USD 60)                   |
-| `REFERREE_JOY`        | 1000 (\~USD 60)                   |
-| `tJOY_BUDGET`         | 105,000,000                       |
-| `USD_SUBSIDY`         | USD 2362.5 `*`                    |
-| `CAP`                 | JOY 15,000 (\~USD 9,000)          |
-| `COUNCIL_tJOY_REWARD` | 3,024,000 (15,120,000 in total)   |
+| Name                  | Value                           |
+| --------------------- | ------------------------------- |
+| `JOY_BUDGET`          | 2,500,000 (0.25% \~USD 150,000) |
+| `REFERRER_JOY`        | 1000 (\~USD 60)                 |
+| `REFERREE_JOY`        | 1000 (\~USD 60)                 |
+| `tJOY_BUDGET`         | 100,000,000                     |
+| `USD_SUBSIDY`         | USD 2400 `*`                    |
+| `CAP`                 | JOY 15,000 (\~USD 9,000)        |
+| `COUNCIL_tJOY_REWARD` | 3,024,000 (15,120,000 in total) |
 
 \`\*\` includes $100 subsidy for SPs, and $150 subsidy for distributors This means that JSG will mint $250 worth of tJOY and distribute across the workers, but these tJOY will not earn the recipients JOY.
 
-_The Parameters for scoring period 6 will be made available on Monday 1800 CET, along with the updated metrics._&#x20;
+_The Parameters for each new scoring period should be made available the following Monday 1800 CET, along with the updated metrics._
 
-Although changes must be expected, the council should assume they will stay the same until the update is made.
+Until published, the council should assume they will stay the same until the update is made.
 
 One change that can be accounted for already, is the fact that the Storage Providers and Distributors will receive an extra $tJOY subsidy, that will NOT count towards their $JOY earnings. This is done to account for the fact that workers (not Leads) in these roles have real operational costs, but their role doesn't require much time. The subsidy will be distributed at the time of grading, and will be shared equally across each worker in each group, adjusted by the number of blocks they were part of the group.
 
@@ -274,7 +274,7 @@ where
 
 The current weights are:
 
-<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>4</td></tr><tr><td><code>C_W</code></td><td>2</td></tr><tr><td><code>D_W</code></td><td>3</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>4</td></tr><tr><td><code>M_W</code></td><td>null</td></tr><tr><td><code>S_W</code></td><td>3</td></tr><tr><td><code>SUM_W</code></td><td>1</td></tr><tr><td><code>P_W</code></td><td>1</td></tr><tr><td><code>H_W</code></td><td>1</td></tr><tr><td><code>LO_W</code></td><td>1</td></tr></tbody></table>
+<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>8</td></tr><tr><td><code>C_W</code></td><td>4</td></tr><tr><td><code>D_W</code></td><td>6</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>8</td></tr><tr><td><code>M_W</code></td><td>null</td></tr><tr><td><code>S_W</code></td><td>6</td></tr><tr><td><code>SUM_W</code></td><td>2</td></tr><tr><td><code>P_W</code></td><td>2</td></tr><tr><td><code>CM_W</code></td><td>2</td></tr><tr><td><code>LO_W</code></td><td>2</td></tr></tbody></table>
 
 Jsgenesis reserves the right to add 1 point to the `M_W` assuming a scope is agreed.
 
