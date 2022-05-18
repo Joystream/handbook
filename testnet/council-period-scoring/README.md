@@ -315,8 +315,8 @@ It has become clear that some extra resources are needed for all parties to:
 * Learn how Jsgenesis is grading each metric
 * Further tips and ideas, not formally part of the overall scoring
 
-{% embed url="https://joystream.notion.site/Incentives-v3-Draft-Scoring-ecc8f827943744a285f8621446ad43e3" %}
-Grading Notes
+{% embed url="https://www.notion.so/joystream/Tools-and-Resources-8969641b5b284d1c85c658106a79792d" %}
+Tools and resources for grading
 {% endembed %}
 
 ### Catastrophic Errors
