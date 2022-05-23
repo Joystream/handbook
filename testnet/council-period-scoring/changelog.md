@@ -4,6 +4,20 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+23.05.22
+
+* Added more scope and weighting to the General Working Group Score
+  * The council is now responsible for submitting WG plans and summaries
+* Updated Council Parameters and weights
+* TODO:
+  * HR: Fix `REPORT_SCORE`, and changes+new metric
+  * Builders: tweak values for development, and new workflow (with the council)
+  * Storage: Small fixes + `elasticSearch`
+  * Distributors: Small fixes + `elasticSearch`
+  * Forum: Add more statistics (`REPORT_SCORE`), update `CATEGORIES_SCORE`
+  * Content: Clarify and improve `FEATURING_SCORE`
+  * Update council responsibilities
+
 18.05.22
 
 * Updated Council Parameters and weights

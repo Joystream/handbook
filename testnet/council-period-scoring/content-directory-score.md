@@ -88,7 +88,7 @@ _Objective:_ `The "Featured Content" must be changed frequently to keep fresh`
 There are three different "types" of featured content:
 
 1. [Featured Categories](https://play.joystream.org/discover)
-2. [Hero](https://play.joystream.org)
+2. [Hero](https://play.joystream.org/)
 
 * More information about 1. and 2. can be found [here](https://github.com/Joystream/atlas/blob/master/docs/community/featured-content.md).
 * The access keys, or help, needed to make the changes will be granted to the Lead upon mentioning `@klaudiusz.eth#6880` and `@bwhm#6514` on discord.
@@ -153,8 +153,6 @@ Then:
 MODERATION_SCORE = (SUM(RESPONSE_SCORES)/TOTAL_BREACHES_OF_POLICY)
 ```
 
-
-
 ### Catastrophic Errors
 
 #### Failure to apply moderation rules
@@ -168,8 +166,6 @@ The logging mandated under the `FEATURING_SCORE` does not occur.
 #### Featured Content Unplayable
 
 If the hero video, or the hero of any category, is not playable and is not dealt within within 1 hour after the change
-
-
 
 ### Need help understanding something?
 

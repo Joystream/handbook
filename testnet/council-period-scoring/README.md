@@ -46,27 +46,23 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 8, for the council elected at block `#748,800.`_
-
-Note: Increased by 5% to account for Forum weighting and score.
+_Valid through council scoring period number 9, for the council elected at block `#849,600.`_
 
 | Name                  | Value                           |
 | --------------------- | ------------------------------- |
 | `JOY_BUDGET`          | 2,500,000 (0.25% \~USD 150,000) |
-| `REFERRER_JOY`        | 1000 (\~USD 60)                 |
-| `REFERREE_JOY`        | 1000 (\~USD 60)                 |
+| `REFERRER_JOY`        | 50,000 (\~USD 3000)             |
+| `REFERREE_JOY`        | 50,000 (\~USD 3000)             |
 | `tJOY_BUDGET`         | 100,000,000                     |
 | `USD_SUBSIDY`         | USD 2400 `*`                    |
 | `CAP`                 | JOY 15,000 (\~USD 9,000)        |
-| `COUNCIL_tJOY_REWARD` | 3,024,000 (15,120,000 in total) |
+| `COUNCIL_tJOY_REWARD` | 4,032,000 (20,160,000 in total) |
 
 \`\*\` includes $100 subsidy for SPs, and $150 subsidy for distributors This means that JSG will mint $250 worth of tJOY and distribute across the workers, but these tJOY will not earn the recipients JOY.
 
-_The Parameters for each new scoring period should be made available the following Monday 1800 CET, along with the updated metrics._
+_The Parameters for each new scoring period should be made available the following Monday 2000 CET, along with the updated metrics._
 
 Until published, the council should assume they will stay the same until the update is made.
-
-One change that can be accounted for already, is the fact that the Storage Providers and Distributors will receive an extra $tJOY subsidy, that will NOT count towards their $JOY earnings. This is done to account for the fact that workers (not Leads) in these roles have real operational costs, but their role doesn't require much time. The subsidy will be distributed at the time of grading, and will be shared equally across each worker in each group, adjusted by the number of blocks they were part of the group.
 
 ## Summary Report and Plan Deadlines
 
@@ -86,11 +82,12 @@ The following deadlines will apply for a **Council Scoring Round**`n` with defin
 | [#working-group-summary](general-working-group-score.md#working-group-summary "mention") (for `n-1`)       | WG Leads    | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
 | [#council-period-summary](./#council-period-summary "mention") (for `n-1`)                                 | Council     | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
 | Period Scoring Results (for `n-1`)                                                                         | Jsgenesis   | <p>Min[<code>B_ce+21600</code>,</p><p>09.05-1400CET]</p> |
-| [#council-period-parameters](./#council-period-parameters "mention") and Metrics  (for `n`)                | Jsgenesis   | <p>Min[<code>B_ce+24000</code>,</p><p>09.05-1800CET]</p> |
+| [#council-period-parameters](./#council-period-parameters "mention") and Metrics  (for `n`)                | Jsgenesis   | Min\[`B_ce+24000,I_m`]                                   |
 | [#council-period-plan](./#council-period-plan "mention") (for `n`)                                         | Council     | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
 | [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention") (for `n`) | WG Leads    | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
 
 * `B_cs` means the block height the council term started (`B_cs+600`thus means 600 blocks later)
+* `I_m` means 1900 CE(S)T, first Monday after the election. This is to allow time for an internal Jsgenesis incentives meeting.
 * `N_cs` means the first time the clock strikes noon CET after the council term started
 * `B_ce` means the block height the council term ended
 * `N_ce` means the first time the clock strikes noon CET after the council term ended

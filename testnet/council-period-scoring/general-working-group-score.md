@@ -4,7 +4,7 @@ description: Metrics used to compute score for all working groups
 
 # General Working Group Score
 
-## Introduction
+Introduction
 
 The _general working group score_ is a type of score, computed in the same way, for all working groups. This general score is incorporated into a final specific score of each working group, which is what is directly used in the final network score, as described in [#network-performance-score](./#network-performance-score "mention")
 
@@ -54,7 +54,6 @@ All working group summaries have the same "core" scope
 * Actual hires made.
 * Actual slashes imposed.
 * Actual firings done.
-* Propose set of bounties that newcomers can tackle.
 * Changes made to the corresponding notion board.
 * A summary on how well the working group served it's intended purpose.
 * Recommendations for what should be focused on in next council period in order to make group more effective.
@@ -62,11 +61,13 @@ All working group summaries have the same "core" scope
 
 ### Submission
 
-The lead for each for a working group must submit the report, with the following specifics:
+For each working group, a plan must be submitted with the following specifics:
 
 * written as a markdown document in English
-* in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the title which includes the council period ID.
-* must use the template created by the council for the term, which should be posted on their notion boards
+* using a template, so that each report is structured and formatted uniformly
+* posted to the forum under category `Governance > Working Groups Plans and Summaries`  in a thread titled:  `[Working Group Name] Summary: [Council Period ID]` where `[Working Group Name]`is the name of the working group
+* include a link to a signal proposal, where the Council explicitly approves the plan
+  * a single proposal can approve all/multiple summaries
 
 If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board, but the general report itself **must** be posted on the forum.
 
@@ -90,23 +91,56 @@ All working group period plans have the same scope:
 
 ### Submission
 
-The lead for each for a working group must submit the report, with the following specifics:
+For each working group, a plan must be submitted with the following specifics:
 
 * written as a markdown document in English
-* in the forum category `Working Groups >[Working Group Name]>Plans` where `[Working Group Name]` is the name of the working group, as a thread which has the title which includes the council period ID
-* must use the template created by the council for the term, which should be posted on their notion boards
+* using a template, so that each report is structured and formatted uniformly
+* posted to the forum under category `Governance > Working Groups Plans and Summaries`  in a thread titled:  `[Working Group Name] Plan: [Council Period ID]` where `[Working Group Name]`is the name of the working group
+* include a link to a signal proposal, where the Council explicitly approves the plan
+  * a single proposal can approve all/multiple plans
 
-If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board, but the general report itself **must** be posted on the forum.
+Links to external resources, such as notion boards, can only include extra information, statistics, and the likes, not the core scope.
 
 ## Worker Opportunities
 
 There must be made space for newcomers to try to participate in the working group, even to the extent that other more experienced - but proficient participants, have to pause their participation in a given role to accommodate newcomers. It is up to the relevant authority, be it the working group lead or the council, in the case of hiring leads, to determine the cheapest way to accommodate newcomers without undermining the operations of the working group. Not only must the space be allocated and reserved for newcomers, but there must be effective collaboration with the [human-resources.md](../../system/human-resources.md "mention") working group to actually identify potential applicants and encourage them to apply to these opportunities.
 
+## Bounty Score
+
+The HR group is responsible for onboarding new people, by providing them a bounty or two where they can show what they can do to contribute. Assuming they are capable, it is important that they are given a chance to proceed further, and get a role where they belong.&#x20;
+
+However, the Leads shouldn't have to hire anyone unless there is a reason they are qualified, meaning the HR group needs to be able to test them somehow.
+
+For each new term, the group must present at least one bounty that a newcomer can address in order to prove themselves for the group in question.
+
+### Scope
+
+* Title
+* High level summary and purpose
+* Time estimate to complete, assuming some relevant skills, but little to no experience with Joystream or the working group
+* Detailed scope of work, relevant for either a specific part of the working group score, or more general
+  * if specific, this implies the group is looking for a worker in this sub-section
+* Discord handle and `memberId` of a worker (or the Lead) WG to act as the oracle for the bounty
+
+## Opening Score
+
+In addition to actually be given opportunities when applying , there needs to be a way for them to have an opening to submit their application. Although the Lead may not be of the opinion they _need_ someone at any given moment, there should always be a space to apply to a well written and informative opening.
+
+### Scope
+
+* Maintain at least one opening for a role in the group at any point during a council period
+* The opening must be relevant, created in the current or last council period, and
+  * be well written and outlining any requirements, conditions, nice to haves, that is needed to get the job
+  * include a set of question that allows the applicant to distinguish themselves
+  * include a link to a forum thread, where any interested parties or applicants can ask questions, and the discord handle of the Lead
+  * include the latest bounty created by the group, to act as a skill test
+* Anyone applies or asks questions in the forum must be followed up within 48h
+
 ## Score
 
 The general working groups score for a given group is computed as follows:
 
-`GENERAL_SCORE = [SUMMARY_SCORE + PLAN_SCORE + WORKER_OPPORTUNITIES_SCORE]/(3*2^{N+M})`
+`GENERAL_SCORE = [SUMMARY_SCORE + PLAN_SCORE + WORKER_OPPORTUNITIES_SCORE + OPENING_SCORE + BOUNTY_SCORE]/(5*2^{N+M})`
 
 where
 
@@ -125,5 +159,35 @@ where
   * `X` is a group-specific percentage, called the _opportunity target_, and `percentile(X,S)` returns the `X`th percentile in non-empty sequence of observations _S._ Consult the scoring rules for each group to find values of `X`.
   * `x_i` is the total number of council period in which the `i`th worker in the group has worked in this group.
   * Consult the scoring rules for each group to find values of `X`.
-* `N` : The number of full 6 hour increments that elapse from the [deadline](./#summary-report-and-plan-deadlines) until a summary report is submitted as described.&#x20;
-* `M` : The number of full 12 hour increments that elapse from  [deadline](./#summary-report-and-plan-deadlines) until the summary a period plan is submitted as described.
+* `OPENING_SCORE` is a score computed by Jsgenesis staff based on the quality (and existance) of the groups openings, which will be in the range \[0, 1], and will emphasize things like
+  * No "downtime" without any openings, even just after filling or closing the old one
+  * Quality of opening, in terms of information, requests and questions
+  * Inquires and applications dealt with in a reasonable time and manner
+* `BOUNTY_SCORE` is a score computed by Jsgenesis staff based on the quality of the groups openings, which will be in the range \[0, 1], and will emphasize things like
+  * Appropriate and well defined scope, meaning it's related either to a general part of the working group, or specific task associated with a specific opening.
+  * A time estimate for completion, which is between 30 minutes and 3 hours.
+  * Proposes either the Lead, or another trusted worker in the group, as the oracle for the bounty.
+* `N` : The number of catastrophic errors, as listed below.
+
+### Catastrophic Errors
+
+#### Late summary
+
+The summary is late by >6 hours or more.
+
+#### Late plan
+
+The plan is late by >6 hours or more.
+
+#### No openings
+
+No openings existed during the term
+
+#### HR sourced candidate not hired
+
+Each scoring period, the HR group is allowed to force the group to hire a member that has gone through the onboarding, given that:
+
+1. The member completed a Bounty made by the group and was awarded a winner.
+   * If the group has not made any bounties for this purpose, or a member of the group was the Oracle, but didn't submit judgement in time, it counts as true
+2. The member applied with more than two days (28,800 blocks) left of the term.
+3. The group has not already hired someone recommended by the HR group said term.
