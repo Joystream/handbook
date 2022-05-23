@@ -28,7 +28,7 @@ Distributor Working Group Knowledge Base
 The score is computed as follows
 
 ```
-FORUM_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + MODERATION_SCORE + NOTIFICATION_SCORE]/(4*2^{N})
+FORUM_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + MODERATION_SCORE + CATEGORY_SCORE]/(5*2^{N})
 ```
 
 where

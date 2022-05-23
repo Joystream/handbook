@@ -30,7 +30,7 @@ Distributor Working Group Knowledge Base
 The score is computed as follows
 
 ```
-DISTRIBUTOR_SCORE = [GENERAL_WG_SCORE + REPORT_SCORE + THUMBNAIL_SCORE + UPGRADE_SCORE]/(4*2^{N})
+DISTRIBUTOR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + THUMBNAIL_SCORE + RESEARCH_SCORE]/(5*2^{N})
 
 ```
 

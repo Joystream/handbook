@@ -8,7 +8,11 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 * Added more scope and weighting to the General Working Group Score
   * The council is now responsible for submitting WG plans and summaries
+  * The weighting of the score is doubled
 * Updated Council Parameters and weights
+
+
+
 * TODO:
   * HR: Fix `REPORT_SCORE`, and changes+new metric
   * Builders: tweak values for development, and new workflow (with the council)
