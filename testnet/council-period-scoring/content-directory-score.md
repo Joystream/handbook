@@ -54,13 +54,15 @@ CONTENT_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + FEATURING_SCORE + MODERATIO
 
 where
 
+`N` : The number of catastrophic error instances which occurred, as defined below.
+
 ### `GENERAL_WG_SCORE`
 
-Is computed with metrics defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
+Is computed with metrics defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`25%`**.
 
 ### `REPORT_SCORE`
 
-In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must include a section covering
+In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must publish a separate report covering
 
 * All channels and videos created.
 * All channels and videos deleted.
@@ -98,36 +100,18 @@ There are three different "types" of featured content:
 Let:
 
 * `CATEGORIES_SCORE` be the score for updating the main featured categories on the platform, as a function of:
-  * `HERO_CATEGORIES_CHANGE` be the score for how frequently the categories at the top row are changed, counted on a 24h basis
-  * `VIDEO_CATEGORIES_CHANGE` be the score for how frequently the top video(s) in each categories are changed, counted on a 24h basis
-  * `CATEGORIES_CHANGE_QUALITY` be the subjective score of how well this is done, based on how frequently the same videos are rotated back to the top, whether the "teaser" and metadata is correct, and whether the video is appropriate to feature (eg. actually representative of the category, good/bad video, not NSFW, etc.)
+  * `HERO_CATEGORIES_CHANGE` be the amount of times all heros were changed during the council period
+  * `VIDEO_CATEGORIES_CHANGE` be the amount of times the top video(s) in each categories were changed during the council period
 * `HERO_SCORE` be the score for updating the main featured video on the platform, as a function of:
-  * `HERO_CHANGE_FREQUENCY` be the frequency of which the hero video is changed, where only changes once per day counts (as close as possible to a set time, eg. \~noon GMT)
+  * `HERO_CHANGE` be the amount of times the hero was changed during the council period
   * `HERO_CHANGE_QUALITY` be the subjective score of how well this is done, based on how frequently the same video is rotated back to the top, whether the "teaser" and metadata is correct, and whether the video is appropriate to feature (eg. good/bad video, not NSFW, etc.)
     * Note that Jsgenesis reserves the right to veto videos suggested for this position, as it's the first thing a new user sees, and should thus be of really high quality
-* `LOGGING_SCORE` be the quality of the change logs in the notion board, so that grading can be done without having to check manually every day. This means creating a spreadsheet/table/db/json that every time a change is made, shows:
-  * `HERO`:
-    * `entryId` the index of change (eg 0,1,2,...,n)
-    * `blockheight+timestamp` denoting when changed
-    * `videoId` of new video,
-    * `metadata` used
-    * (perma)`link` to teaser
-    * `Delta_blockheight` showing how many blocks/days since the last time that vide was used as hero
-    * `lastEntryIds` an array of `entryIds` with all the previous times the video was used
-  * `CATEGORY`:
-    * `entryId` the index of change (eg 0,1,2,...,n)
-    * `blockheight+timestamp` denoting when changed
-    * `changelog` showing the exact changes made, eg.
-      * Top row: `Comedy/9,Gaming/7,Sports/5 -> Gaming/7,Film&Animation/1,Education/13`
-      * Autoplay: `Pets&Animals/4: 22770->22769`
-      * Top 6: ...
+* `LOGGING_SCORE` be the quality of the change logs in the notion board, so that grading can be done without having to check manually every day. This means creating a spreadsheet/table/db/json that every time a change is made
 
 ```
-  CATEGORIES_SCORE = (0.5*HERO_CATEGORIES_CHANGE + 0.5*VIDEO_CATEGORIES_CHANGE) * CATEGORIES_CHANGE_QUALITY =
-  0.5*[max(HERO_CHANGES_MADE/3,1) + max(VIDEO_CHANGES_MADE/3,1)] * CATEGORIES_CHANGE_QUALITY
+  CATEGORIES_SCORE = max[(HERO_CATEGORIES_CHANGE + VIDEO_CATEGORIES_CHANGE)/4 , 1]
 
-  HERO_SCORE = HERO_CHANGE_FREQUENCY*HERO_CHANGE_QUALITY =
-  max(CHANGES_MADE/3,1) * HERO_CHANGE_QUALITY
+  HERO_SCORE = max[(HERO_CHANGE + HERO_CHANGE_QUALITY)/4 , 1]
 
   # finally
   FEATURING_SCORE = (CATEGORIES_SCORE + HERO_SCORE + LOGGING_SCORE)/3

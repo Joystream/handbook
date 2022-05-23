@@ -25,18 +25,18 @@ Builders Notion knowledge base
 The builders working group score is computed as follows
 
 ```
-BUILDER_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + TESTING_SCORE + PIONEER_DEVELOPMENT_SCORE + GENERAL_DEVELOPMENT_SCORE]/5
+BUILDER_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + TESTING_SCORE + PIONEER_DEVELOPMENT_SCORE + 2*GENERAL_DEVELOPMENT_SCORE]/7
 ```
 
 where
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`20%`**.
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`25%`**.
 
 ### `REPORT_SCORE`
 
-In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must include a section covering
+In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must publish a separate report covering
 
 #### Dev builder issues
 
@@ -89,8 +89,8 @@ Let:
 
 ```
 TESTING_SCORE:
-  If ISSUES_TESTED >= 20:     1
-  If 5 < ISSUES_TESTED < 20:  1-((20-ISSUES_TESTED)/15)
+  If ISSUES_TESTED >= 15:     1
+  If 5 < ISSUES_TESTED < 15:  ISSUES_TESTED/15
   If ISSUES_TESTED =< 5:      0
 ```
 
@@ -112,8 +112,8 @@ For each issue that gets merged during a scoring period, the amount of story poi
 
 ```
 DEVELOPMENT_SCORE:
-  If STORY_POINTS >= 12:      1
-  If STORY_POINTS < 12:  1-((10-STORY_POINTS)/12)
+  If STORY_POINTS >= 10:  1
+  If STORY_POINTS < 10:   STORY_POINTS/10
 ```
 
 
@@ -128,12 +128,7 @@ How well the story points translates into score is not fully calibrated, and may
 
 #### Rules
 
-Unlike the Pioneer board, the builders may suggest tasks be added to this board. The process will be formalized further in the project, but until then the following workflow applies
-
-* The builder group, or jsgenesis adds an issue, and the lead assigns story points.
-* The lead requests approval for the issue/story points to jsg, either in a call or in the #builder channel on discord.
-  * The avoid this competing too much with the pioneer development score, only two issues can on this board can be worked on at the same time, and there should never be more than 10 unassigned issues at the same.
-* Jsgenesis can reject proposed issues based on their importance and/or the amount of story points assigned. Only approved issues will count for this score (eg. isses where jgenesis has explicitly given the go ahead in the issue).
+Only Jsgenesis may add tasks to this board, but the Council may ask Jsgenesis to add tasks in the Builders working group plan.&#x20;
 
 #### Scoring Calculations
 
@@ -141,8 +136,9 @@ For each issue that gets merged during a scoring period, the amount of story poi
 
 ```
 DEVELOPMENT_SCORE:
-  If STORY_POINTS >= 15:      1
-  If STORY_POINTS < 15:  1-((15-STORY_POINTS)/15)
+  If STORY_POINTS >= 25:       1
+  If 10 < STORY_POINTS < 25:   STORY_POINTS/25
+  If STORY_POINTS < 10:        0
 ```
 
 ### Need help understanding something?

@@ -38,9 +38,11 @@ STORAGE_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + MAINTENANCE_SCORE + UPLOAD_
 
 where
 
+`N` : The number of catastrophic error instances which occurred, as defined below.
+
 ### `GENERAL_WG_SCORE`
 
-Is computed with the metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`20%`**.
+Is computed with the metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`25%`**.
 
 ### `REPORT_SCORE`
 
@@ -125,37 +127,38 @@ Let:
 Then:
 
 ```
-  UPLOAD_SCORE = (successful_uploads/total_uploads - 0.80)/0.20
+  UPLOAD_SCORE = (successful_uploads/total_uploads - 0.85)/0.15
 ```
 
-### `UPGRADE_SCORE`
-
-Assuming it gets approved, the runtime will get upgraded to `rhodes` at block `#697,400`. This introduces a few changes in the types, which will impact the query-node (`hydra`), the distributor-node (`argus)` and the storage-node (`colossus`). Therefore upgrading the infrastructure is needed.
+### `RESEARCH_SCORE`
 
 **Notes**
 
-For the upgrade to take place seamlessly, all operators must switch over to a `rhodes` compatible version of both `hydra` and `colossus` before any extrinsics/events exposing the new types occur. As that could happen right away, the group needs to act fast.
+In order to drive improvements, we need the group to also consider how we can improve the functionality of their core focus.
 
-From testing, it appears that running both the `rhodes` version of the both the query node and storage-node before the upgrade will work. There is however a chance that some more changes are made to the `rhodes` branch before it gets merged to `master`. [https://query.joystream.org/graphql](https://query.joystream.org/graphql) may host the `rhodes` version even before the upgrade, which may cause some issues.
+**Research Logging**
 
-The storage group needs to plan this, and specifically address:
+To evaluate a system like this, we need to make sure the individual node logs are available, and useful.
 
-* Which nodes will upgrade `colossus` before the release?&#x20;
-  * When will they upgrade their local query-node?
-  * Which endpoint will they point to while syncing their local query-node?
-* Which operators are available to upgrade to `colossus` exactly at the time of the upgrade?
-  * When will they upgrade their local query-node?
-  * Which endpoint will they point to while syncing their local query-node?
+**`DEFAULT_LOGGING`** Review what is currently being logged by a storage node, for each configurable `log-level`. Describe what information it provides, and in what way it can be used to improve the data in the current report, or what new statistics can be derived from it.
 
-Although it's good to have as a backup, relying on the Jsgenesis query-node is not a good plan, and the distributors should maintain their own query nodes.
+**`ELASTIC_LOGGING`** There is an option for the storage node to run with `-e URL`, meaning logs, with configurable verbosity can be uploaded to an endpoint.
 
-**Scoring Calculations**
+* deploy a server to act as the endpoint
+* have a storage node or two report to it, and compare the resource consumption before/after (a couple of times)
+* make it public, so it can be used to debug and collect data
+* create a guide that explains how to set it up, and use it to look at the logs
+* use the most verbose log level, and IF that `LOG_LEVEL` differs from what was found in `DEFAULT_LOGGING`, outline what is added
 
-The score will be set subjectively, based on:
+Note that the distributors will have a similar task - consider collaborating.
 
-1. Whether the plan is good (and on time).
-2. Whether the plan is followed.
-3. How many nodes are down at the same time, and whether they are set to not accept new bags while they are offline. At no point can more than a single node be offline (restarting excluded).
+#### Scoring Calculations
+
+Jsgenesis will assign a score in the range \[0,1] based on:
+
+* The quality of the report
+* The quality of the guide
+* The amount of nodes that connected to the server
 
 ### Catastrophic Errors
 

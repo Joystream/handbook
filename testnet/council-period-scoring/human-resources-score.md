@@ -108,15 +108,20 @@ The HR working group score is computed as follows
 HR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + 2(RESPONSE_TIME_SCORE) + PERSON_LOGGING_SCORE + INTERACTION_LOGGING_SCORE + BOUNTY_SCORE]/(8*2^{N})
 ```
 
+where
+
+`N` : The number of catastrophic error instances which occurred, as defined below.
+
 ### `GENERAL_WG_SCORE`
 
-Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`25%`**.
 
 ### `REPORT_SCORE`
 
 In addition to what is outlined in the [#working-group-summary](general-working-group-score.md#working-group-summary "mention"), the working group report must include a section covering
 
 * How many new people reached out to the group in discord, and how many of them were captured in the CRM.
+  * Regardless of whether they were captured in the CRM, add a link to the persons initial discord post
 * What, and how many, bounties were funded by the group during the council period, and for each bounty
   * Which bounty template id was used for which bounty on-chain id&#x20;
   * Which HR worker created, assigned and funded it
@@ -130,6 +135,7 @@ In addition to what is outlined in the [#working-group-summary](general-working-
 * Which bounties failed during the judgement period because the oracle did not submit a valid judgement.
 * An overview of which bounty templates, and in general types of bounties, are the most and least sought after, and what types of bounty templates more options are needed.
 * Recommendations for "graduates" that should be considered for a role and a specific working group, or handed a spot the council.
+  * Include a link to the public board, and any contact made with the Lead of the group
 * What template bounties should have their budgets adjusted, and why.
 
 Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
@@ -160,11 +166,38 @@ Each instance of a new person joining the Discord and sending a message in the #
 
 Is the fraction of users posting in #start-here that gets an entry in the CRM in the IntegratorInteraction table.
 
-### `BOUNTY_SCORE`&#x20;
+### `BOUNTY_SCORE`
 
-Is the number of bounties assigned to new users joining the #start-here channel divided by the assignment target for the round. For round 5 onwards, the bounty target is `3`.
+Is a function of bounties created by the HR group, that gets assigned to someone with in the CRM. Although the primary focus is on newcomers joining the #start-here channel, two other "groups" of users also count.
 
-The score cannot exceed 1, so, for example, if 4 bounties are assigned and created in Pioneer for new participants and the assignment target is 3, the score would be `1.000`. If the number of bounties assigned is 2, the score would be `0.667`.
+#### Scoring Calculations
+
+Let:
+
+* `initial_newcomer_bounties` be the amount of bounties created on chain for someone that joined the discord within the last 4 weeks, and has never had a role or been assigned a bounty
+* `returning_member_bounties` be the amount bounties created on chain, and assigned to a member that has never had any role or been assigned a bounty on the current chain
+* `wg_role_bounties` be the amount of bounties created on chain, and assigned to a member that wants to join a specific working group, and needs the pass the WG screening bounty. More info in the general working group [#bounty-score](general-working-group-score.md#bounty-score "mention") and [#opening-score](general-working-group-score.md#opening-score "mention").
+* `bounty_sum` be the weighted sum of each
+* `bounty_target` be the target of bounties created
+
+```
+bounty_sum = initial_newcomer_bounties*2 + returning_member_bounties + wg_role_bounties
+
+If    bounty_sum > 10 
+BOUNTY_SCORE = 1
+
+If:   bounty_sum <= 10 
+BOUNTY_SCORE = bounty_sum/10
+```
+
+### `HIRING_SCORE`
+
+Create and maintain a board of all members that the group has interacted with, that has expressed a in interest in joining a particular working group. For each new entry, add
+
+* Brief (relevant) background for the role
+* Contact information, eg. discord handle, member ID and member handle
+* Current status, eg. whether they have applied, completed a bounty, rejected, hired, etc.
+* Help the person contact the Lead of the working group
 
 ### Catastrophic Errors
 

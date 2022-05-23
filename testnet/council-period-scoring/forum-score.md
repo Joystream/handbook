@@ -37,19 +37,28 @@ where
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with metrics defined in , where the opportunity target is **`20%`**.
+Is computed with metrics defined in , where the opportunity target is **`25%`**.
 
 ### `REPORT_SCORE`
 
 In addition to what is outlined in the [#working-group-summary](general-working-group-score.md#working-group-summary "mention"), the working group report must include a section covering
 
-* Changes made to category structure, and why
 * Forum statistics over the course of the scoring period, meaning
   * How many threads were created
   * How many threads were deleted
   * How many posts were created of each type
   * How many posts were deleted
-* A summary of all `forum` (except regular posting) transactions made by the group, who made it, and why
+* For each category
+  * How many threads exists, and how many was created during the last scoring period
+  * How many posts exists, and how many was created during the last scoring period
+* Charts showing the forum history over time
+  * Threads made since genesis
+  * Posts made since genesis
+* A summary of all `forum` (except regular posting) transactions made by the group, who made it, and why, eg.
+  * Moderation of threads
+  * Moderation of posts
+  * Threads moved
+  * Categories changed, deleted or created
 
 Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
 
@@ -69,7 +78,7 @@ The `MODERATION_SCORE` is set subjectively.
 
 #### Notes
 
-With the runtime upgrade scheduled for block `#697,500`, we are going from 20 to 40 max categories. This means we can implement the previously designed system, or a new better one.
+With the runtime upgrade at block `#697,500`, we know have gone from 20 to 40 max categories. This means we can implement the previously designed system, or a new better one.
 
 There are multiple tasks associated with this metric:
 
@@ -89,14 +98,6 @@ If the changes made
 
 the score is automatically zero.
 
-To get a full score, the changes must be completed before:
-
-```
-max[council_approval_block+14400 , runtime_upgrade_block + 28800]
-```
-
-If completed after the block above, but before the council terms ends, the score will be linear from 1 to 0 (assuming no other violations).
-
 ### Catastrophic Errors
 
 #### **Violation of Content Policy**
@@ -106,8 +107,6 @@ Although not strictly the same, the concepts in the content policy applies to th
 #### **Unwarrented deletion of a post or thread**
 
 Any thread or post that gets deleted, for any reason, must be justified in the report. If the grounds are found unwarranted (ie. not in line with any policy), or simply not mentioned in any report, it counts as a catastrophic error.
-
-
 
 ### Need help understanding something?
 
