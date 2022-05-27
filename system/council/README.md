@@ -139,7 +139,7 @@ Unlocking the voting lock on the staking account requires an active recovery act
 
 * If the vote is for an ongoing election, then it is not recoverable.
 * If the vote is for the last concluded election, then it is recoverable only if it was unsealed in favor of a losing candidate, otherwise it is not.
-* If the vote is for any election before the last concluded, the it is always recoverable.
+* If the vote is for any prior election cycle, then it is always recoverable.
 
 ### Election
 
