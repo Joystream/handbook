@@ -64,15 +64,34 @@ Is computed with metrics defined in [general-working-group-score.md](general-wor
 
 In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must publish a separate report covering
 
-* All channels and videos created.
-* All channels and videos deleted.
-* All moderation actions taken by the group, for which channels/video and why.
-* All requests made to storage working group lead, related to moderation.
-* Amount of videos hidden and censored.
-* All changes made to the featured content.
-* Categories created.
+**During the period**
 
-Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
+* All channels and videos by `*Id` created. For each, include&#x20;
+  * metadata, meaning (at least) `title`, `category`, `license`, `objectId`(s)
+  * content directory status, meaning (at least) `isCensored`, `isPublic`, whether each object `isAccepted`
+  * curator specific information, such as in which block it was created, the `createdAt` and `updatedAt`timestamps, for the purpose of being able to review a video that gets updated should be dealt with (eg. censored or no longer censored)
+* All channels and videos by `*Id` updated. For each, include what the change was and when it was made.
+* Channel or video categories created or deleted, when and why.
+* All `NFT`s created, and their `Id`
+* All `NFT`s sold, and the auction type and `Id`
+* All moderation actions taken by the group, for which channels/video and why. This must include&#x20;
+  * `*Id`
+  * action taken
+  * &#x20;justification (longer and "off-chain" - see `MODERATION_SCORE`)&#x20;
+  * `rationale` (if applicable)
+  * block height/event/[link to explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org%3A9944#/explorer) if a transaction was made
+  * the `curatorId` which made the transaction
+* All requests made to storage working group lead, related to moderation.
+* All changes made to the featured content, with precise logs (see `FEATURING_SCORE`)
+
+**For the content directory as a whole**
+
+* Total amount of videos
+* Total amount of channels
+* Total amount of `NFT`s
+* Amount of videos hidden and censored.
+
+The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
 
 ### `FEATURING_SCORE`
 
@@ -125,27 +144,44 @@ Content moderation is applied swiftly and appropriately in accordance with the [
 
 Let:
 
-* `RESPONSE SCORE` be equal to:\
-  \- `1` when a sanction is applied within 24 hours of a policy breaching item\* being uploaded\
-  \- `0` when no action is taken within 24 hours of a policy breaching item\* being uploaded\
-  \*identified by Jsgenesis during the period
-* `TOTAL_BREACHES_OF_POLICY` be the total number of instances of policy breaching items seen uploaded by Jsgenesis.
+* `response_time_i` be the time (in hours) from a video `i` is published until an action has been taken.
+* `justification_j` be a score in the range \[0,1], set by Jsgenesis staff for a few selected actions, based on:
+  * the justification provided for the action, such as pointing to the rule or guideline that is violated, proof related to license, etc.
+  * the `rationale` included in the `content.updateVideoCensorshipStatus` extrinsic
+  * further logging, such as the blockheight/event/[link to explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org%3A9944#/explorer) and who made the decision
+  * whether or not the justification/`rationale` is true
 
 Then:
 
 ```
-MODERATION_SCORE = (SUM(RESPONSE_SCORES)/TOTAL_BREACHES_OF_POLICY)
+response_time_score_i:
+  response_time_i >= 4:          1
+  response_time_i < 24:          0
+  4 < response_time_i < 24:      -0.05*response_time_i + 1.2
+  
+MODERATION_SCORE = [ sum(response_time_score_i) / i + sum(justification_j) / j] / 2
+
 ```
+
+### `CONTENT_OVERVIEW_SCORE`
+
+The curators needs to maintain a database of the content. Both for their own sake (`REPORT_SCORE`), for transparency and for accountability.
+
+This should be revisited occasionally,&#x20;
 
 ### Catastrophic Errors
 
 #### Failure to apply moderation rules
 
-Any item which violates the content guidelines is unmoderated more than 24 hours after being uploaded\
-\
+Any item which violates the content guidelines is unmoderated more than 36 hours after being uploaded
+
+**Video censored unjustly**
+
+Any video that shouldn't have been censored, gets censored without being reverted by the end of the period. Same applies if a video is censored without justification in the report (from `REPORT_SCORE`).
+
 **Logging does not occur**
 
-The logging mandated under the `FEATURING_SCORE` does not occur.
+No logs are kept.
 
 #### Featured Content Unplayable
 

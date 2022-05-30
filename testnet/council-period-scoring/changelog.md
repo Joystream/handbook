@@ -4,6 +4,17 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+**30.05.22**
+
+* Updated Council Parameters
+* Updated all plan, summary and report deadlines
+* Clarified all WG Report submission requirements
+* Updated Content metrics: `REPORT_SCORE` and `MODERATION_SCORE.`
+* Updated Builders metrics "benchmark" and weights
+* Replaced Storage `MAINTENANCE_SCORE`  with `SYSTEM_SCORE`
+* Replaced Distributors `THUMBNAIL_SCORE`  with `SYSTEM_SCORE`
+* New Marketing WG metrics and gave a weight for the overall score
+
 23.05.22
 
 * Added more scope and weighting to the General Working Group Score

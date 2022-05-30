@@ -32,7 +32,7 @@ Storage Providers Working Group Knowledge Base
 The score is computed as follows
 
 ```
-STORAGE_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + MAINTENANCE_SCORE + UPLOAD_SCORE + RESEARCh_SCORE]/(6*2^{N})
+STORAGE_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + SYSTEM_SCORE + UPLOAD_SCORE + RESEARCh_SCORE]/(6*2^{N})
 
 ```
 
@@ -67,14 +67,21 @@ In addition to what is outlined in the [#working-group-period-plan](general-work
 * How much bandwidth did the individual nodes consume during the period.
 * What, if anything, is the storage group doing the monitor the health of the system.
 * A list of all `storage` transactions (not `storageProviderWorkingGroup`) made by the lead, and the purpose behind them.
+* The values used as inputs for the subscores `excess_capacity_score` and `emergency_score` under the `SYSTEM_SCORE`.
 
-Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
+The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
 
-### `MAINTENANCE_SCORE`
+### `SYSTEM_SCORE`
 
-_Objective:_ `Maintain excess capacity, with a replication_rate of at least 4`
+Many things are required for the storage system to function as intended.  It needs
 
-#### Notes
+* to be **robust** enough to survive 2-3 nodes going down at the same time
+* **redundancy** in case of a burst of new uploads
+* to be **configured** well enough to function without intervention in case of personal issues or other
+* to be **responsive** enough to handle changing circumstances quickly
+* **monitoring** to notice the changing circumstances
+
+This score will likely see changes over time, to add remaining metrics.
 
 * This means we want all new objects to be, by default, without manual intervention, to be stored by multiple nodes.
 * "Operating/operated" means that a bucket is assigned to a Worker, the worker is running a node that can be uploaded to (by a channel owner) and downloaded from (by a distributor)
@@ -82,27 +89,36 @@ _Objective:_ `Maintain excess capacity, with a replication_rate of at least 4`
   * dynamic bag policy is 3 and buckets 0-6 can all accept a new bags
     * if bucket 0 is "full" (meaning max objects or size is reached), or down, that means the system CAN in fact halt, despite 1-5 all working.
 
+#### Parameters
+
+* The minimum replication rate is 5 (`replication_score`)
+*   The excess capacity required, for objects and size, must be higher than the "worst" of:
+
+    * 4x last period numbers (not current)
+    * 3x the highest period over the last 4 periods (not including current)
+
+    (`excess_capacity_score`)
+*   Maximum allowed failure probability is 80%, meaning all bags in the top 10% of EITHER:
+
+    * total size stored
+    * total objects stored
+    * amount of uploads over the last period
+
+    must be able to have at least 80% chance of being able to upload 1 object successfully, despite 2 storage nodes hypotethically being down (`emergency_score)`
+* The maximum response time is 2h (`response_score)`
+
+The first three subscores are measured at some point during the last 14400 blocks.
+
+The latter will be measured by creating an opening for `@bwhm` without any rewards, that should be invited to a bucket, but not set to accept new bags, and only (manually) assigned a single existing "testing" bag. If the node goes down, the bag must be removed.
+
 #### Scoring Calculations
-
-Let:
-
-* `dynamic_configuration_i` be the maximum amount of operated storage buckets, that with the current configuration, in a worst case scenario, can accept and store new bags, assuming some random checks (indexed `i`) are made
-* `existing_bag_configuration_i` be the maximum amount of operated storage buckets, that with the current configuration, in a "worst case scenario" will accept new data objects to an existing bag, assuming some random checks (indexed `i`) are made
-* `excess_capacity_objects_true/false_i` and `excess_capacity_size_true/false_i` be the extra capacity for objects and size \[GB] the system has, to accept new data objects, whether the bucket accepts new bags or only additions to existing bags, assuming some random checks (indexed `i`) are made
-* `MAINTENANCE_SCORE` be the final score \[0,1]
 
 Then:
 
 ```
-  dynamic_configuration_score = Zigma[max(dynamic_configuration_i-3,1)]/i
-  existing_bag_configuration_score = Zigma[max(existing_bag_configuration_i-3,1)]/i
-  excess_capacity_objects_false_score = Zigma[max((excess_capacity_objects_i-75)/75,1)]/i
-  excess_capacity_size_false_score = Zigma[max((excess_capacity_size_i-10)/20,1)]/i
-  excess_capacity_objects_true_score = Zigma[max((excess_capacity_objects_i-200)/200,1)]/i
-  excess_capacity_size_true_score = Zigma[max((excess_capacity_size_i-30)/20,1)]/i
+ All subscores are graded binary
 
-  # finally
-  MAINTENANCE_SCORE = 0.25*(dynamic_configuration_score + existing_bag_configuration_score + excess_capacity_objects_score + excess_capacity_size_score)
+  SYSTEM_SCORE = 0.25*(replication_score + excess_capacity_score + emergency_score + response_score)
 ```
 
 ### `UPLOAD_SCORE`

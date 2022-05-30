@@ -46,7 +46,7 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 9, for the council elected at block `#849,600.`_
+_Valid through council scoring period number 9, for the council elected at block `#950,400.`_
 
 | Name                  | Value                           |
 | --------------------- | ------------------------------- |
@@ -68,30 +68,66 @@ Until published, the council should assume they will stay the same until the upd
 
 For the system to work well, there is a need for a feedback-loop, between
 
-* the councils [#council-period-summary](./#council-period-summary "mention") and the working groups [#working-group-summary](general-working-group-score.md#working-group-summary "mention") are important for Jsgenesis to;
-* publish [#council-period-parameters](./#council-period-parameters "mention") (for the next term/scoring period), which are needed for;
+* the councils [#council-period-summary](./#council-period-summary "mention") and the working groups [#working-group-summary](general-working-group-score.md#working-group-summary "mention") are important for Jsgenesis in order to;
+* publish [#council-period-parameters](./#council-period-parameters "mention") (for the next scoring period), which are needed for;
 * the new councils [#council-period-plan](./#council-period-plan "mention") and working groups [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"). ****&#x20;
 
-For this to be the case, strict deadlines are required.&#x20;
+For this to be the case, strict deadlines are required. Based on feedback, we are going to make some changes in order to allow for information transfer from working groups to the council, and for the latter to review and request changes.&#x20;
 
-The following deadlines will apply for a **Council Scoring Round**`n` with definitions below.
+Suppose Council `n` is elected at block B\_n\_el.
 
-| Deliverable                                                                                                | Responsible | Deadline                                                 |
-| ---------------------------------------------------------------------------------------------------------- | ----------- | -------------------------------------------------------- |
-| Note: Council `n` elected                                                                                  | NA          | NA (`B_ce)`                                              |
-| [#working-group-summary](general-working-group-score.md#working-group-summary "mention") (for `n-1`)       | WG Leads    | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
-| [#council-period-summary](./#council-period-summary "mention") (for `n-1`)                                 | Council     | <p>Max(<code>B_ce+3600</code>,<br><code>N_cs</code>)</p> |
-| Period Scoring Results (for `n-1`)                                                                         | Jsgenesis   | <p>Min[<code>B_ce+21600</code>,</p><p>09.05-1400CET]</p> |
-| [#council-period-parameters](./#council-period-parameters "mention") and Metrics  (for `n`)                | Jsgenesis   | Min\[`B_ce+24000,I_m`]                                   |
-| [#council-period-plan](./#council-period-plan "mention") (for `n`)                                         | Council     | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
-| [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention") (for `n`) | WG Leads    | <p>Max[<code>B_ce+24000</code>,<br>PPM+3000]</p>         |
+[#working-group-summary](./#working-group-summary "mention")&#x20;
 
-* `B_cs` means the block height the council term started (`B_cs+600`thus means 600 blocks later)
-* `I_m` means 1900 CE(S)T, first Monday after the election. This is to allow time for an internal Jsgenesis incentives meeting.
-* `N_cs` means the first time the clock strikes noon CET after the council term started
-* `B_ce` means the block height the council term ended
-* `N_ce` means the first time the clock strikes noon CET after the council term ended
-* `PPM` means when the new council period parameters and metrics are posted.
+Deadline: `B_n_el+10800 (`election + 18h) for scoring period `n-1`
+
+
+
+[#council-period-summary](./#council-period-summary "mention")
+
+Deadline: `B_n_el+14400 (`election + 24h) for scoring period `n-1`
+
+
+
+**Working Group Reports**
+
+Deadline: `B_n_el+14400 (`election + 24h) for scoring period `n-1`
+
+
+
+**Initial Grading Results Published**
+
+Target Deadline: `B_n_el+23400`(election+39h) for scoring period `n-1`
+
+A post made in the `#council` room on discord will be made to notify the "old" Council of this.
+
+
+
+[#council-period-parameters](./#council-period-parameters "mention")
+
+Target Deadline: `B_n_el+28800`  (election+48h) for scoring period `n-1`
+
+
+
+****[#council-period-plan](./#council-period-plan "mention")****
+
+Deadline: `B_n_el+36000 (`election + 60h) for scoring period `n`
+
+``
+
+[#working-group-period-plan](./#working-group-period-plan "mention")****
+
+Deadline: `B_n_el+43200 (`election + 72h) for scoring period `n`
+
+### Deadline Notes
+
+* This means the council can not "formally" approve a final version of their own, nor the working groups summaries through a proposal, as there will be a "new" Council by the time it's completed. Instead, the "old" Council will be allowed to make corrections, by simply having one of the "old" Council members posting a new version of the report as a reply to the one made by the Lead, within the Council Period Summary Deadline (meaning an extra 6 hours).
+* For 6h after the **Initial Grading Results** are published, complaints may be issued. For any complaint to be considered, it must come from the "old" Council or the Lead of the Working Group in question, with specific errors or corrections, backed by numbers, facts or links.
+* Once the new **Council Period Parameters** are out, Jsgenesis will create a signal proposal with:
+  * A summary of which paramters was changed and why
+  * A summary of changes to made to the scoring metrics
+* For every 6h the **Initial Grading Results** are delayed, the plans may be submitted 6h later with no negative impact on the scoring.
+
+##
 
 ## Dashboard
 
@@ -141,6 +177,44 @@ The report itself must be written as a markdown document in English, in the foru
 
 If there is a need to link to extra information, statistics, etc. these should be in the notion board.
 
+## Working Group Summary
+
+### Motivation
+
+1. Allow Jsgenesis to update the [#council-period-parameters](../testnet-rewards.md#council-period-parameters "mention") and [#network-performance-score](./#network-performance-score "mention") metrics for the next period based on up to date and accurate information.
+2. Allow the possible next council and working group lead to have good information about the most urgent matters and status of the group.
+3. Provide some group-specific data, to ease the grading process.
+
+### Scope
+
+All working group summaries have the same "core" scope
+
+* Accounting of how much was spent on what.
+* Actual hires made.
+* Actual slashes imposed.
+* Actual firings done.
+* Changes made to the corresponding notion board.
+* A summary on how well the working group served it's intended purpose.
+* Recommendations for what should be focused on in next council period in order to make group more effective.
+* Suggested changes to the purpose or practices built in to this working group, other working groups, the council or Jsgenesis' role, in order to increase overall effectiveness of the group or the project.
+
+### Submission
+
+For each working group, a plan must be submitted with the following specifics:
+
+* written as a markdown document in English
+* using a template, so that each report is structured and formatted uniformly
+* posted to the forum under category `Governance > Working Groups Plans and Summaries`  in a thread titled:  `[Working Group Name] Summary: [Council Period ID]` where `[Working Group Name]`is the name of the working group
+
+In order for the Council to review and approve any summary, we have to either:
+
+1. Accept that the latest datapoints can not be part of the scoring
+2. Allow the council or leads to update the final numbers after the council can no longer approve a plan or summary.
+
+As the numbers are such a key component, we are going with alternative 2. However, this means the Council need another way of approving them.
+
+If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board, but the general report itself **must** be posted on the forum.
+
 ## Council Period Plan
 
 ### Motivation
@@ -164,6 +238,36 @@ Give Jsgenesis visibility into the priorities of the council, and also serve as 
 The plan itself must be written as a markdown document in English, in the forum category `Governance>Council Reports`, as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the plan on the forum.
 
 If there is a need to link to extra information, statistics, etc. these should be in the notion board.
+
+## Working Group Period Plan
+
+#### Motivation
+
+Give Jsgenesis and the council visibility into the priorities of the group, and also serve as a canonical document to focus everyone in the group around a clearly defined plan.
+
+#### Scope
+
+All working group period plans have the same scope:
+
+* Current group composition.
+* Plan for hirings (emphasizing newcomers).
+* Planned firings.
+* Onboarding plans for newcomers.
+* Ranked list of suggestions for problems groups should attempt to tackle, and how, with corresponding budgeting, marketing or other resources needed from council or Jsgenesis.
+
+**Note:** The plan for hiring and firings don't have to be specific members/workers, just the number of.
+
+#### Submission
+
+For each working group, a plan must be submitted with the following specifics:
+
+* written as a markdown document in English
+* using a template, so that each report is structured and formatted uniformly
+* posted to the forum under category `Governance > Working Groups Plans and Summaries` in a thread titled: `[Working Group Name] Plan: [Council Period ID]` where `[Working Group Name]`is the name of the working group
+* include a link to a signal proposal, where the Council explicitly approves the plan
+  * a single proposal can approve all/multiple plans
+
+Links to external resources, such as notion boards, can only include extra information, statistics, and the likes, not the core scope.
 
 ## Council Meetings
 
@@ -271,7 +375,7 @@ where
 
 The current weights are:
 
-<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>8</td></tr><tr><td><code>C_W</code></td><td>4</td></tr><tr><td><code>D_W</code></td><td>6</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>8</td></tr><tr><td><code>M_W</code></td><td>null</td></tr><tr><td><code>S_W</code></td><td>6</td></tr><tr><td><code>SUM_W</code></td><td>2</td></tr><tr><td><code>P_W</code></td><td>2</td></tr><tr><td><code>CM_W</code></td><td>2</td></tr><tr><td><code>LO_W</code></td><td>2</td></tr></tbody></table>
+<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>8</td></tr><tr><td><code>C_W</code></td><td>5</td></tr><tr><td><code>D_W</code></td><td>6</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>8</td></tr><tr><td><code>M_W</code></td><td>2</td></tr><tr><td><code>S_W</code></td><td>6</td></tr><tr><td><code>SUM_W</code></td><td>2</td></tr><tr><td><code>P_W</code></td><td>2</td></tr><tr><td><code>CM_W</code></td><td>2</td></tr><tr><td><code>LO_W</code></td><td>2</td></tr></tbody></table>
 
 Jsgenesis reserves the right to add 1 point to the `M_W` assuming a scope is agreed.
 
@@ -280,8 +384,9 @@ Which Means:
 ```
 NETWORK_PERFORMANCE_SCORE = [
 BUILDER_SCORE*B_W +
-DISTRIBUTOR_SCORE*D_W +
 CONTENT_SCORE*C_W +
+DISTRIBUTOR_SCORE*D_W +
+FORUM_SCORE*D_W +
 HR_SCORE*HR_W +
 MARKETER_SCORE*M_W +
 STORAGE_SCORE*S_W +

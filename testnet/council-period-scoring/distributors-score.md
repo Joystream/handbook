@@ -30,7 +30,7 @@ Distributor Working Group Knowledge Base
 The score is computed as follows
 
 ```
-DISTRIBUTOR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + THUMBNAIL_SCORE + RESEARCH_SCORE]/(5*2^{N})
+DISTRIBUTOR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + SYSTEM_SCORE + RESEARCH_SCORE]/(5*2^{N})
 
 ```
 
@@ -64,33 +64,35 @@ In addition to what is outlined in the [#working-group-period-plan](general-work
 * What, if anything, is the group doing the monitor the health of the system.
 * A list of all `storage` transactions (not `distributorWorkingGroup`) made by the lead, and the purpose behind them.
 
-Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
+The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
 
-### `THUMBNAIL_SCORE`
+### `SYSTEM_SCORE`
 
-_Objective:_ `Get a "clean" landing page on play.joystream.org`
+Although well intended and partially correct given the purpose of `bucket_families` , the current system causes issues for many reasons, two of which are easy to fix:
 
-#### Notes
+* Buckets are assigned more bags than they should, and needs to fetch objects from a storage provider themselves, before they can serve them
+* High latency between user, the player/orion and the distributor nodes, given most users residing in eurasia
 
-* Unless all thumbnails are cached on the server side, a new user scrolling through the player will have a bad experiences.
-* It's not clear to us how to best achieve this. It will likely playing around with both node and system configs
+Redesign the distributor system, to reduce these errors.
 
-#### Scoring Calculations
+#### Parameters
 
-Let:
+* All families/buckets well distributed across Europe and the CIS (`coverage_score`)
+* All objects must be available from at least 2 buckets in each family
+  * The top 10 most videos must be available from at least 3 buckets in each family (`redundancy_score`)
+* All distributor nodes are on the latest version of `argus` (`version_score`)
+* All distributor nodes displays their location coordinates and node capacity in the metadata,   (`transparancy_score`)
+* No distributor node stores more than 60% of their capacity (`excess_capacity_score`)
+* The maximum response time is 2h (`response_score)`
 
-* `avg_rendering_time_i` be the average time \[ms] it takes to GET all thumbnails (on screen) when opening [the player](play.joystream.org) (and optionally scrolling), for a test run `i`
-* `max_rendering_time_i` be the longest time \[ms] it takes to render a thumbnail when opening [the player](play.joystream.org), (and optionally scrolling), for a test run `i`
-* `THUMBNAIL_SCORE` be the final score \[0,1]
+The first five subscores are measured at some point during the last 14400 blocks.
 
-Then:
+The latter will be measured by creating an opening for `@bwhm` without any rewards, that should be invited to a bucket and set as serving, but not accept any bags. If the node goes down, it must be set to not serving.
 
 ```
-  avg_rendering = Zigma[max((2000-avg_rendering_time_i)/1000,1)]/i
-  max_rendering_score = max((3000-avg_rendering_time_i/1000),1)
+All subscores are graded binary
 
-  # finally
-  THUMBNAIL_SCORE = 0.6*avg_rendering + 0.4*max_rendering_score
+  SYSTEM_SCORE = (1/6)*(coverage_score + redundancy_score + version_score + transparancy_score + excess_capacity_score + response_score)
 ```
 
 ### `RESEARCH_SCORE`
@@ -128,7 +130,9 @@ Jsgenesis will assign a score in the range \[0,1] based on:
 
 A data object is not available from any distributor, despite being held be an available storage node
 
+#### Old version
 
+A node is operating (set as serving content) while being on an older version 4h after an upgrade has been published.
 
 ### Need help understanding something?
 

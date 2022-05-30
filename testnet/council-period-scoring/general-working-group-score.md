@@ -38,69 +38,6 @@ To find the final scores for each group, consult the corresponding sub-article:
 [storage-providers-score.md](storage-providers-score.md)
 {% endcontent-ref %}
 
-## Working Group Summary
-
-### Motivation
-
-1. Allow Jsgenesis to update the [#council-period-parameters](../testnet-rewards.md#council-period-parameters "mention") and [#network-performance-score](./#network-performance-score "mention") metrics for the next period based on up to date and accurate information.
-2. Allow the possible next council and working group lead to have good information about the most urgent matters and status of the group.
-3. Provide some group-specific data, to ease the grading process.
-
-### Scope
-
-All working group summaries have the same "core" scope
-
-* Accounting of how much was spent on what.
-* Actual hires made.
-* Actual slashes imposed.
-* Actual firings done.
-* Changes made to the corresponding notion board.
-* A summary on how well the working group served it's intended purpose.
-* Recommendations for what should be focused on in next council period in order to make group more effective.
-* Suggested changes to the purpose or practices built in to this working group, other working groups, the council or Jsgenesis' role, in order to increase overall effectiveness of the group or the project.
-
-### Submission
-
-For each working group, a plan must be submitted with the following specifics:
-
-* written as a markdown document in English
-* using a template, so that each report is structured and formatted uniformly
-* posted to the forum under category `Governance > Working Groups Plans and Summaries`  in a thread titled:  `[Working Group Name] Summary: [Council Period ID]` where `[Working Group Name]`is the name of the working group
-* include a link to a signal proposal, where the Council explicitly approves the plan
-  * a single proposal can approve all/multiple summaries
-
-If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board, but the general report itself **must** be posted on the forum.
-
-## Working Group Period Plan
-
-### Motivation
-
-Give Jsgenesis and the council visibility into the priorities of the group, and also serve as a canonical document to focus everyone in the group around a clearly defined plan.
-
-### Scope
-
-All working group period plans have the same scope:
-
-* Current group composition.
-* Plan for hirings (emphasizing newcomers).
-* Planned firings.
-* Onboarding plans for newcomers.
-* Ranked list of suggestions for problems groups should attempt to tackle, and how, with corresponding budgeting, marketing or other resources needed from council or Jsgenesis.
-
-**Note:** The plan for hiring and firings don't have to be specific members/workers, just the number of.
-
-### Submission
-
-For each working group, a plan must be submitted with the following specifics:
-
-* written as a markdown document in English
-* using a template, so that each report is structured and formatted uniformly
-* posted to the forum under category `Governance > Working Groups Plans and Summaries`  in a thread titled:  `[Working Group Name] Plan: [Council Period ID]` where `[Working Group Name]`is the name of the working group
-* include a link to a signal proposal, where the Council explicitly approves the plan
-  * a single proposal can approve all/multiple plans
-
-Links to external resources, such as notion boards, can only include extra information, statistics, and the likes, not the core scope.
-
 ## Worker Opportunities
 
 There must be made space for newcomers to try to participate in the working group, even to the extent that other more experienced - but proficient participants, have to pause their participation in a given role to accommodate newcomers. It is up to the relevant authority, be it the working group lead or the council, in the case of hiring leads, to determine the cheapest way to accommodate newcomers without undermining the operations of the working group. Not only must the space be allocated and reserved for newcomers, but there must be effective collaboration with the [human-resources.md](../../system/human-resources.md "mention") working group to actually identify potential applicants and encourage them to apply to these opportunities.

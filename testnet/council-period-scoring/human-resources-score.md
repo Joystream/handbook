@@ -138,7 +138,7 @@ In addition to what is outlined in the [#working-group-summary](general-working-
   * Include a link to the public board, and any contact made with the Lead of the group
 * What template bounties should have their budgets adjusted, and why.
 
-Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
+The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
 
 ### `RESPONSE_TIME_SCORE`
 

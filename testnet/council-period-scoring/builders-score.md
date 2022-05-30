@@ -25,7 +25,7 @@ Builders Notion knowledge base
 The builders working group score is computed as follows
 
 ```
-BUILDER_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + TESTING_SCORE + PIONEER_DEVELOPMENT_SCORE + 2*GENERAL_DEVELOPMENT_SCORE]/7
+BUILDER_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + TESTING_SCORE + PIONEER_DEVELOPMENT_SCORE + GENERAL_DEVELOPMENT_SCORE]/6
 ```
 
 where
@@ -70,7 +70,7 @@ In addition to what is outlined in the [#working-group-period-plan](general-work
   * Are there any "kinds" of issues the group wants fewer of, relative to the their stack
 * What part of the workflow is unclear, or could be improved (how, why)
 
-Whereas the same deadline as general report applies, there is no requirement to submit a temporary report for this.
+The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
 
 ### `TESTING_SCORE`
 
@@ -112,8 +112,8 @@ For each issue that gets merged during a scoring period, the amount of story poi
 
 ```
 DEVELOPMENT_SCORE:
-  If STORY_POINTS >= 10:  1
-  If STORY_POINTS < 10:   STORY_POINTS/10
+  If STORY_POINTS >= 15:  1
+  If STORY_POINTS < 15:   STORY_POINTS/15
 ```
 
 
@@ -136,9 +136,8 @@ For each issue that gets merged during a scoring period, the amount of story poi
 
 ```
 DEVELOPMENT_SCORE:
-  If STORY_POINTS >= 25:       1
-  If 10 < STORY_POINTS < 25:   STORY_POINTS/25
-  If STORY_POINTS < 10:        0
+  If STORY_POINTS >= 10:       1
+  If 0 < STORY_POINTS < 10:   STORY_POINTS/10
 ```
 
 ### Need help understanding something?
