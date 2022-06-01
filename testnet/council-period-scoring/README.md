@@ -46,7 +46,7 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 9, for the council elected at block `#950,400.`_
+_Valid through council scoring period number 10, for the council elected at block `#950,400.`_
 
 | Name                  | Value                           |
 | --------------------- | ------------------------------- |
@@ -151,7 +151,9 @@ The total tJOY spending over a given council period is something Jsgenesis attem
 * Any tJOY that has actually been cashed out by validators.
 * Any tJOY actually awarded to any council member, lead or worker.
 * Any tJOY paid through a Funding Request.
-* Any $tJOY approved for bounty work.
+* Any $tJOY approved for bounty work (as defined in the [human-resources-score.md](human-resources-score.md "mention")).
+
+Note that the although the `$tJOY_BUDGET`, may be confused with the concept of on chain Council and \[Working Group] Budgets, these are not equivalent. Whereas the tJOY\_BUDGET above includes the spending on validators and nominators, the council do not in fact control this. The same can be said for the bounties referred to above, although they have some influence and recourse here.
 
 ## Council Period Summary
 

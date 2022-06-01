@@ -4,6 +4,13 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+**01.05.22**
+
+* Fixed Council Period ID reference in the Council Period Parameters
+* Added clarity about $JOY for [#funding-requests](../testnet-rewards.md#funding-requests "mention")
+* Removed the scoring example (to simplified)
+* Fixed two errors in the [human-resources-score.md](human-resources-score.md "mention") (`BOUNTY_MANAGEMENT_SCORE`)
+
 **30.05.22**
 
 * Updated Council Parameters

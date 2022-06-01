@@ -105,7 +105,7 @@ Human Resources Working Group Knowledge Base
 The HR working group score is computed as follows
 
 ```
-HR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + 2(RESPONSE_TIME_SCORE) + PERSON_LOGGING_SCORE + INTERACTION_LOGGING_SCORE + BOUNTY_SCORE]/(8*2^{N})
+HR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + 2(RESPONSE_TIME_SCORE) + PERSON_LOGGING_SCORE + INTERACTION_LOGGING_SCORE + BOUNTY_MANAGEMENT_SCORE]/(8*2^{N})
 ```
 
 where
@@ -166,7 +166,7 @@ Each instance of a new person joining the Discord and sending a message in the #
 
 Is the fraction of users posting in #start-here that gets an entry in the CRM in the IntegratorInteraction table.
 
-### `BOUNTY_SCORE`
+### `BOUNTY_MANAGEMENT_SCORE`
 
 Is a function of bounties created by the HR group, that gets assigned to someone with in the CRM. Although the primary focus is on newcomers joining the #start-here channel, two other "groups" of users also count.
 
@@ -192,12 +192,16 @@ BOUNTY_SCORE = bounty_sum/10
 
 ### `HIRING_SCORE`
 
+\*NOT\* active
+
 Create and maintain a board of all members that the group has interacted with, that has expressed a in interest in joining a particular working group. For each new entry, add
 
 * Brief (relevant) background for the role
 * Contact information, eg. discord handle, member ID and member handle
 * Current status, eg. whether they have applied, completed a bounty, rejected, hired, etc.
 * Help the person contact the Lead of the working group
+
+The board should ideally live in the forum, but the notion board may be easier to maintain.
 
 ### Catastrophic Errors
 
