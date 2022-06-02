@@ -4,6 +4,10 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+**02.05.22**
+
+* Synced, and clarified FM thresholds (Council Period Parameters)
+
 **01.05.22**
 
 * Fixed Council Period ID reference in the Council Period Parameters
