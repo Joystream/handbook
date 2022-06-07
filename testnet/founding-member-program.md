@@ -103,38 +103,36 @@ There is a dynamic dashboard which holds up to date information on the state of 
 
 :warning: **These rules will change at our discretion** :warning:
 
-```
-Term
+1. Term
 The Joystream Founding Member Program was formally launched on 12th February 2021. The program will end one month in advance of the mainnet launch, on the snapshot date, yet to be confirmed.
 
-Our current target for mainnet launch is during Q2 2022, though this is subject to change.
+Our current target for mainnet launch is during Q3 2022, though this is subject to change.
 
-Eligibility
+2. Eligibility
 The program is open to everyone over the age of 18 who are not U.S. persons.
 
-To be formally admitted to the program you will be contacted and screened by a Jsgenesis representative upon request (as described above) or upon accumulating unrealized JOY earnings greater than or equal to $10,000USD, based on the value of the JOY token calculated in the previous funding round.
+To be formally admitted to the program you will be contacted and screened by a Jsgenesis representative upon request (as described above) or upon accumulating unrealized JOY earnings greater than or equal to a specific amount that can change periodically (the latest can be found [here](https://github.com/Joystream/handbook/tree/master/testnet/council-period-scoring#council-period-parameters) and is titled `JOY_INDUCTION_THRESHOLD`) based on the value of the JOY token calculated in the previous funding round.
 
 The formal admission of new Founding Members to the program will take place at the end of council periods. Each council period currently lasts one week.
 
-Communication
+3. Communication
 We will publish further public updates about the program through our regular communication channels, including our Official Telegram Channel, our Official Discord Server, the Joystream Newsletter, the official GitBook page for the program (https://joystream.gitbook.io/testnet-workspace/testnet/founding-member-program) and on our website (www.joystream.org), and blog (blog.joystream.org).
 
 Any private or sensitive information about your participation in the program will be communicated via Keybase or some other previously agreed contact method.
 
-Eviction Policy
+4. Eviction Policy
 Any platform member who participates in fraudulent or bad faith activity is liable to be expelled from the leaderboards and Founding Member program, with all associated token claims voided.
 
-Account And Key Security
+5. Account And Key Security
 Your tJOY and accumulated JOY allocation are yours alone and are non-transferrable. You must keep your account and any private keys associated with your membership of the Founding Member program safe and engage in sensible digital security practices.
 
 Keys with associated Founding Member token claims must not be transferred to anyone else under any circumstances. Where this occurs, points or token claims may be voided (see above).
 
 Tokens can only be allocated to addresses under your control. You may be required to sign a message proving you own the private keys to any addresses you provide.
 
-Updates To These Rules
+6. Updates To These Rules
 Jsgenesis reserves the right to update the rules of the program at any time, for any reason.
 
 If serious flaws in the structure of the program are discovered, Jsgenesis reserves the right to announce that after a future scoring period, the "season" is concluded, and a new scheme will apply to following seasons, thus resetting "scores". In such an event, a "slice" of the pool, set by Jsgenesis discretion, will be allocated in accordance with existing rules. The remainder will be transferred to new "seasons".
 
 Jsgenesis reserves the right not to honor any aspect of this agreement due to legal considerations.
-```
