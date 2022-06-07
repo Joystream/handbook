@@ -58,7 +58,7 @@ where
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with metrics defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`25%`**.
+Is computed with metrics defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
 
 ### `REPORT_SCORE`
 
@@ -160,14 +160,11 @@ response_time_score_i:
   4 < response_time_i < 24:      -0.05*response_time_i + 1.2
   
 MODERATION_SCORE = [ sum(response_time_score_i) / i + sum(justification_j) / j] / 2
-
 ```
 
 ### `CONTENT_OVERVIEW_SCORE`
 
-The curators needs to maintain a database of the content. Both for their own sake (`REPORT_SCORE`), for transparency and for accountability.
-
-This should be revisited occasionally,&#x20;
+`TBA`
 
 ### Catastrophic Errors
 

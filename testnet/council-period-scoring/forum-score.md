@@ -37,7 +37,7 @@ where
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with metrics defined in , where the opportunity target is **`25%`**.
+Is computed with metrics defined in , where the opportunity target is **`20%`**.
 
 ### `REPORT_SCORE`
 
@@ -72,31 +72,25 @@ Apply the moderation policy, and for each occurrence, make an entry of it in a s
 
 #### Scoring Calculations
 
-The `MODERATION_SCORE` is set subjectively.
+Let:
 
-### `CATEGORY_SCORE`
+* `response_time_i` be the time (in hours) from a post or thread `i` is created until an action has been taken.
+* `justification_j` be a score in the range \[0,1], set by Jsgenesis staff for a few selected actions, based on:
+  * the justification provided for the action, such as pointing to the rule or guideline that is violated
+  * the `rationale` included (if applicable) in the extrinsic
+  * further logging, such as the blockheight/event/[link to explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org%3A9944#/explorer) and who made the decision
+  * whether or not the justification/`rationale` is true
 
-#### Notes
+Then:
 
-With the runtime upgrade at block `#697,500`, we know have gone from 20 to 40 max categories. This means we can implement the previously designed system, or a new better one.
-
-There are multiple tasks associated with this metric:
-
-1. OPTIONAL: If the old, previously approved, system is found lacking, design a new system of categories and sub-categories.
-2. Get an proposal for a/the new category system approved by the Council. If a "brand" new system is designed, the proposal must include a design brief to explain the reasoning behind it. Regardless, it must include a an overview of:
-   * Which, if any, categories or subcategories should be deleted or moved
-   * Which, if any, threads should be moved
-3. Implement the new category system, without deleting any threads or posts.
-
-#### Scoring Calculations
-
-If the changes made
-
-* are not approved by the council
-* are not implemented exactly as approved (without technical reasons) before the end of the term
-* ends up permanently deleting any post or thread
-
-the score is automatically zero.
+```
+response_time_score_i:
+  response_time_i >= 4:          1
+  response_time_i < 24:          0
+  4 < response_time_i < 24:      -0.05*response_time_i + 1.2
+  
+MODERATION_SCORE = [ sum(response_time_score_i) / i + sum(justification_j) / j] / 2
+```
 
 ### Catastrophic Errors
 

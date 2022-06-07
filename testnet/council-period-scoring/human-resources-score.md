@@ -114,14 +114,15 @@ where
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`25%`**.
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
 
 ### `REPORT_SCORE`
 
 In addition to what is outlined in the [#working-group-summary](general-working-group-score.md#working-group-summary "mention"), the working group report must include a section covering
 
-* How many new people reached out to the group in discord, and how many of them were captured in the CRM.
-  * Regardless of whether they were captured in the CRM, add a link to the persons initial discord post
+* How many new people joined the channel, and for each, add a link to their "joined the channel" post and the timestamp of when they joined. Add this to a table, and
+  * Whether they respond to your welcome message
+  * Whether they were added to the CRM
 * What, and how many, bounties were funded by the group during the council period, and for each bounty
   * Which bounty template id was used for which bounty on-chain id&#x20;
   * Which HR worker created, assigned and funded it
@@ -148,19 +149,23 @@ Between 6am and 11pm CET
 
 Each instance of a new person joining the Discord and sending a message in the #start-here channel will be given points as follows:
 
-* An initial response in under two minutes yields 1 point
-* An initial response between two minutes and five minutes yields 0.8 point
-* An initial response between five minutes and ten minutes yields 0.5 points
-* An initial response after ten minutes has passed yields zero points
-* An initial response or no response after more than 60 minutes yields -1 point.
+Let:
 
-`RESPONSE_TIME_SCORE* =` \
-`SUM(RESPONSE TIME POINTS)/TOTAL NEW JOINERS` \
-`*MUST BE GREATER THAN OR EQUAL TO 0`
+* `new_joiner` be a new person `i`, that joins the channel, and an automatic welcome is made by discord.
+* `response_time` be the time from `new_joiner_i` message to being welcomed by an HR person.
+* `response_score_i` be the points defined below:&#x20;
+  * An initial response in under two minutes yields 1 point
+  * An initial response between two minutes and five minutes yields 0.8 point
+  * An initial response between five minutes and ten minutes yields 0.5 points
+  * An initial response after ten minutes has passed yields zero points
+
+```
+RESPONSE_TIME_SCORE = SUM(response_score_i)/SUM(new_joiner_i)
+```
 
 ### `PERSON_LOGGING_SCORE`
 
-&#x20;Is the fraction of users posting in #start-here that gets an entry in the CRM in the Persons table
+Is the fraction of users responding in #start-here that gets an entry in the CRM in the Persons table.
 
 ### `INTERACTION_LOGGING_SCORE`
 

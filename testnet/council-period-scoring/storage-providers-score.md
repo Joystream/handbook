@@ -42,7 +42,7 @@ where
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with the metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`25%`**.
+Is computed with the metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`20%`**.
 
 ### `REPORT_SCORE`
 

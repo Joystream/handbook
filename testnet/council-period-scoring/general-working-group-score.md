@@ -100,6 +100,7 @@ where
   * No "downtime" without any openings, even just after filling or closing the old one
   * Quality of opening, in terms of information, requests and questions
   * Inquires and applications dealt with in a reasonable time and manner
+  * Openings that were created before the previous scoring period does not count.
 * `BOUNTY_SCORE` is a score computed by Jsgenesis staff based on the quality of the groups openings, which will be in the range \[0, 1], and will emphasize things like
   * Appropriate and well defined scope, meaning it's related either to a general part of the working group, or specific task associated with a specific opening.
   * A time estimate for completion, which is between 30 minutes and 3 hours.
@@ -118,7 +119,7 @@ The plan is late by >6 hours or more.
 
 #### No openings
 
-No openings existed during the term
+No openings existed during the term.
 
 #### HR sourced candidate not hired
 

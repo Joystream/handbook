@@ -4,11 +4,18 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
-**02.05.22**
+**07.06.22**
+
+* "Updated" Council Period Parameters for scoring period 11
+* Slightly tweaked Builders `*DEVELOPMENT_SCORE` metrics.
+* Small changes to the HR groups report and response time scores
+* Lowered the opportunities target from 25% to 20% for all groups.
+
+**02.06.22**
 
 * Synced, and clarified FM thresholds (Council Period Parameters)
 
-**01.05.22**
+**01.06.22**
 
 * Fixed Council Period ID reference in the Council Period Parameters
 * Added clarity about $JOY for [#funding-requests](../testnet-rewards.md#funding-requests "mention")

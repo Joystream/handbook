@@ -48,6 +48,10 @@ where
 
 `N` : The number of catastrophic error instances which occurred, as defined below.
 
+### `GENERAL_WG_SCORE`
+
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
+
 ### `REPORT_SCORE`
 
 In addition to what is outlined in the [#working-group-summary](./#working-group-summary "mention") the working group report must publish a separate report covering working group specific stats

@@ -32,7 +32,7 @@ where
 
 ### `GENERAL_WG_SCORE`
 
-Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`25%`**.
+Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`20%`**.
 
 ### `REPORT_SCORE`
 
@@ -112,11 +112,11 @@ For each issue that gets merged during a scoring period, the amount of story poi
 
 ```
 DEVELOPMENT_SCORE:
-  If STORY_POINTS >= 15:  1
-  If STORY_POINTS < 15:   STORY_POINTS/15
+  If STORY_POINTS >= 12:  1
+  If STORY_POINTS < 12:   STORY_POINTS/12
 ```
 
-
+Any `STORY_POINTS` over 12 can be transferred over to the `GENERAL_DEVELOPMENT_SCORE`
 
 ### `GENERAL_DEVELOPMENT_SCORE`
 
@@ -135,9 +135,9 @@ Only Jsgenesis may add tasks to this board, but the Council may ask Jsgenesis to
 For each issue that gets merged during a scoring period, the amount of story points are summed up, and added below.
 
 ```
-DEVELOPMENT_SCORE:
-  If STORY_POINTS >= 10:       1
-  If 0 < STORY_POINTS < 10:   STORY_POINTS/10
+GENERAL_DEVELOPMENT_SCORE:
+  If STORY_POINTS >= 5:       1
+  If 0 < STORY_POINTS < 5:   STORY_POINTS/5
 ```
 
 ### Need help understanding something?
