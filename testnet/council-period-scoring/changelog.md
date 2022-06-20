@@ -4,6 +4,13 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+**20.06.22**
+
+* Council Period Parameters for scoring period 13.
+* Tweaked Builders metrics.
+* Updated `RESEARCH_SCORE`, and added `LOGGING_SCORE` for the storage group
+* Added a score for the content group
+
 **07.06.22**
 
 * "Updated" Council Period Parameters for scoring period 11

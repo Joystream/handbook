@@ -116,7 +116,7 @@ DEVELOPMENT_SCORE:
   If STORY_POINTS < 12:   STORY_POINTS/12
 ```
 
-Any `STORY_POINTS` over 12 can be transferred over to the `GENERAL_DEVELOPMENT_SCORE`
+If the score surpasses 12 `STORY_POINTS` the points can be transferred over to the `TESTING_SCORE` or the `GENERAL_DEVELOPMENT_SCORE` this term.
 
 ### `GENERAL_DEVELOPMENT_SCORE`
 
@@ -136,9 +136,11 @@ For each issue that gets merged during a scoring period, the amount of story poi
 
 ```
 GENERAL_DEVELOPMENT_SCORE:
-  If STORY_POINTS >= 5:       1
-  If 0 < STORY_POINTS < 5:   STORY_POINTS/5
+  If 0 < STORY_POINTS < 15:  STORY_POINTS/15
+  If STORY_POINTS >= 15:     1
 ```
+
+If the score surpasses 15 `STORY_POINTS` the points can be transferred over to the `TESTING_SCORE` or the `PIONEER_DEVELOPMENT_SCORE` this term.
 
 ### Need help understanding something?
 

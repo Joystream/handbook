@@ -49,7 +49,7 @@ Content Directory Working Group Knowledge Base
 The Content Directory working group score is computed as follows
 
 ```
-CONTENT_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + FEATURING_SCORE + MODERATION_SCORE]/(5*2^{N})
+CONTENT_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + FEATURING_SCORE + MODERATION_SCORE + CURATION_TESTING_SCORE]/(6*2^{N})
 ```
 
 where
@@ -162,9 +162,68 @@ response_time_score_i:
 MODERATION_SCORE = [ sum(response_time_score_i) / i + sum(justification_j) / j] / 2
 ```
 
-### `CONTENT_OVERVIEW_SCORE`
+### `CURATION_TESTING_SCORE`
 
-`TBA`
+Using the CLI and the extrinsics in the [polkadot-js app](https://polkadot.js.org/apps/#/extrinsics), preferably on the staging network:
+
+Create a few channels with a few fresh memberships. Use the CLI (where available) and the extrinsics tab, and test the following commands/extrinsic (all in the `content` module:
+
+```
+# Curator specific commands
+addCuratorToGroup(curatorGroupId, curatorId) 
+createCuratorGroup()
+removeCuratorFromGroup(curatorGroupId, curatorId)
+setCuratorGroupStatus(curatorGroupId, isActive)
+updateChannelCensorshipStatus(actor, channelId, isCensored, rationale)
+updateVideoCensorshipStatus(actor, videoId, isCensored, rationale)
+
+# General commands
+channelCollaboratorRemark(actor, channelId, msg)
+channelModeratorRemark(actor, channelId, msg)
+createVideo(actor, channelId, params)
+deleteChannel(actor, channelId, numObjectsToDelete)
+deleteVideo(actor, videoId, assetsToRemove)
+updateChannel(actor, channelId, params)
+updateModeratorSet(actor, newModerators, channelId)
+updateVideo(actor, videoId, params)
+```
+
+Try each with different "roles". Note that you need to test each for all the types of `actors`, so it's best to try the ones you don't think will work first!
+
+1. As a Curator, not in a `curatorGroup`
+2. As a Curator, in a `curatorGroup`
+3. As the Curator lead, not in a `curatorGroup`
+4. As the Curator lead, in a `curatorGroup`
+5. As the channel owner
+6. As a collaborator
+7. As a former collaborator
+8. As a moderator (of the channel)
+
+For each test, log:
+
+* The exact command/extrinsic, and the block height the tx was attempted
+* All inputs (if encoded, both with and without)
+* Relevant information about the channel and/or video at the time the transaction was attempted
+* If the actor was made as the owner, collaborator or moderator, include relevant information
+* If the `actor` was a curator, whether it was part of an (active) `curatorGroup` or not
+* The result of the transaction, meaning
+  * If done in polkadot-js: what the message box in the top right corner was
+  * If done using the cli: what the output was
+  * For both: screenshot of the polkadot-js log, and whether the query-node was updated after
+
+Notes:
+
+* Many of these will require technical assistance if/when using the extrinsics tab.
+* If using the cli, not that it will automatically select the any account that is allowed to make the operation automatically unless you select a specific member/actor OR delete the other accounts
+
+#### Scoring Calculations
+
+The grading will be subjective, and in the range `[0,1]`, based on:
+
+* The amount of transactions tested
+* The logging of the results
+
+&#x20;It's sufficient to complete half of the transactions to score 1 in this single period. If all are done, the weighting will be increased so that work isn't lost.
 
 ### Catastrophic Errors
 

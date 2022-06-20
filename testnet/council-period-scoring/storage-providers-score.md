@@ -32,7 +32,7 @@ Storage Providers Working Group Knowledge Base
 The score is computed as follows
 
 ```
-STORAGE_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + SYSTEM_SCORE + UPLOAD_SCORE + RESEARCh_SCORE]/(6*2^{N})
+STORAGE_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + SYSTEM_SCORE + UPLOAD_SCORE + LOGGING_SCORE+ RESEARCH_SCORE]/(7*2^{N})
 
 ```
 
@@ -146,27 +146,17 @@ Then:
   UPLOAD_SCORE = (successful_uploads/total_uploads - 0.85)/0.15
 ```
 
-### `RESEARCH_SCORE`
+### `LOGGING_SCORE`
 
-**Notes**
+Have all operating storage nodes log to the elastic logging server.
 
-In order to drive improvements, we need the group to also consider how we can improve the functionality of their core focus.
+Make guides for:
 
-**Research Logging**
-
-To evaluate a system like this, we need to make sure the individual node logs are available, and useful.
-
-**`DEFAULT_LOGGING`** Review what is currently being logged by a storage node, for each configurable `log-level`. Describe what information it provides, and in what way it can be used to improve the data in the current report, or what new statistics can be derived from it.
-
-**`ELASTIC_LOGGING`** There is an option for the storage node to run with `-e URL`, meaning logs, with configurable verbosity can be uploaded to an endpoint.
-
-* deploy a server to act as the endpoint
-* have a storage node or two report to it, and compare the resource consumption before/after (a couple of times)
-* make it public, so it can be used to debug and collect data
-* create a guide that explains how to set it up, and use it to look at the logs
-* use the most verbose log level, and IF that `LOG_LEVEL` differs from what was found in `DEFAULT_LOGGING`, outline what is added
-
-Note that the distributors will have a similar task - consider collaborating.
+* Deploying and using the server, meaning:
+  * Setup and configurations
+  * Extracting and parsing the data
+  * What it provides for a Lead
+* Operators to report to it
 
 #### Scoring Calculations
 
@@ -174,7 +164,118 @@ Jsgenesis will assign a score in the range \[0,1] based on:
 
 * The quality of the report
 * The quality of the guide
-* The amount of nodes that connected to the server
+* The amount of nodes that connected to the server (binary)
+
+### `RESEARCH_SCORE`
+
+**Notes**
+
+In order to drive improvements, we need the group to also consider how we can improve the functionality of their core focus.
+
+To evaluate a system like this, we need to make sure the individual node logs are available, and useful. At the end of the term, all operating storage provide should direct their logs here.
+
+**Storage CLI**
+
+Go through all the commands in the storage-cli, and compare to the all the transaction available in the `storage` module, eg. [polkadot-js](https://polkadot.js.org/apps/#/extrinsics) -> extrinsics -> storage
+
+As seen from the print below, far from half of them are relevant.
+
+```
+acceptDistributionBucketInvitation(workerId, bucketId)
+Accept pending invite.
+acceptPendingDataObjects(workerId, storageBucketId, bagId, dataObjects)
+A storage provider signals that the data object was successfully uploaded to its storage.
+acceptStorageBucketInvitation(workerId, storageBucketId, transactorAccountId)
+Accept the storage bucket invitation. An invitation must match the worker_id parameter.
+cancelDistributionBucketOperatorInvite(bucketId, operatorWorkerId)
+Cancel pending invite. Must be pending.
+cancelStorageBucketOperatorInvite(storageBucketId)
+Cancel pending storage bucket invite. An invitation must be pending.
+createDistributionBucket(familyId, acceptingNewBags)
+Create a distribution bucket.
+createDistributionBucketFamily()
+Create a distribution bucket family.
+createStorageBucket(inviteWorker, acceptingNewBags, sizeLimit, objectsLimit)
+Create storage bucket.
+deleteDistributionBucket(bucketId)
+Delete distribution bucket. Must be empty.
+deleteDistributionBucketFamily(familyId)
+Deletes a distribution bucket family.
+deleteStorageBucket(storageBucketId)
+Delete storage bucket. Must be empty. Storage operator must be missing.
+distributionOperatorRemark(workerId, distributionBucketId, msg)
+Create a dynamic bag. Development mode.
+inviteDistributionBucketOperator(bucketId, operatorWorkerId)
+Invite an operator. Must be missing.
+inviteStorageBucketOperator(storageBucketId, operatorId)
+Invite storage bucket operator. Must be missing.
+removeDistributionBucketOperator(bucketId, operatorWorkerId)
+Removes distribution bucket operator.
+removeStorageBucketOperator(storageBucketId)
+Removes storage bucket operator.
+setDistributionBucketFamilyMetadata(familyId, metadata)
+Set distribution bucket family metadata.
+setDistributionOperatorMetadata(workerId, bucketId, metadata)
+Set distribution operator metadata for the distribution bucket.
+setStorageBucketVoucherLimits(storageBucketId, newObjectsSizeLimit, newObjectsNumberLimit)
+Sets storage bucket voucher limits.
+setStorageOperatorMetadata(workerId, storageBucketId, metadata)
+Sets storage operator metadata (eg.: storage node URL).
+storageOperatorRemark(workerId, storageBucketId, msg)
+Create a dynamic bag. Development mode.
+sudoCreateDynamicBag(bagId, deletionPrize)
+Create a dynamic bag. Development mode.
+sudoUploadDataObjects(params)
+Upload new data objects. Development mode.
+updateBlacklist(removeHashes, addHashes)
+Add and remove hashes to the current blacklist.
+updateDataSizeFee(newDataSizeFee)
+Updates size-based pricing of new objects uploaded.
+updateDistributionBucketMode(bucketId, distributing)
+Updates 'distributing' flag for the distributing flag.
+updateDistributionBucketStatus(bucketId, acceptingNewBags)
+Updates a distribution bucket 'accepts new bags' flag.
+updateDistributionBucketsForBag(bagId, familyId, addBucketsIndices, removeBucketsIndices)
+Updates distribution buckets for a bag.
+updateDistributionBucketsPerBagLimit(newLimit)
+Updates "Distribution buckets per bag" number limit.
+updateFamiliesInDynamicBagCreationPolicy(dynamicBagType, families)
+Update number of distributed buckets used in given dynamic bag creation policy.
+updateNumberOfStorageBucketsInDynamicBagCreationPolicy(dynamicBagType, numberOfStorageBuckets)
+Update number of storage buckets used in given dynamic bag creation policy.
+updateStorageBucketStatus(storageBucketId, acceptingNewBags)
+Update whether new bags are being accepted for storage.
+updateStorageBucketsForBag(bagId, addBuckets, removeBuckets)
+Updates storage buckets for a bag..
+updateStorageBucketsPerBagLimit(newLimit)
+Updates "Storage buckets per bag" number limit.
+updateStorageBucketsVoucherMaxLimits(newObjectsSize, newObjectsNumber)
+Updates "Storage buckets voucher max limits".
+updateUploadingBlockedStatus(newStatus)
+```
+
+**All the below testing should be done on a staging network to avoid making any mistakes.**
+
+For the CLI commands you are comfortable with, compare cli command with the extrinsics tab:
+
+* Are all inputs/options supported
+* Does the extrinsics tab allow something the cli doesn't (eg. selecting more bags or buckets for add/remove)
+* Is the CLI documentation correct and complete
+* Does the command work as expected
+
+For the CLI commands you are **not** comfortable with:&#x20;
+
+* Read the documentation, and outline what you expect will happen. This means which value(s) will change, and what that means for the system.
+* Try the command and see if you are correct.
+* Then repeat the tasks from the above
+
+Produce a table of your findings, listing all `storage` extrinsics and if applicable, the corresponding cli command. Add notes if there are any interesting findings, with a log of the blockheights and commands/inputs.
+
+Note that the distributors will have a similar task - consider collaborating.
+
+#### Scoring Calculations
+
+Jsgenesis will assign a score in the range \[0,1] based on the quality of the report
 
 ### Catastrophic Errors
 

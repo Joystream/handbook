@@ -46,7 +46,7 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 11, for the council elected at block `#1,051,200.`_
+_Valid through council scoring period number 13, for the council elected at block `#1,252,800.`_
 
 | Name                      | Value                           |
 | ------------------------- | ------------------------------- |
@@ -56,10 +56,12 @@ _Valid through council scoring period number 11, for the council elected at bloc
 | `tJOY_BUDGET`             | 100,000,000                     |
 | `USD_SUBSIDY`             | USD 2,400 `*`                   |
 | `JOY_VERIFICATION_CAP`    | USD 5,000 (0.00833%)            |
-| `JOY_INDUCTION_THRESHOLD` | USD 15,000 (0.025%)             |
+| `JOY_INDUCTION_THRESHOLD` | USD 15,000 (0.025%) `**`        |
 | `COUNCIL_tJOY_REWARD`     | 4,032,000 (20,160,000 in total) |
 
-\`\*\` includes $100 subsidy for SPs, and $150 subsidy for distributors This means that JSG will mint $250 worth of tJOY and distribute across the workers, but these tJOY will not earn the recipients JOY.
+`*` includes $100 subsidy for SPs, and $150 subsidy for distributors This means that JSG will mint $250 worth of tJOY and distribute across the workers, but these tJOY will not earn the recipients JOY.
+
+`**`If the council spends over 90% of their  `tJOY_BUDGET`, for scoring period 13, the `JOY_INDUCTION_THRESHOLD` will be reduced to USD 12,500.
 
 _The Parameters for each new scoring period should be made available the following Monday 2000 CET, along with the updated metrics._
 
