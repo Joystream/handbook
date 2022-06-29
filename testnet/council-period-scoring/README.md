@@ -46,15 +46,15 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 13, for the council elected at block `#1,252,800.`_
+_Valid through council scoring period number 14, for the council elected at block `#1,382,400.`_
 
 | Name                      | Value                           |
 | ------------------------- | ------------------------------- |
-| `JOY_BUDGET`              | USD 150,000 (0.25%)             |
+| `JOY_BUDGET`              | USD 180,000 (0.3%)              |
 | `REFERRER_JOY`            | USD 3,000 (0.005%)              |
 | `REFERREE_JOY`            | USD 3,000 (0.005%)              |
-| `tJOY_BUDGET`             | 100,000,000                     |
-| `USD_SUBSIDY`             | USD 2,400 `*`                   |
+| `tJOY_BUDGET`             | 90,000,000                      |
+| `USD_SUBSIDY`             | USD 2,200 `*`                   |
 | `JOY_VERIFICATION_CAP`    | USD 5,000 (0.00833%)            |
 | `JOY_INDUCTION_THRESHOLD` | USD 15,000 (0.025%) `**`        |
 | `COUNCIL_tJOY_REWARD`     | 4,032,000 (20,160,000 in total) |
@@ -63,7 +63,7 @@ _Valid through council scoring period number 13, for the council elected at bloc
 
 `**`If the council spends over 90% of their  `tJOY_BUDGET`, for scoring period 13, the `JOY_INDUCTION_THRESHOLD` will be reduced to USD 12,500.
 
-_The Parameters for each new scoring period should be made available the following Monday 2000 CET, along with the updated metrics._
+_The Parameters for each new scoring period should be made available within 48h hours of a new Council elected._
 
 Until published, the council should assume they will stay the same until the update is made.
 
@@ -129,8 +129,6 @@ Deadline: `B_n_el+43200 (`election + 72h) for scoring period `n`
   * A summary of which paramters was changed and why
   * A summary of changes to made to the scoring metrics
 * For every 6h the **Initial Grading Results** are delayed, the plans may be submitted 6h later with no negative impact on the scoring.
-
-##
 
 ## Dashboard
 

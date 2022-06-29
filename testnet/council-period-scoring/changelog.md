@@ -4,6 +4,12 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+**29.06.22**
+
+* Council Period Parameters for scoring period **14**.
+  * Small reduction of `tJOY_budget` and `USD_subsidy`, and a small increase of the `JOY_budget`
+* Small changes to metrics should be expected on the 30th.
+
 **20.06.22**
 
 * Council Period Parameters for scoring period 13.
