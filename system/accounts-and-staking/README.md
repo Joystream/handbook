@@ -12,11 +12,11 @@ Staking, or bonding, is the act of locking up funds under some terms so that the
 
 ## **Accounts**
 
-`wip`  **** &#x20;
+`wip` \*\*\*\*
 
 ## Module Accounts
 
-`wip`  **** &#x20;
+`wip` \*\*\*\*
 
 ## **Staking**
 
@@ -27,7 +27,7 @@ Staking is used for two purposes to serve the system as a whole by providing mor
 
 ## Locks
 
-The way staking is implemented is with the use of account [locks](broken-reference). Each purpose above has one or more fixed number of locks associated with it, each with its own fixed ID. This means it is very easy to simply look at an account and understand in what staking activity it is involved. Some purposes allow more than one account to hold stake for the given purpose, others do not. Some purposes allow for staking any account, while others require that you are staking with an account that has been bound to a specific membership. The this binding constraint comes from purposes where staking itself is associated with membership, and this binding allows initiation of staking with a single extrinsic signed with membership credentials, rather than having an additional extrinsic for each arbitrary account used for staking on each occasion.
+The way staking is implemented is with the use of account [locks](../broken-reference/). Each purpose above has one or more fixed number of locks associated with it, each with its own fixed ID. This means it is very easy to simply look at an account and understand in what staking activity it is involved. Some purposes allow more than one account to hold stake for the given purpose, others do not. Some purposes allow for staking any account, while others require that you are staking with an account that has been bound to a specific membership. The this binding constraint comes from purposes where staking itself is associated with membership, and this binding allows initiation of staking with a single extrinsic signed with membership credentials, rather than having an additional extrinsic for each arbitrary account used for staking on each occasion.
 
 ## Vesting
 
