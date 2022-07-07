@@ -14,18 +14,22 @@ This is the native asset of the Joystream mainnet blockchain when it is launched
 
 The valuation of $JOY stands at **$60M USD** as of the last private transactions for mainnet $JOY, subject to vesting schedules which will be announced. We share this information in order to give prospective and future participants in our FMP some baseline for the value of the allocations they are earning.
 
-`<Add investor logo wall here>`
-
 ## Tokenomics
 
-`<flesh out tokenomics>`
+This breakdown is not final, as tokens will keep getting allocated towards FMP all the way leading up to launch.
 
-* vesting
-* cateories
-  * creator
-  * FM
-  * airdrops
-  * strategic
-  * parachain
-  * reserved
-* disclaimer
+| Purpose         | Supply    |       | Vesting |
+| --------------- | --------- | ----- | ------- |
+| FMP\*           | \~8.49%   | 8 %   | 24 m    |
+| Team            | 27,53 %   | 8 %   | 24 m    |
+| Reserved\*\*    | 21,76 %   | 8 %   | 24 m    |
+| Parachain\*\*\* | 10 %      | 100 % | 0 m     |
+| Investors       | \~32,22 % | 79 %  | 12 m    |
+
+\* Counts everyone > 15K $JOY before round 12 as FM \
+\*\* Additional FM allocations draw from this, and post-mainnet it will be used for a creator program, strategic partners, grants and possibly operations.\
+****\*\*\* Funds reserved for a parachain slot auction are to be offered as a reward in crowdloan on relay chain for stakers, which would introduce new, yet to be determined, vesting for crowdloan participants.
+
+### Disclaimer
+
+Jsgenesis reserve the sole discretion to dispose of funds \*\* and \*\*\* (e.g. burning) in a way different to what is described.
