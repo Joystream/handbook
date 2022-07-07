@@ -18,17 +18,19 @@ The valuation of $JOY stands at **$60M USD** as of the last private transactions
 
 This breakdown is not final, as tokens will keep getting allocated towards FMP all the way leading up to launch.
 
-| Purpose         | Supply    |       | Vesting |
-| --------------- | --------- | ----- | ------- |
-| FMP\*           | \~8.49%   | 8 %   | 24 m    |
-| Team            | 27,53 %   | 8 %   | 24 m    |
-| Reserved\*\*    | 21,76 %   | 8 %   | 24 m    |
-| Parachain\*\*\* | 10 %      | 100 % | 0 m     |
-| Investors       | \~32,22 % | 79 %  | 12 m    |
+| Purpose         | Supply    | Liquidity | Vesting |
+| --------------- | --------- | --------- | ------- |
+| FMP\*           | \~8.49%   | 8 %       | 24 m    |
+| Team            | 27,53 %   | 8 %       | 24 m    |
+| Reserved\*\*    | 21,76 %   | 8 %       | 24 m    |
+| Parachain\*\*\* | 10 %      | 100 %     | 0 m     |
+| Investors       | \~32,22 % | 79 %      | 12 m    |
 
 \* Counts everyone > 15K $JOY before round 12 as FM \
 \*\* Additional FM allocations draw from this, and post-mainnet it will be used for a creator program, strategic partners, grants and possibly operations.\
-****\*\*\* Funds reserved for a parachain slot auction are to be offered as a reward in crowdloan on relay chain for stakers, which would introduce new, yet to be determined, vesting for crowdloan participants.
+****\*\*\* Funds reserved for a parachain slot auction are to be offered as a reward in crowdloan on relay chain for stakers, which would introduce new, yet to be determined, vesting for crowdloan participants.\
+\
+To briefly explain the table, for each purpose, the _supply_ refers to the share of the genesis block allocated, the _liquidity_ refers to the share of this share that is unlocked at launch, and vesting refers to the period of time over which the remaining tokens unlock linearly.
 
 ### Disclaimer
 
