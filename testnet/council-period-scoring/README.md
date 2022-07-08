@@ -46,11 +46,11 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 14, for the council elected at block `#1,382,400.`_
+_Valid through council scoring period number 15, for the council elected at block `#1,483,200.`_
 
 | Name                      | Value                           |
 | ------------------------- | ------------------------------- |
-| `JOY_BUDGET`              | USD 180,000 (0.3%)              |
+| `JOY_BUDGET`              | USD 210,000 (0.35%)             |
 | `REFERRER_JOY`            | USD 3,000 (0.005%)              |
 | `REFERREE_JOY`            | USD 3,000 (0.005%)              |
 | `tJOY_BUDGET`             | 90,000,000                      |
@@ -60,8 +60,6 @@ _Valid through council scoring period number 14, for the council elected at bloc
 | `COUNCIL_tJOY_REWARD`     | 4,032,000 (20,160,000 in total) |
 
 `*` includes $100 subsidy for SPs, and $150 subsidy for distributors This means that JSG will mint $250 worth of tJOY and distribute across the workers, but these tJOY will not earn the recipients JOY.
-
-`**`If the council spends over 90% of their  `tJOY_BUDGET`, for scoring period 13, the `JOY_INDUCTION_THRESHOLD` will be reduced to USD 12,500.
 
 _The Parameters for each new scoring period should be made available within 48h hours of a new Council elected._
 

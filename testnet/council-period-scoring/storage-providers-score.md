@@ -32,8 +32,7 @@ Storage Providers Working Group Knowledge Base
 The score is computed as follows
 
 ```
-STORAGE_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + SYSTEM_SCORE + UPLOAD_SCORE + LOGGING_SCORE+ RESEARCH_SCORE]/(7*2^{N})
-
+STORAGE_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + 2*SYSTEM_SCORE + UPLOAD_SCORE + COST_SCORE]/(7*2^{N})
 ```
 
 where
@@ -67,7 +66,7 @@ In addition to what is outlined in the [#working-group-period-plan](general-work
 * How much bandwidth did the individual nodes consume during the period.
 * What, if anything, is the storage group doing the monitor the health of the system.
 * A list of all `storage` transactions (not `storageProviderWorkingGroup`) made by the lead, and the purpose behind them.
-* The values used as inputs for the subscores `excess_capacity_score` and `emergency_score` under the `SYSTEM_SCORE`.
+* An overview of which nodes that running with `--elasticSearchEndpoint`, what log level they are using, and how this information is used.
 
 The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
 
@@ -76,7 +75,7 @@ The report should be posted in the forum category `Working Groups >[Working Grou
 Many things are required for the storage system to function as intended.  It needs
 
 * to be **robust** enough to survive 2-3 nodes going down at the same time
-* **redundancy** in case of a burst of new uploads
+* **redundancy** in case of a burst of new uploads, some nodes going down, or a datacenter crashes
 * to be **configured** well enough to function without intervention in case of personal issues or other
 * to be **responsive** enough to handle changing circumstances quickly
 * **monitoring** to notice the changing circumstances
@@ -91,20 +90,16 @@ This score will likely see changes over time, to add remaining metrics.
 
 #### Parameters
 
-* The minimum replication rate is 5 (`replication_score`)
-*   The excess capacity required, for objects and size, must be higher than the "worst" of:
-
-    * 4x last period numbers (not current)
-    * 3x the highest period over the last 4 periods (not including current)
-
-    (`excess_capacity_score`)
-*   Maximum allowed failure probability is 80%, meaning all bags in the top 10% of EITHER:
-
-    * total size stored
-    * total objects stored
-    * amount of uploads over the last period
-
-    must be able to have at least 80% chance of being able to upload 1 object successfully, despite 2 storage nodes hypotethically being down (`emergency_score)`
+* The minimum replication rate is 4 (`replication_score`)
+  * Meaning **all** objects must be stored by at least 4 operated buckets at the end of the term
+* If any four storage nodes goes down at the same time, every object must still be available from at least two storage nodes (`redundancy_score`)
+* If any four storage nodes goes down at the same time, every channel must still be able to upload to at least two storage nodes (`emergency_score)`
+* All storage nodes are on the latest version of `colossus` (`version_score`)
+* All storage that has been in the working group for more than 1 week (100,800 blocks), must maintain their own query node, and share the public url in the metadata (`autonomy_score`)
+  * Will not be measured before scoring period 16
+* All storage nodes displays their location coordinates, node storage capacity and caching in the metadata,  (`transparancy_score`)
+* No storage node stores more than 80% of their capacity (`excess_capacity_score`)
+  * This may severely reduce performance
 * The maximum response time is 2h (`response_score)`
 
 The first three subscores are measured at some point during the last 14400 blocks.
@@ -118,7 +113,7 @@ Then:
 ```
  All subscores are graded binary
 
-  SYSTEM_SCORE = 0.25*(replication_score + excess_capacity_score + emergency_score + response_score)
+SYSTEM_SCORE = 0.125*(replication_score + redundancy_score + emergency_score + version_score + autonomy_score + transparancy_score + excess_capacity_score + response_score)
 ```
 
 ### `UPLOAD_SCORE`
@@ -143,139 +138,26 @@ Let:
 Then:
 
 ```
-  UPLOAD_SCORE = (successful_uploads/total_uploads - 0.85)/0.15
+  UPLOAD_SCORE = (successful_uploads/total_uploads - 0.95)/0.05
 ```
 
-### `LOGGING_SCORE`
+### `COST_SCORE`
 
-Have all operating storage nodes log to the elastic logging server.
+The cost score will try to measure how the group allocates their resources. Although being cost efficient is not a top priority for a testnet in general, it doesn't make much sense to:
 
-Make guides for:
+* Employ a lot of operators that are not receiving or storing content
+* Have operators store significantly less content than their capacity
+* Have operators run with costly hardware, and/or in expensive datacenters unless the benefit outweighs the extra costs
 
-* Deploying and using the server, meaning:
-  * Setup and configurations
-  * Extracting and parsing the data
-  * What it provides for a Lead
-* Operators to report to it
+he score is the sum of two subscores:
 
-#### Scoring Calculations
+1. A report documenting
+   * Current costs
+   * What can be done to reduce them (without impacting other scores)
+   * What could be done to reduce them (may impact other scores), and why this may, or may not, be worth it
+2. A subjective analysis by Jsgenesis, based on the report above and chain data. Any "excessive" costs not covered in the report will reduce the score, whereas costs that are documented will not.  An exeption to this rule is if a "cut" is not enacted in subsequent council periods.&#x20;
 
-Jsgenesis will assign a score in the range \[0,1] based on:
-
-* The quality of the report
-* The quality of the guide
-* The amount of nodes that connected to the server (binary)
-
-### `RESEARCH_SCORE`
-
-**Notes**
-
-In order to drive improvements, we need the group to also consider how we can improve the functionality of their core focus.
-
-To evaluate a system like this, we need to make sure the individual node logs are available, and useful. At the end of the term, all operating storage provide should direct their logs here.
-
-**Storage CLI**
-
-Go through all the commands in the storage-cli, and compare to the all the transaction available in the `storage` module, eg. [polkadot-js](https://polkadot.js.org/apps/#/extrinsics) -> extrinsics -> storage
-
-As seen from the print below, far from half of them are relevant.
-
-```
-acceptDistributionBucketInvitation(workerId, bucketId)
-Accept pending invite.
-acceptPendingDataObjects(workerId, storageBucketId, bagId, dataObjects)
-A storage provider signals that the data object was successfully uploaded to its storage.
-acceptStorageBucketInvitation(workerId, storageBucketId, transactorAccountId)
-Accept the storage bucket invitation. An invitation must match the worker_id parameter.
-cancelDistributionBucketOperatorInvite(bucketId, operatorWorkerId)
-Cancel pending invite. Must be pending.
-cancelStorageBucketOperatorInvite(storageBucketId)
-Cancel pending storage bucket invite. An invitation must be pending.
-createDistributionBucket(familyId, acceptingNewBags)
-Create a distribution bucket.
-createDistributionBucketFamily()
-Create a distribution bucket family.
-createStorageBucket(inviteWorker, acceptingNewBags, sizeLimit, objectsLimit)
-Create storage bucket.
-deleteDistributionBucket(bucketId)
-Delete distribution bucket. Must be empty.
-deleteDistributionBucketFamily(familyId)
-Deletes a distribution bucket family.
-deleteStorageBucket(storageBucketId)
-Delete storage bucket. Must be empty. Storage operator must be missing.
-distributionOperatorRemark(workerId, distributionBucketId, msg)
-Create a dynamic bag. Development mode.
-inviteDistributionBucketOperator(bucketId, operatorWorkerId)
-Invite an operator. Must be missing.
-inviteStorageBucketOperator(storageBucketId, operatorId)
-Invite storage bucket operator. Must be missing.
-removeDistributionBucketOperator(bucketId, operatorWorkerId)
-Removes distribution bucket operator.
-removeStorageBucketOperator(storageBucketId)
-Removes storage bucket operator.
-setDistributionBucketFamilyMetadata(familyId, metadata)
-Set distribution bucket family metadata.
-setDistributionOperatorMetadata(workerId, bucketId, metadata)
-Set distribution operator metadata for the distribution bucket.
-setStorageBucketVoucherLimits(storageBucketId, newObjectsSizeLimit, newObjectsNumberLimit)
-Sets storage bucket voucher limits.
-setStorageOperatorMetadata(workerId, storageBucketId, metadata)
-Sets storage operator metadata (eg.: storage node URL).
-storageOperatorRemark(workerId, storageBucketId, msg)
-Create a dynamic bag. Development mode.
-sudoCreateDynamicBag(bagId, deletionPrize)
-Create a dynamic bag. Development mode.
-sudoUploadDataObjects(params)
-Upload new data objects. Development mode.
-updateBlacklist(removeHashes, addHashes)
-Add and remove hashes to the current blacklist.
-updateDataSizeFee(newDataSizeFee)
-Updates size-based pricing of new objects uploaded.
-updateDistributionBucketMode(bucketId, distributing)
-Updates 'distributing' flag for the distributing flag.
-updateDistributionBucketStatus(bucketId, acceptingNewBags)
-Updates a distribution bucket 'accepts new bags' flag.
-updateDistributionBucketsForBag(bagId, familyId, addBucketsIndices, removeBucketsIndices)
-Updates distribution buckets for a bag.
-updateDistributionBucketsPerBagLimit(newLimit)
-Updates "Distribution buckets per bag" number limit.
-updateFamiliesInDynamicBagCreationPolicy(dynamicBagType, families)
-Update number of distributed buckets used in given dynamic bag creation policy.
-updateNumberOfStorageBucketsInDynamicBagCreationPolicy(dynamicBagType, numberOfStorageBuckets)
-Update number of storage buckets used in given dynamic bag creation policy.
-updateStorageBucketStatus(storageBucketId, acceptingNewBags)
-Update whether new bags are being accepted for storage.
-updateStorageBucketsForBag(bagId, addBuckets, removeBuckets)
-Updates storage buckets for a bag..
-updateStorageBucketsPerBagLimit(newLimit)
-Updates "Storage buckets per bag" number limit.
-updateStorageBucketsVoucherMaxLimits(newObjectsSize, newObjectsNumber)
-Updates "Storage buckets voucher max limits".
-updateUploadingBlockedStatus(newStatus)
-```
-
-**All the below testing should be done on a staging network to avoid making any mistakes.**
-
-For the CLI commands you are comfortable with, compare cli command with the extrinsics tab:
-
-* Are all inputs/options supported
-* Does the extrinsics tab allow something the cli doesn't (eg. selecting more bags or buckets for add/remove)
-* Is the CLI documentation correct and complete
-* Does the command work as expected
-
-For the CLI commands you are **not** comfortable with:&#x20;
-
-* Read the documentation, and outline what you expect will happen. This means which value(s) will change, and what that means for the system.
-* Try the command and see if you are correct.
-* Then repeat the tasks from the above
-
-Produce a table of your findings, listing all `storage` extrinsics and if applicable, the corresponding cli command. Add notes if there are any interesting findings, with a log of the blockheights and commands/inputs.
-
-Note that the distributors will have a similar task - consider collaborating.
-
-#### Scoring Calculations
-
-Jsgenesis will assign a score in the range \[0,1] based on the quality of the report
+Jsgenesis will assign a score in the range \[0,1] based on this.
 
 ### Catastrophic Errors
 

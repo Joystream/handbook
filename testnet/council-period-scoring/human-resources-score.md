@@ -195,19 +195,6 @@ If:   bounty_sum <= 10
 BOUNTY_SCORE = bounty_sum/10
 ```
 
-### `HIRING_SCORE`
-
-\*NOT\* active
-
-Create and maintain a board of all members that the group has interacted with, that has expressed a in interest in joining a particular working group. For each new entry, add
-
-* Brief (relevant) background for the role
-* Contact information, eg. discord handle, member ID and member handle
-* Current status, eg. whether they have applied, completed a bounty, rejected, hired, etc.
-* Help the person contact the Lead of the working group
-
-The board should ideally live in the forum, but the notion board may be easier to maintain.
-
 ### Catastrophic Errors
 
 #### **Inadequate Report**

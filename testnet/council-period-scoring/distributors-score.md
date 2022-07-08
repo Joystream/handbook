@@ -30,7 +30,7 @@ Distributor Working Group Knowledge Base
 The score is computed as follows
 
 ```
-DISTRIBUTOR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + SYSTEM_SCORE + RESEARCH_SCORE]/(5*2^{N})
+DISTRIBUTOR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + 2*SYSTEM_SCORE + COST_SCORE]/(6*2^{N})
 
 ```
 
@@ -52,7 +52,6 @@ In addition to what is outlined in the [#working-group-period-plan](general-work
 * What was the rationale behind the family bucket and bucket configuration, meaning
   * What geographical regions are the families meant to serve
   * Why was the specific dynamic bag policy chosen
-  * How do you want to scale the system assuming a growth of 2x, 10x and 100x in terms of data objects and size
 * How much bandwidth did the individual nodes consume during the period.
 * How is the bandwidth usage distributed, meaning
   * How did bandwidth usage look over a day (peak hours and slow hours)
@@ -63,6 +62,7 @@ In addition to what is outlined in the [#working-group-period-plan](general-work
 * What is the current running costs for the system, and a breakdown of said costs.
 * What, if anything, is the group doing the monitor the health of the system.
 * A list of all `storage` transactions (not `distributorWorkingGroup`) made by the lead, and the purpose behind them.
+* An overview of which nodes that running with `--elasticSearchEndpoint`, what log level they are using, and how this information is used.
 
 The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
 
@@ -71,58 +71,51 @@ The report should be posted in the forum category `Working Groups >[Working Grou
 Although well intended and partially correct given the purpose of `bucket_families` , the current system causes issues for many reasons, two of which are easy to fix:
 
 * Buckets are assigned more bags than they should, and needs to fetch objects from a storage provider themselves, before they can serve them
-* High latency between user, the player/orion and the distributor nodes, given most users residing in eurasia
+* High latency between user, the player/orion and the distributor nodes, given most users residing Europe and the CIS
 
 Redesign the distributor system, to reduce these errors.
 
 #### Parameters
 
-* All families/buckets well distributed across Europe and the CIS (`coverage_score`)
-* All objects must be available from at least 2 buckets in each family
-  * The top 10 most videos must be available from at least 3 buckets in each family (`redundancy_score`)
+* **All** families/buckets are well distributed across Europe and the CIS (`coverage_score`)
+  * No **active** distributor operates from any other geographical location
+* All objects must be available from at least 2 operators in each family (`redundancy_score`)
 * All distributor nodes are on the latest version of `argus` (`version_score`)
-* All distributor nodes displays their location coordinates and node capacity in the metadata,   (`transparancy_score`)
-* No distributor node stores more than 60% of their capacity (`excess_capacity_score`)
+* All distributors that has been operating for more than 1 week (100,800 blocks), must maintain their own query node, and share the public url in the metadata (`autonomy_score`)
+  * Will not be measured before scoring period 16
+* All distributor nodes displays their location coordinates, node storage capacity and caching in the metadata,   (`transparancy_score`)
+  * These should be the same numbers as `limits.storage` `limits.maxCachedItemSize` in the `config.yml` file
+* No distributor node stores more than 80% of their capacity (`excess_capacity_score`)
+  * This may severely reduce performance
 * The maximum response time is 2h (`response_score)`
 
-The first five subscores are measured at some point during the last 14400 blocks.
+The first five subscores are measured at some point during the last 14400 blocks of the scoring period.
 
 The latter will be measured by creating an opening for `@bwhm` without any rewards, that should be invited to a bucket and set as serving, but not accept any bags. If the node goes down, it must be set to not serving.
 
 ```
 All subscores are graded binary
 
-  SYSTEM_SCORE = (1/6)*(coverage_score + redundancy_score + version_score + transparancy_score + excess_capacity_score + response_score)
+  SYSTEM_SCORE = (1/7)*(coverage_score + redundancy_score + version_score + autonomy_score + transparancy_score + excess_capacity_score + response_score)
 ```
 
-### `RESEARCH_SCORE`
+### `COST_SCORE`
 
-**Notes**
+The cost score will try to measure how the group allocates their resources. Although being cost efficient is not a top priority for a testnet in general, it doesn't make much sense to:
 
-In order to drive improvements, we need the group to also consider how we can improve the functionality of their core focus.
+* Employ a lot of operators that are not serving content
+* Have operators store significantly less content than their capacity (especially cached capacity)
+* Have operators run with costly hardware, and/or in expensive datacenters unless the benefit outweighs the extra costs
 
-**Research Logging**
+The score is the sum of two subscores:
 
-To evaluate a system like this, we need to make sure the individual node logs are available, and useful.
+1. A report documenting
+   * Current costs
+   * What can be done to reduce them (without impacting other scores)
+   * What could be done to reduce them (may impact other scores), and why this may, or may not, be worth it
+2. A subjective analysis by Jsgenesis, based on the report above and chain data. Any "excessive" costs not covered in the report will reduce the score, whereas costs that are documented will not.  An exeption to this rule is if a "cut" is not enacted in subsequent council periods.&#x20;
 
-**`DEFAULT_LOGGING`** Review what is currently being logged by a distributor node, for each configurable `log-level`. Describe what information it provides, and in what way it can be used to improve the data in the current report, or what new statistics can be derived from it.
-
-**`ELASTIC_LOGGING`** In the `config.yml` file `elastic` is commented out. Look into the codebase/documentation, and:
-
-* deploy a server to act as the endpoint
-* have a distributor node or two report to it, and compare the resource consumption before/after (a couple of times)
-* make it public, so it can be used to debug and collect data
-* create a guide that explains how to set it up, and use it to look at the logs
-
-Note that the storage providers will have a similar task - consider collaborating.
-
-#### Scoring Calculations
-
-Jsgenesis will assign a score in the range \[0,1] based on:
-
-* The quality of the report
-* The quality of the guide
-* The amount of nodes that connected to the server
+Jsgenesis will assign a score in the range \[0,1] based on this.
 
 ### Catastrophic Errors
 

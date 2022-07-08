@@ -49,7 +49,7 @@ Content Directory Working Group Knowledge Base
 The Content Directory working group score is computed as follows
 
 ```
-CONTENT_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + FEATURING_SCORE + MODERATION_SCORE + CURATION_TESTING_SCORE]/(6*2^{N})
+CONTENT_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + FEATURING_SCORE + MODERATION_SCORE  + MIGRATION_SCORE]/(6)
 ```
 
 where
@@ -162,68 +162,25 @@ response_time_score_i:
 MODERATION_SCORE = [ sum(response_time_score_i) / i + sum(justification_j) / j] / 2
 ```
 
-### `CURATION_TESTING_SCORE`
+### `MIGRATION_SCORE`
 
-Using the CLI and the extrinsics in the [polkadot-js app](https://polkadot.js.org/apps/#/extrinsics), preferably on the staging network:
+We are approaching `carthage`, where no channel or videos will be migrated over. This means all channels needs to be evaluated for migration.
 
-Create a few channels with a few fresh memberships. Use the CLI (where available) and the extrinsics tab, and test the following commands/extrinsic (all in the `content` module:
+Over the course of the next 4 council periods, go through all channels and videos. For each period, process the a third of channels, create a table with (at least) 6 columns, namely:
 
-```
-# Curator specific commands
-addCuratorToGroup(curatorGroupId, curatorId) 
-createCuratorGroup()
-removeCuratorFromGroup(curatorGroupId, curatorId)
-setCuratorGroupStatus(curatorGroupId, isActive)
-updateChannelCensorshipStatus(actor, channelId, isCensored, rationale)
-updateVideoCensorshipStatus(actor, videoId, isCensored, rationale)
+* Channel ID
+* Owner Member ID
+* Video IDs:  a comma separated list of all videos in the channel
+* Grade: a score between 0 and 3, where:
+  * 3 means **all** videos in the channel are both of "good" quality, **and** does not violate any license, copyright or other parts of the content policy
+  * 0 means **no** videos in the channel are both of "good" quality, **and** does not violate any license, copyright or other parts of the content policy
+  * 2 and 1 means most, but not all, of the matches the requirements in 3 and 0 respectively
+* Comments: for channels that are graded:
+  * 2 - which videos should be excluded from migration and why.
+  * 1 - which videos should be included in the migration and why.
+* Checked: meaning who performed the check (member and discord handle), and when the check was made. This is to ensure we can check all channels that have been updated at the end, and in case of complaints, the community knows who to ask if there is an issue.
 
-# General commands
-channelCollaboratorRemark(actor, channelId, msg)
-channelModeratorRemark(actor, channelId, msg)
-createVideo(actor, channelId, params)
-deleteChannel(actor, channelId, numObjectsToDelete)
-deleteVideo(actor, videoId, assetsToRemove)
-updateChannel(actor, channelId, params)
-updateModeratorSet(actor, newModerators, channelId)
-updateVideo(actor, videoId, params)
-```
-
-Try each with different "roles". Note that you need to test each for all the types of `actors`, so it's best to try the ones you don't think will work first!
-
-1. As a Curator, not in a `curatorGroup`
-2. As a Curator, in a `curatorGroup`
-3. As the Curator lead, not in a `curatorGroup`
-4. As the Curator lead, in a `curatorGroup`
-5. As the channel owner
-6. As a collaborator
-7. As a former collaborator
-8. As a moderator (of the channel)
-
-For each test, log:
-
-* The exact command/extrinsic, and the block height the tx was attempted
-* All inputs (if encoded, both with and without)
-* Relevant information about the channel and/or video at the time the transaction was attempted
-* If the actor was made as the owner, collaborator or moderator, include relevant information
-* If the `actor` was a curator, whether it was part of an (active) `curatorGroup` or not
-* The result of the transaction, meaning
-  * If done in polkadot-js: what the message box in the top right corner was
-  * If done using the cli: what the output was
-  * For both: screenshot of the polkadot-js log, and whether the query-node was updated after
-
-Notes:
-
-* Many of these will require technical assistance if/when using the extrinsics tab.
-* If using the cli, not that it will automatically select the any account that is allowed to make the operation automatically unless you select a specific member/actor OR delete the other accounts
-
-#### Scoring Calculations
-
-The grading will be subjective, and in the range `[0,1]`, based on:
-
-* The amount of transactions tested
-* The logging of the results
-
-&#x20;It's sufficient to complete half of the transactions to score 1 in this single period. If all are done, the weighting will be increased so that work isn't lost.
+Share the table publicly with the community, so they can appeal.
 
 ### Catastrophic Errors
 

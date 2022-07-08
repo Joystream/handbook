@@ -4,6 +4,16 @@ description: Recent changes made, that impacts workflow, scoring or grading are 
 
 # Changelog
 
+**08.07.22**
+
+* Council Period Parameters for scoring period **15**.
+  * Small increase of the `JOY_budget`
+* Changes to metrics for:
+  * Content
+  * Distributors
+  * Storage
+  * HR (Not relevant)
+
 **29.06.22**
 
 * Council Period Parameters for scoring period **14**.
