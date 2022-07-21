@@ -19,7 +19,11 @@ This guide is primarily targeting current Stakeholders, meaning anyone with a cl
 
 Although there are other ways to generate keys we recommend `subkey`, a key generation and management utility developed and maintained by Parity Technologies. It's simple to use and allows keys to be generated offline. Both installation and usage is explained in the official [docs](https://docs.substrate.io/reference/command-line-tools/subkey/), that also contains plenty of examples. The downside of using the official release is that it doesn't support encoding the SS58 Address as Joystream Network Addresses out of the box.
 
-Note that sharing your keys as Joystream Network Addresses is not required, as any Account ID and SS58 Address is sufficient. However, instructions for generating Joystream Network Addresses can be found here [here](account-generation.md#joystream-network-address-generation).
+Note that sharing your keys as Joystream Network Addresses is not required, as any Account ID and SS58 Address is sufficient. However, instructions for generating Joystream Network Addresses can be found [here](account-generation.md#joystream-network-address-generation).
+
+A more user friendly alternative to the recommended key generation exists in the form of the [polkadot-js browser extension](https://polkadot.js.org/extension/). This is the default way of interacting with the Joystream chain, both for governance participants and content creators. Although there are some risks associated with generating keys in the browser generally, it may be a worthwhile tradeoff against the complexity of subkey, as a key generated here can be used without any further action.
+
+Instructions for Account generation with polkadot-js can be found [here](account-generation.md#joystream-network-address-generation-1).
 
 ### Address Types
 
@@ -155,3 +159,67 @@ Public Key URI `j4VwFPPGcpP77MuQbWdn7EbpBbjM4Siq5AGGuraF8ktr8vqjA` is account:
 ```
 
 This means regardless if you choose to generate your keypairs with the official `subkey` or `joystream-node key`, you can verify the results using the other in an online setting without exposing your private keys on an online computer.
+
+
+
+## Polkadot{.js} Account Generation
+
+The Polkadot wiki have created their own guide, which can be found [here](https://wiki.polkadot.network/docs/learn-account-generation#polkadotjs-browser-extension). However, as with subkey, displaying the Joystream Network Address format as default is not possible without some extra steps.
+
+Below, you will find a slightly modified version of the same guide, with references to the polkadot network are removed and some joystream specific information is added.
+
+### Polkadot{.js} Browser Extension
+
+The [Polkadot{.js} Extension](https://polkadot.js.org/extension/) provides a reasonable balance of security and usability. It provides a separate local mechanism to generate your address and interact with Polkadot.
+
+This method involves installing the Polkadot{.js} plugin and using it as a “virtual vault," separate from your browser, to store your private keys. It also allows the signing of transactions and similar functionality.
+
+#### Create Account
+
+Open the Polkadot{.js} browser extension by clicking the logo on the top bar of your browser. You will see a browser popup, not unlike the one below.
+
+![](../../.gitbook/assets/plugin-1.png)
+
+Click the big plus button or select "Create new account" from the small plus icon in the top right. The Polkadot{.js} plugin will then use system randomness to make a new seed for you and display it to you in the form of twelve words.
+
+![](../../.gitbook/assets/plugin-2.png)
+
+Back up these words, as it's the only way to recover your Account if your computer is lost or wiped. It is imperative to store the seed somewhere safe, secret, and secure. If you cannot access your account via Polkadot{.js} for some reason, you can re-enter your seed through the "Add account menu" by selecting "Import account from pre-existing seed".
+
+![](../../.gitbook/assets/plugin-3.png)
+
+#### Name Account
+
+The account name is arbitrary and for your use only. It is not stored on the blockchain and will not be visible to other users who look at your address via a block explorer. If you're juggling multiple accounts, it helps to make this as descriptive and detailed as needed.
+
+#### Enter Password
+
+The password will be used to encrypt this account's information. You will need to re-enter it when using the account for any kind of outgoing transaction or when using it to cryptographically sign a message.
+
+Note that this password does NOT protect your seed phrase. If someone knows the twelve words in your mnemonic seed, they still have control over your account even if they do not know the password.
+
+### Address Format
+
+Your address' format is only visual - the data used to derive this representation of your address are the same, so you can use the same address on multiple chains. However, for privacy reasons, we recommend creating a new address for each chain you're using.
+
+You can copy your address by clicking on the account's icon while the desired chain format is active. E.g. selecting "Substrate" as the format will change your address to start with the number 5, and clicking the colorful icon of your account will copy it in that format. While in Polkadot mode (starts with 1), that format will be copied, and so on.
+
+#### Verify Joystream Address Format
+
+You can display your new Account in the Joystream Network Address format, and even make test transaction on a staging network, without installing any additional software.
+
+Suppose I create an Account and name it "test" using the extension. This will display the address in the default SS58 Address format.
+
+![5FnKASiFwEnKPszomKKgRtQF552mMNA3fT978QxD2pkNPMFL](<../../.gitbook/assets/Screen Shot 2022-07-20 at 13.09.24.png>)
+
+Open the [polkadot{.js} app,](https://polkadot.js.org/apps) with [this link](https://polkadot.js.org/apps/?rpc=wss://172.104.229.249.nip.io/ws-rpc#/accounts), as it also configures your endpoint to `wss://172.104.229.249.nip.io/`, a development network we have deployed for this purpose.
+
+Allow your extension to connect to the website, and make sure any Accounts you want to use for the Joystream network is configured to "Allow use on any chain". The `accounts` tab of the app should now display your own Account(s), together with the default development chain Accounts (which you should not use to receive any JOY with).
+
+![](<../../.gitbook/assets/Screen Shot 2022-07-20 at 13.05.09.png>)
+
+Click on the Account of "interest", and you will be shown the full Joystream Network Address.
+
+![j4V3DjUxDoxHMEVSZ3HmNH37EbT7LrFjDPPmYVxzXTtu12c29](<../../.gitbook/assets/Screen Shot 2022-07-20 at 13.05.54.png>)
+
+Feel free to send a test transaction to your Account and back.
