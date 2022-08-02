@@ -27,11 +27,7 @@ This breakdown is not final, as tokens will keep getting allocated towards FMP a
 | Investors       | \~32,22 % | 79 %      | 12 m    |
 
 \* Counts everyone > 15K $JOY before round 12 as FM \
-\*\* Additional FM allocations draw from this, and post-mainnet it will be used for a creator program, strategic partners, grants and possibly operations.\
+\*\* Additional FM allocations draw from this.\
 ****\*\*\* Funds reserved for a parachain slot auction are to be offered as a reward in crowdloan on relay chain for stakers, which would introduce new, yet to be determined, vesting for crowdloan participants.\
 \
 To briefly explain the table, for each purpose, the _supply_ refers to the share of the genesis block allocated, the _liquidity_ refers to the share of this share that is unlocked at launch, and vesting refers to the period of time over which the remaining tokens unlock linearly.
-
-### Disclaimer
-
-Jsgenesis reserve the sole discretion to dispose of funds \*\* and \*\*\* (e.g. burning) in a way different to what is described.
