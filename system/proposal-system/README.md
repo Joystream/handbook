@@ -84,7 +84,7 @@ A proposal is defined by the following information
 * **Type:** Which type of proposal this is.
 * **General Parameters:** Values for general proposal parameters.
 * **Type-Specific Parameters:** Values for type-specific proposal parameters.
-* **Stage:**  The life-cycle stage of a proposal, as defined precisely in the next section.
+* **Stage:** The life-cycle stage of a proposal, as defined precisely in the next section.
 * **Votes:** The set of votes currently associated with the proposal.
 * **Council Approvals:** How many prior councils have approved the proposal, starts at 0.
 * **Starting Block:** The block where the deciding period was initiated.
@@ -225,7 +225,7 @@ None.
 #### Creation Conditions
 
 * each `amount` is greater than zero.
-* each `amount` is  no more than `MAX_SPENDING_PROPOSAL_VALUE`
+* each `amount` is no more than `MAX_SPENDING_PROPOSAL_VALUE`
 * there is at least one account
 
 #### Execution Conditions
@@ -546,7 +546,7 @@ None.
 
 #### Execution Conditions
 
-If `budget_update` is non-negative, then this it must be no less than the council budget, otherwise the absolute value must be no less than the current group budget.
+If `budget_update` is non-negative, then this it must be no more than the council budget, otherwise the absolute value must be no more than the current group budget.
 
 #### Effect
 
@@ -903,16 +903,16 @@ Unlocks the post with `post_id` allowing for modification
 
 The following constants are hard coded into the system, they can only be updated with a runtime upgrade.
 
-| Name                            | Description                                                                      |   Value   |
-| ------------------------------- | -------------------------------------------------------------------------------- | :-------: |
-| `MAX_RUNTIME_UPGRADE_BYTES`     | Maximum allowed number of bytes in a runtime upgrade Wasm blob.                  | `fill-in` |
-| `REJECTION_FEE`                 | Up to number of tokens slashed if proposal rejected, but not with slashing.      | `fill-in` |
-| `DISCUSSION_LINGERING_DURATION` | Number of blocks after proposal inactivation a proposal discussion is closed.    | `fill-in` |
-| `MAX_POSTS_PER_THREAD`          | Max posts per thread.                                                            | `fill-in` |
-| `MAX_ACTIVE_PROPOSALS`          | Max active proposals allowed at any given time.                                  | `fill-in` |
-| `PROPOSAL_LOCK_ID`              | The lock id used for proposal staking locks.                                     | `fill-in` |
-| `MAX_VALIDATOR_COUNT`           | The maximum number of validators accepted by validator staking system.           | `fill-in` |
-| `MAX_WHITELIST_SIZE`            | The maximum number of whitelisted participants in a closed  propsoal discussion. | `fill-in` |
+| Name                            | Description                                                                     |   Value   |
+| ------------------------------- | ------------------------------------------------------------------------------- | :-------: |
+| `MAX_RUNTIME_UPGRADE_BYTES`     | Maximum allowed number of bytes in a runtime upgrade Wasm blob.                 | `fill-in` |
+| `REJECTION_FEE`                 | Up to number of tokens slashed if proposal rejected, but not with slashing.     | `fill-in` |
+| `DISCUSSION_LINGERING_DURATION` | Number of blocks after proposal inactivation a proposal discussion is closed.   | `fill-in` |
+| `MAX_POSTS_PER_THREAD`          | Max posts per thread.                                                           | `fill-in` |
+| `MAX_ACTIVE_PROPOSALS`          | Max active proposals allowed at any given time.                                 | `fill-in` |
+| `PROPOSAL_LOCK_ID`              | The lock id used for proposal staking locks.                                    | `fill-in` |
+| `MAX_VALIDATOR_COUNT`           | The maximum number of validators accepted by validator staking system.          | `fill-in` |
+| `MAX_WHITELIST_SIZE`            | The maximum number of whitelisted participants in a closed propsoal discussion. | `fill-in` |
 
 ## Extrinsics
 
@@ -976,7 +976,7 @@ Record vote of `councilor`, and follow steps in **Deciding** stage for processin
 
 * `proposal` corresponds to an existing proposal in where discussion is active, that is either the proposal is active, or no more than `DISCUSSION_LINGERING_DURATION` blocks have passed since it became inactive.
 * `author` corresponds to signer.
-* If `author` is a member,  either is the proposer, or the discussion mode is open,  or it is closed and the `author` is on the whitelist for this thread.
+* If `author` is a member, either is the proposer, or the discussion mode is open, or it is closed and the `author` is on the whitelist for this thread.
 * The current number of posts in this thread is less than `MAX_POSTS_PER_THREAD`.
 
 #### Effect
