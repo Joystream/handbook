@@ -76,7 +76,7 @@ The model for reuse of accounts is quite simple. There is a finite set of lock t
 \* It is not possible to initiation the invitation lock, it is automatically applied when a new member is invited on, hence the question of whether binding is required for applying the lock does not even apply.\
 \*\* Vesting is only going to be setup for accounts originating from mainnet genesis block, and so by definition no binding would be needed for that.
 
-## Transaction Costs
+## Transaction Funding
 
 `wip`
 
