@@ -76,13 +76,25 @@ The model for reuse of accounts is quite simple. There is a finite set of lock t
 \* It is not possible to initiation the invitation lock, it is automatically applied when a new member is invited on, hence the question of whether binding is required for applying the lock does not even apply.\
 \*\* Vesting is only going to be setup for accounts originating from mainnet genesis block, and so by definition no binding would be needed for that.
 
-## Transaction Funding
-
-`wip`
-
 ## Reservation
 
 `WIP Only used in vesting`
+
+## Balances
+
+The _total balance_ of an account is the total number of tokens in the account, and it can be split into two distinct parts the _free balance_ and the _reserved balance_, where the latter refers to reservations in the sense described in [#reservation](./#reservation "mention"). The naming of the former is quite misleading, it is inherited from Substrate terminology, as it does not refer to funds that freely can be used for any purpose. The second constraint which ultimately still may encumber the free balance are locks, as described in [#locks](./#locks "mention"). The key concept to understand is that locks "stack", hence the net effect of all locks on an account is simply equivalent to the lock for the largest amount. Hence for example, if you have a free balance of 10, and locks of size 7, 6 and 2, then they net out to a locking effect of 7, which means that only 10 - 7 = 3 of the tokens actually are entirely unencumbered, also called _usable_. We refer to this balance as the _usable balance._ We can thus summarise as follows\
+&#x20;\
+`total_balance = free_balance + reserved_balance`
+
+`usable_balance = max(free_balance - max{lock_1, ..., lock_N, 0}, 0)`
+
+where `lock_i` is the lock amount of the `i'th` lock.\
+\
+`<add image here of how locks and reservations interact to influence the free, reserved, total and usable balance>`
+
+## Transaction Funding
+
+`wip`
 
 ## Slashing
 
