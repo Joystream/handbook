@@ -25,6 +25,14 @@ Staking is used for two purposes to serve the system as a whole by providing mor
 1. **Exposure:** By requiring that someone who occupies a role that impacts the value of the system has exposure to that value in their portfolio. For this requirement to be effective, this exposure should not be hedgeable, and it is generally assumed that markets for this are missing. It is also assumed that any harm or benefit that results from the actions of the actor will capitalize in the value of the platform, and thus be partially reflected in the value of the stake. This should in total discourage harmful conduct and encourage beneficial conduct.
 2. **Punishment:** In cases where it is possible to, if only imperfectly, have the system adjudicate whether an actor has acted harmfully, the ability to slash funds as a result of such detection can generate very strong incentives for pro-social behavior. The adjudication may be purely cryptographic, or it may require some level of social consensus. In either case, to the extent that it reliably can detect failure - that is avoiding false positives and negatives, it is a very cost-effective means of generating incentives compared to the first approach. It's cheaper because it allows for less capital to be locked for a given level of deterrence effect.
 
+## Transactions
+
+`wip`&#x20;
+
+* fees
+* weight
+* tips: where they go
+
 ## Locks
 
 A _lock_ is limitation applied to how funds can be used in an account, primarily to enable staking, and it is defined by&#x20;
@@ -119,9 +127,27 @@ where `lock_i` is the lock amount of the `i'th` lock.\
 \
 `<add image here of how locks and reservations interact to influence the free, reserved, total and usable balance>`
 
-## Transaction Funding
+## The Invitation Lock Exception&#x20;
 
-`wip`
+As you can read in the [#invitations](../memberships/#invitations "mention") section of the membership subsystem article, the purpose of the invitation lock is to onboard a new member, for example a creator, onto the system. This means they have to be granted some minimal quantity of initial funds that allow them to engage with the system in a very basic way. Typically, this will be done by applications that apply their own Sybill resistance check. Since all such checks are imperfect, the invitation lock is applied with an amount matching the initial quantity of funds credited, and this lock prevents the user from simply cashing out by exchanging the tokens to some other account for some sidepayment. At the same time, the lock also allows consuming the funds for a wide range of transactions, for example such as creating a channel or uploading a video. Some transactions are explicitly excluded because they inherently involve transferring funds to some new stakeholder, for example when bidding on an NFT or funding a bounty.
+
+The precise constraint for what invitation locks allow is as follows: if the transaction otherwise would have succeeded if the invitation lock was not present, and it is not among one of the cases below, then the transaction will still succeed regardless of the lock amount:
+
+1. Any transaction with non-zero tip.
+2. Balance transfers.
+3. Bidding on an NFT.
+4. Buying an NFT _now._
+5. Accepting an offer for an NFT which requires payment.
+6. Purchase creator tokens in a sale or from AMM.
+7. Contribute funds to a bounty.
+8. Paying for a channel swap.
+9. Sending funds to the council or working group budget.
+10. Gifting a membership.
+11. Buying a membership.
+
+**`NB: Add links to explicit extrinsics in other articles later!`**
+
+This upside of this exception to how locks are normally influencing funds available to fund transactions is that despite the membership controller account possibly having a usable balance which is nil or otherwise too low, funds encumbered by this lock can be deployed for the relevant purposes of a transaction, which on many occasions may make the difference, certainly for a totally new user.
 
 ## Slashing
 
