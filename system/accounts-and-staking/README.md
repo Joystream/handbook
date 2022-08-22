@@ -16,7 +16,7 @@ Staking, or bonding, is the act of locking up funds under some terms so that the
 
 ## Module Accounts
 
-`wip` \*\*\*\*
+`wip` : dynamic and static
 
 ## **Staking**
 
@@ -42,7 +42,7 @@ When initiating staking of some kind, it is very often - although not always, in
 
 Both are achieved by signing with for some account and in general they will not be the same. As a result, it is required that a user connects - or _binds_, a given account which holds funds for the purposes of staking, to their membership, in advance of being able to use that account for staking as that member. This binding is a two step process, per account, where the first step is to turn the account into a _staking candidate_ by issuing a request to bind to a given member by signing via this account, and the second step is for the member to accept this candidate, using the controller account for that membership.
 
-## Locks
+## Rivalry
 
 In what follows we attempt to briefly summarizes the what locks exist, their purposes and in what combinations are allowed on the same account. The reason some combinations of locks are acceptable, while others are not, stems from whether reusing capital across the two purposes of the locks is compatible with these purposes. Allowing capital to be reused has the benefit of more efficient use of capital for a single actor, reducing the barrier to getting involved in multiple activities simultaneously. At the same time, it may in some cases not be acceptable, if it ends up reducing the effective bond needed to generate good incentives for some form of participation.\
 \
@@ -76,9 +76,13 @@ The model for reuse of accounts is quite simple. There is a finite set of lock t
 \* It is not possible to initiation the invitation lock, it is automatically applied when a new member is invited on, hence the question of whether binding is required for applying the lock does not even apply.\
 \*\* Vesting is only going to be setup for accounts originating from mainnet genesis block, and so by definition no binding would be needed for that.
 
+## Transaction Costs
+
+`wip`
+
 ## Reservation
 
-`WIP`
+`WIP Only used in vesting`
 
 ## Slashing
 
