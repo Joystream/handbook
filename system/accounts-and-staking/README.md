@@ -27,7 +27,34 @@ Staking is used for two purposes to serve the system as a whole by providing mor
 
 ## Locks
 
-The way staking is implemented is with the use of account [locks](../broken-reference/). Each purpose above has one or more fixed number of locks associated with it, each with its own fixed ID. This means it is very easy to simply look at an account and understand in what staking activity it is involved. Some purposes allow more than one account to hold stake for the given purpose, others do not. Some purposes allow for staking any account, while others require that you are staking with an account that has been bound to a specific membership. The this binding constraint comes from purposes where staking itself is associated with membership, and this binding allows initiation of staking with a single extrinsic signed with membership credentials, rather than having an additional extrinsic for each arbitrary account used for staking on each occasion.
+A _lock_ is limitation applied to how funds can be used in an account, primarily to enable staking, and it is defined by&#x20;
+
+* a _lock ID, unique across all locks on that account_
+* _an amount , which is a quantity of tokens, and_
+* _a type, of which there are a finite number_
+
+These are the different types of locks that currently exist, each has a distinct ID, which means it is very easy to work at what sort of staking is going on funded by a given account.
+
+| Lock                            | Description |
+| ------------------------------- | ----------- |
+| Voting                          | `wip`       |
+| Vesting                         | `wip`       |
+| Invitation                      | `wip`       |
+| Bound Staking Account           | `wip`       |
+| Council Candidate Staking       | `wip`       |
+| Council Member Staking          | `wip`       |
+| Validation & Nomination Staking | `wip`       |
+| Proposals Staking               | `wip`       |
+| Storage WG Staking              | `wip`       |
+| Content Directory WG Staking    | `wip`       |
+| Forum WG Staking                | `wip`       |
+| Membership WG Staking           | `wip`       |
+| Distributor WG Staking          | `wip`       |
+| Builders WG Staking             | `wip`       |
+| Gateway WG Staking              | `wip`       |
+| HR WG Staking                   | `wip`       |
+| Marketing WG Staking            | `wip`       |
+| Bounty Entry Staking            | `wip`       |
 
 ## Vesting
 
@@ -100,7 +127,7 @@ where `lock_i` is the lock amount of the `i'th` lock.\
 
 Slashing is the act of reducing the balance of an account by some amount, and also reducing the size of the lock which represents the use case under which the slashing occurs.
 
-## State bloat
+## WIP: State bloat
 
 Some modules such as forum and working group allows user to call extrinsics that allows them to occupy storage. This can be a problem since some malicious users could use this to fill up the storage, either taking all the allotted space for that given storage map or claim storage space until no single node has enough storage. Furthermore, there is no incentive even for regular users to cleanup their storage use.
 
