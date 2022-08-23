@@ -32,6 +32,7 @@ Staking is used for two purposes to serve the system as a whole by providing mor
 * fees
 * weight
 * tips: where they go
+* locks and balances
 
 ## Locks
 
