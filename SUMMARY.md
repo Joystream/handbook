@@ -11,6 +11,7 @@
 * [🧙 Founding Member Program](testnet/founding-member-program/README.md)
   * [Verification](testnet/founding-member-program/verification.md)
   * [Allocation Distribution](testnet/founding-member-program/allocation-distribution.md)
+  * [Inductions](testnet/founding-member-program/inductions.md)
 * [📏 Council Period Scoring](testnet/council-period-scoring/README.md)
   * [General Working Group Score](testnet/council-period-scoring/general-working-group-score.md)
   * [Builders Score](testnet/council-period-scoring/builders-score.md)
