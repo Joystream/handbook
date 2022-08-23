@@ -146,9 +146,11 @@ The precise constraint for what invitation locks allow is as follows: if the tra
 10. Gifting a membership.
 11. Buying a membership.
 
-**`NB: Add links to explicit extrinsics in other articles later!`**
+**`TODO: Add links to explicit extrinsics in other articles later!`**
 
-This upside of this exception to how locks are normally influencing funds available to fund transactions is that despite the membership controller account possibly having a usable balance which is nil or otherwise too low, funds encumbered by this lock can be deployed for the relevant purposes of a transaction, which on many occasions may make the difference, certainly for a totally new user.
+This upside of this exception to how locks are normally influencing funds available to fund transactions is that despite the membership controller account possibly having a usable balance which is too low, funds encumbered by this lock can be deployed for the relevant purposes of a transaction, which on many occasions may make the difference, certainly for a totally new user.\
+\
+**`TODO: add example later of how this explicitly helps`**
 
 ## Slashing
 
