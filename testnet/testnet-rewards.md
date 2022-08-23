@@ -15,7 +15,7 @@ description: Who is given what, for what reason at what time?
 There are two kinds of rewards associated with testnet participation.
 
 1. The first is $tJOY, described here [usdtjoy.md](usdtjoy.md "mention") , which is the native token of our testnets, and which can be used to redeem for $USD at any time.
-2. The second is $JOY, described here [usdjoy.md](../usdjoy.md "mention"), which is the native token of our coming mainnet. This tokens are distributed as part of our Founding Member Program (FMP), described here [founding-member-program.md](founding-member-program.md "mention"), which is our program to reward high value community member with our mainnet token.
+2. The second is $JOY, described here [usdjoy.md](../usdjoy.md "mention"), which is the native token of our coming mainnet. This tokens are distributed as part of our Founding Member Program (FMP), described here [founding-member-program](founding-member-program/ "mention"), which is our program to reward high value community member with our mainnet token.
 
 ## Council Period Cadence
 
@@ -49,7 +49,7 @@ Here we cover how different kinds activities are rewarded
 
 ### Refer A Friend
 
-Read more in section [#refer-a-friend](founding-member-program.md#refer-a-friend "mention").
+Read more in section [#refer-a-friend](founding-member-program/#refer-a-friend "mention").
 
 ### Bounties
 

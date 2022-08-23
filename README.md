@@ -12,7 +12,7 @@ There are a variety of ways to earn $JOY and $tJOY, summarized in the table belo
 
 | Activity              | Reference                                                                         |
 | --------------------- | --------------------------------------------------------------------------------- |
-| Refer A Friend        | [#refer-a-friend](testnet/founding-member-program.md#refer-a-friend "mention")    |
+| Refer A Friend        | [#refer-a-friend](testnet/founding-member-program/#refer-a-friend "mention")      |
 | Bounty                | [bounties](system/bounties/ "mention")                                            |
 | Council Member        | [#council-member](system/council/#council-member "mention")                       |
 | Content Curator       | [#content-curator](system/content-directory/#content-curator "mention")           |

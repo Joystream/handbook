@@ -8,7 +8,7 @@ description: Our mainnet asset.
 
 ## Introduction
 
-This is the native asset of the Joystream mainnet blockchain when it is launched Q2 2022, the only way to obtain this token at this time is to participate in our [founding-member-program.md](testnet/founding-member-program.md "mention") (FMP).
+This is the native asset of the Joystream mainnet blockchain when it is launched Q2 2022, the only way to obtain this token at this time is to participate in our [founding-member-program](testnet/founding-member-program/ "mention") (FMP).
 
 ## Valuation
 
