@@ -24,9 +24,9 @@ Note that the email must be the same as you are sending from, and that it will b
 
 ### Sign Message
 
-The message above must be signed with your membership root key in order for us to ensure you control the keys of the membership. Steps:
+The message above must be signed with your membership root or controller key in order for us to ensure you control the keys of the membership. Steps:
 
-1. Go to [polkadot-js](https://polkadot.js.org/apps/#/signing) -> `developer` -> `Sign message` and select your membership root key.
+1. Go to [polkadot-js](https://polkadot.js.org/apps/#/signing) -> `developer` -> `Sign message` and select your membership root or controller key.
 2. Paste in the **exact** message (if not, the signature verification will fail), and click "Sign message"
 3. Copy the "signature of supplied data" and paste it in the email.
 

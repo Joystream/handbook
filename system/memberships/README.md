@@ -183,7 +183,7 @@ Profile of member corresponding to `member_id` is updated with new field values.
 
 #### Conditions
 
-* Signer matches controller account member corresponding to `member_id`.
+* Signer matches the `root_account` corresponding to `member_id`.
 * At least one new account is provided.
 
 #### Effect
