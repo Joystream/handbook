@@ -7,8 +7,8 @@ There is a limited number of invitations each member has (currently 5 for those 
 If you need more invitations, you can ask for them. Other members can transfer their invites to you, and you can also transfer yours to others. You can do so by clicking the paper plane button next to your number of invitations. The pop-up window will appear, where you'll need to write the number of invites and select a member to whom you want to transfer them. 
 
 To invite a new member, you should use **Invite a Member** button, which is at the top right corner on [this page](https://dao.joystream.org/#/profile/memberships). Click on it, and fill out the pop-up form. 
-![Alt-текст](https://raw.githubusercontent.com/katerina510/handbook/master/.gitbook/assets/invite_member_1.png?s=100 "Орк") 
-
+![Invite a Member form](https://raw.githubusercontent.com/katerina510/handbook/master/.gitbook/assets/invite_member_1.png?s=300 "Invite a Member form") 
+<img src="https://raw.githubusercontent.com/katerina510/handbook/master/.gitbook/assets/invite_member_1.png" width="375">
 There are 4 **compulsory** fields for you to fill out:
 
 - **Inviting member** is a member who invites. You may have several memberships associated with your account, so you need to select a particular member here. 
