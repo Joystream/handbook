@@ -75,7 +75,7 @@ Although you may use download the temporary [binary](account-generation.md#binar
 
 ### Fork and Compile Subkey
 
-If you want to compile a version of `subkey` that supports Joystream Network Address, (fork and) clone the [substrate repo.](https://github.com/paritytech/substrate) Replace the default `ss58-registry` package in `primitives/core/Cargo.toml`:&#x20;
+If you want to compile a version of `subkey` that supports Joystream Network Address, (fork and) clone the [substrate repo.](https://github.com/paritytech/substrate) Replace the default `ss58-registry` package in `primitives/core/Cargo.toml`:
 
 ```
 # From
@@ -160,8 +160,6 @@ Public Key URI `j4VwFPPGcpP77MuQbWdn7EbpBbjM4Siq5AGGuraF8ktr8vqjA` is account:
 
 This means regardless if you choose to generate your keypairs with the official `subkey` or `joystream-node key`, you can verify the results using the other in an online setting without exposing your private keys on an online computer.
 
-
-
 ## Polkadot{.js} Account Generation
 
 The Polkadot wiki have created their own guide, which can be found [here](https://wiki.polkadot.network/docs/learn-account-generation#polkadotjs-browser-extension). However, as with subkey, displaying the Joystream Network Address format as default is not possible without some extra steps.
@@ -186,7 +184,7 @@ Click the big plus button or select "Create new account" from the small plus ico
 
 Back up these words, as it's the only way to recover your Account if your computer is lost or wiped. It is imperative to store the seed somewhere safe, secret, and secure. If you cannot access your account via Polkadot{.js} for some reason, you can re-enter your seed through the "Add account menu" by selecting "Import account from pre-existing seed".
 
-![](../../.gitbook/assets/plugin-3.png)
+![](<../../.gitbook/assets/plugin-3 (1).png>)
 
 #### Name Account
 

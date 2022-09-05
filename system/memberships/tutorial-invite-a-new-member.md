@@ -4,7 +4,7 @@ To ensure safety and protect the system against different kinds of abuses, Joyst
 
 There is a limited number of invitations each member has (currently 5 for those who bought a membership and 0 for those who were invited). You can check the number you have by visiting [this page](https://dao.joystream.org/#/profile/memberships). Here, in a column _"INVITATIONS"_, you'll see how many members you can invite. Each time you invite a member, the amount of invitations decreases by 1.
 
-If you need more invitations, you can ask for them. Other members can transfer their invites to you, and you can also transfer yours to others. You can do so by clicking the paper plane button next to your number of invitations. The pop-up window will appear, where you'll need to write the number of invites and select a member to whom you want to transfer them.
+If you need more invitations, you can ask for them. Other members can transfer their invites to you, and you can also transfer yours to others. You can do so by clicking the paper plane button ![](../../.gitbook/assets/invite\_member\_2.png)next to your number of invitations.  The pop-up window will appear, where you'll need to write the number of invites and select a member to whom you want to transfer them.
 
 To invite a new member, you should use **Invite a Member** button, which is at the top right corner on [this page](https://dao.joystream.org/#/profile/memberships). Click on it, and fill out the following pop-up form:
 
