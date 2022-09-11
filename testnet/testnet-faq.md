@@ -16,13 +16,9 @@ You have to win a seat as part of the [#elections](testnet-faq.md#elections "men
 
 No, absolutely not, it never will.
 
-### Should I hold $tJOY or cashout?
+### Can I still convert $tJOY for USD?
 
-Only hold the $tJOY you need to use for staking or paying fees, which should be very little, cashout everything else, it's value over time will decline.
-
-### What determines the value of $tJOY?
-
-This testnet asset is convertible by cashing out to $USD with Jsgenesis, and the exchange rate is held more or less stable, with slow decline, over time by Jsgenesis attempting to balance the effect of the minting on the testnet that causes dilution.
+No, this was discontinued in preperation for the upcoming mainnet launch. However, JSG may choose to directly send BCH to users as a reward for their participation or for running infrastructure.
 
 ### What is the value of one $tJOY in $JOY
 
@@ -61,7 +57,7 @@ No, this is strictly against the rules. If it was ever discovered that a members
 
 ### How much $JOY makes me a Founding Member?
 
-There is no direct relationship between $JOY earned and FM status, howeve the more the better in terms of your prospects. If you are unsure about why you have not yet earned the status, despite a high $JOY allocation, please write `why_not_fm@jsgenesis.com`.
+The amount can change during each council term, you can find the most recent value here:  [testnet-rewards.md](testnet-rewards.md "mention")&#x20;
 
 ### Can I get kicked out?
 
@@ -77,13 +73,13 @@ No, we do not have the resources to go back and evaluate testnet activities whic
 
 ### **Wen?**
 
-Our current best estimate is Q2 2022.
+Our current best estimate is Q3 2022.
 
 ## Still need help?
 
 * If you are already in a working group, try asking the Lead first!
 * If you're new and want to get started, get in touch with the HR group on our [discord](https://discord.gg/vzr74ja6) by asking in the #start-here channel
-* If not, we _try_ to be available on [discord](https://discord.gg/vzr74ja6), try pinging `@blrhc#0162` and/or `@bwhm#6514`. On most weekdays, we strive for one of us to reply within an hour \*. On weekends, we check in at least twice a day.
+* If not, we _try_ to be available on [discord](https://discord.gg/vzr74ja6), try pinging `@bwhm#6514`. On most weekdays, we strive for one of us to reply within an hour \*. On weekends, we check in at least twice a day.
 
 &#x20;\* inside reasonable hours (CET)
 
