@@ -28,3 +28,6 @@ Now you're ready to fill out the form. Return to the opening page and click "App
 As you see on the black left part, you'll need to finish 3 steps. The first one is to specify your staking, role and reward accounts. We've already discussed the first two. As for the reward account, it's the account to which the rewards will be paid and it's usually the same as your controller (main) account. \
 The next step is to fill out the application. It's specific for each position and the fields you need to fill out are determined by the Lead of the working group you're applying for. If you have any questions, you can ask him/her in Discord. The Leads are listed [here](https://dao.joystream.org/#/working-groups) at the right. \
 The last step is to sign the transaction. Just click "Sign Transaction and Bind Staking Account" button. If everything is right, your application will be submitted and you'll see yourself among applicants on the corresponding opening page.
+
+<figure><img src="../../.gitbook/assets/opening_page.png" alt=""><figcaption></figcaption></figure>
+
