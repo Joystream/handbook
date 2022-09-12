@@ -12,28 +12,28 @@ A working group is an organizational body, subject to the oversight of the counc
 
 ## Groups
 
-{% content-ref url="../human-resources.md" %}
-[human-resources.md](../human-resources.md)
+{% content-ref url="human-resources.md" %}
+[human-resources.md](human-resources.md)
 {% endcontent-ref %}
 
-{% content-ref url="../builders/" %}
-[builders](../builders/)
+{% content-ref url="builders.md" %}
+[builders.md](builders.md)
 {% endcontent-ref %}
 
-{% content-ref url="../content-directory/" %}
-[content-directory](../content-directory/)
+{% content-ref url="content-directory.md" %}
+[content-directory.md](content-directory.md)
 {% endcontent-ref %}
 
-{% content-ref url="../marketers.md" %}
-[marketers.md](../marketers.md)
+{% content-ref url="marketers.md" %}
+[marketers.md](marketers.md)
 {% endcontent-ref %}
 
-{% content-ref url="../storage/" %}
-[storage](../storage/)
+{% content-ref url="storage/" %}
+[storage](storage/)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference/" %}
-[broken-reference](broken-reference/)
+{% content-ref url="working-groups/broken-reference/" %}
+[broken-reference](working-groups/broken-reference/)
 {% endcontent-ref %}
 
 ## Operations Working Groups
@@ -93,7 +93,7 @@ In addition to rewards, the lead can spend from this budget for arbitrary purpos
 
 ### Staking
 
-Worker roles require staking in order to apply and remain in the role. Staking for worker roles is done using a designated working group lock on a single account per worker role. The amount required is set by the discretion of the lead. The staking requirement could be decreased by the lead (or by the council for leaders). The worker is able to increase their own stake, for example, in response for leader demand. Consult the [Staking](broken-reference/) article to see a list of other staking purposes, and corresponding locks, which can be combined with staking for a given working group.
+Worker roles require staking in order to apply and remain in the role. Staking for worker roles is done using a designated working group lock on a single account per worker role. The amount required is set by the discretion of the lead. The staking requirement could be decreased by the lead (or by the council for leaders). The worker is able to increase their own stake, for example, in response for leader demand. Consult the [Staking](working-groups/broken-reference/) article to see a list of other staking purposes, and corresponding locks, which can be combined with staking for a given working group.
 
 #### Staking Policy
 
@@ -115,7 +115,7 @@ An application has the following information
 * **Role account:** A required account that is used to authenticate as the worker if selected, in other parts of the platform. Need not be unique across workers, but in practice probably will be.
 * **Staking account:** The account holding the stake of the application.
 * **Member:** Identifier of member from which application originates.
-* **Description:** [Application description metadata](broken-reference/).
+* **Description:** [Application description metadata](working-groups/broken-reference/).
 
 #### Opening
 
@@ -123,7 +123,7 @@ An opening has the following information associated
 
 * **Id:** A unique immutable non-negative integer identifying an individual opening, is automatically assigned when an opening is created.
 * **Type:** Whether the opening is for the lead or for a non-lead worker.
-* **Description:** [Opening description metadata](broken-reference/).
+* **Description:** [Opening description metadata](working-groups/broken-reference/).
 * **Staking policy:**
   * **Balance:** The required non-zero balance required.
   * **Leaving unstaking period:** The number of blocks required from a worker initiating leaving the group until their staked funds are unlocked.
@@ -151,18 +151,18 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 
 \*\*Only one of the fields should be set.\*\*​
 
-| Field                     | Type                                              | Label    | Description |
-| ------------------------- | ------------------------------------------------- | -------- | ----------- |
-| set\_group\_metadata      | [SetGroupMetadata](./#setgroupmetadata)           | optional |             |
-| add\_upcoming\_opening    | [AddUpcomingOpening](./#addupcomingopening)       | optional |             |
-| remove\_upcoming\_opening | [RemoveUpcomingOpening](./#removeupcomingopening) | optional |             |
+| Field                     | Type                                                             | Label    | Description |
+| ------------------------- | ---------------------------------------------------------------- | -------- | ----------- |
+| set\_group\_metadata      | [SetGroupMetadata](working-groups.md#setgroupmetadata)           | optional |             |
+| add\_upcoming\_opening    | [AddUpcomingOpening](working-groups.md#addupcomingopening)       | optional |             |
+| remove\_upcoming\_opening | [RemoveUpcomingOpening](working-groups.md#removeupcomingopening) | optional |             |
 
 ### SetGroupMetadata
 
-| Field                  | Type                                            | Label    | Description                                                 |
-| ---------------------- | ----------------------------------------------- | -------- | ----------------------------------------------------------- |
-| new\_metadata          | [WorkingGroupMetadata](./#workinggroupmetadata) | optional | New working group metadata to set (can be a partial update) |
-| ### AddUpcomingOpening |                                                 |          |                                                             |
+| Field                  | Type                                                           | Label    | Description                                                 |
+| ---------------------- | -------------------------------------------------------------- | -------- | ----------------------------------------------------------- |
+| new\_metadata          | [WorkingGroupMetadata](working-groups.md#workinggroupmetadata) | optional | New working group metadata to set (can be a partial update) |
+| ### AddUpcomingOpening |                                                                |          |                                                             |
 
 ### RemoveUpcomingOpening
 
@@ -172,17 +172,17 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 
 ### UpcomingOpeningMetadata
 
-| Field                   | Type                                  | Label    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ----------------------- | ------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| expected\_start         | uint32                                | optional | Expected opening start (timestamp)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| reward\_per\_block      | uint64                                | optional | Expected reward per block                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| min\_application\_stake | uint64                                | optional | Expected min. application stake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| metadata                | [OpeningMetadata](./#openingmetadata) | optional | <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody><tr><td>expected_start</td><td>uint32</td><td>optional</td><td>Expected opening start (timestamp)</td></tr><tr><td>reward_per_block</td><td>uint64</td><td>optional</td><td>Expected reward per block</td></tr><tr><td>min_application_stake</td><td>uint64</td><td>optional</td><td>Expected min. application stake</td></tr><tr><td>metadata</td><td><a href="./#openingmetadata">OpeningMetadata</a></td><td>optional</td><td>Opening metadata</td></tr></tbody></table><p>Opening metadata</p> |
-| Field                   | Type                                  | Label    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| expected\_start         | uint32                                | optional | Expected opening start (timestamp)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| reward\_per\_block      | uint64                                | optional | Expected reward per block                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| min\_application\_stake | uint64                                | optional | Expected min. application stake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| metadata                | [OpeningMetadata](./#openingmetadata) | optional | Opening metadata                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Field                   | Type                                                 | Label    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------------- | ---------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| expected\_start         | uint32                                               | optional | Expected opening start (timestamp)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| reward\_per\_block      | uint64                                               | optional | Expected reward per block                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| min\_application\_stake | uint64                                               | optional | Expected min. application stake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| metadata                | [OpeningMetadata](working-groups.md#openingmetadata) | optional | <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody><tr><td>expected_start</td><td>uint32</td><td>optional</td><td>Expected opening start (timestamp)</td></tr><tr><td>reward_per_block</td><td>uint64</td><td>optional</td><td>Expected reward per block</td></tr><tr><td>min_application_stake</td><td>uint64</td><td>optional</td><td>Expected min. application stake</td></tr><tr><td>metadata</td><td><a href="working-groups.md#openingmetadata">OpeningMetadata</a></td><td>optional</td><td>Opening metadata</td></tr></tbody></table><p>Opening metadata</p> |
+| Field                   | Type                                                 | Label    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| expected\_start         | uint32                                               | optional | Expected opening start (timestamp)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| reward\_per\_block      | uint64                                               | optional | Expected reward per block                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| min\_application\_stake | uint64                                               | optional | Expected min. application stake                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| metadata                | [OpeningMetadata](working-groups.md#openingmetadata) | optional | Opening metadata                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 ### Working Group Status
 
@@ -195,21 +195,21 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 
 ### Working Group Opening Metadata
 
-| Field                        | Type                                                  | Label    | Description                                                  |
-| ---------------------------- | ----------------------------------------------------- | -------- | ------------------------------------------------------------ |
-| short\_description           | string)                                               | optional | Short description of the opening                             |
-| description                  | string                                                | optional | Full description of the opening                              |
-| hiring\_limit                | uint32                                                | optional | Expected number of hired applicants                          |
-| expected\_ending\_timestamp  | uint32                                                | optional | Expected time when the opening will close (Unix timestamp)   |
-| application\_details         | string                                                | optional | Md-formatted text explaining the application process         |
-| application\_form\_questions | [ApplicationFormQuestion](./#applicationformquestion) | repeated | List of questions that should be answered during application |
+| Field                        | Type                                                                 | Label    | Description                                                  |
+| ---------------------------- | -------------------------------------------------------------------- | -------- | ------------------------------------------------------------ |
+| short\_description           | string)                                                              | optional | Short description of the opening                             |
+| description                  | string                                                               | optional | Full description of the opening                              |
+| hiring\_limit                | uint32                                                               | optional | Expected number of hired applicants                          |
+| expected\_ending\_timestamp  | uint32                                                               | optional | Expected time when the opening will close (Unix timestamp)   |
+| application\_details         | string                                                               | optional | Md-formatted text explaining the application process         |
+| application\_form\_questions | [ApplicationFormQuestion](working-groups.md#applicationformquestion) | repeated | List of questions that should be answered during application |
 
 ### ApplicationFormQuestion
 
-| Field    | Type                      | Label    | Description                                     |
-| -------- | ------------------------- | -------- | ----------------------------------------------- |
-| question | string                    | optional | The question itself (ie. "What is your name?"") |
-| type     | [InputType](./#inputtype) | optional | Suggested type of the UI answer input           |
+| Field    | Type                                     | Label    | Description                                     |
+| -------- | ---------------------------------------- | -------- | ----------------------------------------------- |
+| question | string                                   | optional | The question itself (ie. "What is your name?"") |
+| type     | [InputType](working-groups.md#inputtype) | optional | Suggested type of the UI answer input           |
 
 ### InputType
 
@@ -239,11 +239,11 @@ Hard-coded values are defined _for each working group_, and they can only be alt
 
 **Parameters**
 
-| Name               | Description                                                |
-| ------------------ | ---------------------------------------------------------- |
-| `description`      | Endoded [opening description](broken-reference/) metadata. |
-| `staking_policy`   | Staking policy of new opening.                             |
-| `reward_per_block` | Initial per reward block.                                  |
+| Name               | Description                                                               |
+| ------------------ | ------------------------------------------------------------------------- |
+| `description`      | Endoded [opening description](working-groups/broken-reference/) metadata. |
+| `staking_policy`   | Staking policy of new opening.                                            |
+| `reward_per_block` | Initial per reward block.                                                 |
 
 #### Conditions
 
@@ -260,14 +260,14 @@ A new opening is added with the given information and for hiring a worker, not l
 
 **Parameters**
 
-| Name              | Description                                                    |
-| ----------------- | -------------------------------------------------------------- |
-| `member_id`       | Member identifier.                                             |
-| `opening_id`      | Identifier of opening being applied to.                        |
-| `role_account`    | Role account of future worker.                                 |
-| `staking_account` | Account holding stake.                                         |
-| `staking_balance` | Balance to stake.                                              |
-| `description`     | Encoded [application description](broken-reference/) metadata. |
+| Name              | Description                                                                   |
+| ----------------- | ----------------------------------------------------------------------------- |
+| `member_id`       | Member identifier.                                                            |
+| `opening_id`      | Identifier of opening being applied to.                                       |
+| `role_account`    | Role account of future worker.                                                |
+| `staking_account` | Account holding stake.                                                        |
+| `staking_balance` | Balance to stake.                                                             |
+| `description`     | Encoded [application description](working-groups/broken-reference/) metadata. |
 
 #### Conditions
 
@@ -533,9 +533,9 @@ Account balance is increased by `amount`, and `budget` is reduced correspondingl
 
 **Parameters**
 
-| Name         | Description                                                            |
-| ------------ | ---------------------------------------------------------------------- |
-| `new_status` | Encoded [working group status](broken-reference/) new status metadata. |
+| Name         | Description                                                                           |
+| ------------ | ------------------------------------------------------------------------------------- |
+| `new_status` | Encoded [working group status](working-groups/broken-reference/) new status metadata. |
 
 #### Conditions
 

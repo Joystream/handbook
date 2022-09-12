@@ -8,7 +8,7 @@ Your membership will be migrated over to the Carthage network, the last testnet 
 
 The critical part here are the `root_account` and `controller_account` for your membership. For most members, they are currently the same, but you will probably want separate ones.&#x20;
 
-As explained in [memberships](../../system/memberships/ "mention"), the `controller_account` is what you use to act as the member, whereas the `root_account` is only valid for updating both, or either, of these for your membership. That means your `root_account` could be an offline key, whereas the `controller_account` should not.&#x20;
+As explained in [memberships.md](../../system/memberships.md "mention"), the `controller_account` is what you use to act as the member, whereas the `root_account` is only valid for updating both, or either, of these for your membership. That means your `root_account` could be an offline key, whereas the `controller_account` should not.&#x20;
 
 You may want to change your `root_account` to a more secure key, as that significantly reduces the risk of losing (control of) your membership.
 

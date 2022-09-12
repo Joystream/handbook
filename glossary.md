@@ -18,7 +18,7 @@ Mainnet is the network where real token balances will be launched on a fully dev
 
 ## Integerators
 
-A group of workers in the DAO, specifically the [#human-resources](system/working-groups/#human-resources "mention") working group, who are tasked with onboarding and supporting members in their journey to contibute to the Joystream project. Read more here [Broken link](broken-reference "mention").
+A group of workers in the DAO, specifically the [#human-resources](system/working-groups.md#human-resources "mention") working group, who are tasked with onboarding and supporting members in their journey to contibute to the Joystream project. Read more here [broken-reference](broken-reference/ "mention").
 
 ## Verification
 
@@ -28,4 +28,4 @@ A group of workers in the DAO, specifically the [#human-resources](system/workin
 
 `TBD`
 
-``
+\`\`

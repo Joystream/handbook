@@ -1,2 +1,0 @@
-# A Case Study: Laura
-

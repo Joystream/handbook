@@ -1,2 +1,0 @@
-# Tutorial: Slash A Worker
-

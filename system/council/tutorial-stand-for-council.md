@@ -1,2 +1,0 @@
-# Tutorial: Stand for Council
-

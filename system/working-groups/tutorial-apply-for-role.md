@@ -1,2 +1,0 @@
-# Tutorial: Apply For Role
-

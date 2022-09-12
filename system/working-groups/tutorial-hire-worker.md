@@ -1,2 +1,0 @@
-# Tutorial: Hire Worker
-
