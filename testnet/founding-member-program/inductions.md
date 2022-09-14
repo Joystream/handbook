@@ -8,13 +8,32 @@ description: A place to see who made it at what time!
 
 This page is meant as a simple way to coordinate everyone around big inductions that are taking place.
 
+## 14th of September 2022
+
+With Council Periods Scoring round 22, the following members have reached the threshold for verification and induction. Congratulations!
+
+| Member ID | Member Handle | $JOY Allocation |
+| --------- | ------------- | --------------- |
+| 4236      | Deathix       | US$ 21103.31    |
+| 4129      | CodefiKeyz    | US$ 19418.35    |
+| 772       | kudo94        | US$ 13173.47    |
+| 4122      | lamma         | US$ 13071.91    |
+| 4215      | Genius        | US$ 12314.05    |
+| 4234      | SASY          | US$ 11690.78    |
+| 2032      | alex6370      | US$ 11371.82    |
+| 4279      | tremtremson   | US$ 10130.09    |
+| 4166      | Kyler\_Zm     | US$ 10065.76    |
+| 4280      | Helen4749     | US$ 10007.59    |
+
+Please see [verification.md](verification.md "mention") for instructions on how to proceed.
+
 ## 6th of September 2022
 
 With Council Periods Scoring rounds 20 and 21, the following members have reached the threshold for verification and induction. Congratulations!
 
-Please see [verification.md](verification.md "mention") for instructions on how to proceed.
-
 <table><thead><tr><th data-type="number">Member ID</th><th>Member Handle</th><th>$JOY Allocation</th></tr></thead><tbody><tr><td>2345</td><td>olgakuzia</td><td>US$ 19727.79</td></tr><tr><td>1131</td><td>gameover</td><td>US$ 16722.12</td></tr><tr><td>4211</td><td>7185</td><td>US$ 16175.65</td></tr><tr><td>2342</td><td>vladislav220294</td><td>US$ 15035.99</td></tr><tr><td>4141</td><td>gyroflaw</td><td>US$ 14694.05</td></tr><tr><td>4207</td><td>0280</td><td>US$ 13706.65</td></tr><tr><td>4245</td><td>3455</td><td>US$ 11700.94</td></tr><tr><td>770</td><td>andicapitan</td><td>US$ 10526.22</td></tr><tr><td>1082</td><td>alexmanilove</td><td>US$ 10347.71</td></tr><tr><td>559</td><td>baikal</td><td>US$ 10019.27</td></tr></tbody></table>
+
+Please see [verification.md](verification.md "mention") for instructions on how to proceed.
 
 ## 23th August 2022
 
