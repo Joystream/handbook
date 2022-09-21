@@ -1,2 +1,0 @@
-# Tutorial: Become a Member
-

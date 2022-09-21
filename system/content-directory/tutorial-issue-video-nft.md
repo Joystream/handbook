@@ -1,2 +1,0 @@
-# Tutorial: Issue Video NFT
-

@@ -1,2 +1,0 @@
-# Tutorial: Fire A Worker
-

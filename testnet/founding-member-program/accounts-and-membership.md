@@ -2,13 +2,36 @@
 
 If you pass the verification, you will receive an email about submitting accounts for your allocation in the genesis block. As there are some nuances in this step for Founding Members compared to the general information found in [account-generation.md](../../system/accounts-and-staking/account-generation.md "mention"), some additional steps are outlined below.
 
+## Read This First!
+
+<mark style="color:red;">We are receiving a lot of emails, so don't expect a reply right away.</mark>&#x20;
+
+<mark style="color:red;">**If you have sent the requested information, as a newly inducted FM:**</mark>
+
+* <mark style="color:red;">If all documents are shipped as expected ->  Do not expect a reply ever.</mark>&#x20;
+  * <mark style="color:red;">Once we have received a sufficiently large number of accounts, the Accounts and Balance will be made public (without metadata) so you can confirm they are correct, but no one else can now who they belong to.</mark>
+  * <mark style="color:red;">Your FM avatar will be added to the Founding Member repo within 2 weeks.</mark>
+* <mark style="color:red;">If something was missing -> Do not expect a reply ever.</mark>&#x20;
+  * <mark style="color:red;">If you forgot to add Accounts, we assume you want to use your membership accounts.</mark>
+  * <mark style="color:red;">If you forgot the avatar ID, we assume we can choose for you.</mark>
+* <mark style="color:red;">If something was wrong -> We will contact you within two weeks.</mark>
+
+&#x20;<mark style="color:red;"></mark> <mark style="color:red;"></mark><mark style="color:red;">**If you have sent the requested information, as an "OG" Founding Member confirming email:**</mark>
+
+* <mark style="color:red;">Contact information signed and accepted -> you will be prompted for the next step(s) within a week.</mark>
+* <mark style="color:red;">Contact information missing/failed (bad signature, missing info, etc.) -> you will be told to send again within a week.</mark>
+
+<mark style="color:red;">****</mark>
+
+If you send an email to get verified, despite not having reached the threshold, thus not listed under [inductions.md](inductions.md "mention") , you will **NOT** receive a reply whether you failed or not.&#x20;
+
 ### Membership Accounts
 
 Your membership will be migrated over to the Carthage network, the last testnet before mainnet, by taking a snapshot at some cutoff. The same will be the case for the mainnet rather quickly after Carthage has been launched.
 
 The critical part here are the `root_account` and `controller_account` for your membership. For most members, they are currently the same, but you will probably want separate ones.&#x20;
 
-As explained in [memberships](../../system/memberships/ "mention"), the `controller_account` is what you use to act as the member, whereas the `root_account` is only valid for updating both, or either, of these for your membership. That means your `root_account` could be an offline key, whereas the `controller_account` should not.&#x20;
+As explained in [memberships.md](../../system/memberships.md "mention"), the `controller_account` is what you use to act as the member, whereas the `root_account` is only valid for updating both, or either, of these for your membership. That means your `root_account` could be an offline key, whereas the `controller_account` should not.&#x20;
 
 You may want to change your `root_account` to a more secure key, as that significantly reduces the risk of losing (control of) your membership.
 

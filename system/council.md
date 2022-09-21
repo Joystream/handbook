@@ -14,7 +14,7 @@ The council is a fixed size committee, up for election at regular intervals by t
 
 While on testnet, and for the purposes of training Founding Members, Jsgenesis will use its token holding on testnet to influence who wins a seat on the council, through the normal election process. A relative newcomer may have a difficult time getting enough votes to win a seat on their own, which is fine on mainnet, but on testnet we are seeking multiple objectives at the same time, hence this sort of intervention is acceptable.
 
-Jsgenesis will, as everyone else, vote on candidates that have announced themselves during the announcement phase of the election process, based on a holistic evaluation of the candidates, the need for newcomers and other constraints. Before the voting period begins, Jsgenesis will announce who, if any, it is endorsing, with how many $tJOY and for what reason. The voting, and the announcement, will be done via the official membership of Jsgenesis, described here [#official-jsgenesis-membership](../../jsgenesis.md#official-jsgenesis-membership "mention") , and the announcement will be in the form of a thread in the forum category `Jsgenesis Testnet Council Endorsements`, [here](https://www.joystream.org), which has the title of the corresponding election ID.
+Jsgenesis will, as everyone else, vote on candidates that have announced themselves during the announcement phase of the election process, based on a holistic evaluation of the candidates, the need for newcomers and other constraints. Before the voting period begins, Jsgenesis will announce who, if any, it is endorsing, with how many $tJOY and for what reason. The voting, and the announcement, will be done via the official membership of Jsgenesis, described here [#official-jsgenesis-membership](../jsgenesis.md#official-jsgenesis-membership "mention") , and the announcement will be in the form of a thread in the forum category `Jsgenesis Testnet Council Endorsements`, [here](https://www.joystream.org), which has the title of the corresponding election ID.
 
 ## Council Member
 
@@ -92,7 +92,7 @@ _Notice that working group spending, such as lead spending, or subsystem specifi
 The council has a fixed number of seats `NUMBER_OF_COUNCIL_SEATS` occupied by members, called _councilors_. The seats are always occupied, allowing the platform to dispose of all proposals they may come in at any time. The council body has two high level states described as follows.
 
 * **Normal:** During this stage the council operates normally. After `NORMAL_PERIOD_LENGTH` blocks have passed since this period started, a transition is made to the election stage.
-* **Election:** During this stage, not only does the council operate, but there is an election ongoing. Read more about elections the [Council](broken-reference) section below.
+* **Election:** During this stage, not only does the council operate, but there is an election ongoing. Read more about elections the [Council](council/broken-reference/) section below.
 
 #### Rewards
 
@@ -126,7 +126,7 @@ Notice that, while there is no explicit identifier, a councilorship can be impli
 
 A vote is a defined by the following
 
-* **Staking account:** Holds the stake associated with the vote. A given account can only be involved in a single vote for a given election cycle (see [Council](broken-reference)).
+* **Staking account:** Holds the stake associated with the vote. A given account can only be involved in a single vote for a given election cycle (see [Council](council/broken-reference/)).
 * **Staking balance:** The amount of funds in the staking account encumbered for this vote, will be no less than `MINIUMUM_VOTING_STAKE`.
 * **Cycle Id:** The election cycle in which the vote was cast.
 * **Stage:** The vote has two stages, being _sealed_ and _unsealed, each having the following associated information_
@@ -151,7 +151,7 @@ An election is the periodic process by which a new council is selected by voters
 
 The stages and transitions, are summarized in the figure below.
 
-![Election life-cycle stages.](../../.gitbook/assets/election-1.png)
+![Election life-cycle stages.](../.gitbook/assets/election-1.png)
 
 ## Constants
 
@@ -192,7 +192,7 @@ The following constants are hard coded into the system, they can only be updated
 * Signer is controller account of member with identifier `membership_id`.
 * There is an active election in the **Announcement Period**.
 * There is no prior candidacy in this election for `membership_id`.
-* `staking_account_id` has no conflicting locks (see [Staking](broken-reference)).
+* `staking_account_id` has no conflicting locks (see [Staking](council/broken-reference/)).
 * `staking_account_id` has enough balance to be locked as candidacy stake.
 * `staking_account_id` is associated with the member.
 * The `stake` must be at least `REQUIRED_CANDIDACY_STAKE`.
@@ -232,7 +232,7 @@ The candidacy and candidacy lock is removed.
 
 * Is signed with some account `staking_account_id`.
 * There is an active election in **Voting Period**.
-* The `staking_account_id` account  has no associated vote for the current election cycle.
+* The `staking_account_id` account has no associated vote for the current election cycle.
 * The `staking_account_id` total balance no less than `stake`.
 * The `stake` must be at least `MINIUMUM_VOTING_STAKE`.
 
@@ -301,10 +301,10 @@ Candidate lock is removed from staking account of candidate, and candidate is re
 
 #### Parameters
 
-| Name            | Description                                                                                                                 |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `membership_id` | Membership identifier.                                                                                                      |
-| `note`          | Encoded [candidacy note](broken-reference) metadata (subsequent calls will only affect explicitly provided metadata fields) |
+| Name            | Description                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `membership_id` | Membership identifier.                                                                                                               |
+| `note`          | Encoded [candidacy note](council/broken-reference/) metadata (subsequent calls will only affect explicitly provided metadata fields) |
 
 #### Conditions
 

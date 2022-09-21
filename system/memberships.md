@@ -86,13 +86,13 @@ The following constants are hard coded into the system, they can only be updated
 
 **Parameters**
 
-| Name                 | Description                                      |
-| -------------------- | ------------------------------------------------ |
-| `root_account`       | To be root account of membership.                |
-| `controller_account` | To be controller account of membership.          |
-| `handle`             | To be handle of membership.                      |
-| `metadata`           | Encoded [membership metadata](broken-reference/) |
-| `referer_id`         | Optional identifier of some existing member.     |
+| Name                 | Description                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| `root_account`       | To be root account of membership.                            |
+| `controller_account` | To be controller account of membership.                      |
+| `handle`             | To be handle of membership.                                  |
+| `metadata`           | Encoded [membership metadata](memberships/broken-reference/) |
+| `referer_id`         | Optional identifier of some existing member.                 |
 
 #### Conditions
 
@@ -109,13 +109,13 @@ The following constants are hard coded into the system, they can only be updated
 
 **Parameters**
 
-| Name                 | Description                                      |
-| -------------------- | ------------------------------------------------ |
-| `member_id`          | Identifier of inviting member.                   |
-| `root_account`       | To be root account of membership.                |
-| `controller_account` | To be controller account of membership.          |
-| `handle`             | To be handle of membership.                      |
-| `metadata`           | Encoded [membership metadata](broken-reference/) |
+| Name                 | Description                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| `member_id`          | Identifier of inviting member.                               |
+| `root_account`       | To be root account of membership.                            |
+| `controller_account` | To be controller account of membership.                      |
+| `handle`             | To be handle of membership.                                  |
+| `metadata`           | Encoded [membership metadata](memberships/broken-reference/) |
 
 #### Conditions
 
@@ -135,11 +135,11 @@ The following constants are hard coded into the system, they can only be updated
 
 **Parameters**
 
-| Name           | Description                                                                                              |
-| -------------- | -------------------------------------------------------------------------------------------------------- |
-| `member_id`    | Identifier of member wishing to update profile.                                                          |
-| `handle`       | Optional new handle for membership.                                                                      |
-| `new_metadata` | Optional new encoded [membership metadata](broken-reference/) (only the provided fields will be updated) |
+| Name           | Description                                                                                                          |
+| -------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `member_id`    | Identifier of member wishing to update profile.                                                                      |
+| `handle`       | Optional new handle for membership.                                                                                  |
+| `new_metadata` | Optional new encoded [membership metadata](memberships/broken-reference/) (only the provided fields will be updated) |
 
 #### Conditions
 

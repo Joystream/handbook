@@ -14,7 +14,7 @@ description: Who is given what, for what reason at what time?
 
 There are two kinds of rewards associated with testnet participation.
 
-1. The first is $tJOY, described here [usdtjoy.md](usdtjoy.md "mention") , which is the native token of our testnets, and which can be used to redeem for $USD at any time.
+1. The first is $tJOY, described here [usdtjoy.md](usdtjoy.md "mention") , which is the native token of our testnets. Although it was possible to exchange this for USD this is no longer possible. Although JSG may still choose to send users BCH directly as a reward for participation or running infrastructure.
 2. The second is $JOY, described here [usdjoy.md](../usdjoy.md "mention"), which is the native token of our coming mainnet. This tokens are distributed as part of our Founding Member Program (FMP), described here [founding-member-program](founding-member-program/ "mention"), which is our program to reward high value community member with our mainnet token.
 
 ## Council Period Cadence
@@ -33,15 +33,14 @@ Currently, the `CouncilSize` is 5, and the `MinNumberOfExtraCandidates` is 1. Th
 
 Each council period a set of key parameters are updated, and these are critical for determining how much each activity will be rewarded, and under what terms.
 
-| Name                  | Description                                                                                        |
-| --------------------- | -------------------------------------------------------------------------------------------------- |
-| `JOY_BUDGET`          | Total $JOY available to be rewarded for all activities, except referring a friend.                 |
-| `REFERRER_JOY`        | $JOY rewarded to someone who referred someone when that person was verified.                       |
-| `REFERREE_JOY`        | $JOY rewarded to someone who was referred when verified.                                           |
-| `tJOY_BUDGET`         | Total $tJOY which can be spent by DAO across all activities.                                       |
-| `USD_SUBSIDY`         | The USD value which is added to the backing value of $tJOY at the beginning of the council period. |
-| `CAP`                 | Limit for how much $JOY can be earned by unverified person.                                        |
-| `COUNCIL_tJOY_REWARD` | The council member reward in $tJOY how much each council member makes, as reward rate.             |
+| Name                  | Description                                                                            |
+| --------------------- | -------------------------------------------------------------------------------------- |
+| `JOY_BUDGET`          | Total $JOY available to be rewarded for all activities, except referring a friend.     |
+| `REFERRER_JOY`        | $JOY rewarded to someone who referred someone when that person was verified.           |
+| `REFERREE_JOY`        | $JOY rewarded to someone who was referred when verified.                               |
+| `tJOY_BUDGET`         | Total $tJOY which can be spent by DAO across all activities.                           |
+| `CAP`                 | Limit for how much $JOY can be earned by unverified person.                            |
+| `COUNCIL_tJOY_REWARD` | The council member reward in $tJOY how much each council member makes, as reward rate. |
 
 ## Activity Rewards
 
