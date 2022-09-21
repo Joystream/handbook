@@ -4,6 +4,14 @@ description: How to start the KYC process after reaching the induction threshold
 
 # Verification
 
+## Read This First!
+
+`<insert explainer here for confused people`>
+
+## FAQ
+
+`<add answers to frequently asked stuff right up front>`
+
 ## Email
 
 To get the KYC process started, send an email to `founding.members-at-jsgenesis.com`, with the subject **`FM Induction - <myMemberId>`**
