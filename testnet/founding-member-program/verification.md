@@ -6,11 +6,17 @@ description: How to start the KYC process after reaching the induction threshold
 
 ## Read This First!
 
-`<insert explainer here for confused people`>
+<mark style="color:red;">We are receiving a lot of emails, so don't expect a reply right away. Going forward, we will contact you within 1 week IF:</mark>
+
+* <mark style="color:red;">Your verification is accepted -> you will be prompted for the next step(s)</mark>
+* <mark style="color:red;">Your verification failed (bad signature, missing info, etc.) -> you will be told to send again</mark>
+
+If you send an email to get verified, despite not having reached the threshold, thus not listed under [inductions.md](inductions.md "mention") , you will **NOT** receive a reply whether you failed or not.&#x20;
 
 ## FAQ
 
-`<add answers to frequently asked stuff right up front>`
+* Q: "I am close, and expect to reach the Threshold after grading of next round. Should I send an email".
+  * A: **No. The email will likely get deleted, forcing you to send again.**
 
 ## Email
 
