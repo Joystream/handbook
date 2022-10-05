@@ -57,13 +57,7 @@ If someone voted for a candidate in an election, they will and can free their st
 
 #### Candidacy
 
-When voting, one does so as a member, and one can only do so a single time per election. One has to stake with an account bound to the membership, and, this account can only be simultaneously locked for
-
-1. voting in some past election, using lock id `VOTING_LOCK_ID`.
-2. candidacy in some past election, using lock id `CANDIDACY_LOCK_ID`.
-3. council member in the current council, using lock id `COUNCILOR_LOCK_ID`.
-
-The candidacy lock can of course be a different amount to any of these locks. If someone announced their candidacy in an election, but did not end up winning, then they can at any time after the conclusion of that election cycle free their stake
+When voting, one does so as a member, and one can only do so a single time per election. One has to stake with an account bound to the membership, and, this account can only be simultaneously locked for voting in some past election, using lock id `VOTING_LOCK_ID`. The candidacy lock can of course be different to this lock. If someone announced their candidacy in an election, but did not end up winning, then they can at any time after the conclusion of that election cycle free their stake
 
 #### Council
 
