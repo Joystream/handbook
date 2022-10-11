@@ -6,7 +6,16 @@ description: A temporary one page explainer for curators
 
 This is meant as a placeholder description for the benefit of the content curation working group before a full article can be prepared.
 
-The curator model is centered around workers, and the lead, in the curator working group. These actors can engage in a range of special activities in the content directory which others cannot.
+The curator model is centered around workers, and the lead, in the curator working group. These actors can engage in a range of special activities in the content directory which others canno
+
+## Frozen Features
+
+* Update permissions of a curator group.
+* Update channel privilege level.
+* Update channel NFT limit.
+* Update paused features of a channel.
+
+Certain features are currently implemented, but frozen - hence not accessible on the runtime, due limit scope of testing required for mainnet.
 
 ## Moderation Actions
 
@@ -82,6 +91,8 @@ CreatorTokenIssuance,
 }
 ```
 
-## Cruator Groups and Permissions
+## Curator Groups and Permissions
 
-Since many of these actions are quite invasive, there is a permissionsing system which constrains exactly what curator can do what actions on a given channel. To make the management of curators, and their permissions, practical at scale, the concept of _curator groups_ has been introduced. A curator can be part of none or many such groups, and the permissions exist at the group level, not curator. Channels are partitioned into permission levels called _channel permission levels_. When first created a channel has a default permission level, but this can be updated later by the lead. The levels themselves have no direct meaning, and are identified by integers, but there is no relationship between the permissions of a channel and the level. The permissions of a curator group describe what moderation actions group members can do for different permission levels. If no such action description exists for a given permission level, then group members cannot do any moderation action at all for channels with this level.
+Since many of these actions are quite invasive, there is a permissioning system which constrains exactly what curator can do what actions on a given channel. To make the management of curators, and their permissions, practical at scale, the concept of _curator groups_ has been introduced. A curator can be part of none or many such groups, and the permissions exist at the group level, not curator. Channels are partitioned into permission levels called _channel privelege levels_. When first created a channel has a default level, but this can be updated later by the lead. The levels themselves have no direct meaning, and are identified by integers, but there is no relationship between the permissions of a channel and the level. The permissions of a curator group describe what moderation actions group members can do for different levels. If no such action description exists for a given permission level, then group members cannot do any moderation action at all for channels with this level.
+
+##
