@@ -8,9 +8,20 @@ description: A place to see who made it at what time!
 
 This page is meant as a simple way to coordinate everyone around big inductions that are taking place.
 
+## 11th of October 2022
+
+With Council Periods Scoring round 26, the following members have reached the threshold for verification and induction. Congratulations!
+
+
+
+| **Member ID** | **Member Handle** | **$JOY Allocation** |
+| ------------- | ----------------- | ------------------- |
+| **3655**      | goksel            | US$ 15 559.19       |
+| **4354**      | jpaul             | US$ 10 535.39       |
+
 ## 3rd of October 2022
 
-With Council Periods Scoring round 24, the following members have reached the threshold for verification and induction. Congratulations!
+With Council Periods Scoring round 25, the following members have reached the threshold for verification and induction. Congratulations!
 
 
 
