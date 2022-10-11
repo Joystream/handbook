@@ -37,6 +37,7 @@
 * [⚖ Proposal System](system/proposal-system.md)
 * [🎬 Content Directory](system/content-directory/README.md)
   * [NFT](system/content-directory/nft.md)
+  * [Curation Model](system/content-directory/curation-model.md)
 * [💽 Storage & Bandwidth](system/storage/README.md)
   * [Data Directory](system/storage/data-directory.md)
   * [Storage Node](system/storage/storage-node.md)
