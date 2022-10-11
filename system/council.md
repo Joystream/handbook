@@ -99,7 +99,7 @@ A candidacy is defined by the following information
 * **Member:** The member behind the candidacy.
 * **Program:** A human readable description of the candidacy. Some socially enforced schema for the encoding of the program.
 * **Cycle Id:** The election cycle to which this candidacy corresponds.
-* **Staking account:** The account holding the stake for the candidate. After announcing the staking account will have locked up `REQUIRED_CANDIDACY_STAKE` under the relevant council lock. If the candidacy fails - either because the election cycle fails or the candidate receives too few votes, then this lock can be removed by the candidate, otherwise it remains on into the councilorship.
+* **Staking account:** The account holding the stake for the candidate. After announcing the staking account will have locked up `REQUIRED_CANDIDACY_STAKE` under the relevant council lock. If the candidacy fails - either because the election cycle fails or the candidate receives too few votes, then this lock can be removed by the candidate, otherwise it remains on into the councilorship. Be aware that this stake contributed towards the candidacy does _not_ contribute towards the final election outcome, hence exceeding the minimum bound would only be done for signaling or other social purposes.
 * **Votes Received:** The total amount token votes received by this candidate in revealing period ofthe election, is zero before that time.
 
 Note that, while there is no explicit identifier, a candidacy can be implicitly identified by a combination of the member, the order of this announcement for this member - as one could in principle announce and withdraw multiple times, and finally the election cycle number.
