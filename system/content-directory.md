@@ -2,9 +2,13 @@
 
 ## Introduction
 
-`wip`
+Content Directory working group monitors publishing of the new content into the content directory , responds to the reported publications and adjudicates possible dispute processes.&#x20;
 
-## Content Creator
+As every other working group, Content Directory group is accountable to the Council and has a set of goals to achieve for each Term. [Content Directory Score ](https://joystream.gitbook.io/testnet-workspace/testnet/council-period-scoring/content-directory-score)is a quantitative representation of how effective the group is in achieving its goals.
+
+You can see the current openings of Content Directory WG [here](https://dao.joystream.org/#/working-groups/content). Just click the opening and then Learn More button, and you'll see the details. You can also use the above link to see the budget of the group, the number of currently hired workers and information about them, as well as the history of hirings.&#x20;
+
+For more information about the group please refer to their [Knowledge Base](https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab) on Notion, where you'll find useful resources, information about activities, reports and budget details, and more.&#x20;
 
 ## Content Curator
 
@@ -13,7 +17,7 @@
 * Monitor the publishing of new content into the content directory, and respond to reports about contested publications
 * Adjudicate possible dispute processes resulting from reports from users
 * Update information on content to be accurate
-* Collaborate with [Builders](https://www.joystream.org/roles#builder) to improve both tools, and user facing experiences, to improve the integrity of the content directory
+* Collaborate with [Builders](https://joystream.gitbook.io/testnet-workspace/system/builders) to improve both tools, and user facing experiences, to improve the integrity of the content directory
 
 ### Requirements
 
@@ -35,3 +39,5 @@ The Council has the power to appoint a Content Curator Lead for the network who 
 
 * Fairly adjudicate disputes, and communicate in clear and transparent way with stakeholders and participants
 * Hold sufficient amount of the native platform token to put at stake
+
+Content Directory WG Lead has its Deputy. The responsibilities of the Deputy are similar of those of the Lead. The Deputy helps the Lead to achieve the goals of the group.&#x20;
