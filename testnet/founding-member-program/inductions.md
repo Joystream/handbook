@@ -8,6 +8,22 @@ description: A place to see who made it at what time!
 
 This page is meant as a simple way to coordinate everyone around big inductions that are taking place.
 
+If you find yourself on this list, please see [verification.md](verification.md "mention") for instructions on how to proceed!
+
+## 24th of October 2022
+
+With Council Periods Scoring round 27 and 28, the following members have reached the threshold for verification and induction. Congratulations!
+
+| **Member ID** | **Member Handle** | **$JOY Allocation** |
+| ------------- | ----------------- | ------------------- |
+| **4346**      | Katya             | US$ 14 750.62       |
+| **4351**      | Gift\_szn         | US$ 13 337.57       |
+| **3625**      | firuz89           | US$ 13 162.62       |
+| **4093**      | tes\_hsn          | US$ 13 108.65       |
+| **793**       | prettyfreak       | US$ 11 428.41       |
+| **2440**      | codervv           | US$ 10 886.79       |
+| **1158**      | arsonque          | US$ 10 169.69       |
+
 ## 11th of October 2022
 
 With Council Periods Scoring round 26, the following members have reached the threshold for verification and induction. Congratulations!
