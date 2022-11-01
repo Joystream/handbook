@@ -16,12 +16,12 @@ This process will be used for the upcoming launch of the `Carthage`  network, wh
 
 The launch of the final joystream testnet - `Carthage`, intended as the final test of the runtime and our intended deployment plan for the Joystream mainnet, will be rolled out as outlined in the table below:
 
-| Stage (Runtime) | Duration | Sudo                        | Consensus | Calls Allowed                                                                                         | Main Jsgenesis Actions                  | Staking Rewarded | #Validators     |
-| --------------- | -------- | --------------------------- | --------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------- | ---------------- | --------------- |
-| **Frozen**      | \~24h    | <p>Yes <br>(Single Key)</p> | PoA       | <p><code>sudo,</code><br><code>staking,</code><br><code>session,</code><br><code>multisig*</code></p> | <p>Bootstrap <br>-> Thawn</p>           | No               | 9-12            |
-| **Thawn**       | \~6days  | <p>Yes<br>(Multisig)</p>    | PoS       | <p><code>sudo,</code><br><code>staking,</code><br><code>session,</code><br><code>multisig*</code></p> | <p>Set #Validators<br>-> Supervised</p> | Yes              | 12-24           |
-| **Supervised**  | Weeks    | <p>Yes<br>(Multisig)</p>    | PoS       | Everything`**`                                                                                        | <p>Set #Validators<br>-> Liberated</p>  | Yes              | 24-?            |
-| **Liberated**   | NA       | No                          | PoS       | Everything`**`                                                                                        | NA                                      | Yes              | council decides |
+| Stage          | Duration | Sudo                        | Consensus | Calls Allowed                                                                                         | Main Jsgenesis Actions                  | Staking Rewarded | #Validators     |
+| -------------- | -------- | --------------------------- | --------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------- | ---------------- | --------------- |
+| **Frozen**     | \~24h    | <p>Yes <br>(Single Key)</p> | PoA       | <p><code>sudo,</code><br><code>staking,</code><br><code>session,</code><br><code>multisig*</code></p> | <p>Bootstrap <br>-> Thawn</p>           | No               | 9-12            |
+| **Thawn**      | \~6days  | <p>Yes<br>(Multisig)</p>    | PoS       | <p><code>sudo,</code><br><code>staking,</code><br><code>session,</code><br><code>multisig*</code></p> | <p>Set #Validators<br>-> Supervised</p> | Yes              | 12-24           |
+| **Supervised** | Weeks    | <p>Yes<br>(Multisig)</p>    | PoS       | Everything`**`                                                                                        | <p>Set #Validators<br>-> Liberated</p>  | Yes              | 24-?            |
+| **Liberated**  | NA       | No                          | PoS       | Everything`**`                                                                                        | NA                                      | Yes              | council decides |
 
 * `*` All transaction related to the `sudo`, `staking`, `session` and `multisig` modules will not be filtered, regardless of origin. This means:
   * Prospective validators and nominators can prepare and configure their validator (on chain), and/or nominate. There will be no changes to the actual set however during the `Frozen` stage.
@@ -36,21 +36,17 @@ The launch of the final joystream testnet - `Carthage`, intended as the final te
 
 ### Overview
 
-* **Duration:**
-  * `~24hours`
-* **Consensus:**
-  * `PoA`
-* **Purpose:**
-  * bootstrapping of `memberships`
+* **Duration:** `~24hours`
+* **Consensus:**`PoA`
+* **Purpose:** bootstrapping of `memberships`
 * **Actors:**
   * Jsgenesis (as `sudo`)
   * Prospective validators and nominators
-* **Filter:**
-  * everything except:
-    * `staking`
-    * `session`
-    * `sudo`
-    * `multisig`
+* **Filter:** everything except
+  * `staking`
+  * `session`
+  * `sudo`
+  * `multisig`
 
 ### Purpose
 
@@ -97,21 +93,17 @@ Once \~24 hours have passed, giving everyone equal opportunity to deploy their n
 
 ### Overview
 
-* **Duration:**
-  * `~6days`
-* **Consensus:**
-  * `PoS`
-* **Purpose:**
-  * Ensure a safe transition from `PoA` to `PoS`
+* **Duration:** `~6days`
+* **Consensus:** `PoS`
+* **Purpose:** Ensure a safe transition from `PoA` to `PoS`
 * **Actors:**
   * Jsgenesis (as `sudo`)
   * Validators and nominators
-* **Filter:**
-  * everything except:
-    * `staking`
-    * `session`
-    * `sudo`
-    * `multisig`
+* **Filter:** everything except
+  * `staking`
+  * `session`
+  * `sudo`
+  * `multisig`
 
 ### Purpose
 
@@ -156,20 +148,17 @@ Once \~6 days have passed, and we are now assuming that the validators are perfo
 
 ### Overview
 
-* **Duration:**
-  * `unknown`
-* **Consensus:**
-  * `PoS`
+* **Duration:** `unknown`
+* **Consensus:** `PoS`
 * **Purpose:**
   * Remove the transaction filter, thus opening for "normal" operations and governance.
   * Maintain `sudo` power for potential emergencies
 * **Actors:**
   * Jsgenesis (as `sudo`)
   * Everyone
-* **Filter:**
-  * nothing except:
-    * `bounty`
-    * ...
+* **Filter:** nothing except
+  * `bounty`
+  * a few calls in proposals and content directory
 
 ### Purpose
 
@@ -223,13 +212,8 @@ Hopefully, nothing else will be required.
 
 ### Overview
 
-* **Duration:**
-  * `forever?`
-* **Consensus:**
-  * `PoS`
-* **Purpose:**
-  * `Video platform DAO`
-* **Actors:**
-  * Everyone
-* **Filter:**
-  * NA
+* **Duration:**`forever`
+* **Consensus:** `PoS`
+* **Purpose:** `Video platform DAO`
+* **Actors:** Everyone
+* **Filter:** Same as prior
