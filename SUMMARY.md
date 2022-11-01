@@ -25,15 +25,15 @@
   * [Changelog](testnet/council-period-scoring/changelog.md)
 * [✋ Content Policy](testnet/content-policy.md)
 * [📈 Dashboards](testnet/dashboards.md)
-* [🧻 Carthage Rollout Plan](testnet/carthage-rollout-plan/README.md)
-  * [1⃣ Phase 1 - Frozen](testnet/carthage-rollout-plan/phase-1-frozen.md)
-  * [2⃣ Phase 2 - Thawn](testnet/carthage-rollout-plan/phase-2-thawn.md)
-  * [3⃣ Phase 3 - Supervised](testnet/carthage-rollout-plan/phase-3-supervised.md)
-  * [4⃣ Phase 4 - Liberated](testnet/carthage-rollout-plan/phase-4-liberated.md)
 * [❓ Testnet FAQ](testnet/testnet-faq.md)
 
 ## system
 
+* [🧨 Launch Process](system/launch-process/README.md)
+  * [1⃣ Phase 1 - Frozen](system/launch-process/phase-1-frozen.md)
+  * [2⃣ Phase 2 - Thawn](system/launch-process/phase-2-thawn.md)
+  * [3⃣ Phase 3 - Supervised](system/launch-process/phase-3-supervised.md)
+  * [4⃣ Phase 4 - Liberated](system/launch-process/phase-4-liberated.md)
 * [🥩 Accounts & Staking](system/accounts-and-staking/README.md)
   * [Account Generation](system/accounts-and-staking/account-generation.md)
 * [🔑 Memberships](system/memberships.md)
