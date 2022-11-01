@@ -6,34 +6,30 @@ description: Deciding who gets to be a validator.
 
 ## Introduction
 
-\
-The Joystream platform state lives on a blockchain consensus system. This consensus system is a variant of classical BFT consensus combined with Proof-of-Stake to determine who gets to be a consensus participant, i.e. validator. A validator is an actor which checks the validity of newly constructed blocks, proposes new blocks and participates in the consensus process for committing new block to the chain. This role has a purpose very similar to the miners in the Bitcoin blockchain. Importantly, anyone can fully check the validity of the blockchain, not just validators, and this is called validation.
+The Joystream blockchain is a PoS system, meaning that what actors are involved in validation, that is producing blocks and maintaining agreement over the canonical history of blocks as it is extended, is determined by how much stake is devoted to the candidacy of any prospective validator. Nominators are those native token holders who choose to be involved in the activity of voting for validation candidates, and they do so in return for a share of the validation rewards of this validator, and under the risk of loosing some of their funds if this validator misbehaves.
 
 ## Nomination
 
 ### Responsibilities
 
-* Run and maintain screening nodes that are always available and performant
-* Help enforce the consensus rules of the network
+* Select and monitor validator performance.
 
 ### Requirements
 
-* Experienced with how to setup and maintain high performance IT infrastructure
-* Access to highly performant and reliable IT infrastructure, with high storage, (up & down) bandwidth and processing capacity
 * Able to securely store keys
 * Hold sufficient amount of the native platform token to put at stake
 
 ## Risks and Rewards
 
-xxx
+`TODO: Martin`
 
 ## Selecting Validators
 
-xxx
+`TODO: Bedeho`
 
 ## Meet Some Validators
 
-`add list of validators here`
+`TODO add list of validators here: Bedeho`
 
 ## Guides
 
