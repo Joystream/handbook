@@ -29,7 +29,9 @@
 
 ## system
 
-* [🧨 Launch Process](system/launch-process.md)
+* [🧨 Launch Process](testnet/carthage-rollout-plan/README.md)
+* [🏭 Validation](system/validation.md)
+* [🗳 Nomination](system/nomination.md)
 * [🥩 Accounts & Staking](system/accounts-and-staking/README.md)
   * [Account Generation](system/accounts-and-staking/account-generation.md)
 * [🔑 Memberships](system/memberships.md)
@@ -52,7 +54,6 @@
 * [🚀 Marketers](system/marketers.md)
 * [🌉 Gateways](system/gateways.md)
 * [💸 Fees](system/fees.md)
-* [🏭 Validation](system/validation.md)
 
 ***
 
