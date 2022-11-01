@@ -36,21 +36,17 @@ The launch of the final joystream testnet - `Carthage`, intended as the final te
 
 ### Overview
 
-* **Duration:**
-  * `~24hours`
-* **Consensus:**
-  * `PoA`
-* **Purpose:**
-  * bootstrapping of `memberships`
+* **Duration:** `~24hours`
+* **Consensus:**`PoA`
+* **Purpose:** bootstrapping of `memberships`
 * **Actors:**
   * Jsgenesis (as `sudo`)
   * Prospective validators and nominators
-* **Filter:**
-  * everything except:
-    * `staking`
-    * `session`
-    * `sudo`
-    * `multisig`
+* **Filter:** everything except
+  * `staking`
+  * `session`
+  * `sudo`
+  * `multisig`
 
 ### Purpose
 
@@ -97,21 +93,17 @@ Once \~24 hours have passed, giving everyone equal opportunity to deploy their n
 
 ### Overview
 
-* **Duration:**
-  * `~6days`
-* **Consensus:**
-  * `PoS`
-* **Purpose:**
-  * Ensure a safe transition from `PoA` to `PoS`
+* **Duration:** `~6days`
+* **Consensus:** `PoS`
+* **Purpose:** Ensure a safe transition from `PoA` to `PoS`
 * **Actors:**
   * Jsgenesis (as `sudo`)
   * Validators and nominators
-* **Filter:**
-  * everything except:
-    * `staking`
-    * `session`
-    * `sudo`
-    * `multisig`
+* **Filter:** everything except
+  * `staking`
+  * `session`
+  * `sudo`
+  * `multisig`
 
 ### Purpose
 
@@ -156,20 +148,17 @@ Once \~6 days have passed, and we are now assuming that the validators are perfo
 
 ### Overview
 
-* **Duration:**
-  * `unknown`
-* **Consensus:**
-  * `PoS`
+* **Duration:** `unknown`
+* **Consensus:** `PoS`
 * **Purpose:**
   * Remove the transaction filter, thus opening for "normal" operations and governance.
   * Maintain `sudo` power for potential emergencies
 * **Actors:**
   * Jsgenesis (as `sudo`)
   * Everyone
-* **Filter:**
-  * nothing except:
-    * `bounty`
-    * ...
+* **Filter:** nothing except
+  * `bounty`
+  * a few calls in proposals and content directory
 
 ### Purpose
 
@@ -223,13 +212,8 @@ Hopefully, nothing else will be required.
 
 ### Overview
 
-* **Duration:**
-  * `forever?`
-* **Consensus:**
-  * `PoS`
-* **Purpose:**
-  * `Video platform DAO`
-* **Actors:**
-  * Everyone
-* **Filter:**
-  * NA
+* **Duration:**`forever`
+* **Consensus:** `PoS`
+* **Purpose:** `Video platform DAO`
+* **Actors:** Everyone
+* **Filter:** Same as prior

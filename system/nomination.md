@@ -10,6 +10,20 @@ For the time being, we will only show how to do this with [polkadot-js](https://
 
 We will add another option for doing this, using the joystream-cli and (optionally) signing offline, if you don't want to expose them on the internet.
 
+
+
+### Responsibilities
+
+* Run and maintain screening nodes that are always available and performant
+* Help enforce the consensus rules of the network
+
+### Requirements
+
+* Experienced with how to setup and maintain high performance IT infrastructure
+* Access to highly performant and reliable IT infrastructure, with high storage, (up & down) bandwidth and processing capacity
+* Able to securely store keys
+* Hold sufficient amount of the native platform token to put at stake
+
 ### Who and Why
 
 TODO
