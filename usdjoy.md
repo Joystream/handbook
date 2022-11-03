@@ -14,9 +14,36 @@ This is the native asset of the Joystream mainnet blockchain when it is launched
 
 The valuation of $JOY stands at **$60M USD** as of the last private transactions for mainnet $JOY, subject to vesting schedules which will be announced. We share this information in order to give prospective and future participants in our FMP some baseline for the value of the allocations they are earning.
 
-## Tokenomics
+## Ticker
 
-This breakdown is not final, as tokens will keep getting allocated towards FMP all the way leading up to launch.
+$JOY
+
+## Supply
+
+The initial total supply is 1,000,000,000 $JOY, however there is no supply cap.
+
+## Hapi Units
+
+The base unit is called _Hapi_, equivalent to Satoshis in Bitcoin. There are ten billion (10,000,000,000) Hapi in each $JOY, and hence at genesis there will be 1,000,000,000x10,000,000,000=10^19 Hapi.
+
+## Denominations&#x20;
+
+| Unit |     $JOY     | Hapi           |
+| ---- | :----------: | -------------- |
+| Hapi | 0.0000000001 | 1              |
+| $JOY |       1      | 10,000,000,000 |
+
+## Decimals
+
+$JOY has 10 decimals for display and input purposes in UIs.
+
+## Inflation
+
+There are two sources of inflation, staking rewards for validators and nominators, and the council minting new tokens out of it's [#budget](system/council.md#budget "mention"), however both are dynamic and constrained.
+
+## Genesis Block
+
+**This breakdown is not final, as tokens will keep getting allocated towards FMP all the way leading up to launch.**
 
 | Purpose         | Supply    | Liquidity | Vesting |
 | --------------- | --------- | --------- | ------- |
