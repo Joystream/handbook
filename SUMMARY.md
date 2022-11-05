@@ -7,6 +7,7 @@
   * [Allocation Distribution](founding-member-program/allocation-distribution.md)
   * [Accounts and Membership](founding-member-program/accounts-and-membership.md)
   * [Inductions](founding-member-program/inductions.md)
+* [✋ Content Moderation](content-policy.md)
 * [🏤 Jsgenesis](jsgenesis.md)
 
 ## Testnet
@@ -23,7 +24,6 @@
   * [Storage Providers Score](testnet/council-period-scoring/storage-providers-score.md)
   * [Marketers Score](testnet/council-period-scoring/marketers-score.md)
   * [Changelog](testnet/council-period-scoring/changelog.md)
-* [✋ Content Policy](testnet/content-policy.md)
 * [📈 Dashboards](testnet/dashboards.md)
 * [❓ Testnet FAQ](testnet/testnet-faq.md)
 

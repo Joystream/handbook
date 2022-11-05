@@ -4,7 +4,9 @@ description: >-
   testnets.
 ---
 
-# ✋ Content Policy
+# ✋ Content Moderation
+
+## \*\*UPDATE ON MAINNET TO EXPLAIN CONTENT MODERATION MORE HOLISTICALLY\*\*
 
 ## JSG Content Policy
 
