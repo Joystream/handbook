@@ -4,6 +4,12 @@
 
 `wip`
 
+## Content Directory Notion Space&#x20;
+
+The community maintains a distinct Notion space which holds more dynamic information on the activities of the content directory working group.
+
+{% embed url="https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab" %}
+
 ## Content Creator
 
 ## Content Curator
