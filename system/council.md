@@ -10,7 +10,7 @@ description: >-
 
 The council is a fixed size committee, up for election at regular intervals by token holders, tasked with the role of voting on proposals in the proposal system. At the heart of the governance process on the platform is the proposal system, which allows anyone to submit some suggestion for changing the state or policy of the platform in some way. These proposals are processed and voted on by a council, where the participants are referred to as council members. A seat on the council is won through an election process, and lasts for some period of time until a new election.
 
-## Notion Space
+## Council Notion Space
 
 The community maintains a distinct Notion space which holds more dynamic information on the activities of the council.
 
