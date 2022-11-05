@@ -10,12 +10,6 @@ The platform runtime, tools, infrastructure software and user facing application
 
 All of these contributors are collectively referred to as Builders. Anyone can contribute in the same mode as any of these possible contributor functions, as all the platform source assets are open source and developed in the open. Being a Builder means that one has some scope of responsibility in ongoing efforts, and that one has some predefined reward scheme associated with this responsibility.
 
-## Notion Space&#x20;
-
-The community maintains a distinct Notion space which holds more dynamic information on the activities of the builders working group.
-
-{% embed url="https://joystream.notion.site/Builders-ffb1c9d1d1094fc4a6f04eb47677673d" %}
-
 ## Builder
 
 ### Responsibilities

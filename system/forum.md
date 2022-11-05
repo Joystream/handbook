@@ -10,6 +10,12 @@ description: >-
 
 The forum is the primary place for community-wide asynchronous written communication about all topics relevant to the platform among members. It is hierarchically organized into a tree of categories, each with designated moderators responsible for policing and encouraging effective and beneficial interactions among members. The moderators are part of a designated forum working group, and the lead of that working group can decide what moderators are responsible for what categories. Categories contain subcategories, and threaded topic-based discussions, called _threads_, where any member can open a thread, and others can come and make replies in the form of _posts_. Some threads can also include a poll, allowing any member to weight in on a question. To create a thread an initial deposit is needed that goes into a thread account, all posts also requires a deposit that goes into the thread account related to the post, whenever a thread is deleted the funds from the thread account are transferred to the caller of the delete extrinsic.
 
+## Notion Space
+
+The community maintains a dedicated Notion space to the operational activities of the forum working group.
+
+{% embed url="https://joystream.notion.site/Forum-9d4eae77ce7544e0a860fbce4386805d" %}
+
 ## Forum Moderator
 
 ### Responsibilities
@@ -274,7 +280,7 @@ The category is dropped.
 * `category_id` corresponds to an existing category.
 * Limit `MAX_THREADS_IN_CATEGORY` is respected.
 * The category is not archived.
-* If poll information is provided, make sure&#x20;
+* If poll information is provided, make sure
   * limit `MAX_POLL_ALTERNATIVES` is respected, and that there are at least two alternatives.
   * the end time is in the future.
 * Signer's account has at least `THREAD_DEPOSIT + POST_DEPOSIT` free balance.
@@ -323,7 +329,7 @@ The title of the thread is set to `new_title`.
 
 #### Conditions
 
-* Signer uses role account of `actor`.&#x20;
+* Signer uses role account of `actor`.
 * `category_id` corresponds to an existing category.
 * `new_category_id` corresponds to an existing category.
 * `category_id` and `new_category_id` are distinct.
@@ -350,7 +356,7 @@ The thread has relocated to category corresponding to `new_category_id`.
 
 #### Conditions
 
-* Signer corresponds to `forum_member_id`.&#x20;
+* Signer corresponds to `forum_member_id`.
 * `category_id` corresponds to an existing category.
 * `thread_id` corresponds to an existing thread that's not deleted from storage.
 * `forum_member_id` corresponds to thread creator.
@@ -373,7 +379,7 @@ The thread has relocated to category corresponding to `new_category_id`.
 
 #### Conditions
 
-* Signer corresponds to `forum_member_id`.&#x20;
+* Signer corresponds to `forum_member_id`.
 * `category_id` corresponds to an existing category.
 * `thread_id` corresponds to an existing thread that's not deleted from storage.
 * If signer is moderator then this moderator must be assigned have control of the category corresponding to `category_id`.
@@ -474,7 +480,7 @@ Reaction with value `reaction_value`is accepted.
 
 #### Conditions
 
-* Signer uses role account of `actor`.&#x20;
+* Signer uses role account of `actor`.
 * `category_id` corresponds to an existing category.
 * `thread_id` corresponds to an existing thread.
 * `post_id` corresponds to an existing post.
@@ -503,7 +509,7 @@ Reaction with value `reaction_value`is accepted.
 
 #### Conditions
 
-* Signer uses role account of `actor`.&#x20;
+* Signer uses role account of `actor`.
 * `category_id` corresponds to an existing category.
 * `post_id` corresponds to an existing post.
 * post is not first post in thread.
