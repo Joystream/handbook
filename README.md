@@ -31,6 +31,12 @@ There are a variety of ways to earn $JOY, summarized in the table below:
 
 There are different rules which determine how each kind of testnet activity is rewarded, and these rules are continuously updated by [#jsgenesis](glossary.md#jsgenesis "mention") staff to ensure that the testnet activity in line with the stated goals.
 
+## Community Notion
+
+The community maintains a distinct Notion workspace for ongoing operational and coordination activities, it is a great complement to this more static handbook.
+
+{% embed url="https://joystream.notion.site/Joystream-Workspace-1175fcb1cc644fdb874558181fd2dbee" %}
+
 ## Feeling Lost?
 
 Are you still totally lost, not sure where to go or whom to speak to about getting started? Go speak to our integrators, these are the friendliest folks you can imagine, standing by 24/7 - rewarded by the DAO, to help you find your place and become valuable and effective contributor to the system.

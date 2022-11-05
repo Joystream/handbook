@@ -138,7 +138,7 @@ Let:
 
 ### `MODERATION_SCORE`
 
-Content moderation is applied swiftly and appropriately in accordance with the [Content Policy](../../content-policy.md).
+Content moderation is applied swiftly and appropriately in accordance with the [Content Policy](../content-policy.md).
 
 #### Scoring Calculations
 

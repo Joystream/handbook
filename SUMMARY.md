@@ -7,7 +7,8 @@
   * [Allocation Distribution](founding-member-program/allocation-distribution.md)
   * [Accounts and Membership](founding-member-program/accounts-and-membership.md)
   * [Inductions](founding-member-program/inductions.md)
-* [✋ Content Moderation](content-policy.md)
+* [✋ Content Moderation](testnet/content-policy.md)
+* [🧨 Launch Process](launch-process.md)
 * [🏤 Jsgenesis](jsgenesis.md)
 
 ## Testnet
@@ -29,7 +30,6 @@
 
 ## system
 
-* [🧨 Launch Process](testnet/carthage-rollout-plan/README.md)
 * [🏭 Validation](system/validation.md)
 * [🗳 Nomination](system/nomination.md)
 * [🥩 Accounts & Staking](system/accounts-and-staking/README.md)
