@@ -8,11 +8,11 @@ description: >-
 
 ## Opportunities
 
-There are a variety of ways to earn $JOY and $tJOY, summarized in the table below:
+There are a variety of ways to earn $JOY, summarized in the table below:
 
 | Activity              | Reference                                                                         |
 | --------------------- | --------------------------------------------------------------------------------- |
-| Refer A Friend        | [#refer-a-friend](testnet/founding-member-program/#refer-a-friend "mention")      |
+| Refer A Friend        | [#refer-a-friend](founding-member-program/#refer-a-friend "mention")              |
 | Bounty                | [bounties](system/bounties/ "mention")                                            |
 | Council Member        | [#council-member](system/council.md#council-member "mention")                     |
 | Content Curator       | [#content-curator](system/content-directory/#content-curator "mention")           |

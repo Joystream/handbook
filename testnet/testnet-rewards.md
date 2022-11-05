@@ -15,7 +15,7 @@ description: Who is given what, for what reason at what time?
 There are two kinds of rewards associated with testnet participation.
 
 1. The first is $tJOY, described here [usdtjoy.md](usdtjoy.md "mention") , which is the native token of our testnets. Although it was possible to exchange this for USD this is no longer possible. Although JSG may still choose to send users BCH directly as a reward for participation or running infrastructure.
-2. The second is $JOY, described here [usdjoy.md](../usdjoy.md "mention"), which is the native token of our coming mainnet. This tokens are distributed as part of our Founding Member Program (FMP), described here [founding-member-program](founding-member-program/ "mention"), which is our program to reward high value community member with our mainnet token.
+2. The second is $JOY, described here [usdjoy.md](../usdjoy.md "mention"), which is the native token of our coming mainnet. This tokens are distributed as part of our Founding Member Program (FMP), described here [founding-member-program](../founding-member-program/ "mention"), which is our program to reward high value community member with our mainnet token.
 
 ## Council Period Cadence
 
@@ -48,7 +48,7 @@ Here we cover how different kinds activities are rewarded
 
 ### Refer A Friend
 
-Read more in section [#refer-a-friend](founding-member-program/#refer-a-friend "mention").
+Read more in section [#refer-a-friend](../founding-member-program/#refer-a-friend "mention").
 
 ### Bounties
 

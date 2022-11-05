@@ -2,17 +2,17 @@
 
 * [🎯 Start Here](README.md)
 * [🚀 $JOY](usdjoy.md)
+* [🧙 Founding Members](founding-member-program/README.md)
+  * [Verification](founding-member-program/verification.md)
+  * [Allocation Distribution](founding-member-program/allocation-distribution.md)
+  * [Accounts and Membership](founding-member-program/accounts-and-membership.md)
+  * [Inductions](founding-member-program/inductions.md)
 * [🏤 Jsgenesis](jsgenesis.md)
 
 ## Testnet
 
 * [🤑 Testnet Rewards](testnet/testnet-rewards.md)
 * [💵 $tJOY](testnet/usdtjoy.md)
-* [🧙 Founding Member Program](testnet/founding-member-program/README.md)
-  * [Verification](testnet/founding-member-program/verification.md)
-  * [Allocation Distribution](testnet/founding-member-program/allocation-distribution.md)
-  * [Accounts and Membership](testnet/founding-member-program/accounts-and-membership.md)
-  * [Inductions](testnet/founding-member-program/inductions.md)
 * [📏 Council Period Scoring](testnet/council-period-scoring/README.md)
   * [General Working Group Score](testnet/council-period-scoring/general-working-group-score.md)
   * [Builders Score](testnet/council-period-scoring/builders-score.md)
