@@ -4,7 +4,7 @@
 
 `wip`
 
-## Content Directory Notion Space&#x20;
+## Notion Space&#x20;
 
 The community maintains a distinct Notion space which holds more dynamic information on the activities of the content directory working group.
 
