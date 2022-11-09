@@ -25,11 +25,15 @@ The Joystream blockchain is a PoS system, meaning that what actors are involved 
 
 ## Selecting Validators
 
-`TODO: Bedeho`
+{% embed url="https://wiki.polkadot.network/docs/learn-nominator#what-to-take-into-consideration-when-nominating" %}
+How to Pick a validator
+{% endembed %}
 
-## Meet Some Validators
+## Meet Your Validators
 
-`TODO add list of validators here: Bedeho`
+{% embed url="https://joystream.notion.site/Meet-Your-Validators-a4a1d8dd629d4c9fa49cdfb3e252b86d" %}
+Here is a list of validator identities
+{% endembed %}
 
 ## Guides
 
