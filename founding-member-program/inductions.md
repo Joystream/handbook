@@ -10,6 +10,16 @@ This page is meant as a simple way to coordinate everyone around big inductions 
 
 If you find yourself on this list, please see [verification.md](verification.md "mention") for instructions on how to proceed!
 
+## 16th of November 2022
+
+With Council Periods Scoring round 30, the following member have reached the threshold for verification and induction. Congratulations!
+
+| **Member ID** | **Member Handle** | **$JOY Allocation** |
+| ------------- | ----------------- | ------------------- |
+| **4373**      | investor          | US$ 10 834.71       |
+
+Please see [verification.md](verification.md "mention") for instructions on how to proceed.
+
 ## 1st of November 2022
 
 With Council Periods Scoring round 29, the following members have reached the threshold for verification and induction. Congratulations!
