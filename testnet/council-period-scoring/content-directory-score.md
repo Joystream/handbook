@@ -49,92 +49,14 @@ Content Directory Working Group Knowledge Base
 The Content Directory working group score is computed as follows
 
 ```
-CONTENT_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + FEATURING_SCORE + MODERATION_SCORE  + MIGRATION_SCORE]/(6)
+CONTENT_SCORE = [MODERATION_SCORE + DOCUMENTATION_SCORE]/(2*2^{N})
 ```
 
 where
 
 `N` : The number of catastrophic error instances which occurred, as defined below.
 
-### `GENERAL_WG_SCORE`
-
-Is computed with metrics defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
-
-### `REPORT_SCORE`
-
-In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must publish a separate report covering
-
-**During the period**
-
-* All channels and videos by `*Id` created. For each, include&#x20;
-  * metadata, meaning (at least) `title`, `category`, `license`, `objectId`(s)
-  * content directory status, meaning (at least) `isCensored`, `isPublic`, whether each object `isAccepted`
-  * curator specific information, such as in which block it was created, the `createdAt` and `updatedAt`timestamps, for the purpose of being able to review a video that gets updated should be dealt with (eg. censored or no longer censored)
-* All channels and videos by `*Id` updated. For each, include what the change was and when it was made.
-* Channel or video categories created or deleted, when and why.
-* All `NFT`s created, and their `Id`
-* All `NFT`s sold, and the auction type and `Id`
-* All moderation actions taken by the group, for which channels/video and why. This must include&#x20;
-  * `*Id`
-  * action taken
-  * &#x20;justification (longer and "off-chain" - see `MODERATION_SCORE`)&#x20;
-  * `rationale` (if applicable)
-  * block height/event/[link to explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org%3A9944#/explorer) if a transaction was made
-  * the `curatorId` which made the transaction
-* All requests made to storage working group lead, related to moderation.
-* All changes made to the featured content, with precise logs (see `FEATURING_SCORE`)
-
-**For the content directory as a whole**
-
-* Total amount of videos
-* Total amount of channels
-* Total amount of `NFT`s
-* Amount of videos hidden and censored.
-
-The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
-
-### `FEATURING_SCORE`
-
-_Objective:_ `The "Featured Content" must be changed frequently to keep fresh`
-
-### Notes
-
-`FEATURING_SCORE` is a score computed by Jsgenesis staff for the quality of featuring activity, which will be in the range \[0, 1], and will emphasize;
-
-* Frequency of updating featured content
-* Quality of content featured given the content available and quality of text, thumbnails etc. and other assets used in promoting content
-
-#### Instructions
-
-There are three different "types" of featured content:
-
-1. [Featured Categories](https://play.joystream.org/discover)
-2. [Hero](https://play.joystream.org/)
-
-* More information about 1. and 2. can be found [here](https://github.com/Joystream/atlas/blob/master/docs/community/featured-content.md).
-* The access keys, or help, needed to make the changes will be granted to the Lead upon mentioning `@klaudiusz.eth#6880` and `@bwhm#6514` on discord.
-
-#### Scoring Calculations
-
-Let:
-
-* `CATEGORIES_SCORE` be the score for updating the main featured categories on the platform, as a function of:
-  * `HERO_CATEGORIES_CHANGE` be the amount of times all heros were changed during the council period
-  * `VIDEO_CATEGORIES_CHANGE` be the amount of times the top video(s) in each categories were changed during the council period
-* `HERO_SCORE` be the score for updating the main featured video on the platform, as a function of:
-  * `HERO_CHANGE` be the amount of times the hero was changed during the council period
-  * `HERO_CHANGE_QUALITY` be the subjective score of how well this is done, based on how frequently the same video is rotated back to the top, whether the "teaser" and metadata is correct, and whether the video is appropriate to feature (eg. good/bad video, not NSFW, etc.)
-    * Note that Jsgenesis reserves the right to veto videos suggested for this position, as it's the first thing a new user sees, and should thus be of really high quality
-* `LOGGING_SCORE` be the quality of the change logs in the notion board, so that grading can be done without having to check manually every day. This means creating a spreadsheet/table/db/json that every time a change is made
-
-```
-  CATEGORIES_SCORE = max[(HERO_CATEGORIES_CHANGE + VIDEO_CATEGORIES_CHANGE)/4 , 1]
-
-  HERO_SCORE = max[(HERO_CHANGE + HERO_CHANGE_QUALITY)/4 , 1]
-
-  # finally
-  FEATURING_SCORE = (CATEGORIES_SCORE + HERO_SCORE + LOGGING_SCORE)/3
-```
+``
 
 ### `MODERATION_SCORE`
 
@@ -162,25 +84,15 @@ response_time_score_i:
 MODERATION_SCORE = [ sum(response_time_score_i) / i + sum(justification_j) / j] / 2
 ```
 
-### `MIGRATION_SCORE`
+### `DOCUMENTATION_SCORE`
 
-We are approaching `carthage`, where no channel or videos will be migrated over. This means all channels needs to be evaluated for migration.
+Play around with the new system, and document how the content directory works. Emphasis on permissions for updating, changing and moderating, as a:
 
-Over the course of the next 4 council periods, go through all channels and videos. For each period, process the a third of channels, create a table with (at least) 6 columns, namely:
-
-* Channel ID
-* Owner Member ID
-* Video IDs:  a comma separated list of all videos in the channel
-* Grade: a score between 0 and 3, where:
-  * 3 means **all** videos in the channel are both of "good" quality, **and** does not violate any license, copyright or other parts of the content policy
-  * 0 means **no** videos in the channel are both of "good" quality, **and** does not violate any license, copyright or other parts of the content policy
-  * 2 and 1 means most, but not all, of the matches the requirements in 3 and 0 respectively
-* Comments: for channels that are graded:
-  * 2 - which videos should be excluded from migration and why.
-  * 1 - which videos should be included in the migration and why.
-* Checked: meaning who performed the check (member and discord handle), and when the check was made. This is to ensure we can check all channels that have been updated at the end, and in case of complaints, the community knows who to ask if there is an issue.
-
-Share the table publicly with the community, so they can appeal.
+* Channel owner
+* Collaberator
+* Curator (not in a group)
+* Curator (in a group)
+* Lead
 
 ### Catastrophic Errors
 

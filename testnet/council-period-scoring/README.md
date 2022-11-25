@@ -46,91 +46,77 @@ Here is a live [dashboard](https://joystream.retool.com/embedded/public/3ef6f2ee
 
 ## Council Period Parameters
 
-_Valid through council scoring period number 15, for the council elected at block `#1,483,200.`_
+_Valid for council scoring period number 31, for the first council elected on Carthage (at block `#216,000.`)_ _The term will last from `#216,000` to `#288,000` -> `72,000` blocks -> 5 days_
 
-| Name                      | Value                           |
-| ------------------------- | ------------------------------- |
-| `JOY_BUDGET`              | USD 210,000 (0.35%)             |
-| `REFERRER_JOY`            | USD 3,000 (0.005%)              |
-| `REFERREE_JOY`            | USD 3,000 (0.005%)              |
-| `tJOY_BUDGET`             | 90,000,000                      |
-| `USD_SUBSIDY`             | USD 2,200 `*`                   |
-| `JOY_VERIFICATION_CAP`    | USD 5,000 (0.00833%)            |
-| `JOY_INDUCTION_THRESHOLD` | USD 15,000 (0.025%) `**`        |
-| `COUNCIL_tJOY_REWARD`     | 4,032,000 (20,160,000 in total) |
+| Name                  | Value               |
+| --------------------- | ------------------- |
+| `JOY_BUDGET`          | USD 150,000 (0.25%) |
+| `REFERRER_JOY`        | USD 3,000 (0.005%)  |
+| `REFERREE_JOY`        | USD 3,000 (0.005%)  |
+| `tJOY_BUDGET`         | 300,000             |
+| `COUNCIL_tJOY_REWARD` | 83,333              |
 
-`*` includes $100 subsidy for SPs, and $150 subsidy for distributors This means that JSG will mint $250 worth of tJOY and distribute across the workers, but these tJOY will not earn the recipients JOY.
+Notes:
 
-_The Parameters for each new scoring period should be made available within 48h hours of a new Council elected._
+* `tJOY_BUDGET` Does NOT include validator rewards, as the Council can not influence in time for the network.
+* `COUNCIL_tJOY_REWARD` is the total reward for the CMs earned over the duration of the Scoring Period
 
-Until published, the council should assume they will stay the same until the update is made.
+##
 
-## Summary Report and Plan Deadlines
+## Reporting
 
-For the system to work well, there is a need for a feedback-loop, between
+#### Daily Status Update
 
-* the councils [#council-period-summary](./#council-period-summary "mention") and the working groups [#working-group-summary](general-working-group-score.md#working-group-summary "mention") are important for Jsgenesis in order to;
-* publish [#council-period-parameters](./#council-period-parameters "mention") (for the next scoring period), which are needed for;
-* the new councils [#council-period-plan](./#council-period-plan "mention") and working groups [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"). ****&#x20;
+For Carthage, the Council is expected to publish daily reports on the Forum, and link to it on Discord. The report should cover:
 
-For this to be the case, strict deadlines are required. Based on feedback, we are going to make some changes in order to allow for information transfer from working groups to the council, and for the latter to review and request changes.&#x20;
+* Working Group status, meaning for each group:
+  * The composition (and changes) of Workers and Leads
+  * Any changes in openings
+  * Budgets and spending
+  * What the group is working on, with emphasis on Scoring Metrics
+  * Communication between the Council and the Group
+* Council Status, meaning:
+  * Overall budget and spending
+  * What they have been doing
+  * Which meetings have taken place, with links to MoM if applicable
+  * Announce planned meetings
+* Proposal status changes
 
-Suppose Council `n` is elected at block B\_n\_el.
+The document should be concise but complete and preferably published at roughly the same time each day.
 
-[#working-group-summary](./#working-group-summary "mention")&#x20;
+#### Scoring Period Summary
 
-Deadline: `B_n_el+10800 (`election + 18h) for scoring period `n-1`
+Unless a Scoring Period ends on a new election, the documents should be posted within a window of 12 hours before the period ends, and a day after. The summary should cover:
 
+* Working Group status, meaning for each group over the period:
+  * The composition (and changes) of Workers and Leads
+  * Any changes in openings
+  * Budgets and spending
+  * What the group worked on and achieved
+  * Communication between the Council and the Group
+* Council Status, meaning:
+  * Overall budget and spending
+  * What they have been doing
+  * Which meetings have taken place, with links to MoM if applicable
+  * Announce planned meetings
+* Proposal summary
+* Lessons learned
 
+More or a less a summary of the status updates, but with some extra context.
 
-[#council-period-summary](./#council-period-summary "mention")
+#### Scoring Period Plan
 
-Deadline: `B_n_el+14400 (`election + 24h) for scoring period `n-1`
+Unless a Scoring Period ends on a new election, the documents should be posted within a window of 12 hours before the period ends, and a day after. The plan should cover:
 
-
-
-**Working Group Reports**
-
-Deadline: `B_n_el+14400 (`election + 24h) for scoring period `n-1`
-
-
-
-**Initial Grading Results Published**
-
-Target Deadline: `B_n_el+23400`(election+39h) for scoring period `n-1`
-
-A post made in the `#council` room on discord will be made to notify the "old" Council of this.
-
-
-
-[#council-period-parameters](./#council-period-parameters "mention")
-
-Target Deadline: `B_n_el+28800`  (election+48h) for scoring period `n-1`
-
-
-
-****[#council-period-plan](./#council-period-plan "mention")****
-
-Deadline: `B_n_el+36000 (`election + 60h) for scoring period `n`
-
-``
-
-[#working-group-period-plan](./#working-group-period-plan "mention")****
-
-Deadline: `B_n_el+43200 (`election + 72h) for scoring period `n`
-
-### Deadline Notes
-
-* This means the council can not "formally" approve a final version of their own, nor the working groups summaries through a proposal, as there will be a "new" Council by the time it's completed. Instead, the "old" Council will be allowed to make corrections, by simply having one of the "old" Council members posting a new version of the report as a reply to the one made by the Lead, within the Council Period Summary Deadline (meaning an extra 6 hours).
-* For 6h after the **Initial Grading Results** are published, complaints may be issued. For any complaint to be considered, it must come from the "old" Council or the Lead of the Working Group in question, with specific errors or corrections, backed by numbers, facts or links.
-* Once the new **Council Period Parameters** are out, Jsgenesis will create a signal proposal with:
-  * A summary of which paramters was changed and why
-  * A summary of changes to made to the scoring metrics
-* For every 6h the **Initial Grading Results** are delayed, the plans may be submitted 6h later with no negative impact on the scoring.
-
-## Dashboard
-
-TODO
+* Working Group plans, meaning for each group over the period:
+  * What they expect to work on and achieve
+  * Budgets for the Group
+  * Planned communication with the Group
+  * Changes planned from the previous Scoring Period
+* Council plans, meaning activities outside of the Working Groups:
+  * Other spending plans
+  * Workflow plans
+  * Changes planned from the previous Scoring Period
 
 ## Knowledge Bases <a href="#group-knowledge-base" id="group-knowledge-base"></a>
 
@@ -142,192 +128,26 @@ The council and each working group must maintain its own Notion board where a bo
 Council Knowledge Base
 {% endembed %}
 
-## Total tJOY Spending
+### Total tJOY Spending
 
 The total tJOY spending over a given council period is something Jsgenesis attempts to directly constrain through its policy parameter `tJOY_BUDGET` , and it the sum of the following non-overlapping categories of flows during the blocks of a council period
 
-* Any increase in tJOY that any validator can cashout, but currently has not.
-* Any tJOY that has actually been cashed out by validators.
 * Any tJOY actually awarded to any council member, lead or worker.
 * Any tJOY paid through a Funding Request.
-* Any $tJOY approved for bounty work (as defined in the [human-resources-score.md](human-resources-score.md "mention")).
 
-Note that the although the `$tJOY_BUDGET`, may be confused with the concept of on chain Council and \[Working Group] Budgets, these are not equivalent. Whereas the tJOY\_BUDGET above includes the spending on validators and nominators, the council do not in fact control this. The same can be said for the bounties referred to above, although they have some influence and recourse here.
+Note that the although the `$tJOY_BUDGET`, may be confused with the concept of on chain Council and \[Working Group] Budgets, these are not equivalent.
 
-## Council Period Summary
+### Opportunities Score
 
-### Motivation
+At the end of the Period, the amount of Workers and Leads OR their rewards, whatever is worst (excluding Council Members) will be added up between members that have reached the FM threshold or not.
 
-* Allow Jsgenesis to update the [#council-period-parameters](../testnet-rewards.md#council-period-parameters "mention") and [#network-performance-score](./#network-performance-score "mention") metrics for the next period based on up to date and accurate information.
-* Allow the possible next council to have good information about the most urgent matters and status of the network.
+Starting at 1, for each percentage point over 40% that is held by members over the threshold, the score will decrease by by 0.025.
 
-### Scope
+### Score
 
-* Accounting of how much was spent on what.
-* Actual hires made.
-* Actual firings done.
-* Spending proposals passed.
-* Changes made to the notion board.
-* A summary on how well the network as a whole performed, and what problems occurred.
-* Recommendations for what should be focused on in next council period in order to make the network more effective.
-* Feedback on the Council Period Parameters during their term.
+#### Overview
 
-### Submission
-
-The report itself must be written as a markdown document in English, in the forum category `Governance>Council Reports`, as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the report on the forum.
-
-If there is a need to link to extra information, statistics, etc. these should be in the notion board.
-
-## Working Group Summary
-
-### Motivation
-
-1. Allow Jsgenesis to update the [#council-period-parameters](../testnet-rewards.md#council-period-parameters "mention") and [#network-performance-score](./#network-performance-score "mention") metrics for the next period based on up to date and accurate information.
-2. Allow the possible next council and working group lead to have good information about the most urgent matters and status of the group.
-3. Provide some group-specific data, to ease the grading process.
-
-### Scope
-
-All working group summaries have the same "core" scope
-
-* Accounting of how much was spent on what.
-* Actual hires made.
-* Actual slashes imposed.
-* Actual firings done.
-* Changes made to the corresponding notion board.
-* A summary on how well the working group served it's intended purpose.
-* Recommendations for what should be focused on in next council period in order to make group more effective.
-* Suggested changes to the purpose or practices built in to this working group, other working groups, the council or Jsgenesis' role, in order to increase overall effectiveness of the group or the project.
-
-### Submission
-
-For each working group, a plan must be submitted with the following specifics:
-
-* written as a markdown document in English
-* using a template, so that each report is structured and formatted uniformly
-* posted to the forum under category `Governance > Working Groups Plans and Summaries`  in a thread titled:  `[Working Group Name] Summary: [Council Period ID]` where `[Working Group Name]`is the name of the working group
-
-In order for the Council to review and approve any summary, we have to either:
-
-1. Accept that the latest datapoints can not be part of the scoring
-2. Allow the council or leads to update the final numbers after the council can no longer approve a plan or summary.
-
-As the numbers are such a key component, we are going with alternative 2. However, this means the Council need another way of approving them.
-
-If there is a need to link to extra information, statistics, etc. these should be in the working groups own notion board, but the general report itself **must** be posted on the forum.
-
-## Council Period Plan
-
-### Motivation
-
-Give Jsgenesis visibility into the priorities of the council, and also serve as a canonical document to focus everyone in the council around a clearly defined plan.
-
-### Scope
-
-* Prioritization to each working group about what they should focus on solving.
-* How total $tJOY budget will be allocated across groups and council.
-* Set the schedule for all the [#council-meetings](./#council-meetings "mention") until the council period is over.
-* List all known tasks to be assigned to individual council members, and add them to the council period task tracker on the Notion board.
-* The council are further _encouraged_ to include specific workflows for items such as:
-  * How to follow up each working group, and by whom
-  * How budgets are managed, and by whom
-  * Who is responsible for taking and publishing minutes
-  * etc.
-
-### Submission
-
-The plan itself must be written as a markdown document in English, in the forum category `Governance>Council Reports`, as a thread which has the title which includes the council period ID. The council must pass a text proposal (add link when proposal list is in) which references the plan on the forum.
-
-If there is a need to link to extra information, statistics, etc. these should be in the notion board.
-
-## Working Group Period Plan
-
-#### Motivation
-
-Give Jsgenesis and the council visibility into the priorities of the group, and also serve as a canonical document to focus everyone in the group around a clearly defined plan.
-
-#### Scope
-
-All working group period plans have the same scope:
-
-* Current group composition.
-* Plan for hirings (emphasizing newcomers).
-* Planned firings.
-* Onboarding plans for newcomers.
-* Ranked list of suggestions for problems groups should attempt to tackle, and how, with corresponding budgeting, marketing or other resources needed from council or Jsgenesis.
-
-**Note:** The plan for hiring and firings don't have to be specific members/workers, just the number of.
-
-#### Submission
-
-For each working group, a plan must be submitted with the following specifics:
-
-* written as a markdown document in English
-* using a template, so that each report is structured and formatted uniformly
-* posted to the forum under category `Governance > Working Groups Plans and Summaries` in a thread titled: `[Working Group Name] Plan: [Council Period ID]` where `[Working Group Name]`is the name of the working group
-* include a link to a signal proposal, where the Council explicitly approves the plan
-  * a single proposal can approve all/multiple plans
-
-Links to external resources, such as notion boards, can only include extra information, statistics, and the likes, not the core scope.
-
-## Council Meetings
-
-As a minimum, all council members are expected to be available for
-
-* two handover calls, after getting elected and after their term has ended
-  * organized and always attended by Jsgenesis
-* daily standups for coordinating between them
-  * organized by the council themselves
-
-### Motivation
-
-#### Handover
-
-A handover meeting allows the new council to prepare for their [#council-period-plan](./#council-period-plan "mention") with assistance from both the previous council and Jsgenesis. The previous council will get immidiate feedback on their [#council-period-summary](./#council-period-summary "mention") and Jsgenesis will learn what the current pressure points are.
-
-#### **Daily Standup**
-
-As for any organization, internal communication is key for performance. Every day between the handovers, the Council shall have a daily sync call, held in public on Discord. The scheduling will be set in the [#council-period-plan](./#council-period-plan "mention"), where the inaugural shall be **after** Jsgenesis publishes the new [#council-period-parameters](./#council-period-parameters "mention") and the scoring metrics for the period, but **before** the deadline to release the [#council-period-plan](./#council-period-plan "mention").&#x20;
-
-See [#summary-report-and-plan-deadlines](./#summary-report-and-plan-deadlines "mention") for more information.
-
-### Scope
-
-#### Handover
-
-* Discuss the performance of the previous council
-* Review the temporary summary, presented by the previous council, for the benefit of all parties, with an emphasis on lessons learned
-* Questions and comments
-
-A member of the new council takes notes, and quickly prepares a brief minutes of meeting to post on the forum or discord for feedback by the others. To avoid conflict and reduce the barrier to speak, the minutes must obey the "[Chatham House Rules](https://en.wikipedia.org/wiki/Chatham\_House\_Rule)".
-
-#### **Daily Standup**
-
-* Follow up the tasks in the councils own task tracker
-
-### Submission
-
-#### Handover
-
-Once approved (informally, eg. no comments in discord unaddressed), the minutes are submitted in the forum category `Governance>Council Reports` as a thread which has the title which includes the two council period IDs.
-
-#### **Daily Standup**
-
-Minutes are added to the `Governance>Council Reports` in a thread that contains all standups for the week.
-
-## Council Daily Sync
-
-
-
-## Lead Opportunities
-
-There must be made space for people to try to participate as leads for working group, even to the extent that other more experienced - but proficient leads, have to pause their participation. It is up to the council to determine the cheapest way to accommodate newcomers without undermining the operations of the working group. Not only must the space be allocated and reserved for newcomers, but there must be effective collaboration with the [human-resources.md](../../system/human-resources.md "mention") working group to actually identify potential applicants and encourage them to apply to these opportunities.
-
-## Score
-
-### Overview
-
-At the beginning of each council [#jsgenesis](../../glossary.md#jsgenesis "mention") staff will state a set of explicit metrics that will apply to the upcoming council period. At the end of each council period, [#jsgenesis](../../glossary.md#jsgenesis "mention") staff will determine a final _network performance score_ for the council which will be in the range \[0,1]. This score is used to determine the [usdtjoy.md](../usdtjoy.md "mention") reward and [#founding-member-points](../../founding-member-program/#founding-member-points "mention") for the council members, as described above.
+At the beginning of each council #jsgenesis staff will state a set of explicit metrics that will apply to the upcoming council period. At the end of each council period, #jsgenesis staff will determine a final _network performance score_ for the council which will be in the range \[0,1]. This score is used to determine the usdtjoy.md reward and #founding-member-points for the council members, as described above.
 
 Specifically, the score is a weighted linear combination of scores _working group scores_, which themselves are in the range \[0,1], which is normalized by the weights, and lastly discounted by exponentially by the number of _catastrophic errors_ detected, that is
 
@@ -349,13 +169,13 @@ LEAD_OPPORTUNITIES_SCORE + LO_W
 
 where
 
-* `BUILDER_SCORE` (`B_W`): computed with metrics defined in [builders-score.md](builders-score.md "mention").
-* `CONTENT_SCORE`(`C_W`): computed with metrics defined in [content-directory-score.md](content-directory-score.md "mention").
-* `DISTRIBUTOR_SCORE` (`D_W`): computed with metrics defined in [forum-score.md](forum-score.md "mention") .
-* `FORUM_SCORE` (`F_W`): computed with metrics defined in [distributors-score.md](distributors-score.md "mention").
-* `HR_SCORE` (`HR_W`): computed with metrics defined in [human-resources-score.md](human-resources-score.md "mention").
-* `MARKETER_SCORE` (`M_W`): computed with metrics defined in [marketers-score.md](marketers-score.md "mention").
-* `STORAGE_SCORE` (`S_W`): computed with metrics defined in [storage-providers-score.md](storage-providers-score.md "mention").
+* `BUILDER_SCORE` (`B_W`): computed with metrics defined in builders-score.md.
+* `CONTENT_SCORE`(`C_W`): computed with metrics defined in content-directory-score.md.
+* `DISTRIBUTOR_SCORE` (`D_W`): computed with metrics defined in forum-score.md .
+* `FORUM_SCORE` (`F_W`): computed with metrics defined in distributors-score.md.
+* `HR_SCORE` (`HR_W`): computed with metrics defined in human-resources-score.md.
+* `MARKETER_SCORE` (`M_W`): computed with metrics defined in marketers-score.md.
+* `STORAGE_SCORE` (`S_W`): computed with metrics defined in storage-providers-score.md.
 * `SUMMARY_SCORE` (`SU_W`): is a score computed for the quality of the council summary, which will be in the range \[0, 1], and will emphasize things like
   * Clarity of communication and organization.
   * Appropriate scope.
@@ -365,20 +185,31 @@ where
   * Clarity of communication and organization.
   * Appropriate scope.
   * Accuracy of facts and information.
-* `MEETING_SCORE` (`ME_W`): is a score in the range \[0, 1], computed based on two factors:
-  * Turnout of council members (n/m), for all handover and standups, where 80% is required to achieve a full score
-  * The quality and promptness of publishing the minutes of meeting, where the score falls linearly from 1 to 0 if minutes are published between 2 hour and 8 hours after the meeting started
-* `LEAD_OPPORTUNITIES_SCORE` is `1/min(x_1,..., x_k)` , which will be in the range \[0, 1], where `x_i` is the total number of council period in which the `i`th lead has worked in this group.
+* `DAILY_STATUS_SCORE` (`CM_W`): is a score in the range \[0, 1], and will emphasize things like
+  * Clarity of communication and organization.
+  * Appropriate scope.
+  * Accuracy of facts and information.
+* `OPPORTUNITIES_SCORE` is `1/min(x_1,..., x_k)` , which will be in the range \[0, 1] as defined above
 * `*_W` : are the weights from the table below.
 * `N` : The number of catastrophic error instances which occurred, as defined below.
 
-### Weights
+#### Weights
 
 The current weights are:
 
-<table><thead><tr><th>Weight</th><th data-type="number">Value</th></tr></thead><tbody><tr><td><code>B_W</code></td><td>8</td></tr><tr><td><code>C_W</code></td><td>5</td></tr><tr><td><code>D_W</code></td><td>6</td></tr><tr><td><code>F_W</code></td><td>1</td></tr><tr><td><code>HR_W</code></td><td>8</td></tr><tr><td><code>M_W</code></td><td>2</td></tr><tr><td><code>S_W</code></td><td>6</td></tr><tr><td><code>SUM_W</code></td><td>2</td></tr><tr><td><code>P_W</code></td><td>2</td></tr><tr><td><code>CM_W</code></td><td>2</td></tr><tr><td><code>LO_W</code></td><td>2</td></tr></tbody></table>
-
-Jsgenesis reserves the right to add 1 point to the `M_W` assuming a scope is agreed.
+| Weight | Value |
+| ------ | ----- |
+| B\_W   | 3     |
+| C\_W   | 1     |
+| D\_W   | 5     |
+| F\_W   | 1     |
+| HR\_W  | 3     |
+| M\_W   | 1     |
+| S\_W   | 5     |
+| SUM\_W | 2     |
+| P\_W   | 2     |
+| CM\_W  | 2     |
+| LO\_W  | 2     |
 
 Which Means:
 
@@ -393,8 +224,8 @@ MARKETER_SCORE*M_W +
 STORAGE_SCORE*S_W +
 SUMMARY_SCORE*SUM_W +
 PLAN_SCORE*P_W +
-COUNCIL_MEETING_SCORE*CM_W +
-LEAD_OPPORTUNITIES_SCORE*LO_W
+DAILY_STATUS_SCORE*CM_W +
+OPPORTUNITIES_SCORE*LO_W
 ]/((B_W + C_W + D_W + HR_W + M_W + S_W + SUM_W + P_W + CM_W + LO_W)*2^N)
 ```
 

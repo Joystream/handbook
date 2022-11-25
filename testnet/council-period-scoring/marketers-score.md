@@ -38,11 +38,13 @@ Marketers Working Group Knowledge Base
 
 ## Score
 
-The HR working group score is computed as follows
+The Marketing working group score is computed as follows
 
 ```
-MARKETING_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + RECRUITING_SCORE + DOCUMENTATION_SCORE]/(5*2^{N})
+HOLD
 ```
+
+**No metrics for period 31.**
 
 where
 

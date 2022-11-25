@@ -28,69 +28,37 @@ Distributor Working Group Knowledge Base
 The score is computed as follows
 
 ```
-FORUM_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + MODERATION_SCORE + CATEGORY_SCORE]/(5*2^{N})
+FORUM_SCORE = [3*CATEGORY_SCORE + USAGE_SCORE]/(5*2^{N})
 ```
 
 where
 
 `N` : The number of catastrophic error instances which occurred, as defined below.
 
-### `GENERAL_WG_SCORE`
+### `CATEGORY_SCORE`
 
-Is computed with metrics defined in , where the opportunity target is **`20%`**.
+1. Create a set of initial categories for the Forum, and ensure it works
+2. Request feedback from the Community
+3. With the below in mind, create a proposal to the Council outlining the categories and hierarchy within
+4. If approved, implement the changes. If not, revise and repeat 4
 
-### `REPORT_SCORE`
+The score for of the above accounts for 25% of the final score, which will be in the range \[0, 1].
 
-In addition to what is outlined in the [#working-group-summary](general-working-group-score.md#working-group-summary "mention"), the working group report must include a section covering
+The score will decrease by 10% for each hour of delay, given the following deadlines:
 
-* Forum statistics over the course of the scoring period, meaning
-  * How many threads were created
-  * How many threads were deleted
-  * How many posts were created of each type
-  * How many posts were deleted
-* For each category
-  * How many threads exists, and how many was created during the last scoring period
-  * How many posts exists, and how many was created during the last scoring period
-* Charts showing the forum history over time
-  * Threads made since genesis
-  * Posts made since genesis
-* A summary of all `forum` (except regular posting) transactions made by the group, who made it, and why, eg.
-  * Moderation of threads
-  * Moderation of posts
-  * Threads moved
-  * Categories changed, deleted or created
+1. 24h from `#216,000`
+2. 24h from `#216,000`
+3. Allow 24h of feedback, then 12h to create proposal
+4. Implement changes, without breaking anything, within 12h of approval; OR\
+   Create a new proposal within 12h of rejection
 
-The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
+### `USAGE_SCORE`
 
-### `MODERATION_SCORE`
+Not (just) the Forum Lead to decide, but there a plethora of ways the community CAN communicate. Discord is probably the fastest, the proposal system is probably best for "big" things, and DMs are probably better for non-public communication or smalltalk.
 
-#### Notes
+However, the forum has it's benefit given that it's easy for all to know who you're talking with, and the messages are (somewhat) permanent.
 
-As for any forum, some moderation is likely required.
-
-Apply the moderation policy, and for each occurrence, make an entry of it in a spreadsheet/table on the groups notion space.
-
-#### Scoring Calculations
-
-Let:
-
-* `response_time_i` be the time (in hours) from a post or thread `i` is created until an action has been taken.
-* `justification_j` be a score in the range \[0,1], set by Jsgenesis staff for a few selected actions, based on:
-  * the justification provided for the action, such as pointing to the rule or guideline that is violated
-  * the `rationale` included (if applicable) in the extrinsic
-  * further logging, such as the blockheight/event/[link to explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org%3A9944#/explorer) and who made the decision
-  * whether or not the justification/`rationale` is true
-
-Then:
-
-```
-response_time_score_i:
-  response_time_i >= 4:          1
-  response_time_i < 24:          0
-  4 < response_time_i < 24:      -0.05*response_time_i + 1.2
-  
-MODERATION_SCORE = [ sum(response_time_score_i) / i + sum(justification_j) / j] / 2
-```
+Draft a proposal outlining this.
 
 ### Catastrophic Errors
 

@@ -30,7 +30,7 @@ Distributor Working Group Knowledge Base
 The score is computed as follows
 
 ```
-DISTRIBUTOR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + 2*SYSTEM_SCORE + COST_SCORE]/(6*2^{N})
+DISTRIBUTOR_SCORE = [3*OPERATIONAL_SCORE + LOG_SCORE + DEPLOYMENT_GUIDE_SCORE]/(5*2^{N})
 
 ```
 
@@ -38,84 +38,32 @@ where
 
 `N` : The number of catastrophic error instances which occurred, as defined below.
 
-### `GENERAL_WG_SCORE`
+### `OPERATIONAL_SCORE`
 
-Is computed with the metrics defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`20%`**.
+Get the system operational as soon as possible, meaning:
 
-### `REPORT_SCORE`
+* Sufficient buckets (as required by the runtime) operational
+* System and bucket level configurations are "good"
+* Non-operational buckets are turned off, to avoid failed requests
+* Bags quickly "moved" as new buckets are online, and others fail
 
-In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must publish a separate report covering
+### `LOG_SCORE`
 
-* What was the setup of distribution family buckets, and buckets at the beginning and end of the term.
-* What was the dynamic policy at the beginning and end of the term.
-* How are bags distributed among the buckets in each bucket family.
-* What was the rationale behind the family bucket and bucket configuration, meaning
-  * What geographical regions are the families meant to serve
-  * Why was the specific dynamic bag policy chosen
-* How much bandwidth did the individual nodes consume during the period.
-* How is the bandwidth usage distributed, meaning
-  * How did bandwidth usage look over a day (peak hours and slow hours)
-  * How did bandwidth usage look over a week (peak days and slow days)
-  * How did bandwidth usage look across regions (which regions consumes the most, if accessible)
-  * How did bandwidth usage look across nodes, operators, buckets and families
-* How are distributors supposed to set their `config.yaml` file and why.
-* What is the current running costs for the system, and a breakdown of said costs.
-* What, if anything, is the group doing the monitor the health of the system.
-* A list of all `storage` transactions (not `distributorWorkingGroup`) made by the lead, and the purpose behind them.
-* An overview of which nodes that running with `--elasticSearchEndpoint`, what log level they are using, and how this information is used.
+Each transaction `tx:n` performed by the Lead role key, successful or not, must be logged.
 
-The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
+* This is not about the Council or JSG catching mistakes, but ensuring that the deployment is reproducible for mainnet (if/when successful)
+* Helpful for reviewing improvements, and lessons learned
 
-### `SYSTEM_SCORE`
+### `DEPLOYMENT_GUIDE_SCORE`
 
-Although well intended and partially correct given the purpose of `bucket_families` , the current system causes issues for many reasons, two of which are easy to fix:
+With the above in hand, the Lead, the Council, the community and JSG can try to improve the process for later. Includes
 
-* Buckets are assigned more bags than they should, and needs to fetch objects from a storage provider themselves, before they can serve them
-* High latency between user, the player/orion and the distributor nodes, given most users residing Europe and the CIS
-
-Redesign the distributor system, to reduce these errors.
-
-#### Parameters
-
-* **All** families/buckets are well distributed across Europe and the CIS (`coverage_score`)
-  * No **active** distributor operates from any other geographical location
-* All objects must be available from at least 2 operators in each family (`redundancy_score`)
-* All distributor nodes are on the latest version of `argus` (`version_score`)
-* All distributors that has been operating for more than 1 week (100,800 blocks), must maintain their own query node, and share the public url in the metadata (`autonomy_score`)
-  * Will not be measured before scoring period 16
-* All distributor nodes displays their location coordinates, node storage capacity and caching in the metadata,   (`transparancy_score`)
-  * These should be the same numbers as `limits.storage` `limits.maxCachedItemSize` in the `config.yml` file
-* No distributor node stores more than 80% of their capacity (`excess_capacity_score`)
-  * This may severely reduce performance
-* The maximum response time is 2h (`response_score)`
-
-The first five subscores are measured at some point during the last 14400 blocks of the scoring period.
-
-The latter will be measured by creating an opening for `@bwhm` without any rewards, that should be invited to a bucket and set as serving, but not accept any bags. If the node goes down, it must be set to not serving.
-
-```
-All subscores are graded binary
-
-  SYSTEM_SCORE = (1/7)*(coverage_score + redundancy_score + version_score + autonomy_score + transparancy_score + excess_capacity_score + response_score)
-```
-
-### `COST_SCORE`
-
-The cost score will try to measure how the group allocates their resources. Although being cost efficient is not a top priority for a testnet in general, it doesn't make much sense to:
-
-* Employ a lot of operators that are not serving content
-* Have operators store significantly less content than their capacity (especially cached capacity)
-* Have operators run with costly hardware, and/or in expensive datacenters unless the benefit outweighs the extra costs
-
-The score is the sum of two subscores:
-
-1. A report documenting
-   * Current costs
-   * What can be done to reduce them (without impacting other scores)
-   * What could be done to reduce them (may impact other scores), and why this may, or may not, be worth it
-2. A subjective analysis by Jsgenesis, based on the report above and chain data. Any "excessive" costs not covered in the report will reduce the score, whereas costs that are documented will not.  An exeption to this rule is if a "cut" is not enacted in subsequent council periods.&#x20;
-
-Jsgenesis will assign a score in the range \[0,1] based on this.
+* The Goal, as in a somewhat stable system with a specific setup of buckets and operators etc.
+* Step by step process, as in the log above except:
+  * "incorrect" transactions are removed
+  * more emphasis on why
+  * other options, if you wanted to achieve goal `x` instead of `y`
+* Troubleshooting, as in how to avoid `x` and recover from `y`
 
 ### Catastrophic Errors
 

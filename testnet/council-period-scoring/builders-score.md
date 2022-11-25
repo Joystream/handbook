@@ -25,52 +25,18 @@ Builders Notion knowledge base
 The builders working group score is computed as follows
 
 ```
-BUILDER_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + TESTING_SCORE + PIONEER_DEVELOPMENT_SCORE + GENERAL_DEVELOPMENT_SCORE]/6
+BUILDER_SCORE = [STAGING_NETWORK_SCORE + TESTING_SCORE + PIONEER_DEVELOPMENT_SCORE + GENERAL_DEVELOPMENT_SCORE]/4
 ```
 
 where
 
-### `GENERAL_WG_SCORE`
+```
+STAGING_NETWORK_SCORE
+```
 
-Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention"). where the opportunity target is **`20%`**.
+#### Instructions
 
-### `REPORT_SCORE`
-
-In addition to what is outlined in the [#working-group-period-plan](general-working-group-score.md#working-group-period-plan "mention"), the working group report must publish a separate report covering
-
-#### Dev builder issues
-
-* How many dev issues, when and which (link) for each, in each project board was
-  * Assigned to a worker (which)
-  * Started by a worker
-  * Sent for internal review (to whom)
-  * Internal review approved
-  * Sent to Jsgenesis review
-    * what is the status/result of said review
-  * What was the approximate hours spend per issue (work, review, addressing review feedback)
-* What is the current status on all issues started, but not completed
-
-#### Testing builder issues
-
-* How many testing issues, when and which (link) for each, in each project board was
-  * Tested and approved
-  * Tested, but issues were found
-
-#### Bounty issues
-
-* How many bounty issues, when and which (link) for each, in each project board was
-  * A builder was assigned as oracle (which)
-  * What is the current status of the bounty
-
-#### Other
-
-* How well is the Joystream stack covered by the current group
-* How well are the current dev issues suitable to the current group, meaning
-  * Are there any "kinds" of issues the group wants more of, relative to the their stack
-  * Are there any "kinds" of issues the group wants fewer of, relative to the their stack
-* What part of the workflow is unclear, or could be improved (how, why)
-
-The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
+Create one or more staging networks with the values requsted, for the Storage and Distribution groups.
 
 ### `TESTING_SCORE`
 

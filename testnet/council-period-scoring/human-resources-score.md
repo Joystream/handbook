@@ -105,95 +105,16 @@ Human Resources Working Group Knowledge Base
 The HR working group score is computed as follows
 
 ```
-HR_SCORE = [2*GENERAL_WG_SCORE + REPORT_SCORE + 2(RESPONSE_TIME_SCORE) + PERSON_LOGGING_SCORE + INTERACTION_LOGGING_SCORE + BOUNTY_MANAGEMENT_SCORE]/(8*2^{N})
+HR_SCORE = [2*FOUNDING_MEMBER_STATUS_SCORE]/(2*2^{N})
 ```
 
 where
 
 `N` : The number of catastrophic error instances which occurred, as defined below.
 
-### `GENERAL_WG_SCORE`
+### `FOUNDING_MEMBER_STATUS_SCORE`
 
-Is computed with metric defined in [general-working-group-score.md](general-working-group-score.md "mention") where the opportunity target is **`20%`**.
-
-### `REPORT_SCORE`
-
-In addition to what is outlined in the [#working-group-summary](general-working-group-score.md#working-group-summary "mention"), the working group report must include a section covering
-
-* How many new people joined the channel, and for each, add a link to their "joined the channel" post and the timestamp of when they joined. Add this to a table, and
-  * Whether they respond to your welcome message
-  * Whether they were added to the CRM
-* What, and how many, bounties were funded by the group during the council period, and for each bounty
-  * Which bounty template id was used for which bounty on-chain id&#x20;
-  * Which HR worker created, assigned and funded it
-  * Whom the bounty was created for
-  * Who was assigned as the oracle
-* What bounties, regardless of which council period it was started, are being worked on, which are not yet completed, and what progress was made in this period, as well as a new ETA on delivery.
-* What, and how many, bounties created by the group were completed during the council period, and for each bounty
-  * What was the result, meaning how much was paid (if any), to whom and why
-  * How much was given to the oracle for providing the judgement
-  * A timeline of all steps
-* Which bounties failed during the judgement period because the oracle did not submit a valid judgement.
-* An overview of which bounty templates, and in general types of bounties, are the most and least sought after, and what types of bounty templates more options are needed.
-* Recommendations for "graduates" that should be considered for a role and a specific working group, or handed a spot the council.
-  * Include a link to the public board, and any contact made with the Lead of the group
-* What template bounties should have their budgets adjusted, and why.
-
-The report should be posted in the forum category `Working Groups >[Working Group Name]` where `[Working Group Name]`is the name of the working group, as a thread which has the `Report for [council period ID]`. As these reports should have lots of tables, links and difficult formatting, some key statistics with link to a page on notion is acceptable.
-
-### `RESPONSE_TIME_SCORE`
-
-_Objective:_ `Ensuring WG is responsive on Discord in a timely manner.`
-
-Between 6am and 11pm CET
-
-Each instance of a new person joining the Discord and sending a message in the #start-here channel will be given points as follows:
-
-Let:
-
-* `new_joiner` be a new person `i`, that joins the channel, and an automatic welcome is made by discord.
-* `response_time` be the time from `new_joiner_i` message to being welcomed by an HR person.
-* `response_score_i` be the points defined below:&#x20;
-  * An initial response in under two minutes yields 1 point
-  * An initial response between two minutes and five minutes yields 0.8 point
-  * An initial response between five minutes and ten minutes yields 0.5 points
-  * An initial response after ten minutes has passed yields zero points
-
-```
-RESPONSE_TIME_SCORE = SUM(response_score_i)/SUM(new_joiner_i)
-```
-
-### `PERSON_LOGGING_SCORE`
-
-Is the fraction of users responding in #start-here that gets an entry in the CRM in the Persons table.
-
-### `INTERACTION_LOGGING_SCORE`
-
-Is the fraction of users posting in #start-here that gets an entry in the CRM in the IntegratorInteraction table.
-
-### `BOUNTY_MANAGEMENT_SCORE`
-
-Is a function of bounties created by the HR group, that gets assigned to someone with in the CRM. Although the primary focus is on newcomers joining the #start-here channel, two other "groups" of users also count.
-
-#### Scoring Calculations
-
-Let:
-
-* `initial_newcomer_bounties` be the amount of bounties created on chain for someone that joined the discord within the last 4 weeks, and has never had a role or been assigned a bounty
-* `returning_member_bounties` be the amount bounties created on chain, and assigned to a member that has never had any role or been assigned a bounty on the current chain
-* `wg_role_bounties` be the amount of bounties created on chain, and assigned to a member that wants to join a specific working group, and needs the pass the WG screening bounty. More info in the general working group [#bounty-score](general-working-group-score.md#bounty-score "mention") and [#opening-score](general-working-group-score.md#opening-score "mention").
-* `bounty_sum` be the weighted sum of each
-* `bounty_target` be the target of bounties created
-
-```
-bounty_sum = initial_newcomer_bounties*2 + returning_member_bounties + wg_role_bounties
-
-If    bounty_sum > 10 
-BOUNTY_SCORE = 1
-
-If:   bounty_sum <= 10 
-BOUNTY_SCORE = bounty_sum/10
-```
+#### HOLD
 
 ### Catastrophic Errors
 
