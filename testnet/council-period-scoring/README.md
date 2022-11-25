@@ -143,6 +143,18 @@ At the end of the Period, the amount of Workers and Leads OR their rewards, what
 
 Starting at 1, for each percentage point over 40% that is held by members over the threshold, the score will decrease by by 0.025.
 
+
+
+### Council Member Failure
+
+Unlike previous networks, Carthage only has 3 Council Members. As some proposals require more than 2 votes to finalize, Council Members that fails to vote or comment on a proposal within 24h, will lose some of their rewards.
+
+For each 24h period `n` this occurs for Council Member, the $JOY reward for that Councillor (only) is reduced by:
+
+```
+reduced_reward = base_reward / (2^n)
+```
+
 ### Score
 
 #### Overview
@@ -201,15 +213,15 @@ The current weights are:
 | ------ | ----- |
 | B\_W   | 3     |
 | C\_W   | 1     |
-| D\_W   | 5     |
-| F\_W   | 1     |
+| D\_W   | 6     |
+| F\_W   | 2     |
 | HR\_W  | 3     |
-| M\_W   | 1     |
-| S\_W   | 5     |
-| SUM\_W | 2     |
-| P\_W   | 2     |
+| M\_W   | 0     |
+| S\_W   | 6     |
+| SUM\_W | 1     |
+| P\_W   | 1     |
 | CM\_W  | 2     |
-| LO\_W  | 2     |
+| OP\_W  | 2     |
 
 Which Means:
 
