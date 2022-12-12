@@ -11,23 +11,6 @@
 * [🧨 Launch Process](testnet/carthage-rollout-plan/README.md)
 * [🏤 Jsgenesis](jsgenesis.md)
 
-## Testnet
-
-* [🤑 Testnet Rewards](testnet/testnet-rewards.md)
-* [💵 $tJOY](testnet/usdtjoy.md)
-* [📏 Council Period Scoring](testnet/council-period-scoring/README.md)
-  * [General Working Group Score](testnet/council-period-scoring/general-working-group-score.md)
-  * [Builders Score](testnet/council-period-scoring/builders-score.md)
-  * [Content Directory Score](testnet/council-period-scoring/content-directory-score.md)
-  * [Distributors Score](testnet/council-period-scoring/distributors-score.md)
-  * [Forum Score](testnet/council-period-scoring/forum-score.md)
-  * [Human Resources Score](testnet/council-period-scoring/human-resources-score.md)
-  * [Storage Providers Score](testnet/council-period-scoring/storage-providers-score.md)
-  * [Marketers Score](testnet/council-period-scoring/marketers-score.md)
-  * [Changelog](testnet/council-period-scoring/changelog.md)
-* [📈 Dashboards](testnet/dashboards.md)
-* [❓ Testnet FAQ](testnet/testnet-faq.md)
-
 ## system
 
 * [🏭 Validation](system/validation.md)

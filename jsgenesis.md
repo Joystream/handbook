@@ -14,9 +14,9 @@ Jsgenesis is currently involved in the following activities
 
 1. Developing the technology and products that will power the Joystream network
 2. Running live testnets operated entirely by community participation.
-3. Funding expenses of testnet activities by operation the testnet token [usdtjoy.md](testnet/usdtjoy.md "mention").
+3. Funding expenses of testnet activities by operation the testnet token [Broken link](broken-reference "mention").
 4. Operating a program to identify, train and reward community members with mainnet tokens through the [founding-member-program](founding-member-program/ "mention").
-5. Assist promising newcomers to get a seat in the tesnet [council-period-scoring](testnet/council-period-scoring/ "mention")through an this [#jsgenesis-endorsement](testnet/council-period-scoring/#jsgenesis-endorsement "mention") scheme.
+5. Assist promising newcomers to get a seat in the tesnet [Broken link](broken-reference "mention")through an this [Broken link](broken-reference "mention") scheme.
 
 ## Official Jsgenesis Membership
 

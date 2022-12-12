@@ -61,7 +61,7 @@ Verification is the process by which Jsgenesis approves you for further particip
 
 ## Refer A Friend
 
-When creating a membership on-chain, or when interacting with the onboarding process of the HR group ([#onboarding](../testnet/council-period-scoring/human-resources-score.md#onboarding "mention")), you can select what other member has referred you. **This cannot be updated at a later time, and if there is a conflict between what was told to the HR representative, and the blockchain, then the latter is considered authoritative.** When the new member is verified, the member and whomever referred the member receives `REFERREE_JOY` and `REFERRER_JOY` amount of $JOY, respectively, where these are [#council-period-parameters](../testnet/testnet-rewards.md#council-period-parameters "mention") from the period in which the invitation was registered. Hence both actors receive a reward.
+When creating a membership on-chain, or when interacting with the onboarding process of the HR group ([Broken link](broken-reference "mention")), you can select what other member has referred you. **This cannot be updated at a later time, and if there is a conflict between what was told to the HR representative, and the blockchain, then the latter is considered authoritative.** When the new member is verified, the member and whomever referred the member receives `REFERREE_JOY` and `REFERRER_JOY` amount of $JOY, respectively, where these are [Broken link](broken-reference "mention") from the period in which the invitation was registered. Hence both actors receive a reward.
 
 ## Dashboard
 
@@ -97,7 +97,7 @@ There is a dynamic dashboard which holds up to date information on the state of 
 
 ## FAQ
 
-[#founding-members](../testnet/testnet-faq.md#founding-members "mention")
+[Broken link](broken-reference "mention")
 
 ## Rules
 
