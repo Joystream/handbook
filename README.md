@@ -12,8 +12,6 @@ There are a variety of ways to earn $JOY, summarized in the table below:
 
 | Activity              | Reference                                                                         |
 | --------------------- | --------------------------------------------------------------------------------- |
-| Refer A Friend        | [#refer-a-friend](founding-member-program/#refer-a-friend "mention")              |
-| Bounty                | [bounties](system/bounties/ "mention")                                            |
 | Council Member        | [#council-member](system/council.md#council-member "mention")                     |
 | Content Curator       | [#content-curator](system/content-directory/#content-curator "mention")           |
 | Content Curator Lead  | [#content-curator-lead](system/content-directory/#content-curator-lead "mention") |
@@ -28,6 +26,7 @@ There are a variety of ways to earn $JOY, summarized in the table below:
 | Distributor           | [#distributor](system/storage/#distributor "mention")                             |
 | Distributor Lead      | [#distributor-lead](system/storage/#distributor-lead "mention")                   |
 | Validator             | [#validator](system/validation.md#validator "mention")                            |
+| Bounty                | [bounties](system/bounties/ "mention")                                            |
 
 There are different rules which determine how each kind of testnet activity is rewarded, and these rules are continuously updated by [#jsgenesis](glossary.md#jsgenesis "mention") staff to ensure that the testnet activity in line with the stated goals.
 
