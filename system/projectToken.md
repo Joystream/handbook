@@ -67,7 +67,10 @@ The amount of tokens minted through patronage is computed according to:
 $$
 \text{patronageAmount} = \text{totalSupply} \times (1 + \text{patronageRate})^{c}
 $$
-with $c = \frac{blocksSinceLastPatronageClaim}{blocksInAYear}$
+with 
+$$
+c = \frac{blocksSinceLastPatronageClaim}{blocksInAYear}
+$$
 
 The `patronage_rate` can range from $0$ to a certain upper bound set by the governance.
 It can be also reduced at any given time by the Token Issuer, in this case, the patronage rate used for computing the patronage amount will be the latest value set.
@@ -75,7 +78,7 @@ It can be also reduced at any given time by the Token Issuer, in this case, the 
 ## Revenue split
 Allows the Token issuer to dispense a certain amount of $JOY between himself (called *Issuer Amount*) and CRT accounts (called *Revenue Allocation*) in a predefined time window.
 Is up to the token issuer to start a revenue split at any given time (provided that there's no other ongoing) in which case he will receive his Issuer Amount immediately, the remaining Revenue Allocation amount is thus destined for CRT accounts.
-At any time since the start of the revenue split any CRT holder willing to participate can stake some of his token (both from his transferrable and vesting balance) to participate in the revenue split and claim some JOYs (herein referred to as *JOY Dividend*).
+At any time since the start of the revenue split any CRT holder willing to participate can stake some of his token (both from his transferrable and vesting balance) to participate in the revenue split and claim some JOYs (referred to as *JOY Dividend*).
 The tokens will remain staked until the split is ended and it is up to the CRT holders to unstake their tokens via the appropriate extrinsic.
 In particular, the JOY Dividend amount is transferred to the CRT holders' JOY balance upon staking and according to the following formula:
 $$
@@ -100,14 +103,33 @@ The sale has an indefinite duration and it can be started immediately at any tim
 Two possible operations are possible in this AMM scenario:
 - a `buy` operation, through which any Joystream member can have new Tokens minted into his transferrable balance effectively and immediately in exchange for JOYs (in case of a member not having a CRT account yet the mechanics are the same as in the standard Token Sale). The JOY proceedings from the minting operation are deposited into an internally managed AMM account.
 - a `sell` operation, through which any CRT account can sell some of its transferrable balance to the AMM and get some AMM treasury JOYs in exchange. A sell operation is no longer possible if the AMM treasury account is empty. Tokens sold to the AMM are burned.
-The amount of tokens outstanding from all AMM buy/sell sale operations is referred to as the *AMM-Provided Supply*, which is a subset of the Total supply denoting the number of tokens that have been minted minus the tokens that have been burned to the AMM since its activation.
+The amount of tokens outstanding from all AMM buy/sell sale operations is referred to as the *AMM-Provided Supply*, which is a subset of the Total supply denoting the number of tokens that have been minted minus the tokens that have been burned by the AMM since its activation.
 The unit price for each token bought/sold on the AMM is computed using the following formula:
 $$
 \text{AMMprice} = a \times \text{AMMProvidedSupply} + \text{initialPrice}
 $$
 Where *Initial Price* and $a$ are respectively the first price and sensitivity parameter the Issuer sets upon AMM activation.  
 
-The AMM Sale finally can be closed at any given time by the Issuer provided that the following condition holds:
+The AMM Sale can be finally closed at any given time by the Issuer provided that the following condition holds:
 $$ \text{AMMProvidedSupply} \le \text{TotalSupply} \times \text{Threshold}$$
 Where `THRESHOLD` is a governance-set percentage. Notice that if `THRESHOLD = 0` then every token minted through the AMM must be also burned for the AMM sale to be closed.
 
+## Parameters
+| Name                       | Type          | Description                                                           |
+| -------------------------- | ------------- | --------------------------------------------------------------------- |
+| `BloatBond`                | `Balance`     | Bloat bond value used during account creation                         |
+| `MinSaleDuration`          | `BlockNUmber` | Minimum duration of a token sale                                      |
+| `MinRevenueSplitDuration`  | `BlockNumber` | Minimum duration for a revenue split                                  |
+| `SalePlatformFee`          | `Permill`     | Platform fee percentage charged on top of each sale and burned        |
+| `AMMDeactivationThreshold` | `Permill`     | maximum AMMSupply/TotalSupply ration allowed for deactivating the AMM | 
+| `AMMBuyTxFees` | `Permill`     | Percentage of fees charged on top of each token purchase from the AMM |
+| `AMMSellTxFees` | `Permill`     | Percentage of fees charged on top of each token sold to the AMM | 
+| `MaxYearlyPatronageRate` | `Permill`     | Maximum patronage rate allowed |
+
+## Constants
+| Name       | Description               | Value |
+| ---------- | ------------------------- | ----- |
+| `PalletId` | Identifier for the pallet | `fill-in`      |
+| `JoyExistentialDeposit` | Existential deposit for the JOY account | `fill-in`      |
+| `BlocksPerYear` | (Average) number of blocks finalized in a year | `fill-in`      |
+| `MaxOutputs` | Max number of receivers for a single transfer | `fill-in`      |
