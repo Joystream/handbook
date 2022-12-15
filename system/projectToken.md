@@ -65,7 +65,7 @@ The patronage functionality allows the token issuer to claim a certain percentag
 The claim can be exercised at any time and the patronage amount will be minted into the token issuer account.
 The amount of tokens minted through patronage is computed according to:
 $$
-\text{patronageAmount} = \text{totalSupply} \times (1 + \text{patronageRate})^{c}
+\text{patronageAmount} = \text{totalSupply} ( \times (1 + \text{patronageRate})^{c}  - 1 )
 $$
 with 
 $$
