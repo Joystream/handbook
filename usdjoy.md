@@ -4,8 +4,6 @@ description: Our mainnet asset.
 
 # 🚀 $JOY
 
-## :flag\_us: US persons are not eligible for $JOY :flag\_us:
-
 ## Introduction
 
 This is the native asset of the Joystream mainnet blockchain.
