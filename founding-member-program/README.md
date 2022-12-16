@@ -4,7 +4,9 @@ description: How you become a owner and operator of the Joystream network.
 
 # 🧙 Founding Members
 
-## :flag\_us: US persons are not eligible for $JOY :flag\_us:
+## &#x20;UPDATE ON MAINNET
+
+## :flag\_us:US persons are not eligible for $JOY :flag\_us:
 
 ## Introduction
 

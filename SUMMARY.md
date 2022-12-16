@@ -9,7 +9,6 @@
   * [Inductions](founding-member-program/inductions.md)
 * [✋ Content Moderation](testnet/content-policy.md)
 * [🧨 Launch Process](testnet/carthage-rollout-plan/README.md)
-* [🏤 Jsgenesis](jsgenesis.md)
 
 ## system
 
