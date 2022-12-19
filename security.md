@@ -6,7 +6,7 @@ description: Security related resources and information.
 
 ## Vulnerability Reporting
 
-To report issues in a responsible manner, please send to <mark style="color:red;">**security@joystream.org**</mark>, and encrypt the message.
+To report issues in a responsible manner, please send to "<mark style="color:red;">**security" on domain "joystream.org"**</mark>, and encrypt the message, this is however _**not**_ a support channel.
 
 The following GPG keys may be used to communicate sensitive information to relevant developers, in particular concerning the runtime and blockchain, but also other critical infrastructure and applications. These recipients will relay the message securely to whomever is the maintainer at any given time.
 
