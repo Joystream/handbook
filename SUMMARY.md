@@ -39,4 +39,5 @@
 
 ***
 
+* [🔐 Security](security.md)
 * [📔 Glossary](glossary.md)

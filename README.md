@@ -28,6 +28,8 @@ There are a variety of ways to earn $JOY, summarized in the table below:
 | Validator             | [#validator](system/validation.md#validator "mention")                            |
 | Bounty                | [bounties](system/bounties/ "mention")                                            |
 
+There are different rules which determine how each kind of testnet activity is rewarded, and these rules are continuously updated by [#jsgenesis](glossary.md#jsgenesis "mention") staff to ensure that the testnet activity in line with the stated goals.
+
 ## Community Notion
 
 The community maintains a distinct Notion workspace for ongoing operational and coordination activities, it is a great complement to this more static handbook.
