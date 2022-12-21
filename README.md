@@ -1,10 +1,12 @@
 ---
 description: >-
-  This is your guide to get started participating in the incentivized Joystream
-  testnet activities.
+  This is your guide to get started participating in Joystream network
+  activities.
 ---
 
 # 🎯 Start Here
+
+## Warning: This handbook is in the process of being updated, as it now partially reflecting the old testnet phase, but it is still a useful resource for mainnet purposes.
 
 ## Opportunities
 
@@ -27,8 +29,6 @@ There are a variety of ways to earn $JOY, summarized in the table below:
 | Distributor Lead      | [#distributor-lead](system/storage/#distributor-lead "mention")                   |
 | Validator             | [#validator](system/validation.md#validator "mention")                            |
 | Bounty                | [bounties](system/bounties/ "mention")                                            |
-
-There are different rules which determine how each kind of testnet activity is rewarded, and these rules are continuously updated by [#jsgenesis](glossary.md#jsgenesis "mention") staff to ensure that the testnet activity in line with the stated goals.
 
 ## Community Notion
 
