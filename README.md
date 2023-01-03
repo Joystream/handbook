@@ -6,8 +6,6 @@ description: >-
 
 # 🎯 Start Here
 
-## Warning: This handbook is in the process of being updated, as it now partially reflecting the old testnet phase, but it is still a useful resource for mainnet purposes.
-
 ## Opportunities
 
 There are a variety of ways to earn $JOY, summarized in the table below:
