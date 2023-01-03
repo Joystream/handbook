@@ -4,7 +4,9 @@ description: How you become a owner and operator of the Joystream network.
 
 # 🧙 Founding Members
 
-## :flag\_us: US persons are not eligible for $JOY :flag\_us:
+## &#x20;UPDATE ON MAINNET
+
+## :flag\_us:US persons are not eligible for $JOY :flag\_us:
 
 ## Introduction
 
@@ -24,7 +26,7 @@ The program is intended to run _**at least**_ until the platform is ready to go 
 * **Membership Status:** A special marker in the membership registry of the genesis block of the mainnet blockchain, forever distinguishing you as an elite OG-contributor with high social standing. This is very valuable in a governance system which critically uses reputation and standing as a way to give people access to opportunitites, such as serving on a council, or get projects funded through proposals or bounties or to have senior leadership roles in working groups.
 * **Handcrafted Avatar:** A unique profile picture, hand crafted in the Joystream brand identity style, making you immediately recognizable on all social media channels and inside Joystream products. Here are some examples
 
-![Handcrafted Founding Member avatars](<../.gitbook/assets/Group 3(1).png>)
+![Handcrafted Founding Member avatars](<.gitbook/assets/Group 3(1).png>)
 
 ## Stages
 

@@ -2,11 +2,7 @@
 
 * [🎯 Start Here](README.md)
 * [🚀 $JOY](usdjoy.md)
-* [🧙 Founding Members](founding-member-program/README.md)
-  * [Verification](founding-member-program/verification.md)
-  * [Allocation Distribution](founding-member-program/allocation-distribution.md)
-  * [Accounts and Membership](founding-member-program/accounts-and-membership.md)
-  * [Inductions](founding-member-program/inductions.md)
+* [🧙 Founding Members](founding-member-program.md)
 * [✋ Content Moderation](testnet/content-policy.md)
 * [🧨 Launch Process](testnet/carthage-rollout-plan/README.md)
 
