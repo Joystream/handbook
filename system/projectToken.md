@@ -1,3 +1,6 @@
+---
+description: Information on the project token functionality.
+---
 # Introduction
 Gives token-like functionality for a content creator to capitalize on his channel and popularity.  
 A token works similarly to shares of a company, meaning that holders can claim the channel's profit (via revenue split), but also it can be transferred between accounts and exchanged for $JOYs.
