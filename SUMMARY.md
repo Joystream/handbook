@@ -37,6 +37,7 @@
 * [🚀 Marketers](system/marketers.md)
 * [🌉 Gateways](system/gateways.md)
 * [💸 Fees](system/fees.md)
+* [🪙 Project Token](system/projectToken.md)
 
 ***
 
