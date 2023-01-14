@@ -19,6 +19,7 @@
 * [🎬 Content Directory](system/content-directory/README.md)
   * [NFT](system/content-directory/nft.md)
   * [Curation Model](system/content-directory/curation-model.md)
+* [🪙 Project Token](system/projectToken.md)
 * [💽 Storage & Bandwidth](system/storage/README.md)
   * [Data Directory](system/storage/data-directory.md)
   * [Storage Node](system/storage/storage-node.md)
@@ -32,7 +33,6 @@
 * [🚀 Marketers](system/marketers.md)
 * [🌉 Gateways](system/gateways.md)
 * [💸 Fees](system/fees.md)
-* [🪙 Project Token](system/projectToken.md)
 
 ***
 
