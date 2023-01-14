@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-A working group is an organizational body, subject to the oversight of the council, which is responsible for the day-to-day functioning of some subsystem of the platform. There is exactly one working group per subsystem. The rationale for having a working group for this purpose, rather than having the council directly involved, has three parts. First, since all council members are supposed to be fully informed on all matters the cumulative workload of overseeing all subsystems would not be feasible for a single council. Second, even if it was feasible, voting is not a sound means of making such decisions, because there is a lack of guaranteed coherence in the decisions over time. Third, each subsystem will over time likely require a differentiated skill set, knowledge base and social capital. The appropriate analogy for understanding the role of the working groups in the overall operation of the system would be a commission or agency body in a political institution. &#x20;
+A working group is an organizational body, subject to the oversight of the council, which is responsible for the day-to-day functioning of some subsystem of the platform. There is exactly one working group per subsystem. The rationale for having a working group for this purpose, rather than having the council directly involved, has three parts. First, since all council members are supposed to be fully informed on all matters the cumulative workload of overseeing all subsystems would not be feasible for a single council. Second, even if it was feasible, voting is not a sound means of making such decisions, because there is a lack of guaranteed coherence in the decisions over time. Third, each subsystem will over time likely require a differentiated skill set, knowledge base and social capital. The appropriate analogy for understanding the role of the working groups in the overall operation of the system would be a commission or agency body in a political institution.&#x20;
 
 ## Groups
 
@@ -41,7 +41,7 @@ A working group is an organizational body, subject to the oversight of the counc
 Working groups which do not have dedicated on-chain subsystem, such as the content directory or storage system, are called _operations working groups_. They mainly exist to coordinate people are activity purely, and currently we have the following groups of this kind
 
 * Builders
-* Human Resources
+* HR
 * Marketers
 
 ## Roles
