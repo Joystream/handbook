@@ -1,73 +1,20 @@
 ---
-description: How you become a owner and operator of the Joystream network.
+description: The people who were here before the show got started.
 ---
 
 # 🧙 Founding Members
 
-## &#x20;UPDATE ON MAINNET
-
-## :flag\_us:US persons are not eligible for $JOY :flag\_us:
-
 ## Introduction
-
-While Jsgenesis is the team currently building the technology behind the Joystream project, we will not be around forever, and we are instead entrusting the future operation of the Joystream DAO to our community members.
-
-The Founding Member Program (FMP) formally allocates JOY tokens among some of our highest quality community members in recognition of their contributions to the project and ensures that a sufficiently large, effective and motivated community of users is ready to occupy all the different roles required to run, evolve and grow the platform on mainnet.
-
-The program is intended to run _**at least**_ until the platform is ready to go live on mainnet, possibly even after. However, some changes in structure along the way must be expected.
-
-## Current Founding Members
-
-[https://github.com/Joystream/founding-members/blob/main/inducted/README.md](https://github.com/Joystream/founding-members/blob/main/inducted/README.md)
-
-## Why Become A Founding Member?
-
-* **$JOY:** A share of the native token powering the mainnet blockchain.
-* **Membership Status:** A special marker in the membership registry of the genesis block of the mainnet blockchain, forever distinguishing you as an elite OG-contributor with high social standing. This is very valuable in a governance system which critically uses reputation and standing as a way to give people access to opportunitites, such as serving on a council, or get projects funded through proposals or bounties or to have senior leadership roles in working groups.
-* **Handcrafted Avatar:** A unique profile picture, hand crafted in the Joystream brand identity style, making you immediately recognizable on all social media channels and inside Joystream products. Here are some examples
 
 ![Handcrafted Founding Member avatars](<.gitbook/assets/Group 3(1).png>)
 
-## Stages
+Joystream was under development for a very long time, with over 13 incentivsed testnets from 2019 to 2022. A key goal of that process was not only to mature the technology, tools and products, but also to attract, train and incentivse the community members who would direct and operate the DAO post-launch. The founding member program was a community development initiative devised to reach this goal, and through it we were able to build a highly aligne, well trained and passionate community of people who both could work together, had a shared mission and had the knowledge to be effective. You can read the history of the program below.
 
-There three stages of participation in the FMP
+The basic idea of the program was to allow non-US community members to earn $JOY allocations through participating in the testnet across a variety of roles and activities. After reaching a certain level of involvement, they would be granted the status of a _founding member_, which with it also entailed receiving a hand crafted on-brand avatar and immutable recognition in the blockchain as being among an elite initial set of participants. **Importantly, the founding member status was later taken to include anyone who has worked directly in association with Jsgenesis, and depending on the context the term **_**Founding Member**_** may or may not include such Jsgenesis persons, which may be a bit confusing.**
 
-1. **Unverified:** This is the initial status of any newcomer registered on the platform, you can immediately start earning $tJOY and $JOY, however, the moment you reach a certain number of $JOY tokens (the verification cap), you are going to lose all additional $JOY earned until you are verified. **If you re unable to become a FM when mainnet comes around, your $JOY allocation will be lost.**
-2. **Verified:** This means you can continue to earn $JOY tokens, increasing your allocation over time, and **you also will lose your allocation if you are not a FM by mainnet.**
-3. **Founding Member:** You have become a FM, and any $JOY you have allocated will be accessible to you when the mainnet is launched. You can keep earning $JOY even after this you have reached this status.
+## Founding Members
 
-## :skull: Bribery
-
-Offering or accepting value, including but not limited to
-
-* cash
-* cryptocurrency
-* NFTs
-* reciprocation of favor in the future
-* promotion
-* personal favors
-* any form of consideration
-
-for access to opportunities, specifically
-
-* A council seat
-* A working group lead position
-* A worker position
-* A bounty
-
-Is not only strictly prohibited, but Jsgenesis will be conducting continuous bribery tests, including recruiting existing members and founding members to help, to ensure bribery does not occur. Anyone found to be involved in bribery will lose their $JOY allocations and be permanently banned.
-
-## Verification
-
-Verification is the process by which Jsgenesis approves you for further participation in the founding member program, so you can keep earning $JOY tokens and eventually reach founding member status. You have to have a [minimum number of $JOY tokens before you can get verified](https://joystream.retool.com/embedded/public/39f655da-9b03-450e-b5c5-f85403dadb82) (unverified JOY accumulation cap). To get verified make a thread in the `Verification` category of the forum, using the membership you wish to get verified for, and add a short bullet-point list of things for which you have earned $JOY in past council periods. Then write an email where you reference this thread, and send it to `verification@jsgenesis.com`.
-
-## Refer A Friend
-
-When creating a membership on-chain, or when interacting with the onboarding process of the HR group ([Broken link](broken-reference "mention")), you can select what other member has referred you. **This cannot be updated at a later time, and if there is a conflict between what was told to the HR representative, and the blockchain, then the latter is considered authoritative.** When the new member is verified, the member and whomever referred the member receives `REFERREE_JOY` and `REFERRER_JOY` amount of $JOY, respectively, where these are [Broken link](broken-reference "mention") from the period in which the invitation was registered. Hence both actors receive a reward.
-
-## Dashboard
-
-There is a dynamic dashboard which holds up to date information on the state of the program and each participant, found [here](https://joystream.retool.com/embedded/public/9478bcc0-f6d6-4f74-bd0a-0637535e75b1).
+[https://github.com/Joystream/founding-members/blob/main/inducted/README.md](https://github.com/Joystream/founding-members/blob/main/inducted/README.md)
 
 ## History
 
@@ -96,47 +43,3 @@ There is a dynamic dashboard which holds up to date information on the state of 
   * The old `Founding Member` program officially came to an end.
   * With `Olympia` (the largest testnet release to date) and a new `Founding Member` program launching, it would also involve wiping some amount of content from the testnet.
     * Prior to this upgrade, the testnet, incentives, `FM` program, `KPI` system had come together around a nascent, dedicated community and managed to produce a truly staggering amount of activity--including more than 1,400+ on-chain proposals, 3,400+ on-chain memberships, 11,000+ on-chain forum posts, 90+ on-chain forum threads, on-chain elections involving more than `$16,000 USD` worth of stake, more than 85 workers concurrently working on-chain and being paid automatically by a DAO maintained by more than 50 validators. While also sustaining a storage and distribution network serving more than 5,500 video uploads managed by the DAO.
-
-## FAQ
-
-[Broken link](broken-reference "mention")
-
-## Rules
-
-:warning: **These rules will change at our discretion** :warning:
-
-```
-Term
-The Joystream Founding Member Program was formally launched on 12th February 2021. The program will end one month in advance of the mainnet launch, on the snapshot date, yet to be confirmed.
-
-Our current target for mainnet launch is during Q2 2022, though this is subject to change.
-
-Eligibility
-The program is open to everyone over the age of 18 who are not U.S. persons.
-
-To be formally admitted to the program you will be contacted and screened by a Jsgenesis representative upon request (as described above) or upon accumulating unrealized JOY earnings greater than or equal to $10,000USD, based on the value of the JOY token calculated in the previous funding round.
-
-The formal admission of new Founding Members to the program will take place at the end of council periods. Each council period currently lasts one week.
-
-Communication
-We will publish further public updates about the program through our regular communication channels, including our Official Telegram Channel, our Official Discord Server, the Joystream Newsletter, the official GitBook page for the program (https://joystream.gitbook.io/testnet-workspace/testnet/founding-member-program) and on our website (www.joystream.org), and blog (blog.joystream.org).
-
-Any private or sensitive information about your participation in the program will be communicated via Keybase or some other previously agreed contact method.
-
-Eviction Policy
-Any platform member who participates in fraudulent or bad faith activity is liable to be expelled from the leaderboards and Founding Member program, with all associated token claims voided.
-
-Account And Key Security
-Your tJOY and accumulated JOY allocation are yours alone and are non-transferrable. You must keep your account and any private keys associated with your membership of the Founding Member program safe and engage in sensible digital security practices.
-
-Keys with associated Founding Member token claims must not be transferred to anyone else under any circumstances. Where this occurs, points or token claims may be voided (see above).
-
-Tokens can only be allocated to addresses under your control. You may be required to sign a message proving you own the private keys to any addresses you provide.
-
-Updates To These Rules
-Jsgenesis reserves the right to update the rules of the program at any time, for any reason.
-
-If serious flaws in the structure of the program are discovered, Jsgenesis reserves the right to announce that after a future scoring period, the "season" is concluded, and a new scheme will apply to following seasons, thus resetting "scores". In such an event, a "slice" of the pool, set by Jsgenesis discretion, will be allocated in accordance with existing rules. The remainder will be transferred to new "seasons".
-
-Jsgenesis reserves the right not to honor any aspect of this agreement due to legal considerations.
-```
