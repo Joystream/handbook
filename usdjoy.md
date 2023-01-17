@@ -46,3 +46,5 @@ There are two sources of inflation, staking rewards for validators and nominator
 | Strategic Partners         |  3.0013001% |        100%       |     0 months     |
 | Reserved 1                 | 11.7988418% |         0         |     12 months    |
 | Reserved 2                 |  0.000012%  |         8         |     24 months    |
+
+The investors acquired $JOY allocations, subject to vesting, across rounds in 2018 and 2021 at implied valuations of $40M and $60M, or equivalently token prices of $0.04 and $0.06.
