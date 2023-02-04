@@ -3,7 +3,8 @@
 * [🎯 Start Here](README.md)
 * [🚀 $JOY](usdjoy.md)
 * [🧙 Founding Members](founding-member-program.md)
-* [✋ Content Moderation](testnet/content-policy.md)
+* [🛑 Content Moderation](testnet/content-policy.md)
+* [🤚 JIP Process](jip-process.md)
 * [🧨 Launch Process](testnet/carthage-rollout-plan/README.md)
 
 ## system
