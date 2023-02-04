@@ -1,10 +1,8 @@
 ---
-description: >-
-  The Jsgenesis content policy which applies to content uploaded to our
-  testnets.
+description: Innovation without negative externalities
 ---
 
-# ✋ Content Moderation
+# 🛑 Content Moderation
 
 ## \*\*UPDATE ON MAINNET TO EXPLAIN CONTENT MODERATION MORE HOLISTICALLY\*\*
 
