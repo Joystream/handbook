@@ -103,16 +103,11 @@ for non member-owned channels
 
 **Parameters**
 
-| Name | Descripion|
-|------|-----------|
-| `new_payout_commitment`| hash for the merkle root (optional)
-| `object_creation_list`| list of `(ipfs_id, object_mb_size)` containing information about object size and creation |
-| `uploader_account`| account from which all the expenses for the storage upload are charged to |
-| `expected_data_size_fee`| expected price for mb, must match the `storage-pallet::data_size_fee` value |
-| `expected_data_object_state_bloat_bond`| expected bloat bond for storage occupation. Must match the `storage-pallet::data_object_state_bloat_bond` value |
-| `new_min_cashout_allowed`| minimum amount that a channel is allowed to cash out (optional) |
-| `new_max_cashout_allowed`| maximum amount that a channel is allowed to cash out (optional) |
-| `channel_cashouts_enabled`| whether or not to enable the channel payouts functionality (optional) |
+| Name | Description |
+|------|-------------|
+| `actor`| either a member, lead or curator claiming the `payout` |
+| `proof`| merkle proof used for verifying whether the `payout` the channel is claiming is legit or not |
+| `pull_payment_item`| the information containing the `payout` plus some other data used in the validation process and also the `channel_id` for which the `payout` is destined to |
 
 #### Condition
 * `channel_id`: must refer to an existing `channel` 
