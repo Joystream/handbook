@@ -104,8 +104,8 @@ Minting limits on NFTs are applied to avoid massive proliferation of low quality
 There are several types of limits, depending on the time window considered and context:
 
 **Global Limits**
-- Global weekly limit: max number of NFT that can be minted each week, stored on the content pallet storage
-- Global daily limit: max number of NFT that can be minted each day, storedo on the content pallet storage
+- Global weekly limit: max number of NFT that can be minted each week, stored on chain 
+- Global daily limit: max number of NFT that can be minted each day, storedo on chain
 
 The above values are updated via a `UpdateGlobalNftLimit` proposal.
 
@@ -115,7 +115,7 @@ The above values are updated via a `UpdateGlobalNftLimit` proposal.
 
 Their value can be modified on a per-channel basis by the Lead or a Curator having sufficient permission level.
 
-The whole limiting functionality can be disabled, and a proposal for that is planned to be added to the runtime.
+The whole limiting functionality can be disabled. The status of the NFT limit functionality can be inspected by looking at the `Content.nft_limit_enabled` value on chain 
 
 ## Parameters
 
