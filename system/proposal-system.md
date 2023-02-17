@@ -816,6 +816,39 @@ None.
 
 The councilor reward is set to `new_councilor_reward`.
 
+### Update Global NFT Limit
+
+#### Parameters
+
+| Name   | Description                                               |
+| ------ | --------------------------------------------------------- |
+| `nft_limit_period` | The type of period for which the limit should be updated. |
+| `limit` | The value for the limit. |
+
+#### Constants
+
+| Constant             | Value     |
+| -------------------- | --------- |
+| `DECIDING_PERIOD`    | `fill-in` |
+| `GRACE_PERIOD`       | `fill-in` |
+| `APPROVAL_QUORUM`    | `fill-in` |
+| `APPROVAL_THRESHOLD` | `fill-in` |
+| `SLASHING_QUORUM`    | `fill-in` |
+| `SLASHING_THRESHOLD` | `fill-in` |
+| `PROPOSAL_STAKE`     | `fill-in` |
+| `CONSTITUTIONALITY`  | `fill-in` |
+
+#### Creation Conditions
+
+#### Execution Conditions
+
+Global limit value for specified period is updated
+
+#### Effect
+
+The block after this proposal is executed will follow the rules of the runtime captured in `blob`.
+
+
 ### Create Blog Post
 
 **Parameters**
