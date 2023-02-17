@@ -98,6 +98,25 @@ An _NFT_ represents ownership title over video, and it is defined by the followi
 * **Status: The**  representing the state of the NFT currently.
 * **Royalty:** If set, it specifies the fraction of the paid value of later transactions which must accrue to the issuer.
 
+### Minting Limits
+Minting limits on NFTs are applied to avoid massive proliferation of low quality NFT projects.
+
+There are several types of limits, depending on the time window considered and context:
+
+**Global Limits**
+- Global weekly limit: max number of NFT that can be minted each week, stored on the content pallet storage
+- Global daily limit: max number of NFT that can be minted each day, storedo on the content pallet storage
+
+The above values are updated via a `UpdateGlobalNftLimit` proposal.
+
+**Channel Limits**
+- Channel weekly limit: max number of NFT that can be minted each week by a particular channel, they are set at channel creation with a value of `DefaultWeeklyChannelLimit`
+- Channel daily limit: max number of NFT that can be minted each day by a particular channel, they are set at channel creation with a value of `DefaultDailyChannelLimit`
+
+Their value can be modified on a per-channel basis by the Lead or a Curator having sufficient permission level.
+
+The whole limiting functionality can be disabled, and a proposal for that is planned to be added to the runtime.
+
 ## Parameters
 
 The following mutable parameters.
@@ -115,6 +134,8 @@ The following mutable parameters.
 | `MaxBidStep`              | `Balance`     | Max auction bid step.                          |
 | `AuctionFeePercentag`     | `Perbill`     | Auction platform fee percentage.               |
 | `AuctionStartsAtMaxDelta` | `BlockNumber` | Max delta between current block and starts at. |
+| `DefaultWeeklyChannelLimit` | `u64` | Max amount of NFT that a newly created channel can mint in a week|
+| `DefaultDailyChannelLimit` | `u64` | Max amount of NFT that a newly created channel can mint in a day|
 
 ## Constants
 
