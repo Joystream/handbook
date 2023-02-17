@@ -105,7 +105,7 @@ There are several types of limits, depending on the time window considered and c
 
 **Global Limits**
 - Global weekly limit: max number of NFT that can be minted each week, stored on chain 
-- Global daily limit: max number of NFT that can be minted each day, storedo on chain
+- Global daily limit: max number of NFT that can be minted each day, stored on chain
 
 The above values are updated via a `UpdateGlobalNftLimit` proposal.
 
