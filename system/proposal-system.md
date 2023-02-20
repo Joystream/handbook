@@ -118,7 +118,7 @@ Before mainnet, an extra transition rule is worth bearing in mind is that, for a
 
 The stages and transitions, excluding SUDO dynamics, are summarized in the image below.
 
-![Proposal life-cycle stages.](../../.gitbook/assets/proposal\_3.png)
+![Proposal life-cycle stages.](../.gitbook/assets/proposal\_3.png)
 
 ### Staking
 
@@ -843,11 +843,6 @@ The councilor reward is set to `new_councilor_reward`.
 #### Execution Conditions
 
 Global limit value for specified period is updated
-
-#### Effect
-
-The block after this proposal is executed will follow the rules of the runtime captured in `blob`.
-
 
 ### Create Blog Post
 
