@@ -4,7 +4,7 @@
 * [🚀 $JOY](usdjoy.md)
 * [🧙 Founding Members](founding-member-program.md)
 * [🛑 Content Moderation](testnet/content-policy.md)
-* [🤚 JIP Process](jip-process.md)
+* [🤚 Joystream Improvement Proposals](jip-process.md)
 * [🧨 Launch Process](testnet/carthage-rollout-plan/README.md)
 
 ## system
@@ -15,7 +15,7 @@
   * [Account Generation](system/accounts-and-staking/account-generation.md)
 * [🔑 Memberships](system/memberships.md)
 * [🏛 Council](system/council.md)
-* [👷♀ Working Groups](system/working-groups.md)
+* [👷♀ 👷♀ Working Groups](system/working-groups.md)
 * [⚖ Proposal System](system/proposal-system.md)
 * [🎬 Content Directory](system/content-directory/README.md)
   * [NFT](system/content-directory/nft.md)
