@@ -98,6 +98,26 @@ An _NFT_ represents ownership title over video, and it is defined by the followi
 * **Status: The**  representing the state of the NFT currently.
 * **Royalty:** If set, it specifies the fraction of the paid value of later transactions which must accrue to the issuer.
 
+### Minting Limits
+Minting limits on NFTs are applied to avoid massive proliferation of low quality NFT projects.
+
+There are several types of limits, depending on the time window considered and context:
+
+**Global Limits**
+- Global weekly limit: max number of NFT that can be minted each week, stored on chain 
+- Global daily limit: max number of NFT that can be minted each day, stored on chain
+
+The above values are updated via a [`UpdateGlobalNftLimit`](../proposal-system.md#update-global-nft-limit) proposal.
+
+**Channel Limits**
+- Channel weekly limit: max number of NFT that can be minted each week by a particular channel, they are set at channel creation with a value of `DefaultWeeklyChannelLimit`
+- Channel daily limit: max number of NFT that can be minted each day by a particular channel, they are set at channel creation with a value of `DefaultDailyChannelLimit`
+
+Their value can be [modified](#update-channel-nft-limit) on a per-channel basis by the Lead or a Curator having sufficient permission level.
+
+#### Toggling the limit functionality
+The whole limiting functionality can be disabled. The status of the NFT limit functionality can be inspected by looking at the `Content.nft_limit_enabled` value on chain 
+
 ## Parameters
 
 The following mutable parameters.
@@ -115,6 +135,8 @@ The following mutable parameters.
 | `MaxBidStep`              | `Balance`     | Max auction bid step.                          |
 | `AuctionFeePercentag`     | `Perbill`     | Auction platform fee percentage.               |
 | `AuctionStartsAtMaxDelta` | `BlockNumber` | Max delta between current block and starts at. |
+| `DefaultWeeklyChannelLimit` | `u64` | Max amount of NFT that a newly created channel can mint in a week|
+| `DefaultDailyChannelLimit` | `u64` | Max amount of NFT that a newly created channel can mint in a day|
 
 ## Constants
 
@@ -351,3 +373,23 @@ Returns ownership of idle status NFT from owner to channel itself, even if the c
 #### Effect
 
 * WIP.
+
+### Update Channel NFT Limit
+
+**Parameters**
+
+| Name       | Description                                                        |
+| ---------- | ------------------------------------------------------------------ |
+| `actor` | `ContentActor` either Lead or Curator with sufficient permission.     |
+| `nft_limit_period` | Type of period for the limit: either Weekly or Daily.  |
+| `channel_id` | Channel which limit we want to set. |
+| `limit` | Value for the new limit to be set. |
+
+#### Conditions
+
+* WIP.
+
+#### Effect
+
+* WIP
+

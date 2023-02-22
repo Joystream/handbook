@@ -11,10 +11,10 @@ description: >-
 
 A proposal is a motion to change the state or policy of the system in some way. There are a wide variety of such proposal types, each type having a different
 
-* set of required input parameter values
-* requirements and risks of proposing
-* barrier for getting accepted
-* delay to being put into motion when accepted
+- set of required input parameter values
+- requirements and risks of proposing
+- barrier for getting accepted
+- delay to being put into motion when accepted
 
 The reason for this differentiation across types is because different proposals have very different effects, and carry very different risks of failure or abuse. The proposal system has the responsibility of coordinating the different actors involved in the lifetime of a proposal, from submission to finalization.
 
@@ -22,8 +22,8 @@ The reason for this differentiation across types is because different proposals 
 
 The relevant roles in the proposal system are
 
-* **Proposer:** A member that has submitted an instance of a specific proposal type. A given member can submit multiple proposals at once, or over time.
-* **Council Members:** They are tasked with voting on proposals, which determines whether the proposals are accepted or not, as well as discussing a proposal with the proposer, and leaving a rationale for their vote.
+- **Proposer:** A member that has submitted an instance of a specific proposal type. A given member can submit multiple proposals at once, or over time.
+- **Council Members:** They are tasked with voting on proposals, which determines whether the proposals are accepted or not, as well as discussing a proposal with the proposer, and leaving a rationale for their vote.
 
 ## Concepts
 
@@ -31,11 +31,11 @@ The relevant roles in the proposal system are
 
 Each council member can submit at most one vote per proposal, and it includes the following:
 
-* **Rationale:** A human readable description of why they are voting as they are.
-* **Type:** There three types
-  * **Approve:** Proposal should be approved.
-  * **Reject:** Proposal should be rejected. Additionally, it can be expressed whether it should be slashed as part of the rejection.
-  * **Abstain:** Voter has no position on outcome.
+- **Rationale:** A human readable description of why they are voting as they are.
+- **Type:** There three types
+  - **Approve:** Proposal should be approved.
+  - **Reject:** Proposal should be rejected. Additionally, it can be expressed whether it should be slashed as part of the rejection.
+  - **Abstain:** Voter has no position on outcome.
 
 ### Proposal Type
 
@@ -60,11 +60,11 @@ All proposal types have constant values for a shared set of parameters that are 
 
 Whenever a proposal of a given type is created, the proposer must provide values for a set of parameters. The parameters fall into one of two categories: _general_ and _type-specific_. Each parameter will also have some constraint on the valid range of values. The general proposal parameters are
 
-* **Proposer:** Member identifier of the proposer.
-* **Title:** A human readable title.
-* **Rationale:** A human readable description text that is intended to hold the rationale for the proposal should be accepted. It is expected that some social convention will emerge on the appropriate encoding of this text, for example markdown, that would facilitate consistent input and display across client applications.
-* **Trigger:** An optional block number where the proposal is to be executed.
-* **Staking Account:** The account that holds the funds that will be locked for staking, if required.
+- **Proposer:** Member identifier of the proposer.
+- **Title:** A human readable title.
+- **Rationale:** A human readable description text that is intended to hold the rationale for the proposal should be accepted. It is expected that some social convention will emerge on the appropriate encoding of this text, for example markdown, that would facilitate consistent input and display across client applications.
+- **Trigger:** An optional block number where the proposal is to be executed.
+- **Staking Account:** The account that holds the funds that will be locked for staking, if required.
 
 The type-specific parameters for each proposal type are listed with the proposals below.
 
@@ -80,37 +80,37 @@ A proposal may be approved, and at some point the actual business logic that emb
 
 A proposal is defined by the following information
 
-* **Id:** A unique non-negative integer identifier.
-* **Type:** Which type of proposal this is.
-* **General Parameters:** Values for general proposal parameters.
-* **Type-Specific Parameters:** Values for type-specific proposal parameters.
-* **Stage:** The life-cycle stage of a proposal, as defined precisely in the next section.
-* **Votes:** The set of votes currently associated with the proposal.
-* **Council Approvals:** How many prior councils have approved the proposal, starts at 0.
-* **Starting Block:** The block where the deciding period was initiated.
-* **Discussion:** A single threaded discussion about the proposal, as defined in the discussion section.
+- **Id:** A unique non-negative integer identifier.
+- **Type:** Which type of proposal this is.
+- **General Parameters:** Values for general proposal parameters.
+- **Type-Specific Parameters:** Values for type-specific proposal parameters.
+- **Stage:** The life-cycle stage of a proposal, as defined precisely in the next section.
+- **Votes:** The set of votes currently associated with the proposal.
+- **Council Approvals:** How many prior councils have approved the proposal, starts at 0.
+- **Starting Block:** The block where the deciding period was initiated.
+- **Discussion:** A single threaded discussion about the proposal, as defined in the discussion section.
 
 **Stage**
 
 Below is a list of the stages a proposal can be in, and what each of them mean:
 
-*   **Deciding:** Initial stage for all successfully created proposals. This is the only stage where votes submitted can actually impact the outcome. If a new council is elected, any present stake is slashed by `REJECTION_FEE` , the staking lock is removed and the proposal transitions to the rejected stage.
+- **Deciding:** Initial stage for all successfully created proposals. This is the only stage where votes submitted can actually impact the outcome. If a new council is elected, any present stake is slashed by `REJECTION_FEE` , the staking lock is removed and the proposal transitions to the rejected stage.
 
-    When a vote is submitted it is evaluated as such:
+  When a vote is submitted it is evaluated as such:
 
-    1. If `APPROVAL_QUORUM` and `APPROVAL_THRESHOLD` are satisfied, then increment council approvals counter. If counter now is `CONSTITUTIONALITY` then remove staking lock and transition to gracing stage, otherwise transition to dormant stage.
-    2. If `SLASHING_QUORUM` and `SLASHING_THRESHOLD` are satisfied, but point (1) is not, then slash full stake, remove the lock and transition to the rejected stage.
-    3. If points (1) and (2) are not and cannot be satisfied by any future a outstanding votes, then slash stake by up to `REJECTION_FEE`, remove lock and transition to rejected stage.
+  1. If `APPROVAL_QUORUM` and `APPROVAL_THRESHOLD` are satisfied, then increment council approvals counter. If counter now is `CONSTITUTIONALITY` then remove staking lock and transition to gracing stage, otherwise transition to dormant stage.
+  2. If `SLASHING_QUORUM` and `SLASHING_THRESHOLD` are satisfied, but point (1) is not, then slash full stake, remove the lock and transition to the rejected stage.
+  3. If points (1) and (2) are not and cannot be satisfied by any future a outstanding votes, then slash stake by up to `REJECTION_FEE`, remove lock and transition to rejected stage.
 
 If `DECIDING_PERIOD` blocks pass while still in this stage, apply checks (1-3) with same transition and side-effect rules as above.
 
-* **Dormant:** Was approved by current council, but requires further approvals to satisfy `CONSTITUTIONALITY` requirement. Transitions to deciding stage when next council is elected.
-* **Gracing:** Is awaiting execution for until trigger block, or `GRACING_LIMIT` blocks since start of period if no trigger was provided. When this duration is over, the execution conditions are checked, if they are satisfied the proposal transitions to the execution succeeded stage, if they are not, it transitions to the execution failed stage.
-* **Vetoed:** Was halted by SUDO, nothing further can happen. This is removed at mainnet.
-* **Slashed:** Was rejected with full stake penalty by the current council.
-* **Execution Succeeded:** Execution succeeded, nothing further can happen.
-* **Execution Failed:** Execution failed due to unsatisfied execution conditions, nothing further can happen.
-* **Rejected:** Was not approved, nothing further can happen.
+- **Dormant:** Was approved by current council, but requires further approvals to satisfy `CONSTITUTIONALITY` requirement. Transitions to deciding stage when next council is elected.
+- **Gracing:** Is awaiting execution for until trigger block, or `GRACING_LIMIT` blocks since start of period if no trigger was provided. When this duration is over, the execution conditions are checked, if they are satisfied the proposal transitions to the execution succeeded stage, if they are not, it transitions to the execution failed stage.
+- **Vetoed:** Was halted by SUDO, nothing further can happen. This is removed at mainnet.
+- **Slashed:** Was rejected with full stake penalty by the current council.
+- **Execution Succeeded:** Execution succeeded, nothing further can happen.
+- **Execution Failed:** Execution failed due to unsatisfied execution conditions, nothing further can happen.
+- **Rejected:** Was not approved, nothing further can happen.
 
 It useful to designate any proposal in the stages deciding, dormant or gracing, as an _active proposal_, and any other proposal is said to be an _inactive proposal_. Votes can not be submitted for _inactive proposal_.
 
@@ -118,7 +118,7 @@ Before mainnet, an extra transition rule is worth bearing in mind is that, for a
 
 The stages and transitions, excluding SUDO dynamics, are summarized in the image below.
 
-![Proposal life-cycle stages.](../.gitbook/assets/proposal\_3.png)
+![Proposal life-cycle stages.](../.gitbook/assets/proposal_3.png)
 
 ### Staking
 
@@ -157,7 +157,7 @@ Note that the distinction between `signal` and the rationale parameter is that t
 
 #### Creation Conditions
 
-* `signal` is non-empty.
+- `signal` is non-empty.
 
 #### Execution Conditions
 
@@ -224,18 +224,18 @@ None.
 
 #### Creation Conditions
 
-* each `amount` is greater than zero.
-* each `amount` is no more than `MAX_SPENDING_PROPOSAL_VALUE`
-* there is at least one account
+- each `amount` is greater than zero.
+- each `amount` is no more than `MAX_SPENDING_PROPOSAL_VALUE`
+- there is at least one account
 
 #### Execution Conditions
 
-* the council budget is no less than the sum of `amounts`.
+- the council budget is no less than the sum of `amounts`.
 
 #### Effect
 
-* the council budget is reduced by the sum of `amounts`.
-* for each account in `accounts` its fund is augmented by its corresponding amount in `amounts`.
+- the council budget is reduced by the sum of `amounts`.
+- for each account in `accounts` its fund is augmented by its corresponding amount in `amounts`.
 
 ### Runtime Upgrade
 
@@ -406,8 +406,8 @@ None.
 
 Same as when slashing a worker in group with given inputs, except
 
-* signer check,
-* worker corresponding to `worker_id` must be lead.
+- signer check,
+- worker corresponding to `worker_id` must be lead.
 
 #### Effect
 
@@ -816,6 +816,34 @@ None.
 
 The councilor reward is set to `new_councilor_reward`.
 
+### Update Global NFT Limit
+
+#### Parameters
+
+| Name               | Description                                               |
+| ------------------ | --------------------------------------------------------- |
+| `nft_limit_period` | The type of period for which the limit should be updated. |
+| `limit`            | The value for the limit.                                  |
+
+#### Constants
+
+| Constant             | Value     |
+| -------------------- | --------- |
+| `DECIDING_PERIOD`    | `fill-in` |
+| `GRACE_PERIOD`       | `fill-in` |
+| `APPROVAL_QUORUM`    | `fill-in` |
+| `APPROVAL_THRESHOLD` | `fill-in` |
+| `SLASHING_QUORUM`    | `fill-in` |
+| `SLASHING_THRESHOLD` | `fill-in` |
+| `PROPOSAL_STAKE`     | `fill-in` |
+| `CONSTITUTIONALITY`  | `fill-in` |
+
+#### Creation Conditions
+
+#### Execution Conditions
+
+Global limit value for specified period is updated
+
 ## Constants
 
 The following constants are hard coded into the system, they can only be updated with a runtime upgrade.
@@ -848,11 +876,11 @@ The following constants are hard coded into the system, they can only be updated
 
 #### Conditions
 
-* Signer matches controller account of `proposer`
-* Number of active proposals is no greater than `MAX_ACTIVE_PROPOSALS`.
-* If `PROPOSAL_STAKE` is greater than zero, then `account` must have a free balance no less than that. Also`account` is bound to `proposer`, and only has a voting lock if anything.
-* If `trigger` is provided, it must be no less than current block plus `GRACING LIMIT` + `DECIDING_PERIOD`.
-* Creation conditions for `type` are satisfied.
+- Signer matches controller account of `proposer`
+- Number of active proposals is no greater than `MAX_ACTIVE_PROPOSALS`.
+- If `PROPOSAL_STAKE` is greater than zero, then `account` must have a free balance no less than that. Also`account` is bound to `proposer`, and only has a voting lock if anything.
+- If `trigger` is provided, it must be no less than current block plus `GRACING LIMIT` + `DECIDING_PERIOD`.
+- Creation conditions for `type` are satisfied.
 
 #### Effect
 
@@ -871,9 +899,9 @@ A new proposal , of type `type` , is created in the deciding period stage, and a
 
 #### Conditions
 
-* `proposal` corresponds to an existing proposal in **Deciding** stage.
-* Signer is role account of councilor identified by `councilor`.
-* Councilor has not yet voted on this proposal.
+- `proposal` corresponds to an existing proposal in **Deciding** stage.
+- Signer is role account of councilor identified by `councilor`.
+- Councilor has not yet voted on this proposal.
 
 #### Effect
 
@@ -891,10 +919,10 @@ Record vote of `councilor`, and follow steps in **Deciding** stage for processin
 
 #### Conditions
 
-* `proposal` corresponds to an existing proposal in where discussion is active, that is either the proposal is active, or no more than `DISCUSSION_LINGERING_DURATION` blocks have passed since it became inactive.
-* `author` corresponds to signer.
-* If `author` is a member, either is the proposer, or the discussion mode is open, or it is closed and the `author` is on the whitelist for this thread.
-* The current number of posts in this thread is less than `MAX_POSTS_PER_THREAD`.
+- `proposal` corresponds to an existing proposal in where discussion is active, that is either the proposal is active, or no more than `DISCUSSION_LINGERING_DURATION` blocks have passed since it became inactive.
+- `author` corresponds to signer.
+- If `author` is a member, either is the proposer, or the discussion mode is open, or it is closed and the `author` is on the whitelist for this thread.
+- The current number of posts in this thread is less than `MAX_POSTS_PER_THREAD`.
 
 #### Effect
 
@@ -912,9 +940,9 @@ Post is added to thread.
 
 #### Conditions
 
-* `proposal` corresponds to an existing proposal in where discussion is active, that is either the proposal is active, or no more than `DISCUSSION_LINGERING_DURATION` blocks have passed since it became inactive.
-* `post` corresponds to an existing post on proposal.
-* author of post corresponds to signer.
+- `proposal` corresponds to an existing proposal in where discussion is active, that is either the proposal is active, or no more than `DISCUSSION_LINGERING_DURATION` blocks have passed since it became inactive.
+- `post` corresponds to an existing post on proposal.
+- author of post corresponds to signer.
 
 Note that editing is possible, regardless of mode, so long as the `author` is owner.
 
@@ -934,10 +962,10 @@ Update text of post.
 
 #### Conditions
 
-* `proposal` corresponds to an existing proposal in where discussion is active, that is either the proposal is active, or no more than `DISCUSSION_LINGERING_DURATION` blocks have passed since it became inactive.
-* signer corresponds to member identified with `member_id`
-* member is either proposal author or council member.
-* `mode` respects `MAX_WHITELIST_SIZE`.
+- `proposal` corresponds to an existing proposal in where discussion is active, that is either the proposal is active, or no more than `DISCUSSION_LINGERING_DURATION` blocks have passed since it became inactive.
+- signer corresponds to member identified with `member_id`
+- member is either proposal author or council member.
+- `mode` respects `MAX_WHITELIST_SIZE`.
 
 #### Effect
 
@@ -978,8 +1006,8 @@ None.
 
 #### Execution Conditions
 
-* Proposal corresponding to `proposal_id` is either in Vote period, Grace period or pending constitution.
+- Proposal corresponding to `proposal_id` is either in Vote period, Grace period or pending constitution.
 
 #### Effect
 
-* Proposal corresponding to `proposal_id` is automatically discarded.
+- Proposal corresponding to `proposal_id` is automatically discarded.
