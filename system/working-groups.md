@@ -41,7 +41,7 @@ A working group is an organizational body, subject to the oversight of the counc
 Working groups which do not have dedicated on-chain subsystem, such as the content directory or storage system, are called _operations working groups_. They mainly exist to coordinate people are activity purely, and currently we have the following groups of this kind
 
 * Builders
-* HR
+* Human Resources
 * Marketers
 
 ## Roles
