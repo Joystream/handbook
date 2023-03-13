@@ -5,7 +5,8 @@
 * [🧙 Founding Members](founding-member-program.md)
 * [🛑 Content Moderation](testnet/content-policy.md)
 * [🤚 Joystream Improvement Proposals](jip-process.md)
-* [🧨 Launch Process](testnet/carthage-rollout-plan/README.md)
+* [🧨 Launch Process](carthage-rollout-plan/README.md)
+  * [Sudo Transactions Made](carthage-rollout-plan/sudo-transactions-made.md)
 
 ## system
 
