@@ -12,9 +12,9 @@ This is the Joystream Handbook, it is intended as a technical document which des
 
 ## Lightpaper
 
-The lightpaper provides a very high level overview of the project mission, technology and objectives.\
-\
-`` `TODO` add link later. ``
+This handbook is quite technical and contains a substantial level of detail, hence for anyone attempting to gain a more integrated high level overview of the full project and system, then the [lightpaper](http://www.joystream.org/lightpaper.pdf) is more appropriate.
+
+<figure><img src=".gitbook/assets/Into page.png" alt="Joystream Lightpaper"><figcaption><p>Joystream Lightpaper</p></figcaption></figure>
 
 ## Opportunities
 
