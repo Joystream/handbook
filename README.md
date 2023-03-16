@@ -1,14 +1,12 @@
 ---
-description: >-
-  This is your guide to get started participating in Joystream network
-  activities.
+description: A reference document for the Joystream Network.
 ---
 
 # 🎯 Start Here
 
 ## Introduction
 
-This is the Joystream Handbook, it is intended as a technical document which describes the way the system functions from a technical perspective, and also links to various community resources. For detailed information on how different products and applications work, please consult the relevant tutorials and documentation.
+This is the Joystream Handbook, it is intended as a reference document which describes the way the system functions from a technical, economic and social perspective, and also links to various community resources. For detailed information or tutorials on how specific software and applications work, please consult the relevant [source repository](http://github.com/joystream/) for the project:&#x20;
 
 ## Lightpaper
 
