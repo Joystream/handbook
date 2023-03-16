@@ -3,10 +3,7 @@
 * [🎯 Start Here](README.md)
 * [🚀 $JOY](usdjoy.md)
 * [🧙 Founding Members](founding-member-program.md)
-* [🛑 Content Moderation](testnet/content-policy.md)
-* [🤚 Joystream Improvement Proposals](jip-process.md)
-* [🧨 Launch Process](carthage-rollout-plan/README.md)
-  * [Sudo Transactions Made](carthage-rollout-plan/sudo-transactions-made.md)
+* [🤚 JIPs](jip-process.md)
 
 ## system
 
@@ -40,4 +37,6 @@
 ***
 
 * [🔐 Security](security.md)
+* [🧨 Launch Process](carthage-rollout-plan/README.md)
+  * [Sudo Transactions Made](carthage-rollout-plan/sudo-transactions-made.md)
 * [📔 Glossary](glossary.md)
