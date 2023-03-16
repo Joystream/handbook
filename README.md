@@ -6,6 +6,16 @@ description: >-
 
 # 🎯 Start Here
 
+## Introduction
+
+This is the Joystream Handbook, it is intended as a technical document which describes the way the system functions from a technical perspective, and also links to various community resources. For detailed information on how different products and applications work, please consult the relevant tutorials and documentation.
+
+## Lightpaper
+
+The lightpaper provides a very high level overview of the project mission, technology and objectives.\
+\
+`` `TODO` add link later. ``
+
 ## Opportunities
 
 There are a variety of ways to earn $JOY, summarized in the table below:
@@ -27,7 +37,6 @@ There are a variety of ways to earn $JOY, summarized in the table below:
 | Distributor Lead      | [#distributor-lead](system/storage/#distributor-lead "mention")                   |
 | Validator             | [#validator](system/validation.md#validator "mention")                            |
 | Bounty                | [bounties](system/bounties/ "mention")                                            |
-| Project Token         | [#project-token](system/projectToken/ "mention")                                  |
 
 ## Community Notion
 
