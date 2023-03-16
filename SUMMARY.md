@@ -7,6 +7,8 @@
 
 ## system
 
+* [⛓ Blockchain](system/blockchain.md)
+* [🪐 Metaprotocols](system/metaprotocols.md)
 * [🏭 Validation](system/validation.md)
 * [🗳 Nomination](system/nomination.md)
 * [🥩 Accounts & Staking](system/accounts-and-staking/README.md)
@@ -14,6 +16,7 @@
 * [🔑 Memberships](system/memberships.md)
 * [🏛 Council](system/council.md)
 * [👷♀ Working Groups](system/working-groups.md)
+* [🛠 Builders](system/builders.md)
 * [⚖ Proposal System](system/proposal-system.md)
 * [🎬 Content Directory](system/content-directory/README.md)
   * [NFT](system/content-directory/nft.md)
@@ -28,15 +31,11 @@
 * [🏹 Bounties](system/bounties/README.md)
   * [V2](system/bounties/v2.md)
 * [👫 Human Resources](system/human-resources.md)
-* [🛠 Builders](system/builders.md)
-* [🪐 Metaprotocols](system/metaprotocols.md)
 * [🚀 Marketers](system/marketers.md)
 * [🌉 Gateways](system/gateways.md)
-* [💸 Fees](system/fees.md)
 
 ***
 
 * [🔐 Security](security.md)
 * [🧨 Launch Process](carthage-rollout-plan/README.md)
   * [Sudo Transactions Made](carthage-rollout-plan/sudo-transactions-made.md)
-* [📔 Glossary](glossary.md)
