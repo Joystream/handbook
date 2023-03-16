@@ -41,3 +41,5 @@ The Council has the power to appoint a Content Curator Lead for the network who 
 
 * Fairly adjudicate disputes, and communicate in clear and transparent way with stakeholders and participants
 * Hold sufficient amount of the native platform token to put at stake
+
+##
