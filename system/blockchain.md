@@ -26,11 +26,7 @@ chain specification? this concept needs to be explained here...
 
 ## Boot Nodes
 
-x
-
-## Telemetry
-
-x
+`` `WIP: Mokhar` ``
 
 ## Forkless Upgrades
 
@@ -38,9 +34,9 @@ The Joystream blockchain takes advantage of a core feature of Substrate, which i
 
 Here is a running list of upgrades that have taken place.
 
-| Network Name    | Date \|\| Block Updated | Chainspec id | Runtime Hash |
-| --------------- | ----------------------- | ------------ | ------------ |
-| Ephesus Network |                         |              |              |
+| Network Name    | Deployed                 | Chainspec id | Runtime Hash |
+| --------------- | ------------------------ | ------------ | ------------ |
+| Ephesus Network | ETA: 7th April / block x |              |              |
 
 ## Resource Accounting & Fees
 
