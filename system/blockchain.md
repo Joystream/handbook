@@ -34,9 +34,9 @@ The Joystream blockchain takes advantage of a core feature of Substrate, which i
 
 Here is a running list of upgrades that have taken place.
 
-| Network Name    | Deployed                 | Chainspec id | Runtime Hash |
-| --------------- | ------------------------ | ------------ | ------------ |
-| Ephesus Network | ETA: 7th April / block x |              |              |
+| Network | Deployed        | Runtime |
+| ------- | --------------- | ------- |
+| Ephesus | ETA: 7th April  |         |
 
 ## Resource Accounting & Fees
 
@@ -48,7 +48,32 @@ There are three scarce resources which are accounted for when pricing transactio
 * **Weight:** the worst-case case compute time for the transaction on reference hardware.
 * **State:** the added size to the state of the blockchain after the transaction.
 
-TODO: what is reference hardware.\
+TODO: what is reference hardware.
+
+### Reference Hardware
+
+TODO add specification + link
+
+
+
+The transaction weights in Polkadot are benchmarked on reference hardware. We ran the benchmark on VM instances of two major cloud providers: Google Cloud Platform (GCP) and Amazon Web Services (AWS). To be specific, we used `c2d-highcpu-8` VM instance on GCP and `c6id.2xlarge` on AWS. It is recommended that the hardware used to run the validators at least matches the specs of the reference hardware in order to ensure they are able to process all blocks in time. If you use subpar hardware you will possibly run into performance issues, get less era points, and potentially even get slashed.
+
+* **CPU**
+  * x86-64 compatible;
+  * Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen);
+  * 4 physical cores @ 3.4GHz;
+  * Simultaneous multithreading disabled (Hyper-Threading on Intel, SMT on AMD);
+  * Prefer single-threaded performance over higher cores count.&#x20;
+* **Storage**
+  * An NVMe SSD of 1 TB (As it should be reasonably sized to deal with blockchain growth).  In general, the latency is more important than the throughput.
+* **Memory**
+  * 16GB DDR4 ECC.
+* **System**
+  * Linux Kernel 5.16 or newer.
+* **Network**
+  * The minimum symmetric networking speed is set to 500 Mbit/s (= 62.5 MB/s). **This is required to support a large number of parachains and allow for proper congestion control in busy network situations.**
+
+Not hard requirements, but best practice.\
 
 
 ### Fees
