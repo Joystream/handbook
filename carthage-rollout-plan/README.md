@@ -58,7 +58,7 @@ As soon as the first block is created, anyone (with tokens to cover the fees) ca
 
 #### Validators
 
-Go [here](../../system/validation.md) for a step by step guide to become a validator or nominator.
+Go [here](../system/validation/) for a step by step guide to become a validator or nominator.
 
 ### Jsgenesis Actions
 

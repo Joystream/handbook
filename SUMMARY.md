@@ -9,7 +9,8 @@
 
 * [⛓ Blockchain](system/blockchain.md)
 * [🪐 Metaprotocols](system/metaprotocols.md)
-* [🏭 Validation](system/validation.md)
+* [🏭 Validation](system/validation/README.md)
+  * [Glossary](system/validation/glossary.md)
 * [🗳 Nomination](system/nomination.md)
 * [🥩 Accounts & Staking](system/accounts-and-staking/README.md)
   * [Account Generation](system/accounts-and-staking/account-generation.md)

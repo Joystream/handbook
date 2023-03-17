@@ -4,80 +4,6 @@ description: Maintaining agreement over the growing history of the system.
 
 # 🏭 Validation
 
-## Glossary
-
-**`bonding duration`**
-
-The amount of `eras` before a `bonded` account that unbonds has to wait until their tokens **can** be unlocked by the `staking` lock.
-
-This will allow the tokens to be staked for "rivalrous" purposes, and, if no other locks are applied, be spent freely.
-
-Set to 112 `eras`, eg \~403200 blocks, or 28 days.
-
-**`commission`**
-
-**`candidates`**
-
-Validators and nominators get paid from block production on the network, where validators can set a variable commission rate, which is initially subtracted from the total rewards that validator is entitled to (for that period), where the commission determines the rate of distribution for the remaining rewards set out for the nominators that are backing that validator.
-
-Set by the validator as a percentage of the reward for each `era`.
-
-**`election`**
-
-An operation performed automatically on-chain, by the runtime, to elect a new set of validators for the upcoming `era`. Who gets elected depends on a variety of factors, such as the amount of `candidates`, the number of `slots` and the `total active stake` for each validator.
-
-**`era`**
-
-A (whole) number of `sessions`, which is the period that the validator set (and each validator's active nominator set) is recalculated and where rewards are paid out.
-
-Target is 6 `sessions`, eg \~3600 blocks, or 6h.
-
-**`era points`**
-
-Every time a specific validator produces a block, they earn points. The rewards for the individual validator for that `era` are proportional to their era points, which are reset when a new `era` begins.
-
-**`nominator`**
-
-Accounts that select a set of validators to nominate by bonding their tokens. Nominators receive some of the validators' rewards, but are also liable for slashing if their nominated validators misbehave.
-
-**`rewards`**
-
-The shared rewards earned by the entire validator set for each `era`. For the individual `validator`, they are proportional to the `era points` earned.
-
-Note that the `total active stake` does not impact the `era points` or rewards directly, but of course, unless the validator gets a slot, they will not earn any rewards.
-
-**`session`**
-
-A session is a Substrate implementation term for a period that has a constant set of validators. Validators can only join or exit the validator set at a session change.
-
-Target is \~600 blocks, or 1h.
-
-**`session keys`**
-
-Hot (must be online) keys that are used for performing network operations by validators, for example, signing GRANDPA commit messages.
-
-**`slashing`**
-
-The removal of a percentage of an account's JOY as a punishment for a validator acting maliciously or incompetently (e.g., equivocating or remaining offline for an extended period).
-
-Will apply equally to nominators of a validator that gets slashed.
-
-**`slots`**
-
-Total amount of spots in the validator set at any given time. Can be adjusted up or down through a proposal.
-
-**`staking`**
-
-The act of bonding JOY tokens by putting them up as "collateral" for a chance to produce a valid block (and thus obtain a block reward). Validators and nominators stake their JOY in order to secure the network.
-
-**`total active stake`**
-
-The sum of stake put up by the validator itself, plus the amount each of the (potential) `nominators` backs the validator with. Used to the determine whether the validator gets a `slot` in the validator set or not in the `election` for the upcoming era.
-
-## Introduction
-
-The Joystream platform state lives on a blockchain consensus system. This consensus system is a variant of classical BFT consensus combined with Proof-of-Stake to determine who gets to be a consensus participant, i.e. validator. A validator is an actor which checks the validity of newly constructed blocks, proposes new blocks and participates in the consensus process for committing new blocks to the chain. This role has a purpose very similar to the miners in the Bitcoin blockchain. Importantly, anyone can fully check the validity of the blockchain, not just validators, and this is called validation.
-
 ## Validator
 
 ### Responsibilities
@@ -91,6 +17,28 @@ The Joystream platform state lives on a blockchain consensus system. This consen
 * Access to highly performant and reliable IT infrastructure, with high storage, (up & down) bandwidth and processing capacity
 * Able to securely store keys
 * Hold sufficient amount of the native platform token to put at stake
+  * currently **at least** JOY 41.667k in a single account, which is the minimum to sign up – actually getting a validator slot likely requires more
+
+#### Hardware Requirements
+
+The Joystream blockchain, and therefore the `joystream-node` is built on the [substrate](https://substrate.io/) framework, developed for the [Polkadot](https://polkadot.network/) ecosystem. As Joystream is still in infancy on mainnet, we refer to the their expertise for the technical specification and [recommendations](https://wiki.polkadot.network/docs/maintain-guides-how-to-validate-polkadot#reference-hardware):
+
+* **CPU**
+  * x86-64 compatible;
+  * Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen);
+  * 4 physical cores @ 3.4GHz;
+  * Simultaneous multithreading disabled (Hyper-Threading on Intel, SMT on AMD);
+  * Prefer single-threaded performance over higher cores count. A comparison of single-threaded performance can be found [here](https://www.cpubenchmark.net/singleThread.html).
+* **Storage**
+  * An NVMe SSD of 1 TB (As it should be reasonably sized to deal with blockchain growth). An estimation of current chain snapshot sizes can be found [here](https://paranodes.io/DBSize). In general, the latency is more important than the throughput.
+* **Memory**
+  * 16GB DDR4 ECC.
+* **System**
+  * Linux Kernel 5.16 or newer.
+* **Network**
+  * The minimum symmetric networking speed is set to 500 Mbit/s (= 62.5 MB/s). This is required to support a large number of parachains and allow for proper congestion control in busy network situations.
+
+It should be obvious that given the life span and size – thus state and transaction activity – of Polkadot relative to Joystream at this stage, it is certainly fine to scale down on things like storage...
 
 ## Guides
 
@@ -123,26 +71,24 @@ Find the latest release [here](https://github.com/Joystream/joystream/releases/l
 $ curl -sL https://api.github.com/repos/Joystream/joystream/releases/latest | jq -r ".tag_name"
 ```
 
-At the time of writing, the latest release is `v11.3.0` a.k.a. Carthage, the latest and last testnet before mainnet.
+At the time of writing, the latest release is `v12.1001.0`, whereas the last node binary is from version `v12.1000.0` (mainnet)
 
 ```
 # Create the directory, and go there
 $ mkdir ~/bin && cd ~/bin
 
-# Assuming the latest version is still v11.3.0
-$ curl -sL https://api.github.com/repos/Joystream/joystream/releases/latest | jq -r ".tag_name"
-
+# Assuming the latest version is still v12.1000.0
 # Download the binary:
-$ wget https://github.com/Joystream/joystream/releases/download/v11.3.0/joystream-node-7.4.1-d2243721017-x86_64-linux-gnu.tar.gz
+$ wget https://github.com/Joystream/joystream/releases/download/v12.1000.0/joystream-node-8.0.0-1a0d1f677df-x86_64-linux-gnu.tar.gz
 
 # unzip it:
-$ tar -vxf joystream-node-7.4.1-d2243721017-x86_64-linux-gnu.tar.gz
+$ tar -vxf joystream-node-8.0.0-1a0d1f677df-x86_64-linux-gnu.tar.gz
 
 # Download the chain spec:
-$ wget https://github.com/Joystream/joystream/releases/download/v11.3.0/joy-testnet-7-carthage.json
+$ wget https://github.com/Joystream/joystream/releases/download/v12.1000.0/joy-mainnet.json
 
 # test that your node works:
-$ ./joystream-node --chain-spec joy-testnet-7.json --pruning archive
+$ ./joystream-node --chain-spec joy-mainnet.json --pruning archive
 ```
 
 Assuming it starts syncing, you can stop it right away with `ctrl+c`
@@ -202,7 +148,7 @@ Type=simple
 User=joystream
 WorkingDirectory=/home/joystream/bin/
 ExecStart=/home/joystream/bin/joystream-node \
-        --chain /home/joystream/bin/joy-testnet-7.json \
+        --chain /home/joystream/bin/joy-mainnet.json \
         --pruning archive \
         --validator
 Restart=on-failure
@@ -272,15 +218,21 @@ $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method
 
 #### Configure Validator on Chain
 
-For the time being, we will only show how to do this with [Polkadot{.js} apps](https://polkadot.js.org/apps/#/explorer). As this serves lots of projects in the substrate ecosystem, you have to set an endpoint. This can be done by [this](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org%3A9944#/explorer) link, which connects to the current "default" Joystream endpoint, or by clicking the with a logo, project/network name and block height in the top left corner.
+For the time being, we will only show how to do this with [Polkadot{.js} apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org#/explorer), a web based UI, and the [Polkadot{.js} extension](https://polkadot.js.org/extension/), a that works with both the aforementioned UI and Joystreams [own Pioneer](https://pioneerapp.xyz/#/profile).
 
-<figure><img src="../.gitbook/assets/endpoint.png" alt=""><figcaption></figcaption></figure>
+As the polkadot-js UI serves lots of projects in the substrate ecosystem, you have to make sure to set the correct endpoint, meaning which network (and node) you connect to. The link above does Joystream automatically, and sets it as default in local storage (until another is set).&#x20;
+
+The network endpoint can also be set manually by clicking the top left corner, and selecting "Live Networks" -> "Joystream" (hosted by Jsgenesis) before clicking "Switch", from the meny that appears.&#x20;
+
+This will display the logo, network name, node version and latest block height of the chain you are currently connected to as shown below.
+
+<figure><img src="../../.gitbook/assets/endpoint.png" alt=""><figcaption></figcaption></figure>
 
 **With Polkadot-js**
 
 You need two keys for this, one to be the `controller` and one as the `stash`. The latter holds the stake and must sign at least once to "delegate" to the `controller` which is running the "day to day" operations.
 
-Assuming you are fully synched, and your node is running:
+Assuming you are fully synched, your node is running, and you have&#x20;
 
 **Steps:**
 
@@ -289,10 +241,6 @@ Assuming you are fully synched, and your node is running:
 3. Paste in the public session keys (`0xabc...123`), choose a "reward commission percentage" and whether you want to allow nominations or not, then click "Bond & Validate".
 
 If you are preparing this for later, click the "+ Stash" button instead. This allows you to wait for your session keys and/or synching your node.
-
-**With joystream-cli**
-
-`TODO`
 
 #### Being a Validator
 
