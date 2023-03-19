@@ -4,16 +4,18 @@ description: We are all just here for transaction ordering, the rest is gravy.
 
 # 🪐 Metaprotocols
 
-## Metaprotocol
+## Introduction
+
+It has long been known that using an existing blockchain purely as a transaction ordering infrastructure can allow third party developers to innovate in a permissionless way, without requiring buyin from community to upgrade consensus rules, but also to introduce computational primitives that are not constrained by the compute resources requirements for validators ... allow people to ignore.. complex resource accounting sidestep
+
+## Metaprotocols
 
 The fundamental service of a any consensus system is to maintain and build a transaction ordering, whether it is a blockchain or anything else. Once transactions are ordered, one can build consensus about any higher level abstraction, such as a token, exchange, registry or anything else. In all blockchains, the transactions carry some minimal amount of semantics that are also validated by the validator enforced consensus rules, for example rules for creation, transfer, locking and destruction of the native asset (BTC, ETH, .etc), as this is needed to generate the game theoretic incentives for validators/miners to participate at all. Beyond this, some systems have very rich validator in state machines, like the EVM, while others do nothing else, like Bitcoin (more or less). In both systems however, one can build arbitrarily complex consensus state machines on top by simply overloading raw data fields in the native transactions, such as `calldata` in the EVM, or `OP_RETURN` in Bitcoin. There are many examples of this, such as
 
-* **Counterparty:** a Defi protocol on top of Bitcoin which actually implemented the [EVM on top of Bitcoin before Ethereum was aout](https://counterparty.io/news/counterpartys-evm-port-moves-forward/).
+* **Counterparty:** an asset protocol on top of Bitcoin which actually implemented the [EVM on top of Bitcoin before Ethereum was aout](https://counterparty.io/news/counterpartys-evm-port-moves-forward/).
 * **Omni:** an asset protocol on top of Bitcoin which was the foundation of the Tether system for a long time.
 * **Blockstack:** a namespace protocol on top of Bitcoin.
 * **Colored Coin:** another very old asset protocol on top of Bitcoin.
-
-here is a more complete list: https://www.reddit.com/r/Bitcoin/comments/3q0ine/meta\_protocols\_list/
 
 These systems all work by having a separate group of indexing nodes that can identify the embedded transactions in the blockchain, and understand their semantics, so as to allow these nodes to build and maintain a separate state machine.
 
