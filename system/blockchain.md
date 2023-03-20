@@ -34,9 +34,12 @@ The Joystream blockchain takes advantage of a core feature of Substrate, which i
 
 Here is a running list of upgrades that have taken place.
 
-| Network | Deployed        | Runtime |
-| ------- | --------------- | ------- |
-| Ephesus | ETA: 7th April  |         |
+| Network | Deployed        | Runtime\*                                                                                 |
+| ------- | --------------- | ----------------------------------------------------------------------------------------- |
+| Ephesus | ETA: 7th April  | <pre><code>b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184
+</code></pre> |
+
+\*blake2-256 hash of runtime WASM object.
 
 ## Resource Accounting & Fees
 
