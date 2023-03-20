@@ -81,18 +81,21 @@ WebAssembly or native Rust
 
 xximpl auth spec versions determines whether it runs native or WASM runtime. Evaltuation happens all the time, first time and later times, actually on every block or possibly when upgrade happens (in the end, it is always keeping track if its own version is same as the one ). This is all called execution mode.
 
+A full-node will not attempt to use its native runtime in substitute for the on-chain Wasm runtime unless all of `spec_name`, `spec_version` and `authoring_version` are the same between Wasm and native.
+
 ## Forkless Upgrades
 
 The Joystream blockchain takes advantage of a core feature of Substrate, which is that runtime itself - as an executable WebAssembly state machine, is held in the state of the chain. This awareness of the underlying state transition function allows for the blockchain to update it's own runtime on the fly, based on it's on domain specific rules. In Joystream this can be triggered by a [runtime upgrade proposal](proposal-system.md#runtime-upgrade) being passed by the council. This has the benefit of providing a binding and transparent mechanism by which the rules of the protocol change, reducing the risk of permanent forks either due to contention or simple human coordination failures in the upgrade deployment itself.
 
 Here is a running list of upgrades that have taken place.
 
-| Network | Deployed                                        | Runtime\*                                                          |
-| ------- | ----------------------------------------------- | ------------------------------------------------------------------ |
-| Mainnet | Friday at 9:07:42 PM CET December the 9th, 2022 | `TODO: Mokhtar`                                                    |
-| Ephesus | ETA: 7th April                                  | `b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184` |
+| Network | Deployed                                        | Runtime\*                                                          | spec\_version\*\* |
+| ------- | ----------------------------------------------- | ------------------------------------------------------------------ | ----------------- |
+| Mainnet | Friday at 9:07:42 PM CET December the 9th, 2022 | `1a1d11d2cc214edb180fd861826a9450df1acc650226db604d96f489f0a36f8f` | 1000              |
+| Ephesus | ETA: 7th April                                  | `b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184` | 1001              |
 
-_\* blake2-256 hash of runtime WASM object._
+_\* blake2-256 hash of runtime WASM object._\
+_\*\* Version of the runtime specification, must be distinct for each runtime for a chain. Is involved in execution strategy and also transactions commit to this version to avoid unintended semantic changes from time of signing to time of block inclusion._
 
 ## Resource Accounting & Fees
 
