@@ -24,7 +24,31 @@ The genesis block contained the initial state of the blockchain, which primarily
 
 
 
-chain specification? this concept needs to be explained here...
+* chain specification? this concept needs to be explained here...@
+* native vs. non-native WASM?
+
+\`\`\`\
+
+
+```
+/// This runtime version.
+#[sp_version::runtime_version]
+pub const VERSION: RuntimeVersion = RuntimeVersion {
+    spec_name: create_runtime_str!("joystream-node"),
+    impl_name: create_runtime_str!("joystream-node"),
+    authoring_version: 12,
+    spec_version: 1001,
+    impl_version: 0,
+    apis: crate::runtime_api::EXPORTED_RUNTIME_API_VERSIONS,
+    transaction_version: 1,
+    state_version: 1,
+};
+```
+
+\
+
+
+
 
 ## Boot Nodes
 
@@ -63,23 +87,17 @@ TODO add specification + link
 
 The transaction weights in Polkadot are benchmarked on reference hardware. We ran the benchmark on VM instances of two major cloud providers: Google Cloud Platform (GCP) and Amazon Web Services (AWS). To be specific, we used `c2d-highcpu-8` VM instance on GCP and `c6id.2xlarge` on AWS. It is recommended that the hardware used to run the validators at least matches the specs of the reference hardware in order to ensure they are able to process all blocks in time. If you use subpar hardware you will possibly run into performance issues, get less era points, and potentially even get slashed.
 
-* **CPU**
-  * x86-64 compatible;
-  * Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen);
-  * 4 physical cores @ 3.4GHz;
-  * Simultaneous multithreading disabled (Hyper-Threading on Intel, SMT on AMD);
-  * Prefer single-threaded performance over higher cores count.&#x20;
-* **Storage**
-  * An NVMe SSD of 1 TB (As it should be reasonably sized to deal with blockchain growth).  In general, the latency is more important than the throughput.
-* **Memory**
-  * 16GB DDR4 ECC.
-* **System**
-  * Linux Kernel 5.16 or newer.
-* **Network**
-  * The minimum symmetric networking speed is set to 500 Mbit/s (= 62.5 MB/s). **This is required to support a large number of parachains and allow for proper congestion control in busy network situations.**
+Not hard requirements, but best practice.... used to generate fees
 
-Not hard requirements, but best practice.\
 
+
+| Resource | Requirements                                                                                                                                                                                                                                                                                                             |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| CPU      | <ul><li>Prefer single-threaded performance over higher cores count.</li><li>Simultaneous multithreading disabled (Hyper-Threading on Intel, SMT on AMD)</li><li>4 physical cores @ 3.4GHz</li><li>Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen)</li><li>x86-64 compatible</li></ul> |
+| Storage  | An NVMe SSD of 1 TB (As it should be reasonably sized to deal with blockchain growth).  In general, the latency is more important than the throughput.                                                                                                                                                                   |
+| Memory   | 16GB DDR4 ECC.                                                                                                                                                                                                                                                                                                           |
+| System   | Linux Kernel 5.16 or newer.                                                                                                                                                                                                                                                                                              |
+| Network  | The minimum symmetric networking speed is set to 500 Mbit/s (= 62.5 MB/s).                                                                                                                                                                                                                                               |
 
 ### Fees
 
