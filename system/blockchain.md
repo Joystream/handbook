@@ -62,6 +62,8 @@ _\* blake2-256 hash of runtime WASM object._
 
 ## Resource Accounting & Fees
 
+Resource accounting is the activity of anticipating the computational resources consumed by an impending transaction or other trigger, such as a runtime upgrade or a block pre- or post-proccesing hook. The purpose of such accounting is to constrain overall consumption within blocks, and also to use as input for setting fees for pricing user transactions, which itself both funds overall consensus security budget and deters denial-of-service attacks.
+
 ### Resources
 
 There are three scarce resources which are accounted for when pricing transactional use of the blockchain
