@@ -30,4 +30,6 @@ There are a number of benefits to such metaprotocols
 
 ## Usage
 
-xx
+There are a range of different metaprotocols in use in Joystream, documentation will need to be enhanced on this in the future, hence for now the most useful reference will just be the message definitions in the monorepo.
+
+{% embed url="https://github.com/Joystream/joystream/tree/master/metadata-protobuf" %}

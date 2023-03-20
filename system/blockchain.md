@@ -25,52 +25,6 @@ The genesis block was the first block, which contained no user transactions, and
 * the initial distribution of [account balances](../usdjoy.md#genesis-block) and initial state variables for various subsystems, please consult description of each subsystem to find each such initial value, but be aware that subsequent transactions may have altered them.
 * the initial WebAssembly runtime.
 
-This means the initial block hash uniquely identifies the Joystream blockchain.
-
-
-
-
-
-chainspec file:
-
-* passed as an argument when you run the node => identifies the system
-* chainspec file vs raw chainspec (similar structure, all configs removed, actual genesis state is there using builds)
-* all substrate ondes need  chainspec file to start (in polkadot they mbedded the file in the the binary)
-* tells you "what chain to connect to"&#x20;
-* different files are used for different testnets, staging&#x20;
-* contains
-  * ID of chain: "joy\_mainnet", name of folder, may be used in libp2p
-  * protocol\_id: impo"joy\_mainnet", immutable, libp2p coms.
-  * genesis:row:rop: account => balance
-
-
-
-*
-* WebAssembly or native Rust
-* RuntimeVersion is part of runtime, both native and wasm. Node in "native mode" also knows about this information,&#x20;
-  * when signing a tx, it covers the spec\_version, prevent replay. Also genesis hash is covered by signature of Substrate.
-  * point preserve semantics of tx, if presigned or upgrade happens in flight.
-  *
-  *
-  *
-  * \
-
-
-```
-/// This runtime version.
-#[sp_version::runtime_version]
-pub const VERSION: RuntimeVersion = RuntimeVersion {
-    spec_name: create_runtime_str!("joystream-node"),
-    impl_name: create_runtime_str!("joystream-node"),
-    authoring_version: 12,
-    spec_version: 1001,
-    impl_version: 0,
-    apis: crate::runtime_api::EXPORTED_RUNTIME_API_VERSIONS,
-    transaction_version: 1,
-    state_version: 1,
-};
-```
-
 ## Boot Nodes
 
 When starting a new full node, it needs to fetch all the data in the canonical chain, and this requires an initial list of nodes, called the _boot notes_, from which to download this data.. After initially connecting to the peer-to-peer network, a node will learn about additional nodes which can be used on next boot process after a possible session interruption.
@@ -81,7 +35,11 @@ WebAssembly or native Rust
 
 xximpl auth spec versions determines whether it runs native or WASM runtime. Evaltuation happens all the time, first time and later times, actually on every block or possibly when upgrade happens (in the end, it is always keeping track if its own version is same as the one ). This is all called execution mode.
 
-A full-node will not attempt to use its native runtime in substitute for the on-chain Wasm runtime unless all of `spec_name`, `spec_version` and `authoring_version` are the same between Wasm and native.
+A full-node will not attempt to use its native runtime in substitute for the on-chain Wasm runtime unless all of `spec_name`, `spec_version` and `authoring_version` are the same between Wasm and native. `authoring_version` is the version of the authorship interface. An authoring node will not attempt to author blocks unless this is equal to its native runtime.
+
+## WebAssembly Execution Environment <a href="#webassembly-execution-environment" id="webassembly-execution-environment"></a>
+
+The WebAssembly execution environment can be more restrictive than the Rust execution environment. For example, the WebAssembly execution environment is a 32-bit architecture with a maximum 4GB of memory.
 
 ## Forkless Upgrades
 
