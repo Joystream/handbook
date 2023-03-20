@@ -10,7 +10,7 @@ At the heart of the Joystream Network sits a content, social, governance and ass
 
 ## Overview
 
-The blockchain is a standalone L1 blockchain with it's own independent validator set. Currently, there is only a single reference implementation, which is written in Rust, and is based on the [Substrate](https://docs.substrate.io/) blockchain development framework. This means that the consensus and networking logic have already been implemented, and the community can focus on the domain specific state machine which is core to Joystream. This is also written in Rust, and this state machine - called the _Runtime_, runs in a [WebAssembly](https://en.wikipedia.org/wiki/WebAssembly) execution environment. _While it is possible to incorporate a smart contract environment, like the_ [_EVM_](https://substrate-developer-hub.github.io/docs/en/knowledgebase/smart-contracts/evm-pallet)_, that is currently not part of the Joystream runtime._
+The blockchain is a standalone L1 blockchain with it's own independent validator set. Currently, there is only a single reference implementation, which is written in Rust, and is based on the [Substrate](https://docs.substrate.io/) blockchain development framework. This means that the consensus and networking logic have already been implemented, and the community can focus on the domain specific state machine which is core to Joystream. This is also written in Rust, and this state machine - called the _Runtime_, runs in a [WebAssembly](https://en.wikipedia.org/wiki/WebAssembly) execution environment. _While it is possible to incorporate a smart contract environment, like the_ [_EVM_](https://substrate-developer-hub.github.io/docs/en/knowledgebase/smart-contracts/evm-pallet)_, that is currently not part of the Joystream runtime._ The architecture of a Joystream validator node is shown below.
 
 <figure><img src="../.gitbook/assets/Substrate node.svg" alt=""><figcaption><p>Overview of Joystream node architecture, built on Substrate.</p></figcaption></figure>
 
@@ -20,12 +20,40 @@ Validators are selected based on [Nominated PoS](https://arxiv.org/abs/2004.1299
 
 ## Genesis Block
 
-The genesis block contained the initial state of the blockchain, which primarily concerned the initial distribution of [account balances](../usdjoy.md#genesis-block) and initial state variables for various subsystems, please consult description of each subsystem to find each such initial value, but be aware that subsequent transactions may have altered them.
+The genesis block was the first block, which contained no user transactions, and had a block hash of `6b5e488e0fa8f9821110d5c13f4c468abcd43ce5e297e62b34c53c3346465956`. It contained the initial state of the blockchain, which primarily concerned&#x20;
+
+* the initial distribution of [account balances](../usdjoy.md#genesis-block) and initial state variables for various subsystems, please consult description of each subsystem to find each such initial value, but be aware that subsequent transactions may have altered them.
+* the initial WebAssembly runtime.
+
+This means the initial block hash uniquely identifies the Joystream blockchain.
 
 
 
-* chain specification? this concept needs to be explained here...@
-* WebAssembly or native Rust\
+
+
+chainspec file:
+
+* passed as an argument when you run the node => identifies the system
+* chainspec file vs raw chainspec (similar structure, all configs removed, actual genesis state is there using builds)
+* all substrate ondes need  chainspec file to start (in polkadot they mbedded the file in the the binary)
+* tells you "what chain to connect to"&#x20;
+* different files are used for different testnets, staging&#x20;
+* contains
+  * ID of chain: "joy\_mainnet", name of folder, may be used in libp2p
+  * protocol\_id: impo"joy\_mainnet", immutable, libp2p coms.
+  * genesis:row:rop: account => balance
+
+
+
+*
+* WebAssembly or native Rust
+* RuntimeVersion is part of runtime, both native and wasm. Node in "native mode" also knows about this information,&#x20;
+  * when signing a tx, it covers the spec\_version, prevent replay. Also genesis hash is covered by signature of Substrate.
+  * point preserve semantics of tx, if presigned or upgrade happens in flight.
+  *
+  *
+  *
+  * \
 
 
 ```
@@ -45,7 +73,13 @@ pub const VERSION: RuntimeVersion = RuntimeVersion {
 
 ## Boot Nodes
 
-`TODO`
+When starting a new full node, it needs to fetch all the data in the canonical chain, and this requires an initial list of nodes, called the _boot notes_, from which to download this data.. After initially connecting to the peer-to-peer network, a node will learn about additional nodes which can be used on next boot process after a possible session interruption.
+
+## Execution Strategy
+
+WebAssembly or native Rust
+
+xximpl auth spec versions determines whether it runs native or WASM runtime. Evaltuation happens all the time, first time and later times, actually on every block or possibly when upgrade happens (in the end, it is always keeping track if its own version is same as the one ). This is all called execution mode.
 
 ## Forkless Upgrades
 
@@ -55,7 +89,7 @@ Here is a running list of upgrades that have taken place.
 
 | Network | Deployed                                        | Runtime\*                                                          |
 | ------- | ----------------------------------------------- | ------------------------------------------------------------------ |
-| Mainnet | Friday at 9:07:42 PM CET December the 9th, 2022 | `6b5e488e0fa8f9821110d5c13f4c468abcd43ce5e297e62b34c53c3346465956` |
+| Mainnet | Friday at 9:07:42 PM CET December the 9th, 2022 | `TODO: Mokhtar`                                                    |
 | Ephesus | ETA: 7th April                                  | `b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184` |
 
 _\* blake2-256 hash of runtime WASM object._
@@ -111,10 +145,12 @@ Here are the most important blockchain level parameters.
 | Target block time |                          |       |
 | Max block space   |                          |       |
 | Max block weight  |                          |       |
+| Protocol ID       |                          |       |
+| Chain ID          |                          |       |
 
 _Warning: There is always a risk of such table values going stale, so only use these as baseline references, and any_&#x20;
 
-* target block time: 6s
+*
 * block sapce
 * weight to fee
 * byte to fee
