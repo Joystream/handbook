@@ -12,7 +12,7 @@ At the heart of the Joystream Network sits a content, social, governance and ass
 
 The blockchain is a standalone L1 blockchain with it's own independent validator set. Currently, there is only a single reference implementation, which is written in Rust, and is based on the [Substrate](https://docs.substrate.io/) blockchain development framework. This means that the consensus and networking logic have already been implemented, and the community can focus on the domain specific state machine which is core to Joystream. This is also written in Rust, and this state machine - called the _Runtime_, runs in a [WebAssembly](https://en.wikipedia.org/wiki/WebAssembly) execution environment. _While it is possible to incorporate a smart contract environment, like the_ [_EVM_](https://substrate-developer-hub.github.io/docs/en/knowledgebase/smart-contracts/evm-pallet)_, that is currently not part of the Joystream runtime._
 
-<figure><img src="../.gitbook/assets/simplified-architecture.png" alt=""><figcaption><p>Overview of Joystream node architecture, built on Substrate.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Substrate node.svg" alt=""><figcaption><p>Overview of Joystream node architecture, built on Substrate.</p></figcaption></figure>
 
 ## Consensus
 
@@ -25,9 +25,7 @@ The genesis block contained the initial state of the blockchain, which primarily
 
 
 * chain specification? this concept needs to be explained here...@
-* native vs. non-native WASM?
-
-\`\`\`\
+* WebAssembly or native Rust\
 
 
 ```
@@ -45,14 +43,9 @@ pub const VERSION: RuntimeVersion = RuntimeVersion {
 };
 ```
 
-\
-
-
-
-
 ## Boot Nodes
 
-`` `WIP: Mokhar` ``
+`TODO`
 
 ## Forkless Upgrades
 
@@ -65,7 +58,7 @@ Here is a running list of upgrades that have taken place.
 | Ephesus | ETA: 7th April  | <pre><code>b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184
 </code></pre> |
 
-\*blake2-256 hash of runtime WASM object.
+_\* blake2-256 hash of runtime WASM object._
 
 ## Resource Accounting & Fees
 
