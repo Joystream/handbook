@@ -7,13 +7,13 @@
 
 ## system
 
-* [⛓ Blockchain](system/blockchain.md)
+* [⛓ Blockchain](system/blockchain/README.md)
+  * [Account Generation](system/blockchain/account-generation.md)
+* [🥩 Staking](system/accounts-and-staking.md)
 * [🪐 Metaprotocols](system/metaprotocols.md)
 * [🏭 Validation](system/validation/README.md)
   * [Glossary](system/validation/glossary.md)
 * [🗳 Nomination](system/nomination.md)
-* [🥩 Accounts & Staking](system/accounts-and-staking/README.md)
-  * [Account Generation](system/accounts-and-staking/account-generation.md)
 * [🔑 Memberships](system/memberships.md)
 * [🏛 Council](system/council.md)
 * [👷♀ Working Groups](system/working-groups.md)

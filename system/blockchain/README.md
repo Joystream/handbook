@@ -12,17 +12,21 @@ At the heart of the Joystream Network sits a content, social, governance and ass
 
 The blockchain is a standalone L1 blockchain with it's own independent validator set. Currently, there is only a single reference implementation, which is written in Rust, and is based on the [Substrate](https://docs.substrate.io/) blockchain development framework. This means that the consensus and networking logic have already been implemented, and the community can focus on the domain specific state machine which is core to Joystream. This is also written in Rust, and this state machine - called the _Runtime_, runs in a [WebAssembly](https://en.wikipedia.org/wiki/WebAssembly) execution environment. _While it is possible to incorporate a smart contract environment, like the_ [_EVM_](https://substrate-developer-hub.github.io/docs/en/knowledgebase/smart-contracts/evm-pallet)_, that is currently not part of the Joystream runtime._ The architecture of a Joystream validator node is shown below.
 
-<figure><img src="../.gitbook/assets/Substrate node.svg" alt=""><figcaption><p>Overview of Joystream node architecture, built on Substrate.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Substrate node.svg" alt=""><figcaption><p>Overview of Joystream node architecture, built on Substrate.</p></figcaption></figure>
 
 ## Consensus
 
 Validators are selected based on [Nominated PoS](https://arxiv.org/abs/2004.12990), and block production occurs in a slot-based stochastic block authoring schedule called [BABE](https://research.web3.foundation/en/latest/polkadot/block-production/Babe.html), or Blind Assignment for Blockchain Extension. Deterministic finality is produced through a classical BFT agreement protocol called [GRANDPA](https://arxiv.org/abs/2007.01560), or HOST-based Recursive Ancestor Deriving Prefix Agreement), which depends on ⅓ honest validator assumption.
 
+## **Accounts and Digital Signature Schemes**
+
+Accounts are identifiers under which transactions, for example for disposing of owned assets, can be issued. There are two kinds of accounts in the system. There are the _normal accounts_ for which some known digital signature key pair is the credential used to authenticate transactions. The signature scheme used in Joystream is Sr25519, based on the Schnorrkel variant that uses Schnorr signatures with Ristretto point compression. Then there are _keyless accounts_, which are only meant to hold assets, in particular the native asset $JOY, but which are not owned by any key pair. They are also sometimes referred to as _module accounts_. They are loosely analogous to smart contract accounts in the EVM context, and some examples are.
+
 ## Genesis Block
 
 The genesis block was the first block, which contained no user transactions, and had a block hash of `6b5e488e0fa8f9821110d5c13f4c468abcd43ce5e297e62b34c53c3346465956`. It contained the initial state of the blockchain, which primarily concerned&#x20;
 
-* the initial distribution of [account balances](../usdjoy.md#genesis-block) and initial state variables for various subsystems, please consult description of each subsystem to find each such initial value, but be aware that subsequent transactions may have altered them.
+* the initial distribution of [account balances](../../usdjoy.md#genesis-block) and initial state variables for various subsystems, please consult description of each subsystem to find each such initial value, but be aware that subsequent transactions may have altered them.
 * the initial WebAssembly runtime.
 
 ## Boot Nodes
@@ -39,7 +43,7 @@ The WebAssembly execution environment can be more restrictive than the Rust exec
 
 ## Forkless Upgrades
 
-The Joystream blockchain takes advantage of a core feature of Substrate, which is that runtime itself - as an executable WebAssembly state machine, is held in the state of the chain. This awareness of the underlying state transition function allows for the blockchain to update it's own runtime on the fly, based on it's on domain specific rules. In Joystream this can be triggered by a [runtime upgrade proposal](proposal-system.md#runtime-upgrade) being passed by the council. This has the benefit of providing a binding and transparent mechanism by which the rules of the protocol change, reducing the risk of permanent forks either due to contention or simple human coordination failures in the upgrade deployment itself.
+The Joystream blockchain takes advantage of a core feature of Substrate, which is that runtime itself - as an executable WebAssembly state machine, is held in the state of the chain. This awareness of the underlying state transition function allows for the blockchain to update it's own runtime on the fly, based on it's on domain specific rules. In Joystream this can be triggered by a [runtime upgrade proposal](../proposal-system.md#runtime-upgrade) being passed by the council. This has the benefit of providing a binding and transparent mechanism by which the rules of the protocol change, reducing the risk of permanent forks either due to contention or simple human coordination failures in the upgrade deployment itself.
 
 Here is a running list of upgrades that have taken place.
 
@@ -60,7 +64,7 @@ Resource accounting is the activity of anticipating the computational resources 
 There are three scarce resources which are accounted for when pricing transactional use of the blockchain
 
 * **Block space:** The size of the transaction in a block.
-* **Weight:** The worst-case case compute time on [reference hardware](blockchain.md#reference-hardware). The process of determining such weight is called _benchmarking_, and is done by blockchain engineers when writing runtime and node code.
+* **Weight:** The worst-case case compute time on [reference hardware](./#reference-hardware). The process of determining such weight is called _benchmarking_, and is done by blockchain engineers when writing runtime and node code.
 * **State:** The added size to the state of the blockchain after the transaction.
 
 ### Reference Hardware

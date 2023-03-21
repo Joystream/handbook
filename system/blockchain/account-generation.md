@@ -25,10 +25,6 @@ A more user friendly alternative to the recommended key generation exists in the
 
 Instructions for Account generation with polkadot-js can be found [here](account-generation.md#joystream-network-address-generation-1).
 
-### Address Types
-
-Substrate primarily supports three different cryptography schemes; `sr25519`, `ed25519`, and `ecdsa`. As the overwhelming majority of substrate based projects (including Polkadot) are using `sr25519` as their default, we will do the same. Note that this is also the default for subkey.
-
 ### Distribution
 
 Stakeholders are free to distribute your allocation across as many Accounts as they wish. There are some pros and cons associated with any distribution, so we encourage Stakeholders, regardless of how actively they intend to participate on mainnet, to consider this when choosing the amount of Accounts, and the balance distribution.
