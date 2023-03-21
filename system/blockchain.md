@@ -91,21 +91,13 @@ Fee calculation in Substrate chains.
 
 Here are the most important blockchain level parameters.
 
-| Concept           | Reference Codebase Token | Value |
-| ----------------- | ------------------------ | ----- |
-| Target block time |                          |       |
-| Max block space   |                          |       |
-| Max block weight  |                          |       |
-| Protocol ID       |                          |       |
-| Chain ID          |                          |       |
+| Concept                        | Reference Codebase Token | Value               |
+| ------------------------------ | ------------------------ | ------------------- |
+| Target block time              | `ExpectedBlockTime`      | 6 seconds           |
+| Max block space                | `MaximumBlockLength`     | 5 MB                |
+| Max block weight (normal)      | `RuntimeBlockWeights`    | 2 weight per second |
+| Max block weight (operational) | `RuntimeBlockWeights`    |                     |
+| Protocol ID                    |                          |                     |
+| Chain ID                       |                          |                     |
 
-_Warning: There is always a risk of such table values going stale, so only use these as baseline references, and any_&#x20;
-
-*
-* block sapce
-* weight to fee
-* byte to fee
-*
-* max weight
-* Curent runtime version (as of 2011) [https://docs.substrate.io/build/chain-spec/](https://docs.substrate.io/build/chain-spec/)
-* Substrate version (as of)
+_Warning: There is always a risk of such a table of values going stale, so only use these as baseline references, and consult reference implementation for the relevant runtime._
