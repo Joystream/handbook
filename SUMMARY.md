@@ -7,9 +7,9 @@
 
 ## system
 
-* [⛓ Blockchain](system/blockchain/README.md)
-  * [Account Generation](system/blockchain/account-generation.md)
-* [🥩 Staking](system/accounts-and-staking.md)
+* [⛓ Blockchain](system/blockchain.md)
+  * [Account Generation](system/accounts-and-staking/account-generation.md)
+* [🥩 Staking](system/accounts-and-staking/README.md)
 * [🪐 Metaprotocols](system/metaprotocols.md)
 * [🏭 Validation](system/validation/README.md)
   * [Glossary](system/validation/glossary.md)

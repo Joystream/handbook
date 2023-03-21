@@ -46,7 +46,11 @@ These are the different types of locks that currently exist, each has a distinct
 
 ## Vesting
 
-`WIP`
+Vesting only occurs on accounts which existed in the genesis block, and it occurs using a linear curve on the amount of funds encumbered by a vesting lock. Is implemented using the `pallet_vesting` pallet described below.
+
+{% embed url="https://paritytech.github.io/substrate/master/pallet_vesting/index.html" %}
+Vesting pallet
+{% endembed %}
 
 ## Binding
 
@@ -93,7 +97,7 @@ The model for reuse of accounts is quite simple. There is a finite set of lock t
 
 ## Balances
 
-The _total balance_ of an account is the total number of tokens in the account, and it can be split into two distinct parts the _free balance_ and the _reserved balance_, where the latter refers to reservations in the sense described in [#reservation](accounts-and-staking.md#reservation "mention"). The naming of the former is quite misleading, it is inherited from Substrate terminology, as it does not refer to funds that freely can be used for any purpose. The second constraint which ultimately still may encumber the free balance are locks, as described in [#locks](accounts-and-staking.md#locks "mention"). The key concept to understand is that locks "stack", hence the net effect of all locks on an account is simply equivalent to the lock for the largest amount. Hence for example, if you have a free balance of 10, and locks of size 7, 6 and 2, then they net out to a locking effect of 7, which means that only 10 - 7 = 3 of the tokens actually are entirely unencumbered, also called _usable_. We refer to this balance as the _usable balance._ We can thus summarise as follows\
+The _total balance_ of an account is the total number of tokens in the account, and it can be split into two distinct parts the _free balance_ and the _reserved balance_, where the latter refers to reservations in the sense described in [#reservation](./#reservation "mention"). The naming of the former is quite misleading, it is inherited from Substrate terminology, as it does not refer to funds that freely can be used for any purpose. The second constraint which ultimately still may encumber the free balance are locks, as described in [#locks](./#locks "mention"). The key concept to understand is that locks "stack", hence the net effect of all locks on an account is simply equivalent to the lock for the largest amount. Hence for example, if you have a free balance of 10, and locks of size 7, 6 and 2, then they net out to a locking effect of 7, which means that only 10 - 7 = 3 of the tokens actually are entirely unencumbered, also called _usable_. We refer to this balance as the _usable balance._ We can thus summarise as follows\
 &#x20;\
 `total_balance = free_balance + reserved_balance`
 
@@ -105,7 +109,7 @@ where `lock_i` is the lock amount of the `i'th` lock.\
 
 ## The Invitation Lock Exception&#x20;
 
-As you can read in the [#invitations](memberships.md#invitations "mention") section of the membership subsystem article, the purpose of the invitation lock is to onboard a new member, for example a creator, onto the system. This means they have to be granted some minimal quantity of initial funds that allow them to engage with the system in a very basic way. Typically, this will be done by applications that apply their own Sybill resistance check. Since all such checks are imperfect, the invitation lock is applied with an amount matching the initial quantity of funds credited, and this lock prevents the user from simply cashing out by exchanging the tokens to some other account for some sidepayment. At the same time, the lock also allows consuming the funds for a wide range of transactions, for example such as creating a channel or uploading a video. Some transactions are explicitly excluded because they inherently involve transferring funds to some new stakeholder, for example when bidding on an NFT or funding a bounty.
+As you can read in the [#invitations](../memberships.md#invitations "mention") section of the membership subsystem article, the purpose of the invitation lock is to onboard a new member, for example a creator, onto the system. This means they have to be granted some minimal quantity of initial funds that allow them to engage with the system in a very basic way. Typically, this will be done by applications that apply their own Sybill resistance check. Since all such checks are imperfect, the invitation lock is applied with an amount matching the initial quantity of funds credited, and this lock prevents the user from simply cashing out by exchanging the tokens to some other account for some sidepayment. At the same time, the lock also allows consuming the funds for a wide range of transactions, for example such as creating a channel or uploading a video. Some transactions are explicitly excluded because they inherently involve transferring funds to some new stakeholder, for example when bidding on an NFT or funding a bounty.
 
 The precise constraint for what invitation locks allow is as follows: if the transaction otherwise would have succeeded if the invitation lock was not present, and it is not among one of the cases below, then the transaction will still succeed regardless of the lock amount:
 
