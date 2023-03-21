@@ -1,4 +1,8 @@
-# ▶ NFT
+---
+description: The canonical association to a piece of video content.
+---
+
+# ▶ Video NFTs
 
 ## Preamble
 

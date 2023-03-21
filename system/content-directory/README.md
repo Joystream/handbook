@@ -1,8 +1,30 @@
+---
+description: A public index of all creators, content and metadata.
+---
+
 # 🎬 Content Directory
 
 ## Introduction
 
-`wip`
+The content directory is the public index of Rdd
+
+
+
+{% content-ref url="nft.md" %}
+[nft.md](nft.md)
+{% endcontent-ref %}
+
+{% content-ref url="../projectToken.md" %}
+[projectToken.md](../projectToken.md)
+{% endcontent-ref %}
+
+{% content-ref url="payout.md" %}
+[payout.md](payout.md)
+{% endcontent-ref %}
+
+{% content-ref url="curation-model.md" %}
+[curation-model.md](curation-model.md)
+{% endcontent-ref %}
 
 ## Notion Space&#x20;
 
@@ -11,6 +33,14 @@ The community maintains a distinct Notion space which holds more dynamic informa
 {% embed url="https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab" %}
 
 ## Content Creator
+
+### Responsibilities
+
+x
+
+### Requirements
+
+x
 
 ## Content Curator
 
