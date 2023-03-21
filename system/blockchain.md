@@ -31,11 +31,7 @@ When starting a new full node, it needs to fetch all the data in the canonical c
 
 ## Execution Strategy
 
-WebAssembly or native Rust
-
-xximpl auth spec versions determines whether it runs native or WASM runtime. Evaltuation happens all the time, first time and later times, actually on every block or possibly when upgrade happens (in the end, it is always keeping track if its own version is same as the one ). This is all called execution mode.
-
-A full-node will not attempt to use its native runtime in substitute for the on-chain Wasm runtime unless all of `spec_name`, `spec_version` and `authoring_version` are the same between Wasm and native. `authoring_version` is the version of the authorship interface. An authoring node will not attempt to author blocks unless this is equal to its native runtime.
+Using the WebAssembly runtime is important because the WebAssembly and native runtimes can diverge. For example, if you make changes to the runtime, you must generate a new WebAssembly blob and update the chain to use the new version of the WebAssembly runtime. After the update, the WebAssembly runtime differs from the native runtime. To account for this difference, all of the execution strategies treat the WebAssembly representation of the runtime as the canonical runtime. If the native runtime and the WebAssembly runtime versions are different, the WebAssembly runtime is always selected. A full-node will not attempt to use its native runtime in substitute for the on-chain Wasm runtime unless all of `spec_name`, `spec_version` and `authoring_version` are the same between `RuntimeVersion` in Wasm and native. `authoring_version` is the version of the authorship interface. An authoring node will not attempt to author blocks unless this is equal to its native runtime.
 
 ## WebAssembly Execution Environment <a href="#webassembly-execution-environment" id="webassembly-execution-environment"></a>
 
@@ -52,34 +48,26 @@ Here is a running list of upgrades that have taken place.
 | Mainnet | Friday at 9:07:42 PM CET December the 9th, 2022 | `1a1d11d2cc214edb180fd861826a9450df1acc650226db604d96f489f0a36f8f` | 1000              |
 | Ephesus | ETA: 7th April                                  | `b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184` | 1001              |
 
-_\* blake2-256 hash of runtime WASM object._\
+_\* blake2-256 hash of runtime WASM runtime._\
 _\*\* Version of the runtime specification, must be distinct for each runtime for a chain. Is involved in execution strategy and also transactions commit to this version to avoid unintended semantic changes from time of signing to time of block inclusion._
 
 ## Resource Accounting & Fees
 
-Resource accounting is the activity of anticipating the computational resources consumed by an impending transaction or other trigger, such as a runtime upgrade or a block pre- or post-proccesing hook. The purpose of such accounting is to constrain overall consumption within blocks, and also to use as input for setting fees for pricing user transactions, which itself both funds overall consensus security budget and deters denial-of-service attacks.
+Resource accounting is the activity of anticipating the computational resources consumed by an impending transaction or other execution trigger, such as a runtime upgrade or a block pre- or post-processing hook. The purpose of such accounting is to constrain overall consumption within blocks, so as to preserve decentralization by bounding node operational cost, and also to use as input for setting fees for pricing user transactions, which itself both funds overall consensus security budget and deters denial-of-service attacks.
 
 ### Resources
 
 There are three scarce resources which are accounted for when pricing transactional use of the blockchain
 
-* **Block space:** the size of the transaction in a block.
-* **Weight:** the worst-case case compute time for the transaction on reference hardware.
-* **State:** the added size to the state of the blockchain after the transaction.
-
-TODO: what is reference hardware.
+* **Block space:** The size of the transaction in a block.
+* **Weight:** The worst-case case compute time on [reference hardware](blockchain.md#reference-hardware). The process of determining such weight is called _benchmarking_, and is done by blockchain engineers when writing runtime and node code.
+* **State:** The added size to the state of the blockchain after the transaction.
 
 ### Reference Hardware
 
-TODO add specification + link
+The estimation of the weights, which is the time needed to perform various computations, is done on some reference hardware specification. Having such a specification also provides constraints for what validators should adhere to in order to process the chain in a timely manner, otherwise one can earn less era points, and potentially even get slashed.
 
-
-
-The transaction weights in Polkadot are benchmarked on reference hardware. We ran the benchmark on VM instances of two major cloud providers: Google Cloud Platform (GCP) and Amazon Web Services (AWS). To be specific, we used `c2d-highcpu-8` VM instance on GCP and `c6id.2xlarge` on AWS. It is recommended that the hardware used to run the validators at least matches the specs of the reference hardware in order to ensure they are able to process all blocks in time. If you use subpar hardware you will possibly run into performance issues, get less era points, and potentially even get slashed.
-
-Not hard requirements, but best practice.... used to generate fees
-
-
+The benchmarking is currently done on VM instances of two major cloud providers: Google Cloud Platform (GCP) and Amazon Web Services (AWS). To be specific, we used `c2d-highcpu-8` VM instance on GCP and `c6id.2xlarge` on AWS. A detailed specification is provided below.
 
 | Resource | Requirements                                                                                                                                                                                                                                                                                                             |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -93,7 +81,7 @@ Not hard requirements, but best practice.... used to generate fees
 
 In a distributed system, a user can require nodes to perform costly computation. Depending on the design of the system, the compute may be a one time event, or it may need to be replicated by multiple parties when they attempt to validate the integrity of the system. Regardless, this ability to command the compute resources of system participants means that some mechanism is needed to restrict and ration access to such resources. In blockchain systems specifically, access is intended to be open and permissionless, hence paying for access is has been considered the most neutral solution to this problem. Fees associated with inclusion of transactions in the blockchain plays the role of such payments in blockchains.
 
-
+include tip thing?
 
 include point about dynamic adjustment
 
