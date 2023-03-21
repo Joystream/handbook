@@ -91,13 +91,12 @@ Fee calculation in Substrate chains.
 
 Here are the most important blockchain level parameters.
 
-| Concept                        | Reference Codebase Token | Value               |
-| ------------------------------ | ------------------------ | ------------------- |
-| Target block time              | `ExpectedBlockTime`      | 6 seconds           |
-| Max block space                | `MaximumBlockLength`     | 5 MB                |
-| Max block weight (normal)      | `RuntimeBlockWeights`    | 2 weight per second |
-| Max block weight (operational) | `RuntimeBlockWeights`    |                     |
-| Protocol ID                    |                          |                     |
-| Chain ID                       |                          |                     |
+| Concept                        | Reference Codebase Token | Value                                                                                    |
+| ------------------------------ | ------------------------ | ---------------------------------------------------------------------------------------- |
+| Target block time              | `ExpectedBlockTime`      | 6 seconds                                                                                |
+| Max block space                | `MaximumBlockLength`     | 5 MB                                                                                     |
+| Max block weight (normal)      | `RuntimeBlockWeights`    | 75% of 2s of weight                                                                      |
+| Max block weight (operational) | `RuntimeBlockWeights`    | 25% of 2s of weight                                                                      |
+| Weight to fee function         | `WeightToFee`            | [Link](https://github.com/Joystream/joystream/blob/master/runtime/src/constants.rs#L106) |
 
 _Warning: There is always a risk of such a table of values going stale, so only use these as baseline references, and consult reference implementation for the relevant runtime._
