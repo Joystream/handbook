@@ -81,9 +81,11 @@ The benchmarking is currently done on VM instances of two major cloud providers:
 
 In a distributed system, a user can require nodes to perform costly computation. Depending on the design of the system, the compute may be a one time event, or it may need to be replicated by multiple parties when they attempt to validate the integrity of the system. Regardless, this ability to command the compute resources of system participants means that some mechanism is needed to restrict and ration access to such resources. In blockchain systems specifically, access is intended to be open and permissionless, hence paying for access is has been considered the most neutral solution to this problem. Fees associated with inclusion of transactions in the blockchain plays the role of such payments in blockchains.
 
-include tip thing?
+In Joystream, fees are burned, except an extra user specifiable tip, which goes to the block producer, so as to facilitate a fee market. For a detailed explanation of how fees are derived, please consult the link below.
 
-include point about dynamic adjustment
+{% embed url="https://docs.substrate.io/build/tx-weights-fees/#how-fees-are-calculated" %}
+Fee calculation in Substrate chains.
+{% endembed %}
 
 ## Parameters
 
