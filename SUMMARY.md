@@ -9,8 +9,8 @@
 
 * [⛓ Blockchain](system/blockchain.md)
   * [Account Generation](system/accounts-and-staking/account-generation.md)
-* [🥩 Staking](system/accounts-and-staking/README.md)
 * [🪐 Metaprotocols](system/metaprotocols.md)
+* [🥩 Staking](system/accounts-and-staking/README.md)
 * [🏭 Validation](system/validation/README.md)
   * [Glossary](system/validation/glossary.md)
 * [🗳 Nomination](system/nomination.md)
@@ -23,7 +23,7 @@
   * [NFT](system/content-directory/nft.md)
   * [Curation Model](system/content-directory/curation-model.md)
   * [Payout](system/content-directory/payout.md)
-* [🪙 Project Token](system/projectToken.md)
+* [🪙 Creator Tokens](system/projectToken.md)
 * [💽 Storage & Bandwidth](system/storage/README.md)
   * [Data Directory](system/storage/data-directory.md)
   * [Storage Node](system/storage/storage-node.md)

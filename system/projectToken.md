@@ -1,8 +1,8 @@
 ---
-description: Information on the project token functionality.
+description: Financial and marketing super powers for content creators
 ---
 
-# 🪙 Project Token
+# 🪙 Creator Tokens
 
 ## Introduction
 

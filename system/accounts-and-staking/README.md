@@ -1,5 +1,5 @@
 ---
-description: Aligning incen
+description: Aligning incentives for the long run
 ---
 
 # 🥩 Staking
@@ -22,27 +22,6 @@ A _lock_ is limitation applied to how funds can be used in an account, primarily
 * _a type, of which there are a finite number_
 
 These are the different types of locks that currently exist, each has a distinct ID, which means it is very easy to work at what sort of staking is going on funded by a given account.
-
-| Lock                            | Description |
-| ------------------------------- | ----------- |
-| Voting                          | `wip`       |
-| Vesting                         | `wip`       |
-| Invitation                      | `wip`       |
-| Bound Staking Account           | `wip`       |
-| Council Candidate Staking       | `wip`       |
-| Council Member Staking          | `wip`       |
-| Validation & Nomination Staking | `wip`       |
-| Proposals Staking               | `wip`       |
-| Storage WG Staking              | `wip`       |
-| Content Directory WG Staking    | `wip`       |
-| Forum WG Staking                | `wip`       |
-| Membership WG Staking           | `wip`       |
-| Distributor WG Staking          | `wip`       |
-| Builders WG Staking             | `wip`       |
-| Gateway WG Staking              | `wip`       |
-| HR WG Staking                   | `wip`       |
-| Marketing WG Staking            | `wip`       |
-| Bounty Entry Staking            | `wip`       |
 
 ## Vesting
 
