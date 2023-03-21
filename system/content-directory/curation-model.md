@@ -2,7 +2,7 @@
 description: A temporary one page explainer for curators
 ---
 
-# Curation Model
+# 🧐 Curation Model
 
 This is meant as a placeholder description for the benefit of the content curation working group before a full article can be prepared.
 

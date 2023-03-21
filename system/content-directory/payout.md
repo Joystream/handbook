@@ -1,4 +1,8 @@
-# Payout
+---
+description: Scaleable governance powered creator payouts
+---
+
+# 💸 Creator Payouts
 
 ## Introduction
 

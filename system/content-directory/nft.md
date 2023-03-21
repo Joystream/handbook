@@ -1,8 +1,8 @@
-# NFT
+# ▶ NFT
 
 ## Preamble
 
-This article will later be incorporated into the  document at a later time.
+This article will later be incorporated into the document at a later time.
 
 ## Introduction
 
@@ -59,7 +59,7 @@ Notice that only members can be bidders, no other kind of actor.
 An _auction_ represents the structured process through which the current owner can transfer ownership of an NFT through an open non-intermediated bidding process, and it is defined by the following
 
 * **Reservation Price:** The minimum balance required for amount of any bid to be valid.
-* **Type:** The  representing what type of auction this is.
+* **Type:** The representing what type of auction this is.
 * **Minimal Bid Step:** The minimum difference in amount between two consecutive bids in order for the new bid to be valid.
 * **Last Bid:** If present, is the last which was successfully submitted.
 * **Starts At:** The block after which point it becomes possible to submit bids in the auction.
@@ -88,55 +88,57 @@ The _transactional status_ of an NFT represents the state of current opportuniti
 
 The stages and transitions are summarized in the image below.
 
-
-
 ### NFT
 
 An _NFT_ represents ownership title over video, and it is defined by the following information
 
 * **Owner:** The representing the current owner.
-* **Status: The**  representing the state of the NFT currently.
+* **Status: The** representing the state of the NFT currently.
 * **Royalty:** If set, it specifies the fraction of the paid value of later transactions which must accrue to the issuer.
 
 ### Minting Limits
+
 Minting limits on NFTs are applied to avoid massive proliferation of low quality NFT projects.
 
 There are several types of limits, depending on the time window considered and context:
 
 **Global Limits**
-- Global weekly limit: max number of NFT that can be minted each week, stored on chain 
-- Global daily limit: max number of NFT that can be minted each day, stored on chain
+
+* Global weekly limit: max number of NFT that can be minted each week, stored on chain
+* Global daily limit: max number of NFT that can be minted each day, stored on chain
 
 The above values are updated via a [`UpdateGlobalNftLimit`](../proposal-system.md#update-global-nft-limit) proposal.
 
 **Channel Limits**
-- Channel weekly limit: max number of NFT that can be minted each week by a particular channel, they are set at channel creation with a value of `DefaultWeeklyChannelLimit`
-- Channel daily limit: max number of NFT that can be minted each day by a particular channel, they are set at channel creation with a value of `DefaultDailyChannelLimit`
 
-Their value can be [modified](#update-channel-nft-limit) on a per-channel basis by the Lead or a Curator having sufficient permission level.
+* Channel weekly limit: max number of NFT that can be minted each week by a particular channel, they are set at channel creation with a value of `DefaultWeeklyChannelLimit`
+* Channel daily limit: max number of NFT that can be minted each day by a particular channel, they are set at channel creation with a value of `DefaultDailyChannelLimit`
+
+Their value can be [modified](nft.md#update-channel-nft-limit) on a per-channel basis by the Lead or a Curator having sufficient permission level.
 
 #### Toggling the limit functionality
-The whole limiting functionality can be disabled. The status of the NFT limit functionality can be inspected by looking at the `Content.nft_limit_enabled` value on chain 
+
+The whole limiting functionality can be disabled. The status of the NFT limit functionality can be inspected by looking at the `Content.nft_limit_enabled` value on chain
 
 ## Parameters
 
 The following mutable parameters.
 
-| Name                      | Type          | Description                                    |
-| ------------------------- | ------------- | ---------------------------------------------- |
-| `MinRoundTime`            | `BlockNumber` | Min auction round time.                        |
-| `MaxRoundTime`            | `BlockNumber` | Max auction round time.                        |
-| `MinBidLockDuration`      | `BlockNumber` | Min bid lock duration.                         |
-| `MaxBidLockDuration`      | `BlockNumber` | Max bid lock duration.                         |
-| `MinStartingPrice`        | `Balance`     | Min auction staring price.                     |
-| `MinCreatorRoyalty`       | `Perbill`     | Min creator royalty percentage.                |
-| `MaxCreatorRoyalty`       | `Perbill`     | Max creator royalty percentage.                |
-| `MinBidStep`              | `Balance`     | Min auction bid step.                          |
-| `MaxBidStep`              | `Balance`     | Max auction bid step.                          |
-| `AuctionFeePercentag`     | `Perbill`     | Auction platform fee percentage.               |
-| `AuctionStartsAtMaxDelta` | `BlockNumber` | Max delta between current block and starts at. |
-| `DefaultWeeklyChannelLimit` | `u64` | Max amount of NFT that a newly created channel can mint in a week|
-| `DefaultDailyChannelLimit` | `u64` | Max amount of NFT that a newly created channel can mint in a day|
+| Name                        | Type          | Description                                                       |
+| --------------------------- | ------------- | ----------------------------------------------------------------- |
+| `MinRoundTime`              | `BlockNumber` | Min auction round time.                                           |
+| `MaxRoundTime`              | `BlockNumber` | Max auction round time.                                           |
+| `MinBidLockDuration`        | `BlockNumber` | Min bid lock duration.                                            |
+| `MaxBidLockDuration`        | `BlockNumber` | Max bid lock duration.                                            |
+| `MinStartingPrice`          | `Balance`     | Min auction staring price.                                        |
+| `MinCreatorRoyalty`         | `Perbill`     | Min creator royalty percentage.                                   |
+| `MaxCreatorRoyalty`         | `Perbill`     | Max creator royalty percentage.                                   |
+| `MinBidStep`                | `Balance`     | Min auction bid step.                                             |
+| `MaxBidStep`                | `Balance`     | Max auction bid step.                                             |
+| `AuctionFeePercentag`       | `Perbill`     | Auction platform fee percentage.                                  |
+| `AuctionStartsAtMaxDelta`   | `BlockNumber` | Max delta between current block and starts at.                    |
+| `DefaultWeeklyChannelLimit` | `u64`         | Max amount of NFT that a newly created channel can mint in a week |
+| `DefaultDailyChannelLimit`  | `u64`         | Max amount of NFT that a newly created channel can mint in a day  |
 
 ## Constants
 
@@ -378,12 +380,12 @@ Returns ownership of idle status NFT from owner to channel itself, even if the c
 
 **Parameters**
 
-| Name       | Description                                                        |
-| ---------- | ------------------------------------------------------------------ |
-| `actor` | `ContentActor` either Lead or Curator with sufficient permission.     |
-| `nft_limit_period` | Type of period for the limit: either Weekly or Daily.  |
-| `channel_id` | Channel which limit we want to set. |
-| `limit` | Value for the new limit to be set. |
+| Name               | Description                                                       |
+| ------------------ | ----------------------------------------------------------------- |
+| `actor`            | `ContentActor` either Lead or Curator with sufficient permission. |
+| `nft_limit_period` | Type of period for the limit: either Weekly or Daily.             |
+| `channel_id`       | Channel which limit we want to set.                               |
+| `limit`            | Value for the new limit to be set.                                |
 
 #### Conditions
 
@@ -392,4 +394,3 @@ Returns ownership of idle status NFT from owner to channel itself, even if the c
 #### Effect
 
 * WIP
-
