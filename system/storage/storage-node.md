@@ -5,7 +5,7 @@ description: >-
   latency last mile on-demand delivery.
 ---
 
-# Storage Node
+# 💾 Storage Node
 
 ## Preamble
 

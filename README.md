@@ -33,7 +33,7 @@ There are a variety of ways to earn $JOY, summarized in the table below:
 | Storage Provider Lead | [#storage-provider-leader](system/storage/#storage-provider-leader "mention")     |
 | Distributor           | [#distributor](system/storage/#distributor "mention")                             |
 | Distributor Lead      | [#distributor-lead](system/storage/#distributor-lead "mention")                   |
-| Validator             | [#validator](system/validation/#validator "mention")                              |
+| Validator             | [#validator](system/validation.md#validator "mention")                            |
 | Bounty                | [bounties](system/bounties/ "mention")                                            |
 
 ## Community Notion

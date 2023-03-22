@@ -5,7 +5,7 @@ description: >-
   storing and providing bandwidth.
 ---
 
-# Data Directory
+# 🗄 Data Directory
 
 ## Introduction
 
