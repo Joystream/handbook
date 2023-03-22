@@ -64,7 +64,7 @@ Resource accounting is the activity of anticipating the computational resources 
 There are three scarce resources which are accounted for when pricing transactional use of the blockchain
 
 * **Block space:** The size of the transaction in a block.
-* **Weight:** The worst-case case compute time on [reference hardware](blockchain.md#reference-hardware). The process of determining such weight is called _benchmarking_, and is done by blockchain engineers when writing runtime and node code.
+* **Weight:** Unit of compute time, specifically 1 picosecond of compute time on a reference machine. The weight of a transaction is the worst case total weight of executing it, and the process of determining how to efficiently forecast the _weight function_, i.e. the weight estimator for a concrete invocation of a given transaction, is called _benchmarking_, and is done by blockchain engineers when writing runtime and node code.
 * **State:** The added size to the state of the blockchain after the transaction.
 
 ### Reference Hardware
