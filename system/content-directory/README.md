@@ -6,7 +6,7 @@ description: A public index of all creators, content and metadata.
 
 ## Introduction
 
-The content directory is the public index of Rdd
+The content directory is public index of all the channels and content, and associated social interactions like comments and reactions, and associated digital assets like video NFTs and Creator Tokens. Review the relevant subarticle to understand more about the given topic. This article will need to be expanded further, as not all features in the conent directory are currently covered.
 
 
 
