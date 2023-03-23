@@ -20,7 +20,7 @@
 * [🎬 Content Directory](system/content-directory/README.md)
   * [🪙 Creator Tokens](system/projectToken.md)
   * [💸 Creator Payouts](system/content-directory/payout.md)
-  * [▶ Video NFTs](system/content-directory/nft.md)
+  * [🏆 Video NFTs](system/content-directory/nft.md)
   * [🧐 Curation Model](system/content-directory/curation-model.md)
 * [💽 Storage & Bandwidth](system/storage/README.md)
   * [🗄 Data Directory](system/storage/data-directory.md)
