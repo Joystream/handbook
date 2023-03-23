@@ -32,7 +32,7 @@
 * [🛠 Builders](system/builders.md)
 * [👫 Human Resources](system/human-resources.md)
 * [🚀 Marketers](system/marketers.md)
-* [🌉 Gateways](system/gateways.md)
+* [🌉 Applications](system/gateways.md)
 
 ***
 
