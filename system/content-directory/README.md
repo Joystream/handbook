@@ -36,11 +36,14 @@ The community maintains a distinct Notion space which holds more dynamic informa
 
 ### Responsibilities
 
-x
+* Publish content and manage channel.
+* Mint NFTs as desired.
+* Issue and manage Creator Tokens as desired.
+* Manage comments section on content.
 
 ### Requirements
 
-x
+* Create original content or have right to publish content of third party.
 
 ## Content Curator
 
