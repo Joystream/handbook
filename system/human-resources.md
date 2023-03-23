@@ -13,11 +13,3 @@ The human resources subsystem is an [#operations-working-groups](working-groups.
 The community maintains a distinct Notion space which holds more dynamic information on the activities of the HR working group.
 
 {% embed url="https://joystream.notion.site/Human-Resources-ab782adffbdd4be497654f9e48309e2a" %}
-
-## HR Representative
-
-A worker in the HR working group.
-
-## HR Lead
-
-The lead in the HT working group.
