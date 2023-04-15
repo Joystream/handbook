@@ -46,10 +46,6 @@ The following GPG keys may be used to communicate sensitive information to relev
 
 You can import a key by running the following command with that individual’s fingerprint: `gpg --keyserver hkps://keys.openpgp.org --recv-keys "<fingerprint>"` Ensure that you put quotes around fingerprints containing spaces.
 
-## Bug Bounty
-
-Coming soon.
-
 ## Security Audits
 
 Two runtime audits have been conducted so far
