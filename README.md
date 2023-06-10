@@ -12,7 +12,7 @@ This is the Joystream Handbook, it is intended as a reference document which des
 
 This handbook is quite technical and contains a substantial level of detail, hence for anyone attempting to gain a more integrated high level overview of the full project and system, then the [lightpaper](http://www.joystream.org/lightpaper.pdf) is more appropriate.
 
-<figure><img src=".gitbook/assets/Into page.png" alt="Joystream Lightpaper"><figcaption><p>Joystream Lightpaper</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-06-10 at 20.35.20.png" alt=""><figcaption><p>Joystream Lightpaper</p></figcaption></figure>
 
 ## Opportunities
 

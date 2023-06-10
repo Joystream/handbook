@@ -40,9 +40,7 @@ Responsible investigation and reporting includes, but isn't limited to, the foll
 
 The following GPG keys may be used to communicate sensitive information to relevant developers, in particular concerning the runtime and blockchain, but also other critical infrastructure and applications. These recipients will relay the message securely to whomever is the maintainer at any given time.
 
-| Joystream Hande | Fingerprint                                |
-| --------------- | ------------------------------------------ |
-| `mokhtar`       | `2DD5D822FC22DB196E262440ADA7C97DDD6781D8` |
+<table><thead><tr><th width="184">Joystream Hande</th><th>Fingerprint</th></tr></thead><tbody><tr><td><code>mokhtar</code></td><td><code>2DD5D822FC22DB196E262440ADA7C97DDD6781D8</code></td></tr></tbody></table>
 
 You can import a key by running the following command with that individual’s fingerprint: `gpg --keyserver hkps://keys.openpgp.org --recv-keys "<fingerprint>"` Ensure that you put quotes around fingerprints containing spaces.
 

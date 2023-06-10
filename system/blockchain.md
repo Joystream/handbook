@@ -47,10 +47,7 @@ The Joystream blockchain takes advantage of a core feature of Substrate, which i
 
 Here is a running list of upgrades that have taken place.
 
-| Network | Deployed                                        | Runtime\*                                                          | spec\_version\*\* |
-| ------- | ----------------------------------------------- | ------------------------------------------------------------------ | ----------------- |
-| Mainnet | Friday at 9:07:42 PM CET December the 9th, 2022 | `1a1d11d2cc214edb180fd861826a9450df1acc650226db604d96f489f0a36f8f` | 1000              |
-| Ephesus | ETA: 7th April                                  | `b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184` | 1001              |
+<table><thead><tr><th width="143.33333333333331">Network</th><th>Deployed</th><th>Runtime*</th><th>spec_version**</th></tr></thead><tbody><tr><td>Mainnet</td><td>Friday at 9:07:42 PM CET December the 9th, 2022</td><td><code>1a1d11d2cc214edb180fd861826a9450df1acc650226db604d96f489f0a36f8f</code></td><td>1000</td></tr><tr><td>Ephesus</td><td>ETA: 7th April </td><td><code>b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184</code></td><td>1001</td></tr></tbody></table>
 
 _\* blake2-256 hash of runtime WASM runtime._\
 _\*\* Version of the runtime specification, must be distinct for each runtime for a chain. Is involved in execution strategy and also transactions commit to this version to avoid unintended semantic changes from time of signing to time of block inclusion._
@@ -73,13 +70,7 @@ The estimation of the weights, which is the time needed to perform various compu
 
 The benchmarking is currently done on VM instances of two major cloud providers: Google Cloud Platform (GCP) and Amazon Web Services (AWS). To be specific, we used `c2d-highcpu-8` VM instance on GCP and `c6id.2xlarge` on AWS. A detailed specification is provided below.
 
-| Resource | Requirements                                                                                                                                                                                                                                                                                                             |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| CPU      | <ul><li>Prefer single-threaded performance over higher cores count.</li><li>Simultaneous multithreading disabled (Hyper-Threading on Intel, SMT on AMD)</li><li>4 physical cores @ 3.4GHz</li><li>Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen)</li><li>x86-64 compatible</li></ul> |
-| Storage  | An NVMe SSD of 1 TB (As it should be reasonably sized to deal with blockchain growth).  In general, the latency is more important than the throughput.                                                                                                                                                                   |
-| Memory   | 16GB DDR4 ECC.                                                                                                                                                                                                                                                                                                           |
-| System   | Linux Kernel 5.16 or newer.                                                                                                                                                                                                                                                                                              |
-| Network  | The minimum symmetric networking speed is set to 500 Mbit/s (= 62.5 MB/s).                                                                                                                                                                                                                                               |
+<table><thead><tr><th width="135">Resource</th><th>Requirements</th></tr></thead><tbody><tr><td>CPU</td><td><ul><li>Prefer single-threaded performance over higher cores count.</li><li>Simultaneous multithreading disabled (Hyper-Threading on Intel, SMT on AMD)</li><li>4 physical cores @ 3.4GHz</li><li>Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen)</li><li>x86-64 compatible</li></ul></td></tr><tr><td>Storage</td><td>An NVMe SSD of 1 TB (As it should be reasonably sized to deal with blockchain growth).  In general, the latency is more important than the throughput.</td></tr><tr><td>Memory</td><td>16GB DDR4 ECC.</td></tr><tr><td>System</td><td>Linux Kernel 5.16 or newer.</td></tr><tr><td>Network</td><td>The minimum symmetric networking speed is set to 500 Mbit/s (= 62.5 MB/s).</td></tr></tbody></table>
 
 ### Fees
 
@@ -95,12 +86,6 @@ Fee calculation in Substrate chains.
 
 Here are the most important blockchain level parameters.
 
-| Concept                        | Reference Codebase Token | Value                                                                                    |
-| ------------------------------ | ------------------------ | ---------------------------------------------------------------------------------------- |
-| Target block time              | `ExpectedBlockTime`      | 6 seconds                                                                                |
-| Max block space                | `MaximumBlockLength`     | 5 MB                                                                                     |
-| Max block weight (normal)      | `RuntimeBlockWeights`    | 75% of 2s of weight                                                                      |
-| Max block weight (operational) | `RuntimeBlockWeights`    | 25% of 2s of weight                                                                      |
-| Weight to fee function         | `WeightToFee`            | [Link](https://github.com/Joystream/joystream/blob/master/runtime/src/constants.rs#L106) |
+<table><thead><tr><th width="286.3333333333333">Concept</th><th>Reference Codebase Token</th><th>Value</th></tr></thead><tbody><tr><td>Target block time</td><td><code>ExpectedBlockTime</code></td><td>6 seconds</td></tr><tr><td>Max block space</td><td><code>MaximumBlockLength</code></td><td>5 MB</td></tr><tr><td>Max block weight (normal)</td><td><code>RuntimeBlockWeights</code></td><td>75% of 2s of weight</td></tr><tr><td>Max block weight (operational)</td><td><code>RuntimeBlockWeights</code></td><td>25% of 2s of weight</td></tr><tr><td>Weight to fee function</td><td><code>WeightToFee</code></td><td><a href="https://github.com/Joystream/joystream/blob/master/runtime/src/constants.rs#L106">Link</a></td></tr></tbody></table>
 
 _Warning: There is always a risk of such a table of values going stale, so only use these as baseline references, and consult reference implementation for the relevant runtime._
