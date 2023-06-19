@@ -7,18 +7,18 @@ Total reward is split among validators and their nominators depending on the num
 
 Module implements pallet_authorship::EventHandler to add reward points to block producer and block producer of referenced uncles.
 
-The validator and its nominator split their reward as following:
+## The validator and its nominator split their reward as following:
 
 The validator can declare an amount, named commission, that does not get shared with the nominators at each reward payout through its ValidatorPrefs. This value gets deducted from the total reward that is paid to the validator and its nominators. The remaining portion is split among the validator and all of the nominators that nominated the validator, proportional to the value staked behind this validator (i.e. dividing the own or others by total in Exposure).
 
-All entities who receive a reward have the option to choose their reward destination through the Payee storage item (see set_payee), to be one of the following:
+## All entities who receive a reward have the option to choose their reward destination through the Payee storage item (see set_payee), to be one of the following:
 
 Controller account, (obviously) not increasing the staked value.
 Stash account, not increasing the staked value.
 Stash account, also increasing the staked value.
 
 
-How to calculate individual Nominator and Validator Rewards:
+## How to calculate individual Nominator and Validator Rewards:
 
 Shared Validator Set Rewards - THIS ONE DONE BY CHAIN IN THE END OF EACH ERA
 In each era, a function of
