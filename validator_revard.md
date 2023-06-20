@@ -1,9 +1,7 @@
 # Validator Payout Overview
 
 ## Reward Calculation
-Validators and nominators are rewarded at the end of each era. The total reward of an era is calculated using the era duration and the staking rate (the total amount of tokens staked by nominators and validators, divided by the total token supply). It aims to incentivize toward a defined staking rate.
-
-Total reward is split among validators and their nominators depending on the number of points they received during the era. Points are added to a validator using reward_by_ids or reward_by_indices.
+Validators and nominators are rewarded at the end of each era. The total reward of an era is calculated using the era duration and the staking rate (the total amount of tokens staked by nominators and validators, divided by the total token supply). It aims to incentivize toward a defined staking rate. Total reward is split among validators and their nominators depending on the number of points they received during the era. Points are added to a validator using reward_by_ids or reward_by_indices.
 
 Module implements pallet_authorship::EventHandler to add reward points to block producer and block producer of referenced uncles.
 
