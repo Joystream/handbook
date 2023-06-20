@@ -66,7 +66,7 @@ Era points create a probabilistic component for staking rewards.
 
 If the mean of staking rewards is the average rewards per era, then the variance is the variability from the average staking rewards. The exact joys value of each era point is not known in advance since it depends on the total number of points earned by all validators in a given era. This is designed this way so that the total payout per era depends on joystream's inflation model, and not on the number of payable actions (f.e., authoring a new block) executed.
 
-Payout Scheme
+## Payout Scheme
 No matter how much total stake is behind a validator, all validators split the block authoring payout essentially equally. The payout of a specific validator, however, may differ based on era points, as described above. Although there is a probabilistic component to receiving era points, and they may be impacted slightly depending on factors such as network connectivity, well-behaving validators should generally average out to having similar era point totals over a large number of eras.
 
 Validators may also receive "tips" from senders as an incentive to include transactions in their produced blocks. Validators will receive 100% of these tips directly.
@@ -88,7 +88,7 @@ p / v = 8 / 4 = 2 tokens
 siemma—Note that this is different than most other Proof-of-Stake systems such as Cosmos. As long as a validator is in the validator set, it will receive the same block reward as every other validator. Validator v1, who had 18 tokens staked, received the same reward (2 tokens) in this era as v4 who had only 7 tokens staked.
 
 
-Running Multiple Validators
+## Running Multiple Validators
 It is possible for a single entity to run multiple validators. Running multiple validators may provide a better risk/reward ratio. Assuming you have enough joys, or enough stake nominates your validator, to ensure that your validators remain in the validator set, running multiple validators will result in a higher return than running a single validator.
 
 For the following example, assume you have 18 joys to stake. For simplicity's sake, we will ignore nominators. Running a single validator, as in the example above, would net you 2 joys in this era.
@@ -118,7 +118,7 @@ With enough stake, you could run more than two validators. However, each validat
 The incentives of the system favor equally-staked validators. This works out to be a dynamic, rather than static, equilibrium. Potential validators will run different numbers of validators and apply different amounts of stake to them as time goes on, and in response to the actions of other validators on the network.
 
 
-Slashing
+## Slashing
 Although rewards are paid equally, slashes are relative to a validator's stake. Therefore, if you do have enough joys to run multiple validators, it is in your best interest to do so. A slash of 30% will, of course, be more joys for a validator with 18 joys staked than one with 9 joys staked.
 
 Running multiple validators does not absolve you of the consequences of misbehavior. Joystream punishes attacks that appear coordinated more severely than individual attacks. You should not, for example, run multiple validators hosted on the same infrastructure. A proper multi-validator configuration would ensure that they do not fail simultaneously.
@@ -131,7 +131,7 @@ CAUTION
 If a validator is oversubscribed in an era, staking rewards are distributed only to the the top 512 nominators and the rest of the nominators do not receive any rewards. This is not the case for slashing! Every active nominator of the validator committing slashable offence will be slashed.
 
 
-Nominators and Validator Payments
+# Nominators and Validator Payments
 Nominated stake allows you to "vote" for validators and share in the rewards (and slashing) without running a validator node yourself. Validators can choose to keep a percentage of the rewards due to their validator to "reimburse" themselves for the cost of running a validator node. Other than that, all rewards are shared based on the stake behind each validator. This includes the stake of the validator itself, plus any stake bonded by nominators.
 
 INFO
