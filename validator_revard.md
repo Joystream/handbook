@@ -13,21 +13,26 @@ Controller account, (obviously) not increasing the staked value.
 Stash account, not increasing the staked value.
 Stash account, also increasing the staked value.
 
-## How to calculate individual Nominator and Validator Rewards:  
+## How to calculate individual Nominator and Validator Rewards:
+
 Shared Validator Set Rewards - **THIS ONE DONE BY CHAIN IN THE END OF EACH ERA** In each era, a function of  
 − totalIssuance.at(lastBlockOfEra)  
-− erasTotalStake(era)  
+− erasTotalStake(era)
+
 erasRewardPoints(era).total  
-= validatorSetRewardInEra  
+= validatorSetRewardInEra
+
 Individual Rewards for each Validator, before split between (vals + noms)  
 In each era, equal to:  
 (validatorSetRewardInEra × erasRewardPoints(era).stashOfVal /  
 erasRewardPoints(era).total)  
 
 slashedInEra(era,stashOfVal)  
-= totalValidatorRewardInEra  
+= totalValidatorRewardInEra
+
 Individual Rewards for each Validators (vals + noms)  
-In each era, equal to:  
+In each era, equal to:
+
 valCommission = totalValidatorRewardInEra(era) × commission% / 100  
 sharedReward = totalValidatorRewardInEra(era) − totalValidatorRewardInEra(era) × commission% / 100  
 = totalValidatorRewardInEra(era) × (1 00 − commission%)  
