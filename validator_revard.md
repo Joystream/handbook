@@ -66,7 +66,7 @@ Validators will receive staking rewards in the form of the native token of that 
 
 For simplicity, the examples below will assume all validators have the same amount of era points, and received no tips.
 
-Validator Set Size (v): 4
+**Validator Set Size (v): 4**
 
 Validator 1 Stake (v1): 18 tokens
 
@@ -89,7 +89,7 @@ It is possible for a single entity to run multiple validators. Running multiple 
 
 For the following example, assume you have 18 joys to stake. For simplicity's sake, we will ignore nominators. Running a single validator, as in the example above, would net you 2 joys in this era.
 
-Validator Set Size (v): 4
+**Validator Set Size (v): 4**
 
 Validator 1 Stake (v1): 18 joys <- Your validator
 
@@ -105,7 +105,7 @@ Your payout = (p / v) * 1 = (8 / 4) * 1 = 2
 
 **Running two validators, and splitting the stake equally, would result in the original validator v4 to be kicked out of the validator set, as only the top v validators (as measured by stake) are selected to be in the validator set. More important, it would also double the reward that you get from each era.**
 
-Validator Set Size (v): 4
+**Validator Set Size (v): 4**
 
 Validator 1 Stake (v1): 9 joys <- Your first validator
 
@@ -145,7 +145,7 @@ In the following examples, we can see the results of several different validator
 
 Each validator in the example has selected a different validator payment (that is, a percentage of the reward set aside directly for the validator before sharing with all bonded stake). The validator's payment percentage (in joys) is listed in brackets ([]) next to each validator. Note that since the validator payment is public knowledge, having a low or non-existent validator payment may attract more stake from nominators, since they know they will receive a larger reward.
 
-Validator Set Size (v): 4
+**Validator Set Size (v): 4** 
 
 Validator 1 Stake (v1) [20% commission]: 18 joys (9 validator, 9 nominator)
 
@@ -157,26 +157,26 @@ Validator 4 Stake (v4) [ 0% commission]:  6 joys (1 validator, 5 nominator)
 
 Payout (p): 8 joys
 
-
 Payout for each validator (v1 - v4):
 
 p / v = 8 / 4 = 2 joys
 
+**v1:**
 
-v1:
 (0.2 * 2) = 0.4 joys -> validator payment
 
 (2 - 0.4) = 1.6 -> shared between all stake
 
 (9 / 18) * 1.6 = 0.8 -> validator stake share
+
 (9 / 18) * 1.6 = 0.8 -> nominator stake share
 
 v1 validator total reward: 0.4 + 0.8 = 1.2 joys
 
 v1 nominator reward: 0.8 joys
 
+**v2:**
 
-v2:
 (0.4 * 2) = 0.8 joys -> validator payment
 
 (2 - 0.8) = 1.2 -> shared between all stake
@@ -189,10 +189,12 @@ v2 validator total reward: 0.8 + 0.4 = 1.2 joys
 
 v2 nominator reward: 0.8 joys
 
-v3:
+**v3:**
+
 (0.1 * 2) = 0.2 DOT -> validator payment
 
 (2 - 0.2) = 1.8 -> shared between all stake
+
 (4 / 8) * 1.8 = 0.9 -> validator stake share
 
 (4 / 8) * 1.8 = 0.9 -> nominator stake share
@@ -201,8 +203,8 @@ v3 validator total reward: 0.2 + 0.9 joys = 1.1 joys
 
 v3 nominator reward: 0.9 joys
 
+**v4:**
 
-v4:
 (0 * 2) = 0 joys -> validator payment
 
 (2 - 0) = 2.0 -> shared between all stake
