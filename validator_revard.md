@@ -157,74 +157,43 @@ In the following examples, we can see the results of several different validator
 
 Each validator in the example has selected a different validator payment (that is, a percentage of the reward set aside directly for the validator before sharing with all bonded stake). The validator's payment percentage (in joys) is listed in brackets ([]) next to each validator. Note that since the validator payment is public knowledge, having a low or non-existent validator payment may attract more stake from nominators, since they know they will receive a larger reward.
 
-**Validator Set Size (v): 4** 
+**Validator Set Size (v): 4**  
+Validator 1 Stake (v1) [20% commission]: 18 joys (9 validator, 9 nominator)  
+Validator 2 Stake (v2) [40% commission]:  9 joys (3 validator, 6 nominator)  
+Validator 3 Stake (v3) [10% commission]:  8 joys (4 validator, 4 nominator)  
+Validator 4 Stake (v4) [ 0% commission]:  6 joys (1 validator, 5 nominator)  
+Payout (p): 8 joys  
+Payout for each validator (v1 - v4):  
+p / v = 8 / 4 = 2 joys  
 
-Validator 1 Stake (v1) [20% commission]: 18 joys (9 validator, 9 nominator)
+**v1:**  
+(0.2 * 2) = 0.4 joys -> validator payment  
+(2 - 0.4) = 1.6 -> shared between all stake  
+(9 / 18) * 1.6 = 0.8 -> validator stake share  
+(9 / 18) * 1.6 = 0.8 -> nominator stake share  
+v1 validator total reward: 0.4 + 0.8 = 1.2 joys  
+v1 nominator reward: 0.8 joys  
 
-Validator 2 Stake (v2) [40% commission]:  9 joys (3 validator, 6 nominator)
+**v2:**  
+(0.4 * 2) = 0.8 joys -> validator payment  
+(2 - 0.8) = 1.2 -> shared between all stake  
+(3 / 9) * 1.2 = 0.4 -> validator stake share  
+(6 / 9) * 1.2 = 0.8 -> nominator stake share  
+v2 validator total reward: 0.8 + 0.4 = 1.2 joys  
+v2 nominator reward: 0.8 joys  
 
-Validator 3 Stake (v3) [10% commission]:  8 joys (4 validator, 4 nominator)
+**v3:**  
+(0.1 * 2) = 0.2 DOT -> validator payment  
+(2 - 0.2) = 1.8 -> shared between all stake  
+(4 / 8) * 1.8 = 0.9 -> validator stake share    
+(4 / 8) * 1.8 = 0.9 -> nominator stake share  
+v3 validator total reward: 0.2 + 0.9 joys = 1.1 joys  
+v3 nominator reward: 0.9 joys  
 
-Validator 4 Stake (v4) [ 0% commission]:  6 joys (1 validator, 5 nominator)
-
-Payout (p): 8 joys
-
-Payout for each validator (v1 - v4):
-
-p / v = 8 / 4 = 2 joys
-
-**v1:**
-
-(0.2 * 2) = 0.4 joys -> validator payment
-
-(2 - 0.4) = 1.6 -> shared between all stake
-
-(9 / 18) * 1.6 = 0.8 -> validator stake share
-
-(9 / 18) * 1.6 = 0.8 -> nominator stake share
-
-v1 validator total reward: 0.4 + 0.8 = 1.2 joys
-
-v1 nominator reward: 0.8 joys
-
-**v2:**
-
-(0.4 * 2) = 0.8 joys -> validator payment
-
-(2 - 0.8) = 1.2 -> shared between all stake
-
-(3 / 9) * 1.2 = 0.4 -> validator stake share
-
-(6 / 9) * 1.2 = 0.8 -> nominator stake share
-
-v2 validator total reward: 0.8 + 0.4 = 1.2 joys
-
-v2 nominator reward: 0.8 joys
-
-**v3:**
-
-(0.1 * 2) = 0.2 DOT -> validator payment
-
-(2 - 0.2) = 1.8 -> shared between all stake
-
-(4 / 8) * 1.8 = 0.9 -> validator stake share
-
-(4 / 8) * 1.8 = 0.9 -> nominator stake share
-
-v3 validator total reward: 0.2 + 0.9 joys = 1.1 joys
-
-v3 nominator reward: 0.9 joys
-
-**v4:**
-
-(0 * 2) = 0 joys -> validator payment
-
-(2 - 0) = 2.0 -> shared between all stake
-
-(1 / 6) * 2 = 0.33 -> validator stake share
-
-(5 / 6) * 2 = 1.67 -> nominator stake share
-
-v4 validator total reward: 0 + 0.33 joys = 0.33 joys
-
+**v4:**  
+(0 * 2) = 0 joys -> validator payment  
+(2 - 0) = 2.0 -> shared between all stake  
+(1 / 6) * 2 = 0.33 -> validator stake share  
+(5 / 6) * 2 = 1.67 -> nominator stake share  
+v4 validator total reward: 0 + 0.33 joys = 0.33 joys  
 v4 nominator reward: 1.67 joys
