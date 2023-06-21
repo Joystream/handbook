@@ -15,25 +15,37 @@ Stash account, also increasing the staked value.
 
 ## How to calculate individual Nominator and Validator Rewards:
 
-Shared Validator Set Rewards - THIS ONE DONE BY CHAIN IN THE END OF EACH ERA
-In each era, a function of
+Shared Validator Set Rewards - **THIS ONE DONE BY CHAIN IN THE END OF EACH ERA** In each era, a function of
+
 − totalIssuance.at(lastBlockOfEra)
+
 − erasTotalStake(era)
 
 erasRewardPoints(era).total
+
 = validatorSetRewardInEra
+
 Individual Rewards for each Validator, before split between (vals + noms)
+
 In each era, equal to:
+
 (validatorSetRewardInEra × erasRewardPoints(era).stashOfVal /
+
 erasRewardPoints(era).total)
 
+
 slashedInEra(era,stashOfVal)
+
 = totalValidatorRewardInEra
+
 Individual Rewards for each Validators (vals + noms)
+
 In each era, equal to:
 
 valCommission = totalValidatorRewardInEra(era) × commission% / 100
+
 sharedReward = totalValidatorRewardInEra(era) − totalValidatorRewardInEra(era) × commission% / 100
+
 = totalValidatorRewardInEra(era) × (1 00 − commission%)
 
 valReward(era) = valCommission + sharedReward × valOwnStake(era) / totalValStake(era)
