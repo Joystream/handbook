@@ -7,14 +7,13 @@ Validators and nominators are rewarded at the end of each era. The total reward 
 
 The validator can declare an amount, named commission, that does not get shared with the nominators at each reward payout through its ValidatorPrefs. This value gets deducted from the total reward that is paid to the validator and its nominators. The remaining portion is split among the validator and all of the nominators that nominated the validator, proportional to the value staked behind this validator (i.e. dividing the own or others by total in Exposure).
 
-All entities who receive a reward have the option to choose their reward destination through the Payee storage item (see set_payee), to be one of the following:
+## All entities who receive a reward have the option to choose their reward destination through the Payee storage item (see set_payee), to be one of the following:
 
 Controller account, (obviously) not increasing the staked value.
 Stash account, not increasing the staked value.
 Stash account, also increasing the staked value.
 
-
-How to calculate individual Nominator and Validator Rewards:
+## How to calculate individual Nominator and Validator Rewards:
 
 Shared Validator Set Rewards - THIS ONE DONE BY CHAIN IN THE END OF EACH ERA
 In each era, a function of
@@ -43,20 +42,16 @@ nomReward_i(era) = sharedReward × nomStake_i(era) / totalValStake(era)
 
 Era Points
 
-
 For every era (a period of time approximately 6 hours), validators are paid proportionally to the amount of era points they have collected. Era points are reward points earned for payable actions like:
 
 producing a non-uncle block in the Relay Chain.
 producing a reference to a previously unreferenced uncle block.
 producing a referenced uncle block.
 
-
-NOTE
+### NOTE
 An uncle block is a Relay Chain block that is valid in every regard, but which failed to become canonical. This can happen when two or more validators are block producers in a single slot, and the block produced by one validator reaches the next block producer before the others. We call the lagging blocks uncle blocks.
 
-
 Payments occur at the end of every era.
-
 
 Era points create a probabilistic component for staking rewards.
 
@@ -81,8 +76,7 @@ Payout (p): 8 joys
 Payout for each validator (v1 - v4):
 p / v = 8 / 4 = 2 tokens
 
-siemma—Note that this is different than most other Proof-of-Stake systems such as Cosmos. As long as a validator is in the validator set, it will receive the same block reward as every other validator. Validator v1, who had 18 tokens staked, received the same reward (2 tokens) in this era as v4 who had only 7 tokens staked.
-
+Note that this is different than most other Proof-of-Stake systems such as Cosmos. As long as a validator is in the validator set, it will receive the same block reward as every other validator. Validator v1, who had 18 tokens staked, received the same reward (2 tokens) in this era as v4 who had only 7 tokens staked.
 
 ## Running Multiple Validators
 It is possible for a single entity to run multiple validators. Running multiple validators may provide a better risk/reward ratio. Assuming you have enough joys, or enough stake nominates your validator, to ensure that your validators remain in the validator set, running multiple validators will result in a higher return than running a single validator.
@@ -113,7 +107,6 @@ With enough stake, you could run more than two validators. However, each validat
 
 The incentives of the system favor equally-staked validators. This works out to be a dynamic, rather than static, equilibrium. Potential validators will run different numbers of validators and apply different amounts of stake to them as time goes on, and in response to the actions of other validators on the network.
 
-
 ## Slashing
 Although rewards are paid equally, slashes are relative to a validator's stake. Therefore, if you do have enough joys to run multiple validators, it is in your best interest to do so. A slash of 30% will, of course, be more joys for a validator with 18 joys staked than one with 9 joys staked.
 
@@ -123,16 +116,14 @@ Nominators have the incentive to nominate the lowest-staked validator, as this w
 
 To clarify this, let us imagine two validators, v1 and v2. Assume both are in the active set, have commission set to 0%, and are well-behaved. The only difference is that v1 has 90 joys nominating it and v2 only has 10. If you nominate v1, it now has 90 + 10 = 100 joys and you will get 10% of the staking rewards for the next era. If you nominate v2, it now has 10 + 10 = 20 joys nominating it, and you will get 50% of the staking rewards for the next era. In actuality, it would be quite rare to see such a large difference between the stake of validators, but the same principle holds even for smaller differences. If there is a 10% slash of either validator, then you will lose 1 joys in each case.
 
-CAUTION
+### CAUTION
 If a validator is oversubscribed in an era, staking rewards are distributed only to the the top 512 nominators and the rest of the nominators do not receive any rewards. This is not the case for slashing! Every active nominator of the validator committing slashable offence will be slashed.
-
 
 # Nominators and Validator Payments
 Nominated stake allows you to "vote" for validators and share in the rewards (and slashing) without running a validator node yourself. Validators can choose to keep a percentage of the rewards due to their validator to "reimburse" themselves for the cost of running a validator node. Other than that, all rewards are shared based on the stake behind each validator. This includes the stake of the validator itself, plus any stake bonded by nominators.
 
-INFO
+### INFO
 Validators set their preference as a percentage of the block reward, not an absolute number of joys. joystream's block reward is based on the total amount at stake, with the reward peaking when the amount staked is at 50% of the total supply. The commission is set as the amount taken by the validator; that is, 0% commission means that the validator does not receive any proportion of the rewards besides that owed to it from self-stake, and 100% commission means that the validator operator gets all rewards and gives none to its nominators.
-
 
 In the following examples, we can see the results of several different validator payment schemes and split between nominator and validator stake. We will assume a single nominator for each validator. However, there can be numerous nominators for each validator. Rewards are still distributed proportionally - for example, if the total rewards to be given to nominators is 2 joys, and there are four nominators with equal stake bonded, each will receive 0.5 joys. Note also that a single nominator may stake different validators.
 
@@ -179,9 +170,3 @@ v4:
 (5 / 6) * 2 = 1.67 -> nominator stake share
 v4 validator total reward: 0 + 0.33 joys = 0.33 joys
 v4 nominator reward: 1.67 joys
-
-
-
-
-mokhtar, lezek, bedeho, martin from JSG
-tomato, 0x2bc, freakstatic, l1.media, siemma from community
