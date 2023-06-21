@@ -90,26 +90,36 @@ It is possible for a single entity to run multiple validators. Running multiple 
 For the following example, assume you have 18 joys to stake. For simplicity's sake, we will ignore nominators. Running a single validator, as in the example above, would net you 2 joys in this era.
 
 Validator Set Size (v): 4
+
 Validator 1 Stake (v1): 18 joys <- Your validator
+
 Validator 2 Stake (v2):  9 joys
+
 Validator 3 Stake (v3):  8 joys
+
 Validator 4 Stake (v4):  7 joys
+
 Payout (p): 8 joys
 
-Your payout = (p / v) * 1 = (8 / 4) * 1 = 2—
+Your payout = (p / v) * 1 = (8 / 4) * 1 = 2
 
-Running two validators, and splitting the stake equally, would result in the original validator v4 to be kicked out of the validator set, as only the top v validators (as measured by stake) are selected to be in the validator set. More important, it would also double the reward that you get from each era.
+**Running two validators, and splitting the stake equally, would result in the original validator v4 to be kicked out of the validator set, as only the top v validators (as measured by stake) are selected to be in the validator set. More important, it would also double the reward that you get from each era.**
 
 Validator Set Size (v): 4
+
 Validator 1 Stake (v1): 9 joys <- Your first validator
+
 Validator 2 Stake (v2): 9 joys <- Your second validator
+
 Validator 3 Stake (v3): 9 joys
+
 Validator 4 Stake (v4): 8 joys
+
 Payout (p): 8 joys
 
 Your payout = (p / v) * 2 = (8 / 4) * 2 = 4
 
-With enough stake, you could run more than two validators. However, each validator must have enough stake behind it to be in the validator set.
+ ### With enough stake, you could run more than two validators. However, each validator must have enough stake behind it to be in the validator set.
 
 The incentives of the system favor equally-staked validators. This works out to be a dynamic, rather than static, equilibrium. Potential validators will run different numbers of validators and apply different amounts of stake to them as time goes on, and in response to the actions of other validators on the network.
 
@@ -136,43 +146,71 @@ In the following examples, we can see the results of several different validator
 Each validator in the example has selected a different validator payment (that is, a percentage of the reward set aside directly for the validator before sharing with all bonded stake). The validator's payment percentage (in joys) is listed in brackets ([]) next to each validator. Note that since the validator payment is public knowledge, having a low or non-existent validator payment may attract more stake from nominators, since they know they will receive a larger reward.
 
 Validator Set Size (v): 4
+
 Validator 1 Stake (v1) [20% commission]: 18 joys (9 validator, 9 nominator)
+
 Validator 2 Stake (v2) [40% commission]:  9 joys (3 validator, 6 nominator)
+
 Validator 3 Stake (v3) [10% commission]:  8 joys (4 validator, 4 nominator)
+
 Validator 4 Stake (v4) [ 0% commission]:  6 joys (1 validator, 5 nominator)
+
 Payout (p): 8 joys
 
+
 Payout for each validator (v1 - v4):
+
 p / v = 8 / 4 = 2 joys
+
 
 v1:
 (0.2 * 2) = 0.4 joys -> validator payment
+
 (2 - 0.4) = 1.6 -> shared between all stake
+
 (9 / 18) * 1.6 = 0.8 -> validator stake share
 (9 / 18) * 1.6 = 0.8 -> nominator stake share
+
 v1 validator total reward: 0.4 + 0.8 = 1.2 joys
+
 v1 nominator reward: 0.8 joys
+
 
 v2:
 (0.4 * 2) = 0.8 joys -> validator payment
+
 (2 - 0.8) = 1.2 -> shared between all stake
+
 (3 / 9) * 1.2 = 0.4 -> validator stake share
+
 (6 / 9) * 1.2 = 0.8 -> nominator stake share
+
 v2 validator total reward: 0.8 + 0.4 = 1.2 joys
+
 v2 nominator reward: 0.8 joys
 
 v3:
 (0.1 * 2) = 0.2 DOT -> validator payment
+
 (2 - 0.2) = 1.8 -> shared between all stake
 (4 / 8) * 1.8 = 0.9 -> validator stake share
+
 (4 / 8) * 1.8 = 0.9 -> nominator stake share
+
 v3 validator total reward: 0.2 + 0.9 joys = 1.1 joys
+
 v3 nominator reward: 0.9 joys
+
 
 v4:
 (0 * 2) = 0 joys -> validator payment
+
 (2 - 0) = 2.0 -> shared between all stake
+
 (1 / 6) * 2 = 0.33 -> validator stake share
+
 (5 / 6) * 2 = 1.67 -> nominator stake share
+
 v4 validator total reward: 0 + 0.33 joys = 0.33 joys
+
 v4 nominator reward: 1.67 joys
