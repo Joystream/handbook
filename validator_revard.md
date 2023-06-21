@@ -13,44 +13,26 @@ Controller account, (obviously) not increasing the staked value.
 Stash account, not increasing the staked value.
 Stash account, also increasing the staked value.
 
-## How to calculate individual Nominator and Validator Rewards:
+## How to calculate individual Nominator and Validator Rewards:  
+Shared Validator Set Rewards - **THIS ONE DONE BY CHAIN IN THE END OF EACH ERA** In each era, a function of  
+− totalIssuance.at(lastBlockOfEra)  
+− erasTotalStake(era)  
+erasRewardPoints(era).total  
+= validatorSetRewardInEra  
+Individual Rewards for each Validator, before split between (vals + noms)  
+In each era, equal to:  
+(validatorSetRewardInEra × erasRewardPoints(era).stashOfVal /  
+erasRewardPoints(era).total)  
 
-Shared Validator Set Rewards - **THIS ONE DONE BY CHAIN IN THE END OF EACH ERA** In each era, a function of
-
-− totalIssuance.at(lastBlockOfEra)
-
-− erasTotalStake(era)
-
-erasRewardPoints(era).total
-
-= validatorSetRewardInEra
-
-Individual Rewards for each Validator, before split between (vals + noms)
-
-In each era, equal to:
-
-(validatorSetRewardInEra × erasRewardPoints(era).stashOfVal /
-
-erasRewardPoints(era).total)
-
-
-slashedInEra(era,stashOfVal)
-
-= totalValidatorRewardInEra
-
-Individual Rewards for each Validators (vals + noms)
-
-In each era, equal to:
-
-valCommission = totalValidatorRewardInEra(era) × commission% / 100
-
-sharedReward = totalValidatorRewardInEra(era) − totalValidatorRewardInEra(era) × commission% / 100
-
-= totalValidatorRewardInEra(era) × (1 00 − commission%)
-
-valReward(era) = valCommission + sharedReward × valOwnStake(era) / totalValStake(era)
-
-nomReward_i(era) = sharedReward × nomStake_i(era) / totalValStake(era)
+slashedInEra(era,stashOfVal)  
+= totalValidatorRewardInEra  
+Individual Rewards for each Validators (vals + noms)  
+In each era, equal to:  
+valCommission = totalValidatorRewardInEra(era) × commission% / 100  
+sharedReward = totalValidatorRewardInEra(era) − totalValidatorRewardInEra(era) × commission% / 100  
+= totalValidatorRewardInEra(era) × (1 00 − commission%)  
+valReward(era) = valCommission + sharedReward × valOwnStake(era) / totalValStake(era)  
+nomReward_i(era) = sharedReward × nomStake_i(era) / totalValStake(era)  
 
 Era Points
 
@@ -78,17 +60,12 @@ Validators will receive staking rewards in the form of the native token of that 
 
 For simplicity, the examples below will assume all validators have the same amount of era points, and received no tips.
 
-**Validator Set Size (v): 4**
-
-Validator 1 Stake (v1): 18 tokens
-
-Validator 2 Stake (v2):  9 tokens
-
-Validator 3 Stake (v3):  8 tokens
-
-Validator 4 Stake (v4):  7 tokens
-
-Payout (p): 8 joys
+**Validator Set Size (v): 4**  
+Validator 1 Stake (v1): 18 tokens  
+Validator 2 Stake (v2):  9 tokens  
+Validator 3 Stake (v3):  8 tokens  
+Validator 4 Stake (v4):  7 tokens  
+Payout (p): 8 joys  
 
 Payout for each validator (v1 - v4):
 
@@ -101,33 +78,23 @@ It is possible for a single entity to run multiple validators. Running multiple 
 
 For the following example, assume you have 18 joys to stake. For simplicity's sake, we will ignore nominators. Running a single validator, as in the example above, would net you 2 joys in this era.
 
-**Validator Set Size (v): 4**
-
-Validator 1 Stake (v1): 18 joys <- Your validator
-
-Validator 2 Stake (v2):  9 joys
-
-Validator 3 Stake (v3):  8 joys
-
-Validator 4 Stake (v4):  7 joys
-
+**Validator Set Size (v): 4**  
+Validator 1 Stake (v1): 18 joys <- Your validator  
+Validator 2 Stake (v2):  9 joys  
+Validator 3 Stake (v3):  8 joys  
+Validator 4 Stake (v4):  7 joys  
 Payout (p): 8 joys
 
 Your payout = (p / v) * 1 = (8 / 4) * 1 = 2
 
 **Running two validators, and splitting the stake equally, would result in the original validator v4 to be kicked out of the validator set, as only the top v validators (as measured by stake) are selected to be in the validator set. More important, it would also double the reward that you get from each era.**
 
-**Validator Set Size (v): 4**
-
-Validator 1 Stake (v1): 9 joys <- Your first validator
-
-Validator 2 Stake (v2): 9 joys <- Your second validator
-
-Validator 3 Stake (v3): 9 joys
-
-Validator 4 Stake (v4): 8 joys
-
-Payout (p): 8 joys
+**Validator Set Size (v): 4**  
+Validator 1 Stake (v1): 9 joys <- Your first validator  
+Validator 2 Stake (v2): 9 joys <- Your second validator  
+Validator 3 Stake (v3): 9 joys  
+Validator 4 Stake (v4): 8 joys  
+Payout (p): 8 joys  
 
 Your payout = (p / v) * 2 = (8 / 4) * 2 = 4
 
