@@ -56,9 +56,9 @@ If the mean of staking rewards is the average rewards per era, then the variance
 ## Payout Scheme
 No matter how much total stake is behind a validator, all validators split the block authoring payout essentially equally. The payout of a specific validator, however, may differ based on era points, as described above. Although there is a probabilistic component to receiving era points, and they may be impacted slightly depending on factors such as network connectivity, well-behaving validators should generally average out to having similar era point totals over a large number of eras.
 
-Validators may also receive "tips" from senders as an incentive to include transactions in their produced blocks. Validators will receive 100% of these tips directly.  
-Validators will receive staking rewards in the form of the native token of that chain (joystream).  
-For simplicity, the examples below will assume all validators have the same amount of era points, and received no tips.
+Validators may also receive "tips" from senders as an incentive to include transactions in their produced blocks. Validators will receive 100% of these tips directly.    
+Validators will receive staking rewards in the form of the native token of that chain (joystream).   
+For simplicity, the examples below will assume all validators have the same amount of era points, and received no tips.  
 
 **Validator Set Size (v): 4**  
 Validator 1 Stake (v1): 18 tokens  
