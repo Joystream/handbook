@@ -9,9 +9,9 @@ The validator can declare an amount, named commission, that does not get shared 
 
 ## All entities who receive a reward have the option to choose their reward destination through the Payee storage item (see set_payee), to be one of the following:
 
-Controller account, (obviously) not increasing the staked value.
-Stash account, not increasing the staked value.
-Stash account, also increasing the staked value.
+Controller account, (obviously) not increasing the staked value.  
+Stash account, not increasing the staked value.  
+Stash account, also increasing the staked value.  
 
 ## How to calculate individual Nominator and Validator Rewards:
 
@@ -45,9 +45,9 @@ nomReward_i(era) = sharedReward × nomStake_i(era) / totalValStake(era)
 ### Era Points
 For every era (a period of time approximately 6 hours), validators are paid proportionally to the amount of era points they have collected. Era points are reward points earned for payable actions like:
 
-producing a non-uncle block in the Relay Chain.
-producing a reference to a previously unreferenced uncle block.
-producing a referenced uncle block.
+producing a non-uncle block in the Relay Chain.  
+producing a reference to a previously unreferenced uncle block.  
+producing a referenced uncle block.  
 
 ### NOTE
 An uncle block is a Relay Chain block that is valid in every regard, but which failed to become canonical. This can happen when two or more validators are block producers in a single slot, and the block produced by one validator reaches the next block producer before the others. We call the lagging blocks uncle blocks. Era points create a probabilistic component for staking rewards.
@@ -66,7 +66,6 @@ Validator 2 Stake (v2):  9 tokens
 Validator 3 Stake (v3):  8 tokens  
 Validator 4 Stake (v4):  7 tokens  
 Payout (p): 8 joys  
-
 Payout for each validator (v1 - v4):  
 p / v = 8 / 4 = 2 tokens
 
@@ -82,7 +81,6 @@ Validator 2 Stake (v2):  9 joys
 Validator 3 Stake (v3):  8 joys  
 Validator 4 Stake (v4):  7 joys  
 Payout (p): 8 joys
-
 Your payout = (p / v) * 1 = (8 / 4) * 1 = 2
 
 **Running two validators, and splitting the stake equally, would result in the original validator v4 to be kicked out of the validator set, as only the top v validators (as measured by stake) are selected to be in the validator set. More important, it would also double the reward that you get from each era.**
@@ -93,7 +91,6 @@ Validator 2 Stake (v2): 9 joys <- Your second validator
 Validator 3 Stake (v3): 9 joys  
 Validator 4 Stake (v4): 8 joys  
 Payout (p): 8 joys  
-
 Your payout = (p / v) * 2 = (8 / 4) * 2 = 4
 
  ### With enough stake, you could run more than two validators. However, each validator must have enough stake behind it to be in the validator set.
