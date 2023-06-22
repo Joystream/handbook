@@ -15,32 +15,34 @@ Stash account, also increasing the staked value.
 
 ## How to calculate individual Nominator and Validator Rewards:
 
-Shared Validator Set Rewards - **THIS ONE DONE BY CHAIN IN THE END OF EACH ERA** In each era, a function of  
+Shared Validator Set Rewards - **THIS ONE DONE BY CHAIN IN THE END OF EACH ERA** In each era, a function of 
+
 − totalIssuance.at(lastBlockOfEra)  
 − erasTotalStake(era)
 
-erasRewardPoints(era).total  
+ **erasRewardPoints(era).total** 
 = validatorSetRewardInEra
 
-Individual Rewards for each Validator, before split between (vals + noms)  
-In each era, equal to:  
-(validatorSetRewardInEra × erasRewardPoints(era).stashOfVal /  
-erasRewardPoints(era).total)  
+Individual Rewards for each Validator, before split between (vals + noms)   
+In each era, equal to:    
+(validatorSetRewardInEra × erasRewardPoints(era).stashOfVal /    
+erasRewardPoints(era).total)    
 
-slashedInEra(era,stashOfVal)  
+ **slashedInEra(era,stashOfVal)**  
 = totalValidatorRewardInEra
 
 Individual Rewards for each Validators (vals + noms)  
-In each era, equal to:
+In each era, equal to:  
 
-valCommission = totalValidatorRewardInEra(era) × commission% / 100  
-sharedReward = totalValidatorRewardInEra(era) − totalValidatorRewardInEra(era) × commission% / 100  
-= totalValidatorRewardInEra(era) × (1 00 − commission%)  
-valReward(era) = valCommission + sharedReward × valOwnStake(era) / totalValStake(era)  
-nomReward_i(era) = sharedReward × nomStake_i(era) / totalValStake(era)  
+valCommission = totalValidatorRewardInEra(era) × commission% / 100    
+sharedReward = totalValidatorRewardInEra(era) − totalValidatorRewardInEra(era) × commission% / 100    
+= totalValidatorRewardInEra(era) × (1 00 − commission%)
 
-Era Points
+valReward(era) = valCommission + sharedReward × valOwnStake(era) / totalValStake(era)
 
+nomReward_i(era) = sharedReward × nomStake_i(era) / totalValStake(era)    
+
+### Era Points
 For every era (a period of time approximately 6 hours), validators are paid proportionally to the amount of era points they have collected. Era points are reward points earned for payable actions like:
 
 producing a non-uncle block in the Relay Chain.
@@ -48,21 +50,14 @@ producing a reference to a previously unreferenced uncle block.
 producing a referenced uncle block.
 
 ### NOTE
-An uncle block is a Relay Chain block that is valid in every regard, but which failed to become canonical. This can happen when two or more validators are block producers in a single slot, and the block produced by one validator reaches the next block producer before the others. We call the lagging blocks uncle blocks.
-
-Payments occur at the end of every era.
-
-Era points create a probabilistic component for staking rewards.
-
+An uncle block is a Relay Chain block that is valid in every regard, but which failed to become canonical. This can happen when two or more validators are block producers in a single slot, and the block produced by one validator reaches the next block producer before the others. We call the lagging blocks uncle blocks. Era points create a probabilistic component for staking rewards.
 If the mean of staking rewards is the average rewards per era, then the variance is the variability from the average staking rewards. The exact joys value of each era point is not known in advance since it depends on the total number of points earned by all validators in a given era. This is designed this way so that the total payout per era depends on joystream's inflation model, and not on the number of payable actions (f.e., authoring a new block) executed.
 
 ## Payout Scheme
 No matter how much total stake is behind a validator, all validators split the block authoring payout essentially equally. The payout of a specific validator, however, may differ based on era points, as described above. Although there is a probabilistic component to receiving era points, and they may be impacted slightly depending on factors such as network connectivity, well-behaving validators should generally average out to having similar era point totals over a large number of eras.
 
-Validators may also receive "tips" from senders as an incentive to include transactions in their produced blocks. Validators will receive 100% of these tips directly.
-
-Validators will receive staking rewards in the form of the native token of that chain (joystream).
-
+Validators may also receive "tips" from senders as an incentive to include transactions in their produced blocks. Validators will receive 100% of these tips directly.  
+Validators will receive staking rewards in the form of the native token of that chain (joystream).  
 For simplicity, the examples below will assume all validators have the same amount of era points, and received no tips.
 
 **Validator Set Size (v): 4**  
@@ -72,15 +67,13 @@ Validator 3 Stake (v3):  8 tokens
 Validator 4 Stake (v4):  7 tokens  
 Payout (p): 8 joys  
 
-Payout for each validator (v1 - v4):
-
+Payout for each validator (v1 - v4):  
 p / v = 8 / 4 = 2 tokens
 
 ### Note that this is different than most other Proof-of-Stake systems such as Cosmos. As long as a validator is in the validator set, it will receive the same block reward as every other validator. Validator v1, who had 18 tokens staked, received the same reward (2 tokens) in this era as v4 who had only 7 tokens staked.
 
 ## Running Multiple Validators
-It is possible for a single entity to run multiple validators. Running multiple validators may provide a better risk/reward ratio. Assuming you have enough joys, or enough stake nominates your validator, to ensure that your validators remain in the validator set, running multiple validators will result in a higher return than running a single validator.
-
+It is possible for a single entity to run multiple validators. Running multiple validators may provide a better risk/reward ratio. Assuming you have enough joys, or enough stake nominates your validator, to ensure that your validators remain in the validator set, running multiple validators will result in a higher return than running a single validator.  
 For the following example, assume you have 18 joys to stake. For simplicity's sake, we will ignore nominators. Running a single validator, as in the example above, would net you 2 joys in this era.
 
 **Validator Set Size (v): 4**  
