@@ -52,3 +52,7 @@ There are two sources of inflation, staking rewards for validators and nominator
 Many of the tokens in the genesis block were subject to limits on transferrability, and the schedule below shows how the share of tokens in the genesis block that can be transferred increases over time. This schedule can easily be derived from the prior section on the genesis block, but it is explicitly included here for convenience.
 
 <figure><img src=".gitbook/assets/Release Schedule.png" alt=""><figcaption></figcaption></figure>
+
+Here is an embed of the source calculation.
+
+{% embed url="https://docs.google.com/spreadsheets/d/1i3ZZydgSuyGVVYmYGWikjzNd5_VtSIhOYgkVQxBhdJ4/edit#gid=1643597195" %}
