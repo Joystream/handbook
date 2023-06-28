@@ -46,3 +46,9 @@ There are two sources of inflation, staking rewards for validators and nominator
 | Strategic Partners         |  3.0013001% |        100%       |     0 months     |
 | Reserved 1                 | 11.7988418% |         0         |     12 months    |
 | Reserved 2                 |  0.000012%  |         8         |     24 months    |
+
+## Release Schedule
+
+Many of the tokens in the genesis block were subject to limits on transferrability, and the schedule below shows how the share of tokens in the genesis block that can be transferred increases over time. This schedule can easily be derived from the prior section on the genesis block, but it is explicitly included here for convenience.
+
+<figure><img src=".gitbook/assets/Release Schedule.png" alt=""><figcaption></figcaption></figure>
