@@ -69,7 +69,7 @@ Payout (p): 8 joys
 Payout for each validator (v1 - v4):  
 p / v = 8 / 4 = 2 tokens
 
-### Note that this is different than most other Proof-of-Stake systems such as Cosmos. As long as a validator is in the validator set, it will receive the same block reward as every other validator. Validator v1, who had 18 tokens staked, received the same reward (2 tokens) in this era as v4 who had only 7 tokens staked.
+Note that this is different than most other Proof-of-Stake systems such as Cosmos. As long as a validator is in the validator set, it will receive the same block reward as every other validator. Validator v1, who had 18 tokens staked, received the same reward (2 tokens) in this era as v4 who had only 7 tokens staked.
 
 ## Running Multiple Validators
 It is possible for a single entity to run multiple validators. Running multiple validators may provide a better risk/reward ratio. Assuming you have enough joys, or enough stake nominates your validator, to ensure that your validators remain in the validator set, running multiple validators will result in a higher return than running a single validator.  
