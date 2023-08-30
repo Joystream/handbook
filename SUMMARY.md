@@ -4,6 +4,7 @@
 * [🚀 $JOY](usdjoy.md)
 * [🧙 Founding Members](founding-member-program.md)
 * [🤚 JIPs](jip-process.md)
+* [💳 Wallets](wallets.md)
 
 ## system
 

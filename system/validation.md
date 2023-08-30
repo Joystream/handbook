@@ -126,7 +126,7 @@ The node lets you set a variety of option flags. You can display them all with `
 * **Optional**
   * May serve some benefits if you want someone to nominate you, but may make it easier to identity you.
 
-***
+
 
 As a validator, you should (as a bare minimum) be very restrictive in terms of RPC access to your node. Go through the options, and double check that the defaults are in line with your preferences and risk tolerance.
 
@@ -226,7 +226,7 @@ The network endpoint can also be set manually by clicking the top left corner, a
 
 This will display the logo, network name, node version and latest block height of the chain you are currently connected to as shown below.
 
-<figure><img src="../../.gitbook/assets/endpoint.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/endpoint.png" alt=""><figcaption></figcaption></figure>
 
 **With Polkadot-js**
 
