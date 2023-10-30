@@ -6,7 +6,7 @@ description: Security related resources and information.
 
 ## Vulnerability Reporting
 
-To report issues in a responsible manner, please send to "<mark style="color:red;">**security" on domain "joystream.org"**</mark>, and encrypt the message, this is however _**not**_ a support channel.
+To report issues in a responsible manner, please send an email to "<mark style="color:red;">**security" at "joystream.org"**</mark>, and encrypt the message, this is however _**not**_ a support channel.
 
 Your report should include the following:
 
