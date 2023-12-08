@@ -74,11 +74,12 @@ The following constants are hard coded into the system, they can only be updated
 
 ### Membership
 
-| Field  | Type   | Label    | Description                                        |
-| ------ | ------ | -------- | -------------------------------------------------- |
-| name   | string | optional | Member's real name                                 |
-| avatar | uint32 | optional | Member's avatar - index into external assets array |
-| about  | string | optional | Member's md-formatted about text                   |
+| Field             | Type                 | Label    | Description                         |
+| ----------------- | -------------------- | -------- | ------------------------------------|
+| name              | string               | optional | Member's real name                  |
+| about             | string               | optional | Member's md-formatted about text    |
+| avatar_uri        | string               | optional | Member's avatar - uri to the avatar |
+| externalResources | `ExternalResource[]` | optional | <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody><tr><td>ResourceType</td><td>enum</td><td>optional</td><td>One of: `EMAIL`, `HYPERLINK`, `DISCORD`, `GTIHUB`, etc...</td></tr><tr><td>value</td><td>string</td><td>optional</td><td>Member's identifier for the given service</td></tr></tbody></table> |
 
 ## Validator Verification
 
