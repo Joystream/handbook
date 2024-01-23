@@ -6,11 +6,11 @@ description: Maintaining agreement over the growing history of the system.
 
 ## Intro
 
-The Nominated Proof of Stake (NPoS) used in the Joystream ecosystem is a sophisticated consensus mechanism that relies on a collaborative effort between validators and nominators to secure the network. Validators, critical actors in this system, are responsible for producing blocks and validating transactions. To become validators, participants must bond, or 'stake', a certain amount of tokens, signifying their commitment and aligning their interests with the network's health. Nominators, on the other hand, support the network by selecting trustworthy validators and staking their tokens on them, contributing to the overall security and efficiency of the blockchain. The concept of an 'era' in Joystream refers to a fixed period during which staking rewards are calculated and distributed based on validators' and nominators' contributions. These rewards are issued as an incentive for participation and to compensate for the inflationary effects of token creation. However, to maintain network integrity, the system incorporates 'slashing', a penalty mechanism that punishes validators for malicious activities or incompetence by destroying a portion of their staked tokens. This intricate interplay of validators, nominators, staking, bonding, eras, rewards, and slashing forms the backbone of the NPoS system in Joystream, ensuring its security and robustness.
+The Nominated Proof of Stake (NPoS) employed in the Joystream ecosystem is an advanced consensus mechanism that relies on the collaborative efforts of validators and nominators to ensure network security. Validators, pivotal in this framework, are tasked with block production and transaction validation. To qualify as validators, participants must _bond_ a specified quantity of tokens, a process which symbolizes their commitment and aligns their interests with the network's stability. Once tokens are bonded, they can then be _staked_ for engaging in block validation and acquiring rewards. Meanwhile, nominators, after initially bonding their tokens, play a crucial role by selecting reliable validators and allocating their bonded tokens to them, thus bolstering the network's overall security and efficiency. In Joystream, an 'era' denotes a set period during which staking rewards are determined and allocated in accordance with the contributions of validators and nominators. These rewards serve dual purposes: they incentivize participation and offset the inflationary impact of new token generation. To safeguard network integrity, Joystream incorporates a 'slashing' mechanism. This punitive measure targets validators engaging in harmful activities or exhibiting incompetence, penalizing them by destroying a portion of their staked tokens.
 
 ## Reward and Inflation
 
-tokens are minted as part of the inflationary mechanism to compensate validators and nominators for their participation and contribution to network security. This minting process is automated and governed by the network's consensus rules. The newly minted tokens are distributed as rewards at the end of each era.
+Tokens are minted as part of the inflationary mechanism to compensate validators and nominators for their participation and contribution to network security. This minting process is automated and governed by the network's consensus rules. The newly minted tokens are distributed as rewards at the end of each era.
 The mathematical expression used in reward computation is referred as _reward curve_ and it's graph is as follows
 
 ![Reward Curve](./reward_curve.png)
@@ -18,6 +18,78 @@ The mathematical expression used in reward computation is referred as _reward cu
 The minimum and maximum inflation for stakers reward values of `0.705%` and `3%` are highlighted in the y axis and the ideal staking percentage of `50%` is highlighted in the x axis. The reward curve is such that stakers are incentivised if the the current staking percentage is below the ideal rate and disincentivized if it's above the ideal rate.
 
 The current percentage of supply staked can be inspected in Joystream the [subscan dashboard](https://joystream.subscan.io/)
+
+## Staking reward computation
+
+Below is an illustrative example on how validator can determined their profit margin given their initial operational cost of setting up a server.
+Let's start with the following assumptions:
+
+### Network Parameters:
+
+1. **Total Supply of Tokens:** 1,000,000,000 tokens.
+2. **Annual Inflation Rate for NPoS Rewards:** 1.3%.
+3. **Percentage of Tokens Staked:** 12%.
+4. **Era Length:** 6 hours.
+
+### Validators and Nominators Configuration:
+
+1. Validator 1 (v1): 40,000,000 JOY, 20% commission (9 validators, 9 nominators).
+2. Validator 2 (v2): 40,000,000 JOY, 40% commission (3 validators, 6 nominators).
+3. Validator 3 (v3): 30,000,000 JOY, 10% commission (4 validators, 4 nominators).
+4. Validator 4 (v4): 10,000,000 JOY, 0% commission (1 validator, 5 nominators).
+
+### Total Staked and Era Reward Pool:
+
+1. **Total Staked Tokens:** 12% of 1,000,000,000 = 120,000,000 JOY.
+2. **Annual Reward Pool:** 1,000,000,000 \* 1.3% = 13,000,000 JOY.
+3. **Reward Pool per Era:** 13,000,000 JOY / (24 \* 365 / 6) = 8910.96 JOY (approx).
+
+### Era Points and Reward Distribution:
+
+Era points are a measure of a validator's contribution to the network during an era. These points are awarded for various actions like validating blocks, producing blocks, and other network-supportive actions. The specific allocation of era points can vary based on the network's rules and validators' performance.
+
+Validator era point are used to computed the share of each validator for the total reward pool, using the formula `validatorPoints / totalPoints`: where `totalPoints` is the total number of points earned by all validators in the era, and `validatorPoints` is the number of points awarded to each unique
+validator during the same era. Suppose for simplicity that the share is proportional to the validator stake percentage over the total staked amount in the network:
+
+1. Validator 1's share `v1s`: 40,000,000 / 120,000,000.
+2. Validator 2's share `v2s`: 40,000,000 / 120,000,000.
+3. Validator 3's share `v3s`: 30,000,000 / 120,000,000.
+4. Validator 4's share `v4s`: 10,000,000 / 120,000,000.
+
+However, in practice, era points are not strictly proportional to stake but depend on actual performance and contributions, which can vary.
+
+### Calculating Rewards:
+
+1. **Validator 1's Total Reward:**
+
+   - Era Points Share: `v1s` \* 8910.96 JOY = 2970.32 JOY.
+   - Commission: 20% of 2970.32 JOY = 594.06 JOY.
+   - Nominators' Share: 2970.32 JOY - 594.06 JOY = 2376.26 JOY.
+
+2. **Validator 2's Total Reward:**
+
+   - Era Points Share: `v2s` \* 8910.96 JOY = 2970.32 JOY.
+   - Commission: 40% of 2970.32 JOY = 1188.13 JOY.
+   - Nominators' Share: 2970.32 JOY - 1188.13 JOY = 1782.19 JOY.
+
+3. **Validator 3's Total Reward:**
+
+   - Era Points Share: `v3s` \* 8910.96 JOY = 2227.74 JOY.
+   - Commission: 10% of 2227.74 JOY = 222.77 JOY.
+   - Nominators' Share: 2227.74 JOY - 222.77 JOY = 2004.97 JOY.
+
+4. **Validator 4's Total Reward:**
+   - Era Points Share: `v4s` \* 8910.96 JOY = 742.58 JOY.
+   - Commission: 0% of 742.58 JOY = 0 JOY.
+   - Nominators' Share: 742.58 JOY.
+
+### Nominator Rewards:
+
+Each nominator's reward depends on their stake with a specific validator. For instance, a nominator who staked 10% of the total stake with Validator 1 would receive 10% of 2376.26 JOY = 237.63 JOY, and so on for other validators and nominators.
+
+### Conclusion
+
+From the numbers above validators can compute the respective USD revenue per era, which can then be used for budgeting
 
 ## Glossary
 
@@ -142,9 +214,13 @@ The instructions below cover Linux binaries only. If you want to build from sour
   - `#` means it's just a comment/explanation for the readers convenience
 
 ```
+
 # This is just a comment, don't type or paste it in your terminal!
+
 $ cd ~/
+
 # Only type/paste the "cd ~/, not the preceding $ !
+
 ```
 
 For the purposes of simplicity, we will assume:
@@ -157,27 +233,37 @@ For the purposes of simplicity, we will assume:
 Find the latest release [here](https://github.com/Joystream/joystream/releases/latest) or get the tag from the command line with:
 
 ```
+
 $ curl -sL https://api.github.com/repos/Joystream/joystream/releases/latest | jq -r ".tag_name"
+
 ```
 
 At the time of writing, the latest release is `v12.1001.0`, whereas the last node binary is from version `v12.1000.0` (mainnet)
 
 ```
+
 # Create the directory, and go there
+
 $ mkdir ~/bin && cd ~/bin
 
 # Assuming the latest version is still v12.1000.0
+
 # Download the binary:
+
 $ wget https://github.com/Joystream/joystream/releases/download/v12.1000.0/joystream-node-8.0.0-1a0d1f677df-x86_64-linux-gnu.tar.gz
 
 # unzip it:
+
 $ tar -vxf joystream-node-8.0.0-1a0d1f677df-x86_64-linux-gnu.tar.gz
 
 # Download the chain spec:
+
 $ wget https://github.com/Joystream/joystream/releases/download/v12.1000.0/joy-mainnet.json
 
 # test that your node works:
+
 $ ./joystream-node --chain-spec joy-mainnet.json --pruning archive
+
 ```
 
 Assuming it starts syncing, you can stop it right away with `ctrl+c`
@@ -226,6 +312,7 @@ It requires sudo privileges. If you are not user `root`, add `sudo` before comma
 Example file below, with essentials only:
 
 ```
+
 [Unit]
 Description=Joystream Node
 After=network.target
@@ -235,34 +322,44 @@ Type=simple
 User=joystream
 WorkingDirectory=/home/joystream/bin/
 ExecStart=/home/joystream/bin/joystream-node \
-        --chain /home/joystream/bin/joy-mainnet.json \
-        --pruning archive \
-        --validator
+ --chain /home/joystream/bin/joy-mainnet.json \
+ --pruning archive \
+ --validator
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=10000
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 ```
+
 # Create/open a file with your favorite editor (I use nano below)
+
 $ sudo nano /etc/systemd/system/joystream-node.service
 
 # Paste in the example file above, and do "ctrl+x", then "y" and "return" to save
 
 # start it up:
+
 $ sudo systemctl start joystream-node
 
 # check that it's working:
+
 $ sudo systemctl status joystream-node
+
 # For a brief status, OR
+
 $ sudo journalctl -f -n 100 -u joystream-node
+
 # To monitor the log
 
 # If you are happy, enable it so it will start automatically on boot:
+
 $ sudo systemctl enable joystream-node
+
 ```
 
 ### Setup Keys and Validate
@@ -274,10 +371,13 @@ With your validator node up and running, you are now ready to set up keys and an
 In the terminal on your node (will only work if you are on running the chain on the same machine!):
 
 ```
+
 $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
 
 # Which should return:
+
 {"jsonrpc":"2.0","result":"0xabc...123","id":1}
+
 ```
 
 Where `0xabc...123` (a much longer string in reality) is a concatenation of four public keys hex-encoded. The private keys should have been injected in your `base-path`. Make sure you copy this string over somewhere, as you need it later.
@@ -285,7 +385,9 @@ Where `0xabc...123` (a much longer string in reality) is a concatenation of four
 Assuming you only did this once (while running this _this_ chain), and you didn't set a different `--base-path` flag:
 
 ```
+
 # On the current network, replace <chain-name> with joy_testnet_7
+
 $ ls -a ~/.local/share/joystream-node/chains/<chain-name>/keystore
 
 # Which should return 4 files, each a long string starting with a 6.
@@ -295,7 +397,9 @@ $ ls -a ~/.local/share/joystream-node/chains/<chain-name>/keystore
 $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_hasSessionKeys", "params":["0xabc...123"]}' http://localhost:9933
 
 # Which, if you have the corresponding ready to sign, should return:
+
 {"jsonrpc":"2.0","result":true,"id":1}
+
 ```
 
 **Warning:**
@@ -360,3 +464,7 @@ There are of course a limitless amount of other reasons the transaction could be
 `TODO`
 
 ##
+
+```
+
+```
