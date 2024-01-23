@@ -1,10 +1,18 @@
 ---
-description: >-
-  This is your guide to get started participating in Joystream network
-  activities.
+description: A reference document for the Joystream Network.
 ---
 
 # 🎯 Start Here
+
+## Introduction
+
+This is the Joystream Handbook, it is intended as a reference document which describes the way the system functions from a technical, economic and social perspective, and also links to various community resources. For detailed information or tutorials on how specific software and applications work, please consult the relevant [source repository](http://github.com/joystream/) for the project:&#x20;
+
+## Lightpaper
+
+This handbook is quite technical and contains a substantial level of detail, hence for anyone attempting to gain a more integrated high level overview of the full project and system, then the [lightpaper](http://www.joystream.org/lightpaper.pdf) is more appropriate.
+
+<figure><img src=".gitbook/assets/Screenshot 2023-06-10 at 20.35.20.png" alt=""><figcaption><p>Joystream Lightpaper</p></figcaption></figure>
 
 ## Opportunities
 
@@ -27,7 +35,6 @@ There are a variety of ways to earn $JOY, summarized in the table below:
 | Distributor Lead      | [#distributor-lead](system/storage/#distributor-lead "mention")                   |
 | Validator             | [#validator](system/validation.md#validator "mention")                            |
 | Bounty                | [bounties](system/bounties/ "mention")                                            |
-| Project Token         | [#project-token](system/projectToken/ "mention")                                  |
 
 ## Community Notion
 

@@ -1,8 +1,30 @@
+---
+description: A public index of all creators, content and metadata.
+---
+
 # 🎬 Content Directory
 
 ## Introduction
 
-`wip`
+The content directory is public index of all the channels and content, and associated social interactions like comments and reactions, and associated digital assets like video NFTs and Creator Tokens. Review the relevant subarticle to understand more about the given topic. This article will need to be expanded further, as not all features in the conent directory are currently covered.
+
+
+
+{% content-ref url="nft.md" %}
+[nft.md](nft.md)
+{% endcontent-ref %}
+
+{% content-ref url="../projectToken.md" %}
+[projectToken.md](../projectToken.md)
+{% endcontent-ref %}
+
+{% content-ref url="payout.md" %}
+[payout.md](payout.md)
+{% endcontent-ref %}
+
+{% content-ref url="curation-model.md" %}
+[curation-model.md](curation-model.md)
+{% endcontent-ref %}
 
 ## Notion Space&#x20;
 
@@ -11,6 +33,17 @@ The community maintains a distinct Notion space which holds more dynamic informa
 {% embed url="https://joystream.notion.site/Content-Directory-6e4b6d211b174526889464d263475cab" %}
 
 ## Content Creator
+
+### Responsibilities
+
+* Publish content and manage channel.
+* Mint NFTs as desired.
+* Issue and manage Creator Tokens as desired.
+* Manage comments section on content.
+
+### Requirements
+
+* Create original content or have right to publish content of third party.
 
 ## Content Curator
 
@@ -41,3 +74,5 @@ The Council has the power to appoint a Content Curator Lead for the network who 
 
 * Fairly adjudicate disputes, and communicate in clear and transparent way with stakeholders and participants
 * Hold sufficient amount of the native platform token to put at stake
+
+##

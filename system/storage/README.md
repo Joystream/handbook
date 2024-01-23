@@ -185,27 +185,3 @@ The key architectural properties of the system is as follows
 This can all be succinctly summarize in the following figure.
 
 ![System Architecture](../../.gitbook/assets/storage\_v2.png)
-
-## Scenarios
-
-### User Data Upload
-
-WIP.
-
-### New Storage Provider
-
-WIP.
-
-### New Bandwidth Provider
-
-WIP.
-
-### User Data Download
-
-WIP.
-
-### User Data Deletion
-
-WIP.
-
-\`\`

@@ -5,7 +5,7 @@ description: >-
   misses.
 ---
 
-# Bandwidth Node
+# 🌏 Bandwidth Node
 
 ## Preamble
 

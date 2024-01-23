@@ -74,11 +74,35 @@ The following constants are hard coded into the system, they can only be updated
 
 ### Membership
 
-| Field  | Type   | Label    | Description                                        |
-| ------ | ------ | -------- | -------------------------------------------------- |
-| name   | string | optional | Member's real name                                 |
-| avatar | uint32 | optional | Member's avatar - index into external assets array |
-| about  | string | optional | Member's md-formatted about text                   |
+| Field             | Type                 | Label    | Description                         |
+| ----------------- | -------------------- | -------- | ------------------------------------|
+| name              | string               | optional | Member's real name                  |
+| about             | string               | optional | Member's md-formatted about text    |
+| avatar_uri        | string               | optional | Member's avatar - uri to the avatar |
+| externalResources | `ExternalResource[]` | optional | <table><thead><tr><th>Field</th><th>Type</th><th>Label</th><th>Description</th></tr></thead><tbody><tr><td>ResourceType</td><td>enum</td><td>optional</td><td>One of: `EMAIL`, `HYPERLINK`, `DISCORD`, `GTIHUB`, etc...</td></tr><tr><td>value</td><td>string</td><td>optional</td><td>Member's identifier for the given service</td></tr></tbody></table> |
+
+## Validator Verification
+
+In order to help in the nominating process, each validator account can be bond to a Membership which will constitute profile for this validator account. These profiles are presented in Pioneer as information contained in the bound memberships, plus a "verified" status, and a few generated statistics. To in order to complete a their profile each Validator needs to: 
+
+1. Bind their Validator account to a membership through Pioneer. On chain this will be achieved by calling:
+   - First: `members.addStakingAccountCandidate(memberId)`. This transaction will be signed with either: the validator controller account (what Pioneer will be recommending), or the validator stash account (which will be viable once Joystream adds supports for [Proxy Accounts](https://wiki.polkadot.network/docs/learn-proxies)).
+   - Second: `members.confirmStakingAccount(memberId, account)` Here the `account` is the one used to sign the previews transaction. This transaction is signed with the membership controller account.
+
+   This step will done in Pioneer in two way:
+   - **Existing membership case:** If the binding is done to an existing membership, the "Edit membership" modal is used. In this case Pioneer will ask the validator to sign `members.addStakingAccountCandidate` first, then a batch transaction calling `members.updateProfile` and `members.confirmStakingAccount`. The option of binding several validator accounts to the same membership is offered by the design. In this case for each account to bind one `addStakingAccountCandidate` will have to be signed, after what all `confirmStakingAccount` can be batched together with the `updateProfile` call.
+   - **New membership case:** If the binding is done to a new membership, the "Add membership" modal should be used. Here the membership will have to be created first by signing a `members.createMember` transaction, only then `members.addStakingAccountCandidate` can be signed, and finally `members.confirmStakingAccount` is signed last. In this case the membership is still created first then `addStakingAccountCandidate` is called for each account and finally all `confirmStakingAccount` are batched together.
+
+2. Once the Profile is bound it should be manually verified by the Membership Working Group. The profile should be set to "verified" only if: the membership social links, about section, and any other information mentioned in the membership data is genuine and actually describes the person or company operating the validator account. It is achieved by either a worker signing a `membershipWorkingGroup.workerRemark` transaction or the lead signing `membershipWorkingGroup.leadRemark`. These transactions will be called via a CLI command to be created.
+   Both of these extrinsics are simply sending a message of type `RemarkMetadataAction`. This message only takes one `action` field which in the case of this verification is a `VerifyValidator` message has follow:
+
+   | Field       | Type   | Label    | Description                                          |
+   | ----------- | ------ | -------- | ---------------------------------------------------- |
+   | member_id   | uint64 | required | Id of the membership                                 |
+   | is_verified | bool   | required | Whether the profile should be verified or unverified |
+
+> [!WARNING]
+> Whenever `updateProfile` is called for a membership bond to a validator the "verified" status is reset to `false` and step 2 has to be repeated.
 
 ## Extrinsics
 
