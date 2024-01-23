@@ -4,6 +4,21 @@ description: Maintaining agreement over the growing history of the system.
 
 # 🏭 Validation
 
+## Intro
+
+The Nominated Proof of Stake (NPoS) used in the Joystream ecosystem is a sophisticated consensus mechanism that relies on a collaborative effort between validators and nominators to secure the network. Validators, critical actors in this system, are responsible for producing blocks and validating transactions. To become validators, participants must bond, or 'stake', a certain amount of tokens, signifying their commitment and aligning their interests with the network's health. Nominators, on the other hand, support the network by selecting trustworthy validators and staking their tokens on them, contributing to the overall security and efficiency of the blockchain. The concept of an 'era' in Joystream refers to a fixed period during which staking rewards are calculated and distributed based on validators' and nominators' contributions. These rewards are issued as an incentive for participation and to compensate for the inflationary effects of token creation. However, to maintain network integrity, the system incorporates 'slashing', a penalty mechanism that punishes validators for malicious activities or incompetence by destroying a portion of their staked tokens. This intricate interplay of validators, nominators, staking, bonding, eras, rewards, and slashing forms the backbone of the NPoS system in Joystream, ensuring its security and robustness.
+
+## Reward and Inflation
+
+tokens are minted as part of the inflationary mechanism to compensate validators and nominators for their participation and contribution to network security. This minting process is automated and governed by the network's consensus rules. The newly minted tokens are distributed as rewards at the end of each era.
+The mathematical expression used in reward computation is referred as _reward curve_ and it's graph is as follows
+
+![Reward Curve](./reward_curve.png)
+
+The minimum and maximum inflation for stakers reward values of `0.705%` and `3%` are highlighted in the y axis and the ideal staking percentage of `50%` is highlighted in the x axis. The reward curve is such that stakers are incentivised if the the current staking percentage is below the ideal rate and disincentivized if it's above the ideal rate.
+
+The current percentage of supply staked can be inspected in Joystream the [subscan dashboard](https://joystream.subscan.io/)
+
 ## Glossary
 
 **`bonding duration`**
@@ -48,7 +63,7 @@ Note that the `total active stake` does not impact the `era points` or rewards d
 
 **`session`**
 
-A session is a Substrate implementation term for a period that has a constant set of validators. Validators can only join or exit the validator set at a session change.
+A session is a Joystream implementation term for a period that has a constant set of validators. Validators can only join or exit the validator set at a session change.
 
 Target is \~600 blocks, or 1h.
 
@@ -82,15 +97,15 @@ The Joystream platform state lives on a blockchain consensus system. This consen
 
 ### Responsibilities
 
-* Run and maintain screening nodes that are always available and performant
-* Help enforce the consensus rules of the network
+- Run and maintain screening nodes that are always available and performant
+- Help enforce the consensus rules of the network
 
 ### Requirements
 
-* Experienced with how to setup and maintain high performance IT infrastructure
-* Access to highly performant and reliable IT infrastructure, with high storage, (up & down) bandwidth and processing capacity
-* Able to securely store keys
-* Hold sufficient amount of the native platform token to put at stake
+- Experienced with how to setup and maintain high performance IT infrastructure
+- Access to highly performant and reliable IT infrastructure, with high storage, (up & down) bandwidth and processing capacity
+- Able to securely store keys
+- Hold sufficient amount of the native platform token to put at stake
 
 ## Guides
 
@@ -98,11 +113,11 @@ The instructions below cover Linux binaries only. If you want to build from sour
 
 ### Install and Deploy
 
-* Every time something is written in `<brackets>`, this means you have to replace this with your input, without the `<>`.
-* When something is written in `"double_quotes"`, it means the number/data will vary depending on your node or the current state of the blockchain.
-* For terminal commands:
-  * `$` means you must type what comes afterwards
-  * `#` means it's just a comment/explanation for the readers convenience
+- Every time something is written in `<brackets>`, this means you have to replace this with your input, without the `<>`.
+- When something is written in `"double_quotes"`, it means the number/data will vary depending on your node or the current state of the blockchain.
+- For terminal commands:
+  - `$` means you must type what comes afterwards
+  - `#` means it's just a comment/explanation for the readers convenience
 
 ```
 # This is just a comment, don't type or paste it in your terminal!
@@ -151,36 +166,36 @@ Assuming it starts syncing, you can stop it right away with `ctrl+c`
 
 The node lets you set a variety of option flags. You can display them all with `./joystream-node --help` Some basic `options` you should enable or consider:
 
-> \--chain \<CHAIN\_SPEC>
+> \--chain \<CHAIN_SPEC>
 >
 > Specify the chain specification. It can be one of the predefined ones (dev, local, or staging) or it can be a path to a file with the chainspec (such as one exported by the `build-spec` subcommand).
 
-* **Required**
-  * Without this flag, you will not connect the chain.
+- **Required**
+  - Without this flag, you will not connect the chain.
 
-> \--pruning \<PRUNING\_MODE>
+> \--pruning \<PRUNING_MODE>
 >
 > Specify the state pruning mode, a number of blocks to keep or 'archive'. Default is to keep all block states if the node is running as a validator (i.e. 'archive'), otherwise state is only kept for the last 256 blocks.
 
-* **Required for validators**
-  * If you want to be a validator, the node must run with `--pruning archive`
-  * If you start syncing without that flag enabled, you will have to wipe your node and sync again if you change your mind.
+- **Required for validators**
+  - If you want to be a validator, the node must run with `--pruning archive`
+  - If you start syncing without that flag enabled, you will have to wipe your node and sync again if you change your mind.
 
 > \--validator
 >
 > Enable validator mode. The node will be started with the authority role and actively participate in any consensus task that it can (e.g. depending on availability of local keys).
 
-* **Required for validators**
-  * Unlike with `--pruning`, it only has to be set when you are actually in the validator set to have an effect, so you don't have to re-sync if you forget while syncing.
+- **Required for validators**
+  - Unlike with `--pruning`, it only has to be set when you are actually in the validator set to have an effect, so you don't have to re-sync if you forget while syncing.
 
 > \--name
 >
 > The human-readable name for this node. The node name will be reported to the telemetry server, if enabled.
 
-* **Optional**
-  * May serve some benefits if you want someone to nominate you, but may make it easier to identity you.
+- **Optional**
+  - May serve some benefits if you want someone to nominate you, but may make it easier to identity you.
 
-***
+---
 
 As a validator, you should (as a bare minimum) be very restrictive in terms of RPC access to your node. Go through the options, and double check that the defaults are in line with your preferences and risk tolerance.
 
@@ -267,12 +282,12 @@ $ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method
 
 **Warning:**
 
-* It's both bad practice, and a possible slashing risk, to keep multiple set of session keys on one node. If you wanted to try the command, made a mistake, or for whatever reason want to switch them, delete them. If you have had set them on chain (see next steps), you can change them before you get into the validator set.
-* Keeping the same set of keys, on multiple nodes, all running with the `--validator` enabled, will cause a slash. A good backup system could include backup nodes, but be careful. It's better to get "booted" for an era than to double sign blocks. It will be treated as an attack even if just by accident.
+- It's both bad practice, and a possible slashing risk, to keep multiple set of session keys on one node. If you wanted to try the command, made a mistake, or for whatever reason want to switch them, delete them. If you have had set them on chain (see next steps), you can change them before you get into the validator set.
+- Keeping the same set of keys, on multiple nodes, all running with the `--validator` enabled, will cause a slash. A good backup system could include backup nodes, but be careful. It's better to get "booted" for an era than to double sign blocks. It will be treated as an attack even if just by accident.
 
 #### Configure Validator on Chain
 
-For the time being, we will only show how to do this with [Polkadot{.js} apps](https://polkadot.js.org/apps/#/explorer). As this serves lots of projects in the substrate ecosystem, you have to set an endpoint. This can be done by [this](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org%3A9944#/explorer) link, which connects to the current "default" Joystream endpoint, or by clicking the with a logo, project/network name and block height in the top left corner.
+For the time being, we will only show how to do this with [Polkadot{.js} apps](https://polkadot.js.org/apps/#/explorer). As this serves lots of projects in the Joystream ecosystem, you have to set an endpoint. This can be done by [this](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.joystream.org%3A9944#/explorer) link, which connects to the current "default" Joystream endpoint, or by clicking the with a logo, project/network name and block height in the top left corner.
 
 <figure><img src="../.gitbook/assets/endpoint.png" alt=""><figcaption></figcaption></figure>
 
@@ -302,13 +317,13 @@ At all times, there is a limit to how many can become validators. What that numb
 
 Suppose that number is `n`, and that there are `m` validators that, towards the end of each `era` were already validating or joined the queue:
 
-* If `n >= m`, all will be elected
-* If `n<m`, the `n` validators with the highest **total active stake** will be elected for the upcoming `era`
+- If `n >= m`, all will be elected
+- If `n<m`, the `n` validators with the highest **total active stake** will be elected for the upcoming `era`
 
 _Notes:_
 
-* An `era` lasts \~6h.
-* **total active stake** refers to the active stake for the validator itself, plus all of their nominators.
+- An `era` lasts \~6h.
+- **total active stake** refers to the active stake for the validator itself, plus all of their nominators.
 
 **Transaction Rejected**
 
