@@ -170,18 +170,7 @@ The act of bonding JOY tokens by putting them up as "collateral" for a chance to
 
 The sum of stake put up by the validator itself, plus the amount each of the (potential) `nominators` backs the validator with. Used to the determine whether the validator gets a `slot` in the validator set or not in the `election` for the upcoming era.
 
-## Introduction
-
-The Joystream platform state lives on a blockchain consensus system. This consensus system is a variant of classical BFT consensus combined with Proof-of-Stake to determine who gets to be a consensus participant, i.e. validator. A validator is an actor which checks the validity of newly constructed blocks, proposes new blocks and participates in the consensus process for committing new blocks to the chain. This role has a purpose very similar to the miners in the Bitcoin blockchain. Importantly, anyone can fully check the validity of the blockchain, not just validators, and this is called validation.
-
-## Validator
-
-### Responsibilities
-
-- Run and maintain screening nodes that are always available and performant
-- Help enforce the consensus rules of the network
-
-### Requirements
+### Validator General Requirements
 
 - Experienced with how to setup and maintain high performance IT infrastructure
 - Access to highly performant and reliable IT infrastructure, with high storage, (up & down) bandwidth and processing capacity
@@ -189,7 +178,7 @@ The Joystream platform state lives on a blockchain consensus system. This consen
 - Hold sufficient amount of the native platform token to put at stake
   - currently **at least** JOY 41.667k in a single account, which is the minimum to sign up – actually getting a validator slot likely requires more
 
-#### Hardware Requirements
+### Validator Hardware Requirements
 
 The Joystream blockchain, and therefore the `joystream-node` is built on the [substrate](https://substrate.io/) framework, developed for the [Polkadot](https://polkadot.network/) ecosystem. As Joystream is still in infancy on mainnet, we refer to the their expertise for the technical specification and [recommendations](https://wiki.polkadot.network/docs/maintain-guides-how-to-validate-polkadot#reference-hardware):
 
