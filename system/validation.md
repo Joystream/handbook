@@ -33,10 +33,10 @@ Let's start with the following assumptions:
 
 ### Validators and Nominators Configuration:
 
-1. Validator 1 (v1): 40,000,000 JOY, 20% commission (9 validators, 9 nominators).
-2. Validator 2 (v2): 40,000,000 JOY, 40% commission (3 validators, 6 nominators).
-3. Validator 3 (v3): 30,000,000 JOY, 10% commission (4 validators, 4 nominators).
-4. Validator 4 (v4): 10,000,000 JOY, 0% commission (1 validator, 5 nominators).
+1. Validator 1 (v1): 40M JOY, 20% commission (20M validators, 20M nominators).
+2. Validator 2 (v2): 40M JOY, 40% commission (20M validators, 20M nominators).
+3. Validator 3 (v3): 30,000,000 JOY, 10% commission (15M validators, 15M nominators).
+4. Validator 4 (v4): 10M JOY, 0% commission (2M validator, 8M nominators).
 
 ### Total Staked and Era Reward Pool:
 
@@ -47,9 +47,10 @@ Let's start with the following assumptions:
 ### Era Points and Reward Distribution:
 
 Era points are a measure of a validator's contribution to the network during an era. These points are awarded for various actions like validating blocks, producing blocks, and other network-supportive actions. The specific allocation of era points can vary based on the network's rules and validators' performance.
+They are not predictable and they add a probabilistic component to the validator payout scheme.
 
 Validator era point are used to computed the share of each validator for the total reward pool, using the formula `validatorPoints / totalPoints`: where `totalPoints` is the total number of points earned by all validators in the era, and `validatorPoints` is the number of points awarded to each unique
-validator during the same era. Suppose for simplicity that the share is proportional to the validator stake percentage over the total staked amount in the network:
+validator during the same era. Suppose for the sake of simplicity that the share is proportional to the validator stake percentage over the total staked amount in the network:
 
 1. Validator 1's share `v1s`: 40,000,000 / 120,000,000.
 2. Validator 2's share `v2s`: 40,000,000 / 120,000,000.
@@ -63,29 +64,37 @@ However, in practice, era points are not strictly proportional to stake but depe
 1. **Validator 1's Total Reward:**
 
    - Era Points Share: `v1s` \* 8910.96 JOY = 2970.32 JOY.
-   - Commission: 20% of 2970.32 JOY = 594.06 JOY.
-   - Nominators' Share: 2970.32 JOY - 594.06 JOY = 2376.26 JOY.
+   - Commission: 20% of 2970.32 JOY = 594.06 JOY (goes to validator 1)
+   - Validator Share: (80% of 2970.32) \* 20M/40M = 1188.12 JOY
+   - Nominators Share: (80% of 2970.32) \* 20M/40M = 1188.12 JOY
 
 2. **Validator 2's Total Reward:**
 
    - Era Points Share: `v2s` \* 8910.96 JOY = 2970.32 JOY.
-   - Commission: 40% of 2970.32 JOY = 1188.13 JOY.
-   - Nominators' Share: 2970.32 JOY - 1188.13 JOY = 1782.19 JOY.
+   - Commission: 40% of 2970.32 JOY = 1188.12 JOY (goes to validator 2)
+   - Validator Share: (60% of 2970.32) \* 20M/40M = 950.4 JOY
+   - Nominators Share: (60% of 2970.32) \* 20M/40M = 950.4 JOY
 
 3. **Validator 3's Total Reward:**
 
    - Era Points Share: `v3s` \* 8910.96 JOY = 2227.74 JOY.
-   - Commission: 10% of 2227.74 JOY = 222.77 JOY.
-   - Nominators' Share: 2227.74 JOY - 222.77 JOY = 2004.97 JOY.
+   - Commission: 10% of 2227.74 JOY = 222.77 JOY (goes to validator 3)
+   - Validator Share: (90% of 2227.74) \* 15M/30M = 1002.48 JOY
+   - Nominators Share: (90% of 2227.74) \* 15M/30M = 1002.48 JOY,
 
 4. **Validator 4's Total Reward:**
    - Era Points Share: `v4s` \* 8910.96 JOY = 742.58 JOY.
-   - Commission: 0% of 742.58 JOY = 0 JOY.
-   - Nominators' Share: 742.58 JOY.
+   - Commission: 0% of 2227.74 JOY = 0 JOY (goes to validator 4)
+   - Validator' Share: (100% of 742.58) \* 2M/10M = 148.51 JOY.
+   - Nominators Share: (100% of 742.58) \* 8M/10M = 593.94 JOY.
 
 ### Nominator Rewards:
 
-Each nominator's reward depends on their stake with a specific validator. For instance, a nominator who staked 10% of the total stake with Validator 1 would receive 10% of 2376.26 JOY = 237.63 JOY, and so on for other validators and nominators.
+Single nominators reward are distributed according to share of
+staked JOY, so for example if in the Validator 1 case there are two
+nominators staking 10M JOY each then every one of them gets:
+
+- Nominator Share \* 50% = 950.4 \* 50% = 475.2 JOY
 
 ### Conclusion
 
