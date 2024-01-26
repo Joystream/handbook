@@ -103,7 +103,7 @@ Where _Initial Price_ and $a$ are respectively the first price and sensitivity p
 
 The AMM Sale can be finally closed at any given time by the Issuer provided that the following condition holds: $$\text{AMMProvidedSupply} \le \text{TotalSupply} \times \text{Threshold}$$ Where `THRESHOLD` is a governance-set percentage. Notice that if `THRESHOLD = 0` then every token minted through the AMM must be also burned for the AMM sale to be closed.
 
-### Parameters
+## Parameters
 
 | Name                       | Type          | Description                                                           |
 | -------------------------- | ------------- | --------------------------------------------------------------------- |
@@ -116,7 +116,7 @@ The AMM Sale can be finally closed at any given time by the Issuer provided that
 | `AMMSellTxFees`            | `Permill`     | Percentage of fees charged on top of each token sold to the AMM       |
 | `MaxYearlyPatronageRate`   | `Permill`     | Maximum patronage rate allowed                                        |
 
-### Constants
+## Constants
 
 | Name                    | Description                                    | Value     |
 | ----------------------- | ---------------------------------------------- | --------- |
@@ -124,3 +124,252 @@ The AMM Sale can be finally closed at any given time by the Issuer provided that
 | `JoyExistentialDeposit` | Existential deposit for the JOY account        | `fill-in` |
 | `BlocksPerYear`         | (Average) number of blocks finalized in a year | `fill-in` |
 | `MaxOutputs`            | Max number of receivers for a single transfer  | `fill-in` |
+
+## Metadata
+
+Add data later.
+
+## Extrinsics
+
+### Issue Creator Token
+
+* Name: `issue_creator_token`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Init Creator Token Sale
+
+* Name: `init_creator_token_sale`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Update Upcoming Creator Token Sale
+
+* Name: `update_upcoming_creator_token_sale`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Creator Token Issuer Transfer
+
+* Name: `creator_token_issuer_transfer`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Make Creator Token Permissionless
+
+* Name: `make_creator_token_permissionless`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Reduce Creator Token Patronage Rate
+
+* Name: `reduce_creator_token_patronage_rate_to`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Claim Creator Token Patronage Credit
+
+* Name: `claim_creator_token_patronage_credit`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Issue Revenue Split
+
+* Name: `issue_revenue_split`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Finalize Revenue Split
+
+* Name: `finalize_revenue_split`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Finalize Creator Token Sale
+
+* Name: `finalize_creator_token_sale`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Deissue Creator Token
+
+* Name: `deissue_creator_token`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Activate AMM
+
+* Name: `activate_amm`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Deactive AMM
+
+* Name: `deactivate_amm`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Creator Token Issuer Remark
+
+* Name: `creator_token_issuer_remark`
+* Pallet: `content`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+
+
+
+
