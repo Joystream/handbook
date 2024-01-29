@@ -369,7 +369,175 @@ Add data later.
 
 **WIP**
 
+### Transfer
 
+* Name: `transfer`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Burn
+
+* Name: `burn`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Dust Account
+
+* Name: `dust_account`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Join Whitelist
+
+* Name: `join_whitelist`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Purchase Token On Sale
+
+* Name: `purchase_token_on_sale`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Participate In Split
+
+* Name: `participate_in_split`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Exit Revenue Split
+
+* Name: `exit_revenue_split`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Buy On AMM
+
+* Name: `buy_on_amm`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Sell On AMM
+
+* Name: `sell_on_amm`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
+
+### Set Frozen Status
+
+* Name: `set_frozen_status`
+* Pallet: `project_token`
+
+#### Parameters
+
+**WIP**
+
+#### Conditions
+
+**WIP**
+
+#### Effect
+
+**WIP**
 
 
 
