@@ -47,7 +47,11 @@ The Joystream blockchain takes advantage of a core feature of Substrate, which i
 
 Here is a running list of upgrades that have taken place.
 
-<table><thead><tr><th width="143.33333333333331">Network</th><th>Deployed</th><th>Runtime*</th><th>spec_version**</th></tr></thead><tbody><tr><td>Mainnet</td><td>Friday at 9:07:42 PM CET December the 9th, 2022</td><td><code>1a1d11d2cc214edb180fd861826a9450df1acc650226db604d96f489f0a36f8f</code></td><td>1000</td></tr><tr><td>Ephesus</td><td>ETA: 7th April </td><td><code>b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184</code></td><td>1001</td></tr></tbody></table>
+<table><thead><tr><th width="143.33333333333331">Network</th><th>Deployed</th><th>Runtime*</th><th>spec_version**</th></tr></thead><tbody>
+<tr><td>Mainnet</td><td>Friday at 9:07:42 PM CET December the 9th, 2022</td><td><code>1a1d11d2cc214edb180fd861826a9450df1acc650226db604d96f489f0a36f8f</code></td><td>1000</td></tr>
+<tr><td>Ephesus</td><td>Wednesday at 9:47:12 AM CET April 12th, 2023 </td><td><code>b0b35055b27a00c6a6be9c287049c79a9060e923c268de4ba148badcd435c184</code></td><td>1001</td></tr>
+<tr><td>Nara</td><td>Wednesday at 14:06:54 AM CET March 13th, 2024 </td><td><code>c3dda36a68353b12c57263ee101964b6ea80dadefa4a3d1e67903df7cae064c0</code></td><td>2002</td></tr>
+</tbody></table>
 
 _\* blake2-256 hash of runtime WASM runtime._\
 _\*\* Version of the runtime specification, must be distinct for each runtime for a chain. Is involved in execution strategy and also transactions commit to this version to avoid unintended semantic changes from time of signing to time of block inclusion._
