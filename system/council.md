@@ -151,22 +151,23 @@ The stages and transitions, are summarized in the figure below.
 
 The following constants are hard coded into the system, they can only be updated with a runtime upgrade.
 
-| Name                       | Description                                                                              | Value     |
-| -------------------------- | ---------------------------------------------------------------------------------------- | --------- |
-| `NUMBER_OF_COUNCIL_SEATS`  | The number of council seats.                                                             | `fill-in` |
-| `IDLE_PERIOD_LENGTH`       | The number of blocks in the normal period.                                               | `fill-in` |
-| `ANNOUNCING_PERIOD_LENGTH` | The number of blocks in the announcing period                                            | `fill-in` |
-| `VOTING_PERIOD_LENGTH`     | The number of blocks in the voting period.                                               | `fill-in` |
-| `REVEALING_PERIOD_LENGTH`  | The number of blocks in the revealing period.                                            | `fill-in` |
-| `REWARD_PERIOD_LENGTH`     | <p>The number or blocks between each reward<br>payout to councilors.</p>                 | `fill-in` |
-| `BUDGET_PERIOD_LENGTH`     | <p>The number of blocks between each time the the</p><p>council budget is topped up.</p> | `fill-in` |
-| `REQUIRED_CANDIDACY_STAKE` | The required amount of stake for a candidate.                                            | `fill-in` |
-| `MINIMUM_VOTING_STAKE`     | The minimum allowable stake in a vote.                                                   | `fill-in` |
-| `MAX_SALT_LENGTH`          | The maximum length of salt is used to calculate a vote's sealed commitment.              | `fill-in` |
-| `MINIMUM_CANDIDATES_COUNT` | The minimum number of candidates needed for the election to become legitimate.           | `fill-in` |
-| `VOTING_LOCK_ID`           | The Id for the lock used to vote.                                                        | `fill-in` |
-| `CANDIDACY_LOCK_ID`        | The Id for the lock used for candidacy.                                                  | `fill-in` |
-| `COUNCILOR_LOCK_ID`        | The Id for the lock used for councilorship.                                              | `fill-in` |
+| Name                       | Description                                                                              | Value               |
+| -------------------------- | ---------------------------------------------------------------------------------------- | ------------------- |
+| `NUMBER_OF_COUNCIL_SEATS`  | The number of council seats.                                                             |                  3  |
+| `IDLE_PERIOD_LENGTH`       | The number of blocks in the normal period.                                               |            201 600  |
+| `ANNOUNCING_PERIOD_LENGTH` | The number of blocks in the announcing period                                            |             86 400  |
+| `VOTING_PERIOD_LENGTH`     | The number of blocks in the voting period.                                               |             57 600  |
+| `REVEALING_PERIOD_LENGTH`  | The number of blocks in the revealing period.                                            |             57 600  |
+| `REWARD_PERIOD_LENGTH`     | <p>The number or blocks between each reward<br>payout to councilors.</p>                 |             14 400  |
+| `BUDGET_PERIOD_LENGTH`     | <p>The number of blocks between each time the the</p><p>council budget is topped up.</p> |             14 400  |
+| `REQUIRED_CANDIDACY_STAKE` | The required amount of stake for a candidate.                                            |     166 666.67 JOY  |
+| `MINIMUM_VOTING_STAKE`     | The minimum allowable stake in a vote.                                                   |         166.67 JOY  |
+| `MAX_SALT_LENGTH`          | The maximum length of salt is used to calculate a vote's sealed commitment.              |                 32  |
+| `MINIMUM_CANDIDATES_COUNT` | The minimum number of candidates needed for the election to become legitimate.           |                  1  |
+| `VOTING_LOCK_ID`           | The Id for the lock used to vote.                                                        | 0x766f74696e672020  |
+| `CANDIDACY_LOCK_ID`        | The Id for the lock used for candidacy.                                                  | 0x63616e6469646163  |
+| `COUNCILOR_LOCK_ID`        | The Id for the lock used for councilorship.                                              | 0x636f756e63696c6f  |
+Last Update Date: 2024-03-13
 
 ## Extrinsics
 
