@@ -44,4 +44,4 @@ The community maintains a distinct Notion workspace for ongoing operational and 
 
 ## Feeling Lost?
 
-Are you still totally lost, not sure where to go or whom to speak to about getting started? Go speak to our integrators, these are the friendliest folks you can imagine, standing by 24/7 - rewarded by the DAO, to help you find your place and become valuable and effective contributor to the system.
+Are you still totally lost, not sure where to go or whom to speak to about getting started? Go [speak to our integrators](https://discord.com/channels/811216481340751934/813361923172335648), these are the friendliest folks you can imagine, standing by 24/7 - rewarded by the DAO, to help you find your place and become valuable and effective contributor to the system.
