@@ -28,7 +28,7 @@ Joystream supports Polkadot Vault which enables users to utilize almost any smar
    1. Install the [Polkadot Vault](https://signer.parity.io/) app on your phone.
    2. Disconnect your phone from the internet forever. Best to remove any SIM cards, forget any WiFi network, enable airplane mode, etc.
 2. Add Joystream network to Polkadot Vault
-   1. On your computer, open the [Joystream Metadata Portal](https://metadata.joyutils.org/) that will allow you to add Joystream as a network in Vault.
+   1. On your computer, open the [Metadata Portal](https://metadata.novasama.io/?tab=1#/joystream-node) that will allow you to add Joystream as a network in Vault.
    2. Select Joystream network on the left menu
    3. Now select “Chain Specs” tab.\
       ![](<.gitbook/assets/image (1).png>)
