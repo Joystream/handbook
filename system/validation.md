@@ -47,46 +47,40 @@ Let's start with the following assumptions:
 ### Era Points and Reward Distribution:
 
 Era points are a measure of a validator's contribution to the network during an era. These points are awarded for various actions like validating blocks, producing blocks, and other network-supportive actions. The specific allocation of era points can vary based on the network's rules and validators' performance.
-They are not predictable and they add a probabilistic component to the validator payout scheme.
+They are not predictable and they add a probabilistic component to the validator payout scheme. However the reward scheme is designed that all validators receives the same amount over the course of all eras.
 
 Validator era point are used to computed the share of each validator for the total reward pool, using the formula `validatorPoints / totalPoints`: where `totalPoints` is the total number of points earned by all validators in the era, and `validatorPoints` is the number of points awarded to each unique
-validator during the same era. Suppose for the sake of simplicity that the share is proportional to the validator stake percentage over the total staked amount in the network:
-
-1. Validator 1's share `v1s`: 40,000,000 / 120,000,000.
-2. Validator 2's share `v2s`: 40,000,000 / 120,000,000.
-3. Validator 3's share `v3s`: 30,000,000 / 120,000,000.
-4. Validator 4's share `v4s`: 10,000,000 / 120,000,000.
-
-However, in practice, era points are not strictly proportional to stake but depend on actual performance and contributions, which can vary.
+validator during the same era. Suppose era points are uniformly distributed accross validators without fluctuations added by the
+probabilistic component in the computations, hence era point share is equal to `25%` for each validation
 
 ### Calculating Rewards:
 
 1. **Validator 1's Total Reward:**
 
-   - Era Points Share: `v1s` \* 8910.96 JOY = 2970.32 JOY.
+   - Era Points Share: 25% \* 8910.96 JOY = 2227.74 JOY.
    - Commission: 20% of 2970.32 JOY = 594.06 JOY (goes to validator 1)
-   - Validator Share: (80% of 2970.32) \* 20M/40M = 1188.12 JOY
-   - Nominators Share: (80% of 2970.32) \* 20M/40M = 1188.12 JOY
+   - Validator Share: (80% of 2227.74) \* 20M/40M = 1188.12 JOY
+   - Nominators Share: (80% of 2227.74) \* 20M/40M = 1188.12 JOY
 
 2. **Validator 2's Total Reward:**
 
-   - Era Points Share: `v2s` \* 8910.96 JOY = 2970.32 JOY.
-   - Commission: 40% of 2970.32 JOY = 1188.12 JOY (goes to validator 2)
-   - Validator Share: (60% of 2970.32) \* 20M/40M = 950.4 JOY
-   - Nominators Share: (60% of 2970.32) \* 20M/40M = 950.4 JOY
+   - Era Points Share: 25% \* 8910.96 JOY = 2227.74 JOY.
+   - Commission: 40% of 2227.74 JOY = 891.09 JOY (goes to validator 2)
+   - Validator Share: (60% of 2227.74) \* 20M/40M = 668.32 JOY
+   - Nominators Share: (60% of 2227.74) \* 20M/40M = 668.32 JOY
 
 3. **Validator 3's Total Reward:**
 
-   - Era Points Share: `v3s` \* 8910.96 JOY = 2227.74 JOY.
+   - Era Points Share: 25% \* 8910.96 JOY = 2227.74 JOY.
    - Commission: 10% of 2227.74 JOY = 222.77 JOY (goes to validator 3)
    - Validator Share: (90% of 2227.74) \* 15M/30M = 1002.48 JOY
    - Nominators Share: (90% of 2227.74) \* 15M/30M = 1002.48 JOY,
 
 4. **Validator 4's Total Reward:**
-   - Era Points Share: `v4s` \* 8910.96 JOY = 742.58 JOY.
+   - Era Points Share: 25% \* 8910.96 JOY = 2227.74 JOY.
    - Commission: 0% of 2227.74 JOY = 0 JOY (goes to validator 4)
-   - Validator' Share: (100% of 742.58) \* 2M/10M = 148.51 JOY.
-   - Nominators Share: (100% of 742.58) \* 8M/10M = 593.94 JOY.
+   - Validator' Share: (100% of 2227.74) \* 2M/10M = 445.54 JOY.
+   - Nominators Share: (100% of 2227.74) \* 8M/10M = 1782.192 JOY.
 
 ### Nominator Rewards:
 
@@ -94,7 +88,7 @@ Single nominators reward are distributed according to share of
 staked JOY, so for example if in the Validator 1 case there are two
 nominators staking 10M JOY each then every one of them gets:
 
-- Nominator Share \* 50% = 950.4 \* 50% = 475.2 JOY
+- Nominator Share \* 50% = 950.4 \* 50% = 594.06 JOY
 
 ### Conclusion
 
